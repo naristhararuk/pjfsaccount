@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuEmailResending,SS.SU.DTO" table="SuEmailResending">
+
+		<id name="id" column="id" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="emailtype" type="String" name="emailtype" length="100" />
+		<property column="lastsenddate" type="DateTime" name="lastsenddate" not-null="true" />
+		<property column="mailcontent" type="String" name="mailcontent" length="3000" />
+		<property column="retry" type="Int32" name="retry" />
+		<property column="status" type="String" name="status" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="Creby" type="Int64" name="Creby" not-null="true" />
+		<property column="sendto" type="String" name="sendto" />
+    <property column="subject" type="String" name="subject" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,368 @@
+﻿<%@ Master 
+    Language="C#" 
+    AutoEventWireup="true" 
+    CodeBehind="ProgramsPages.master.cs" 
+    Inherits="SCG.eAccounting.Web.ProgramsPages" 
+    EnableTheming="true"
+%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
+<%@ Register Assembly="SS.Standard.Utilities" Namespace="SS.Standard.Utilities" TagPrefix="cc1" %>
+<%@ Register src="UserControls/LanguageFlag.ascx" tagname="LanguageFlag" tagprefix="uc3" %>
+<%@ Register src="UserControls/Menu.ascx" tagname="Menu" tagprefix="uc1" %>
+<%@ Register src="UserControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc5" %>
+<%@ Register src="UserControls/UserInfoWelcome.ascx" tagname="UserInfoWelcome" tagprefix="uc4" %>
+<%@ Register src="UserControls/LoginInformation.ascx" tagname="LoginInformation" tagprefix="uc6" %>
+<%@ Register src="UserControls/LeftMenus.ascx" tagname="LeftMenus" tagprefix="uc2" %>
+<%@ Register src="UserControls/ShowDate.ascx" tagname="ShowDate" tagprefix="uc8" %>
+<%@ Register src="UserControls/BreadCrumb.ascx" tagname="BreadCrumb" tagprefix="uc9" %>
+
+<%@ Register src="UserControls/MenuBottom.ascx" tagname="MenuBottom" tagprefix="uc7" %>
+<%@ Register src="UserControls/PanelMenu.ascx" tagname="PanelMenu" tagprefix="uc11" %>
+
+<%--<%@ Register src="UserControls/Shared/PopupSupport.ascx" tagname="PopupSupport" tagprefix="uc10" %>--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<style type="text/css">
+@import url(<%= Page.ResolveUrl("~/Scripts/themes/smoothness/jquery-ui.css") %>);
+</style>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/Ajax.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/global.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/NumberFormat154.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-1.10.2.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-ui.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/fs.popup.js")%>"></script>
+<script type="text/javascript" language="javascript">
+    var jq = jQuery.noConflict();
+    var imgRightArrowPath = '<%= ResolveUrl("~/App_Themes/Default/images/LeftMenu/anired05_next.gif") %>';
+    var imgLeftArrowPath = '<%= ResolveUrl("~/App_Themes/Default/images/LeftMenu/anired05_back.gif") %>';
+    function MenuControl()
+    {
+            if (event.srcElement.value == '<')
+            {
+                event.srcElement.value = '>';
+                document.getElementById('<%= btnHideMenu.ClientID %>').click();
+                document.getElementById('ctlClose').src = imgRightArrowPath
+                // Call function on global.js for set cookie
+                SetCookie("leftMenuDisplay", ">");
+            }
+            else
+            {
+                event.srcElement.value = '<';
+                document.getElementById('<%= btnDisplayMenu.ClientID %>').click();
+                document.getElementById('ctlClose').src = imgLeftArrowPath
+                // Call function on global.js for set cookie
+                SetCookie("leftMenuDisplay", "<");
+            }
+    }
+
+    var ad;
+    function BeginInitAccordion()
+    {
+        try
+        {
+            // Call function on global.js for get cookie
+            if (GetCookie("leftMenuDisplay") == '>') 
+            {
+                document.getElementById('<%= panelLeftMenuBody.ClientID %>').style.width = 0;
+                document.getElementById('<%= panelLeftControl.ClientID %>').style.width = 0;
+                document.getElementById('<%= btnMenuController.ClientID %>').value = '>';
+                document.getElementById('ctlClose').src = imgRightArrowPath
+            }
+            else if (GetCookie("leftMenuDisplay") == '<')
+            {
+                document.getElementById('<%= panelLeftMenuBody.ClientID %>').style.width = 160;
+                document.getElementById('<%= panelLeftControl.ClientID %>').style.width = 160;
+                document.getElementById('<%= btnMenuController.ClientID %>').value = '<';
+                document.getElementById('ctlClose').src = imgLeftArrowPath
+            }
+            else
+            {
+                document.getElementById('<%= panelLeftMenuBody.ClientID %>').style.width = 160;
+                document.getElementById('<%= panelLeftControl.ClientID %>').style.width = 160;
+                document.getElementById('<%= btnMenuController.ClientID %>').value = '<';
+                document.getElementById('ctlClose').src = imgLeftArrowPath
+            }
+            
+            InitAccordion();
+        }
+        catch (exception) { }
+        if (ad == null)
+        {
+            // Loop until Accordion has been finish loading.
+            var tot = window.setTimeout('BeginInitAccordion();', 500);
+        }
+        else
+        {
+            var tot = window.setTimeout ("showTime()", 1000)
+        }
+    }
+
+    // Call function after finish loading to complete set cookie to control Accordian
+    window.onload = BeginInitAccordion;
+
+    function InitAccordion() {
+
+        ad = $find("<%= LeftMenus1.menuAccordion.ClientID %>_AccordionExtender");
+
+        //Get the value from Cookie
+        getIndexFromCookie();
+
+        ad.add_selectedIndexChanged(function() {
+            //Save the SelectedIndex in the Cookie
+            saveIndexInCookie();
+        });
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function showTime()
+    {
+        var langID = document.getElementById("ctl00_ShowDate1_txtLangID").value;
+        var strReturn = "";
+        var ap = "";
+        
+        var date    = new Date();
+        var secound = date.getSeconds();
+        var minute  = date.getMinutes();
+        var hour    = date.getHours();
+
+        if(langID=="1")
+        {
+            if ( hour < 10 ) 
+                hour = "0" + hour;
+            if ( minute < 10 ) 
+                minute = "0" + minute;
+            if ( secound < 10 ) 
+                secound = "0" + secound;
+
+            strReturn = hour + ":" + minute + ":" + secound ;
+            document.getElementById("ctl00_ShowDate1_lblTime").innerHTML = strReturn;
+        }
+        else   
+        {
+            if ( hour >= 12 ) 
+                ap = " P.M.";
+            else 
+                ap = " A.M.";
+            
+            if ( hour > 12 ) 
+                hour = hour - 12;
+            if ( hour < 10 ) 
+                hour = "0" + hour;
+            if ( minute < 10 ) 
+                minute = "0" + minute;
+            if ( secound < 10 ) 
+                secound = "0" + secound;
+            
+            strReturn = hour + ":" + minute + ":" + secound + " " + ap;
+            document.getElementById("ctl00_ShowDate1_lblTime").innerHTML = strReturn;
+        }
+        
+        var tot = window.setTimeout ("showTime()", 1000)
+    }
+    
+    //window.onload=showTime
+</script>
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="Stylesheet" type="text/css" href="~/App_Themes/Default/default.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="MasterPageBodyTag" runat="server" onkeydown="return fncNotKeyBackSpace(event);">
+    <form id="FormContent" runat="server" align="center">
+    <ajaxToolkit:ToolkitScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release" CombineScripts="true" EnablePageMethods="true" EnablePartialRendering="true" AsyncPostBackTimeout="300"/>
+    <script type="text/javascript" src="<%= ResolveClientUrl("~/Scripts/Alert.js") %>"></script>
+    
+    <table id="MAIN_CENTER" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr align="center" style="vertical-align:top;height:100%;width:100%">
+            
+            <!-- <td style="width:30px;background-image:url(<%= ResolveClientUrl("~/App_Themes/Default/images/MasterPage/BorderLeft.png") %>);"> -->
+            <td style="width:30px;background-color:White">
+            
+            </td>
+            <td>
+                <!-- MAIN_CENTER -->
+                
+                <table id="MAIN_TABLE"  border="0" cellpadding="0" cellspacing="0" style="vertical-align:top;height:100%;width:100%;">
+                   
+                    <!-- ROW_HEAD -->
+                    <tr valign="top" style="height:100%;width:100%">
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" style="height:100%;width:100%">
+                                <tr>
+                                    <td><asp:Image ID="imgHead1" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" CssClass="logoSCG" /></td>
+                                    <td class="backgroundHeaderCenter"></td>
+                                    <td><asp:Image ID="imgHead2" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" CssClass="bannerExpense" /></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- MENU -->
+                    <tr>
+                        <td>
+                            <table style="height:34px;width:100%;" border="0" cellpadding="0" cellspacing="0">
+		                        <tr>
+		                            <td style="width:30px;vertical-align:middle;height:34px" align="center">
+		                                <table style="vertical-align: middle;" border="0" cellpadding="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center" valign="middle">
+                                                    <img id="ctlClose" alt="" style="cursor: hand;" onclick="document.getElementById('<%= btnMenuController.ClientID %>').click();"
+                                                        src="<%= ResolveUrl("~/App_Themes/Default/images/LeftMenu/anired05_back.gif") %>" />
+                                                    <input id="btnMenuController" type="button" runat="server" style="display:none" value="<" onclick="MenuControl();" />
+                                                    <input id="btnDisplayMenu" type="button" runat="server" style="display:none" />
+                                                    <input id="btnHideMenu" type="button" runat="server" style="display:none" />
+                                                </td>
+                                            </tr>
+                                        </table>
+		                            </td>
+		                            <td align="left">
+		                                <uc11:PanelMenu ID="PanelMenu" runat="server" />
+		                            </td>
+		                        </tr>
+		                    </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- DETAIL -->
+                    <tr>
+                        <td>
+                        
+                        <table border="0" cellpadding="0" cellspacing ="0" class="backgroundLeftMenu">
+                            <tr valign="top">
+                                <td>
+                                    <div id="panelLeftMenuBody" runat="server" style="width:160px;text-align:center;overflow:hidden;vertical-align:top">
+                                        <uc2:LeftMenus ID="LeftMenus1" runat="server" />
+                                    </div>
+                                </td>
+                                <td rowspan="2" class="backgroundContent">
+                                
+                                <table border="0" cellpadding="0" cellspacing ="0" style="width:100%;height:100%">
+                                    <tr>
+                                        <td align="left" style="width:100%">
+                                            <%--<asp:SiteMapPath ID="ctlSiteMapPath" runat="server"></asp:SiteMapPath>--%>
+                                            <%--<uc9:BreadCrumb id="ctlBreadCrumb" runat="server" />--%>
+                                            <%--<uc8:ShowDate ID="ShowDate1" runat="server" /> 
+                                            <div id="divShowTime" align="left"></div>--%>
+                                            <table width="100%">
+                                                <tr>
+                                                    <td style="width:70%" align="left">
+                                                        <uc9:BreadCrumb id="ctlBreadCrumb" runat="server" />
+                                                    </td>
+                                                    <td style="width:30%" align="right">
+                                                        <uc8:ShowDate ID="ShowDate1" runat="server" /> 
+                                                        <div id="divShowTime" align="left"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:ContentPlaceHolder ID="A" runat="server">
+                                
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                </td>
+                            </tr>
+                            
+                            <tr valign="bottom">
+                                <td>
+                                    <div id="panelLeftControl" runat="server" style="text-align:center;height:100%;width:100%;overflow:hidden;">
+                                    <table style="height: 100%; width: 100%; vertical-align: top;" border="0" cellpadding="0" cellspacing="0">
+                                        <tr class="menuLine1">
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="vertical-align:top">
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <uc6:LoginInformation ID="LoginInformation1" runat="server" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                </td>
+                              </tr>
+                        </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- BUTTOM -->
+                    <tr>
+                        <td>
+                            
+                            <uc7:MenuBottom ID="MenuBottom" runat="server" />
+                        </td>
+                    </tr>
+                    
+                </table>
+    
+            <!-- MAIN_CENTER -->
+            </td>
+            
+            <!-- <td style="width:30px;background-image:url(<%= ResolveClientUrl("~/App_Themes/Default/images/MasterPage/BorderRight.png") %>);"> -->
+            <td style="width:30px;background-color:White">
+            </td>
+        </tr>
+    </table>
+    
+<ajaxToolkit:AnimationExtender id="AnimateExtender" runat="server" TargetControlID="btnDisplayMenu">
+    <Animations>
+        <OnClick>
+            <Sequence>
+                <Parallel duration="0.3" Fps="30">
+                    <Resize AnimationTarget="panelLeftMenuBody" WidthScript="160" />
+                </Parallel>
+            </Sequence>
+        </OnClick>
+    </Animations>
+</ajaxToolkit:AnimationExtender>
+<ajaxToolkit:AnimationExtender id="AnimationExtender1" runat="server" TargetControlID="btnHideMenu">
+    <Animations>
+        <OnClick>
+            <Sequence>
+                <Parallel duration="0.3" Fps="30">
+                    <Resize AnimationTarget="panelLeftMenuBody" WidthScript="0" />
+                </Parallel>
+            </Sequence>
+        </OnClick>
+    </Animations>
+</ajaxToolkit:AnimationExtender>
+
+<ajaxToolkit:AnimationExtender id="AnimationExtender2" runat="server" TargetControlID="btnDisplayMenu">
+    <Animations>
+        <OnClick>
+            <Sequence>
+                <Parallel duration="0.3" Fps="30">
+                    <Resize AnimationTarget="panelLeftControl" WidthScript="160" />
+                </Parallel>
+            </Sequence>
+        </OnClick>
+    </Animations>
+</ajaxToolkit:AnimationExtender>
+<ajaxToolkit:AnimationExtender id="AnimationExtender3" runat="server" TargetControlID="btnHideMenu">
+    <Animations>
+        <OnClick>
+            <Sequence>
+                <Parallel duration="0.3" Fps="30">
+                    <Resize AnimationTarget="panelLeftControl" WidthScript="0" />
+                </Parallel>
+            </Sequence>
+        </OnClick>
+    </Animations>
+</ajaxToolkit:AnimationExtender>
+<%--<uc10:PopupSupport ID="PopupSupport1" runat="server" />--%>
+    </form>
+</body>
+</html>

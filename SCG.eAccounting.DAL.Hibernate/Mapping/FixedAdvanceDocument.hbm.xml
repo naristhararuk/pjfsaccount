@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FixedAdvanceDocument, SCG.eAccounting.DTO" table="FixedAdvanceDocument">
+		<id name="FixedAdvanceID" column="FixedAdvanceID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="DocumentID" column="DocumentID" class="SCG.eAccounting.DTO.SCGDocument,SCG.eAccounting.DTO" />
+    
+    <property column="EffectiveFromDate" type="DateTime" name="EffectiveFromDate" not-null="true"/>
+		<property column="EffectiveToDate" type="DateTime" name="EffectiveToDate" not-null="true"/>
+    <property column="RequestDate" type="DateTime" name="RequestDate" not-null="true"/>
+    <property column="Objective" type="String" name="Objective"/>
+    <property column="RefFixedAdvanceID" type="System.Nullable`1[[System.Int64]]" name="RefFixedAdvanceID"/>
+    <property column="FixedAdvanceType" type="byte" name="FixedAdvanceType"/>
+    <property column="Amount" type="Double" name="Amount" />
+    <property column="NetAmount" type="Double" name="NetAmount"/>
+    <many-to-one column="ServiceTeamID" class="SCG.DB.DTO.DbServiceTeam,SCG.DB.DTO" name="ServiceTeamID"/>
+    <property column="PaymentType" type="String" name="PaymentType" not-null="true" />
+    <many-to-one column="PBID" class="SCG.DB.DTO.Dbpb,SCG.DB.DTO" name="PBID" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+    <many-to-one column="ReturnServiceTeamID" class="SCG.DB.DTO.DbServiceTeam,SCG.DB.DTO" name="ReturnServiceTeamID"/>
+    <property column="ReturnPaymentType" type="String" name="ReturnPaymentType" />
+    <many-to-one column="ReturnPBID" class="SCG.DB.DTO.Dbpb,SCG.DB.DTO" name="ReturnPBID" />
+    <property column="ReturnRequestDate" type="System.Nullable`1[[System.DateTime]]" name="ReturnRequestDate"/>
+    <property column="BranchCodeReturn" type="String" name="BranchCodeReturn" length="20" />
+    <property column="PaymentMethodIDReturn" name="PaymentMethodIDReturn" type="System.Nullable`1[[System.Int64]]"/>
+    <property column="PostingDateReturn" name="PostingDateReturn" type="System.Nullable`1[[System.DateTime]]"/>
+    <property column="BaseLineDateReturn" name="BaseLineDateReturn" type="System.Nullable`1[[System.DateTime]]"/>
+    <property column="PostingStatusReturn" type="String" name="PostingStatusReturn" length="2" />
+    <property column="FixedAdvanceBankAccount" type="String" name="FixedAdvanceBankAccount" length="6" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,1863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:s0="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:s0="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="YBAPI_GETFIDOC">
+        <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:all>
+            <xsd:element name="I_BKPF" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Accounting Document Header</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:YGETFIDOC_H" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="I_BSEG" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Accounting Document Segment</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:YGETFIDOC_I" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="COMPANYCODE">
+              <xsd:annotation>
+                <xsd:documentation>Company Code</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="4" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="DOCNUMBER">
+              <xsd:annotation>
+                <xsd:documentation>From document number</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="10" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="FISCALYEAR">
+              <xsd:annotation>
+                <xsd:documentation>Fiscal Year</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:pattern value="\d+" />
+                  <xsd:maxLength value="4" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="YBAPI_GETFIDOC.Response">
+        <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:all>
+            <xsd:element name="I_BKPF" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Accounting Document Header</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:YGETFIDOC_H" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="I_BSEG" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Accounting Document Segment</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:YGETFIDOC_I" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="YGETFIDOC_H">
+        <xsd:sequence>
+          <xsd:element name="BELNR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Accounting Document Number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BUKRS" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Company Code</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BUDAT" minOccurs="0" type="s0:date" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Posting Date in the Document</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="XBLNR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Reference Document Number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="16" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BKTXT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Document Header Text</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="25" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BRNCH" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Bank Branch</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="40" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="STBLG" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Reverse Document Number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BUTXT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Name of the company code or company</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="25" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="CPUDT" minOccurs="0" type="s0:date" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Accounting Document Entry Date</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="CPUTM" minOccurs="0" type="s0:time" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Time of Entry</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="BLDAT" minOccurs="0" type="s0:date" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Document Date in Document</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="BLART" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Document type</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="WAERS" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Currency Key</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="5" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="YGETFIDOC_I">
+        <xsd:sequence>
+          <xsd:element name="BUZEI" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Number of Line Item Within Accounting Document</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:pattern value="\d+" />
+                <xsd:maxLength value="3" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BSCHL" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Posting Key</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KOSTL" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Cost Center</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="MWSKZ" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Tax on sales/purchases code</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="ZUONR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Assignment number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="18" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="ZLSCH" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Payment Method</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="ACCOUNT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Account number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="18" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="HKONT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>General Ledger Account</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="DESCRIPTION" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Account name</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="100" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="SAKNR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>G/L Account Number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="WRBTR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Display Amount</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="17" />
+                <xsd:fractionDigits value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="DMBTR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Amount in local currency</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="13" />
+                <xsd:fractionDigits value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="WERKS" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Plant</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="AUFNR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Order Number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="12" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="SHKZG" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Debit/Credit Indicator</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KOART" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Account type</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="WHT_CODE" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Withholding tax code</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="50" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="WHT_TYPE" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Withholding tax type</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="50" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="WHT_BASE" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Withholding tax base amount in document currency</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="100" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KIDNO" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Payment Reference</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="30" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BVTYP" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Partner bank type</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="ZFBDT" minOccurs="0" type="s0:date" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Baseline date for due date calculation</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ZTERM" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Terms of payment key</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="ADDRESS" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Address</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="100" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="SGTXT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Item Text</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="50" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="ZLSPR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Payment Block Key</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="BANK_ACC" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Bank Account Number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="18" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="date">
+        <xsd:union memberTypes="xsd:date s0:genericDate" />
+      </xsd:simpleType>
+      <xsd:simpleType name="genericDate">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="....-..-.." />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:union memberTypes="xsd:time s0:genericTime" />
+      </xsd:simpleType>
+      <xsd:simpleType name="genericTime">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="..:..:.." />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:portType name="dummy.PortType">
+    <wsdl:operation name="YBAPI_GETFIDOC">
+      <wsdl:input message="s0:YBAPI_GETFIDOC.Input" />
+      <wsdl:output message="s0:YBAPI_GETFIDOC.Output" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="dummy.SAPBinding" type="s0:dummy.PortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <s0:binding style="rfc" />
+    <wiz:GeneratorSettings xmlns:wiz="urn:sap:mw:dotnet:wizard">
+      <wiz:ProxyType>Client</wiz:ProxyType>
+      <wiz:ClassName>SAPProxy_YBAPI_GETFIDOC</wiz:ClassName>
+      <wiz:Beautify>True</wiz:Beautify>
+      <wiz:CreateAsyncs>False</wiz:CreateAsyncs>
+      <wiz:CreateQRFC>False</wiz:CreateQRFC>
+      <wiz:CreateTRFC>False</wiz:CreateTRFC>
+      <wiz:ShowTypes>True</wiz:ShowTypes>
+      <wiz:MapBapiExceptions>False</wiz:MapBapiExceptions>
+    </wiz:GeneratorSettings>
+    <wsdl:operation name="YBAPI_GETFIDOC">
+      <ifr:container xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+        <ifr:descriptor>
+          <ifr:description language="EN">ZDMS_GETFIDOC</ifr:description>
+        </ifr:descriptor>
+        <ifr:properties>
+          <ifr:sourceSystem />
+          <ifr:sourceClient>240</ifr:sourceClient>
+          <ifr:release>620 </ifr:release>
+          <ifr:package>ZSD0</ifr:package>
+          <ifr:akhNode />
+          <ifr:released>no</ifr:released>
+          <ifr:outbound>false</ifr:outbound>
+          <ifr:synchronous>true</ifr:synchronous>
+          <ifr:asynchronous>false</ifr:asynchronous>
+          <ifr:unicode1>true</ifr:unicode1>
+          <ifr:unicode2>true</ifr:unicode2>
+        </ifr:properties>
+        <ifr:definition>
+          <ifr:parameters>
+            <ifr:parameter name="COMPANYCODE">
+              <ifr:descriptor>
+                <ifr:description language="EN">Company Code</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BAPI1028_11.COMP_CODE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:checkTable>T001</ifr:checkTable>
+                    <ifr:offset1>2</ifr:offset1>
+                    <ifr:offset2>4</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="BUKRS">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="DOCNUMBER">
+              <ifr:descriptor>
+                <ifr:description language="EN">From document number</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BAPI1028_11.DOC_FROMNO">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:offset1>16</ifr:offset1>
+                    <ifr:offset2>32</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="DOCFROM">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="FISCALYEAR">
+              <ifr:descriptor>
+                <ifr:description language="EN">Fiscal Year</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BAPI1028_11.FISC_YEAR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:offset1>12</ifr:offset1>
+                    <ifr:offset2>24</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="GJAHR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>NUMC</ifr:type>
+                    <ifr:abapType>N</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                    <ifr:conversionExit>GJAHR</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_BKPF">
+              <ifr:descriptor>
+                <ifr:description language="EN">Accounting Document Header</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:complexType name="YGETFIDOC_H" type="structure" xlink:role="type" xlink:href="/Content?TYPE=type&amp;NAME=YGETFIDOC_H" xmlns:ifr="urn:sap-com:ifr:v2:metamodel" xmlns:xlink="http://www.w3.org/1999/xlink" />
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>inout</ifr:direction>
+                <ifr:class>tables</ifr:class>
+                <ifr:type>structure</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_BSEG">
+              <ifr:descriptor>
+                <ifr:description language="EN">Accounting Document Segment</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:complexType name="YGETFIDOC_I" type="structure" xlink:role="type" xlink:href="/Content?TYPE=type&amp;NAME=YGETFIDOC_I" xmlns:ifr="urn:sap-com:ifr:v2:metamodel" xmlns:xlink="http://www.w3.org/1999/xlink" />
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>inout</ifr:direction>
+                <ifr:class>tables</ifr:class>
+                <ifr:type>structure</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+          </ifr:parameters>
+        </ifr:definition>
+      </ifr:container>
+    </wsdl:operation>
+    <s0:type name="YGETFIDOC_H">
+      <ifr:container xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+        <ifr:descriptor>
+          <ifr:description language="EN">YBAPI_GETFIDOC - Header</ifr:description>
+        </ifr:descriptor>
+        <ifr:properties>
+          <ifr:sourceSystem />
+          <ifr:sourceClient>240</ifr:sourceClient>
+          <ifr:release>620 </ifr:release>
+          <ifr:category>structure</ifr:category>
+          <ifr:unicode1>true</ifr:unicode1>
+          <ifr:unicode2>true</ifr:unicode2>
+          <ifr:isFlatStructure>true</ifr:isFlatStructure>
+        </ifr:properties>
+        <ifr:definition>
+          <ifr:internalLength1>167</ifr:internalLength1>
+          <ifr:internalLength2>334</ifr:internalLength2>
+          <ifr:fields>
+            <ifr:field name="BELNR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Accounting Document Number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>0</ifr:offset1>
+                <ifr:offset2>0</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BELNR_D">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BUKRS" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Company Code</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>10</ifr:offset1>
+                <ifr:offset2>20</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BUKRS">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BUDAT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Posting Date in the Document</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>14</ifr:offset1>
+                <ifr:offset2>28</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BUDAT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>DATS</ifr:type>
+                    <ifr:abapType>D</ifr:abapType>
+                    <ifr:length>8</ifr:length>
+                    <ifr:internalLength1>8</ifr:internalLength1>
+                    <ifr:internalLength2>16</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="XBLNR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Reference Document Number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>22</ifr:offset1>
+                <ifr:offset2>44</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="XBLNR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>16</ifr:length>
+                    <ifr:internalLength1>16</ifr:internalLength1>
+                    <ifr:internalLength2>32</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BKTXT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Document Header Text</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>38</ifr:offset1>
+                <ifr:offset2>76</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BKTXT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>true</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>25</ifr:length>
+                    <ifr:internalLength1>25</ifr:internalLength1>
+                    <ifr:internalLength2>50</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>25</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BRNCH" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Bank Branch</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>63</ifr:offset1>
+                <ifr:offset2>126</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BRNCH">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>true</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>40</ifr:length>
+                    <ifr:internalLength1>40</ifr:internalLength1>
+                    <ifr:internalLength2>80</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>40</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="STBLG" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Reverse Document Number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>103</ifr:offset1>
+                <ifr:offset2>206</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="STBLG">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BUTXT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Name of the company code or company</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>113</ifr:offset1>
+                <ifr:offset2>226</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BUTXT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>true</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>25</ifr:length>
+                    <ifr:internalLength1>25</ifr:internalLength1>
+                    <ifr:internalLength2>50</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>25</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="CPUDT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Accounting Document Entry Date</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>138</ifr:offset1>
+                <ifr:offset2>276</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="CPUDT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>DATS</ifr:type>
+                    <ifr:abapType>D</ifr:abapType>
+                    <ifr:length>8</ifr:length>
+                    <ifr:internalLength1>8</ifr:internalLength1>
+                    <ifr:internalLength2>16</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="CPUTM" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Time of Entry</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>146</ifr:offset1>
+                <ifr:offset2>292</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="CPUTM">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>TIMS</ifr:type>
+                    <ifr:abapType>T</ifr:abapType>
+                    <ifr:length>6</ifr:length>
+                    <ifr:internalLength1>6</ifr:internalLength1>
+                    <ifr:internalLength2>12</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>8</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BLDAT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Document Date in Document</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>152</ifr:offset1>
+                <ifr:offset2>304</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BLDAT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>DATS</ifr:type>
+                    <ifr:abapType>D</ifr:abapType>
+                    <ifr:length>8</ifr:length>
+                    <ifr:internalLength1>8</ifr:internalLength1>
+                    <ifr:internalLength2>16</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BLART" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Document type</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>160</ifr:offset1>
+                <ifr:offset2>320</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BLART">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>2</ifr:length>
+                    <ifr:internalLength1>2</ifr:internalLength1>
+                    <ifr:internalLength2>4</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>2</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="WAERS" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Currency Key</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>162</ifr:offset1>
+                <ifr:offset2>324</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="WAERS">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CUKY</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>5</ifr:length>
+                    <ifr:internalLength1>5</ifr:internalLength1>
+                    <ifr:internalLength2>10</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>5</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+          </ifr:fields>
+        </ifr:definition>
+      </ifr:container>
+    </s0:type>
+    <s0:type name="YGETFIDOC_I">
+      <ifr:container xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+        <ifr:descriptor>
+          <ifr:description language="EN">YBAPI_GETFIDOC - Item</ifr:description>
+        </ifr:descriptor>
+        <ifr:properties>
+          <ifr:sourceSystem />
+          <ifr:sourceClient>240</ifr:sourceClient>
+          <ifr:release>620 </ifr:release>
+          <ifr:category>structure</ifr:category>
+          <ifr:unicode1>true</ifr:unicode1>
+          <ifr:unicode2>true</ifr:unicode2>
+          <ifr:isFlatStructure>true</ifr:isFlatStructure>
+        </ifr:properties>
+        <ifr:definition>
+          <ifr:internalLength1>623</ifr:internalLength1>
+          <ifr:internalLength2>1230</ifr:internalLength2>
+          <ifr:fields>
+            <ifr:field name="BUZEI" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Number of Line Item Within Accounting Document</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>0</ifr:offset1>
+                <ifr:offset2>0</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BUZEI">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>NUMC</ifr:type>
+                    <ifr:abapType>N</ifr:abapType>
+                    <ifr:length>3</ifr:length>
+                    <ifr:internalLength1>3</ifr:internalLength1>
+                    <ifr:internalLength2>6</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>3</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BSCHL" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Posting Key</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>3</ifr:offset1>
+                <ifr:offset2>6</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BSCHL">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>2</ifr:length>
+                    <ifr:internalLength1>2</ifr:internalLength1>
+                    <ifr:internalLength2>4</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>2</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KOSTL" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Cost Center</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>5</ifr:offset1>
+                <ifr:offset2>10</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KOSTL">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="MWSKZ" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax on sales/purchases code</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>15</ifr:offset1>
+                <ifr:offset2>30</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="MWSKZ">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>2</ifr:length>
+                    <ifr:internalLength1>2</ifr:internalLength1>
+                    <ifr:internalLength2>4</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>2</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="ZUONR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Assignment number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>17</ifr:offset1>
+                <ifr:offset2>34</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="DZUONR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>true</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>18</ifr:length>
+                    <ifr:internalLength1>18</ifr:internalLength1>
+                    <ifr:internalLength2>36</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>18</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="ZLSCH" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Payment Method</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>35</ifr:offset1>
+                <ifr:offset2>70</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="SCHZW_BSEG">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>1</ifr:length>
+                    <ifr:internalLength1>1</ifr:internalLength1>
+                    <ifr:internalLength2>2</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>1</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="ACCOUNT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Account number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>36</ifr:offset1>
+                <ifr:offset2>72</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>18</ifr:length>
+                    <ifr:internalLength1>18</ifr:internalLength1>
+                    <ifr:internalLength2>36</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="HKONT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">General Ledger Account</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>54</ifr:offset1>
+                <ifr:offset2>108</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="HKONT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="DESCRIPTION" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Account name</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>64</ifr:offset1>
+                <ifr:offset2>128</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>100</ifr:length>
+                    <ifr:internalLength1>100</ifr:internalLength1>
+                    <ifr:internalLength2>200</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="SAKNR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">G/L Account Number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>164</ifr:offset1>
+                <ifr:offset2>328</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="SAKNR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="WRBTR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Display Amount</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:referenceField>WAERS</ifr:referenceField>
+                <ifr:referenceTable>BKPF</ifr:referenceTable>
+                <ifr:offset1>174</ifr:offset1>
+                <ifr:offset2>348</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="AZBET_F05A">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>true</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>17</ifr:length>
+                    <ifr:internalLength1>9</ifr:internalLength1>
+                    <ifr:internalLength2>9</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>23</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="DMBTR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Amount in local currency</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:referenceField>WAERS</ifr:referenceField>
+                <ifr:referenceTable>BKPF</ifr:referenceTable>
+                <ifr:offset1>183</ifr:offset1>
+                <ifr:offset2>357</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="DMBTR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>13</ifr:length>
+                    <ifr:internalLength1>7</ifr:internalLength1>
+                    <ifr:internalLength2>7</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="WERKS" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Plant</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>190</ifr:offset1>
+                <ifr:offset2>364</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="WERKS_D">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="AUFNR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Order Number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>194</ifr:offset1>
+                <ifr:offset2>372</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="AUFNR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>12</ifr:length>
+                    <ifr:internalLength1>12</ifr:internalLength1>
+                    <ifr:internalLength2>24</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>12</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="SHKZG" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Debit/Credit Indicator</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>206</ifr:offset1>
+                <ifr:offset2>396</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="SHKZG">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>true</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>1</ifr:length>
+                    <ifr:internalLength1>1</ifr:internalLength1>
+                    <ifr:internalLength2>2</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>1</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KOART" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Account type</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>207</ifr:offset1>
+                <ifr:offset2>398</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KOART">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>true</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>1</ifr:length>
+                    <ifr:internalLength1>1</ifr:internalLength1>
+                    <ifr:internalLength2>2</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>1</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="WHT_CODE" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Withholding tax code</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>208</ifr:offset1>
+                <ifr:offset2>400</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>50</ifr:length>
+                    <ifr:internalLength1>50</ifr:internalLength1>
+                    <ifr:internalLength2>100</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="WHT_TYPE" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Withholding tax type</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>258</ifr:offset1>
+                <ifr:offset2>500</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>50</ifr:length>
+                    <ifr:internalLength1>50</ifr:internalLength1>
+                    <ifr:internalLength2>100</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="WHT_BASE" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Withholding tax base amount in document currency</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>308</ifr:offset1>
+                <ifr:offset2>600</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>100</ifr:length>
+                    <ifr:internalLength1>100</ifr:internalLength1>
+                    <ifr:internalLength2>200</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KIDNO" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Payment Reference</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>408</ifr:offset1>
+                <ifr:offset2>800</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KIDNO">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>30</ifr:length>
+                    <ifr:internalLength1>30</ifr:internalLength1>
+                    <ifr:internalLength2>60</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>30</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BVTYP" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Partner bank type</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>438</ifr:offset1>
+                <ifr:offset2>860</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BVTYP">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="ZFBDT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Baseline date for due date calculation</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                <ifr:offset1>442</ifr:offset1>
+                <ifr:offset2>868</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="DZFBDT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>DATS</ifr:type>
+                    <ifr:abapType>D</ifr:abapType>
+                    <ifr:length>8</ifr:length>
+                    <ifr:internalLength1>8</ifr:internalLength1>
+                    <ifr:internalLength2>16</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="ZTERM" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Terms of payment key</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>450</ifr:offset1>
+                <ifr:offset2>884</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="DZTERM">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="ADDRESS" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Address</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>454</ifr:offset1>
+                <ifr:offset2>892</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>100</ifr:length>
+                    <ifr:internalLength1>100</ifr:internalLength1>
+                    <ifr:internalLength2>200</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="SGTXT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Item Text</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>554</ifr:offset1>
+                <ifr:offset2>1092</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="SGTXT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>true</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>50</ifr:length>
+                    <ifr:internalLength1>50</ifr:internalLength1>
+                    <ifr:internalLength2>100</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>50</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="ZLSPR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Payment Block Key</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>604</ifr:offset1>
+                <ifr:offset2>1192</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="DZLSPR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>1</ifr:length>
+                    <ifr:internalLength1>1</ifr:internalLength1>
+                    <ifr:internalLength2>2</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>1</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="BANK_ACC" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Bank Account Number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>605</ifr:offset1>
+                <ifr:offset2>1194</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="BANKN">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>18</ifr:length>
+                    <ifr:internalLength1>18</ifr:internalLength1>
+                    <ifr:internalLength2>36</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>18</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+          </ifr:fields>
+        </ifr:definition>
+      </ifr:container>
+    </s0:type>
+  </wsdl:binding>
+  <wsdl:binding name="dummy.Binding" type="s0:dummy.PortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+  </wsdl:binding>
+  <wsdl:message name="YBAPI_GETFIDOC.Input">
+    <wsdl:part name="parameters" element="s0:YBAPI_GETFIDOC" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+  </wsdl:message>
+  <wsdl:message name="YBAPI_GETFIDOC.Output">
+    <wsdl:part name="parameters" element="s0:YBAPI_GETFIDOC.Response" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+  </wsdl:message>
+</wsdl:definitions>

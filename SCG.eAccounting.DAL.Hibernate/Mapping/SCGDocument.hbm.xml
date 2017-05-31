@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.SCGDocument,SCG.eAccounting.DTO" table="Document">
+
+		<id name="DocumentID" column="DocumentID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="CompanyID" column="CompanyID" class="SCG.DB.DTO.DbCompany,SCG.DB.DTO" />
+		<many-to-one name="RequesterID" column="RequesterID" class="SS.SU.DTO.SuUser,SS.SU.DTO" />
+		<many-to-one name="CreatorID" column="CreatorID" class="SS.SU.DTO.SuUser,SS.SU.DTO" />
+		<many-to-one name="ReceiverID" column="ReceiverID" class="SS.SU.DTO.SuUser,SS.SU.DTO" />
+		<property column="DocumentNo" type="String" name="DocumentNo" length="20" />
+		<many-to-one name="DocumentType" column="DocumentTypeID" class="SS.Standard.WorkFlow.DTO.DocumentType,SS.Standard.WorkFlow" />
+		<many-to-one name="ApproverID" column="ApproverID" class="SS.SU.DTO.SuUser,SS.SU.DTO" />
+		<property column="Subject" type="String" name="Subject" length="200" />
+		<property column="Memo" type="String" name="Memo" length="1000" />
+		<property column="PostingStatus" type="String" name="PostingStatus" length="2" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<property column="DocumentDate" type="System.Nullable`1[[System.DateTime]]" name="DocumentDate" />
+    <property column="ReferenceNo" type="String" name="ReferenceNo" length="50" />
+    
+    <property column="BranchCode" type="String" name="BranchCode" length="20" />
+    <property column="PaymentMethodID" name="PaymentMethodID" type="System.Nullable`1[[System.Int64]]"/>
+    <property column="PostingDate" name="PostingDate" type="System.Nullable`1[[System.DateTime]]"/>
+    <property column="BaseLineDate" name="BaseLineDate" type="System.Nullable`1[[System.DateTime]]"/>
+    <property column="BankAccount" type="String" name="BankAccount"/>
+    <property column="IsVerifyImage" type="Boolean" name="IsVerifyImage"/>
+    <property column="Mark" type="Boolean" name="Mark"/>
+    <property column="BusinessArea" type="String" name="BusinessArea" length="10"/>
+    <property column="Supplementary" type="String" name="Supplementary" length="50 "/>
+    <property column="ApproveDate" type="System.Nullable`1[[System.DateTime]]" name="ApproveDate" />
+    <property column="ReceiveDocumentDate" type="System.Nullable`1[[System.DateTime]]" name="ReceiveDocumentDate" />
+    <property column="VerifiedDate" type="System.Nullable`1[[System.DateTime]]" name="VerifiedDate" />
+    <property column="ApproveVerifiedDate" type="System.Nullable`1[[System.DateTime]]" name="ApproveVerifiedDate" />
+    <property column="PaidDate" type="System.Nullable`1[[System.DateTime]]" name="PaidDate" />
+    <property column="RemittanceDate" type="System.Nullable`1[[System.DateTime]]" name="RemittanceDate" />
+    <property column="IsVerifyWithImage" type="System.Nullable`1[[System.Boolean]]" name="IsVerifyWithImage"/>
+    <property column="TotalHold" type="Int32" name="TotalHold" />
+	</class>
+</hibernate-mapping>

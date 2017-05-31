@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!-- SS.Standard.WorkFlow Query -->
+  <object id="WorkFlowQueryProvider" type="SS.Standard.WorkFlow.Query.WorkFlowQueryProvider, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="DocumentQuery" type="SS.Standard.WorkFlow.Query.Hibernate.DocumentQuery, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="DocumentTypeQuery" type="SS.Standard.WorkFlow.Query.Hibernate.DocumentTypeQuery, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowQuery, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowStateEventQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowStateEventQuery, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowStateTransitionQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowStateTransitionQuery, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowTypeDocumentTypeQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowTypeDocumentTypeQuery, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowStateQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowStateQuery, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowResponseQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowResponseQuery, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowHoldResponseQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowHoldResponseQuery, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowHoldResponseDetailQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowHoldResponseDetailQuery, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowResponseTokenQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowResponseTokenQuery, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowStateEventPermissionQuery" type="SS.Standard.WorkFlow.Query.Hibernate.WorkFlowStateEventPermissionQuery, SS.Standard.WorkFlow" autowire="byName" />
+
+  <!-- SS.Standard.WorkFlow DAO -->
+  <object id="WorkFlowDaoProvider" type="SS.Standard.WorkFlow.DAL.WorkFlowDaoProvider, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowDao, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowStateDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowStateDao, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowResponseDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowResponseDao, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowRejectResponseDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowRejectResponseDao, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowHoldResponseDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowHoldResponseDao, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowHoldResponseDetailDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowHoldResponseDetailDao, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowVerifyResponseDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowVerifyResponseDao, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowResponseTokenDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowResponseTokenDao, SS.Standard.WorkFlow" autowire="byName" />
+  <object id="WorkFlowStateEventPermissionDao" type="SS.Standard.WorkFlow.DAL.Hibernate.WorkFlowStateEventPermissionDao, SS.Standard.WorkFlow" autowire="byName" />
+
+  <!--SCG WorkFlow Service-->
+  <object id="WorkFlowStateService" type="SS.Standard.WorkFlow.Service.Implement.WorkFlowStateService, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowService" type="SS.Standard.WorkFlow.Service.Implement.WorkFlowService, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowResponseTokenService" type="SS.Standard.WorkFlow.Service.Implement.WorkFlowService, SS.Standard.WorkFlow" autowire="byName"/>
+  <object id="WorkFlowStateEventPermissionService" type="SS.Standard.WorkFlow.Service.Implement.WorkFlowStateEventPermissionService, SS.Standard.WorkFlow" autowire="byName"/>
+
+</objects>
+

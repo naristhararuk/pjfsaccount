@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using SS.Standard.Data.NHibernate.Service;
+using SCG.FN.DTO;
+using SCG.FN.DTO.ValueObject;
+
+namespace SCG.FN.BLL
+{
+    public interface IFnExpenseInvoiceService : IService<FnExpenseInvoice, long>
+    {
+        long AddInvoiceOnTransaction(FnExpenseInvoice invoice, Guid txId);
+        long AddBeginRowInvoiceOnTransaction(FnExpenseInvoice invoice, Guid txId);
+        void DeleteInvoiceOnTransaction(FnExpenseInvoice invoice, Guid txId);
+    }
+}

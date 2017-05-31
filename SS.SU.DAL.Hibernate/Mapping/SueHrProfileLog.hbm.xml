@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SueHrProfileLog,SS.SU.DTO" table="SuEHrProfileLog">
+
+		<id name="EHrProfileLogID" column="EHrProfileLogID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="PeopleID" type="String" name="PeopleID" length="50" />
+		<property column="UserName" type="String" name="UserName" length="50" />
+		<property column="Message" type="String" name="Message" length="500" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" not-null="true"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

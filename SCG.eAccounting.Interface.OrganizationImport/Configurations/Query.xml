@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:aop="http://www.springframework.net/aop"
+         xmlns:tx="http://www.springframework.net/tx">
+
+	<!--  SS.SU Module -->
+	<object id="QueryProvider" type="SS.SU.Query.QueryProvider, SS.SU.Query" autowire="byName" />
+	<object id="SuUserQuery" type="SS.SU.Query.Hibernate.SuUserQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<!--<object id="SuUserLangQuery" type="SS.SU.Query.Hibernate.SuUserLangQuery, SS.SU.Query.Hibernate" autowire="byName" />-->
+	<object id="SuPasswordHistoryQuery" type="SS.SU.Query.Hibernate.SuPasswordHistoryQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuUserRoleQuery" type="SS.SU.Query.Hibernate.SuUserRoleQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuOrganizationQuery" type="SS.SU.Query.Hibernate.SuOrganizationQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuProgramRoleQuery" type="SS.SU.Query.Hibernate.SuProgramRoleQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuRoleQuery" type="SS.SU.Query.Hibernate.SuRoleQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuProgramQuery" type="SS.SU.Query.Hibernate.SuProgramQuery, SS.SU.Query.Hibernate" autowire="byName"/>
+	<object id="SuDivisionQuery" type="SS.SU.Query.Hibernate.SuDivisionQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuGlobalTranslateQuery" type="SS.SU.Query.Hibernate.SuGlobalTranslateQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuGlobalTranslateLangQuery" type="SS.SU.Query.Hibernate.SuGlobalTranslateLangQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuRoleLangQuery" type="SS.SU.Query.Hibernate.SuRoleLangQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuMenuQuery" type="SS.SU.Query.Hibernate.SuMenuQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuProgramLangQuery" type="SS.SU.Query.Hibernate.SuProgramLangQuery, SS.SU.Query.Hibernate" autowire="byName"/>
+	<object id="SuSessionQuery" type="SS.SU.Query.Hibernate.SuSessionQuery, SS.SU.Query.Hibernate" autowire="byName"/>
+	<object id="SuAnnouncementGroupQuery" type="SS.SU.Query.Hibernate.SuAnnouncementGroupQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuAnnouncementGroupLangQuery" type="SS.SU.Query.Hibernate.SuAnnouncementGroupLangQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuAnnouncementQuery" type="SS.SU.Query.Hibernate.SuAnnouncementQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuAnnouncementLangQuery" type="SS.SU.Query.Hibernate.SuAnnouncementLangQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuOrganizationLangQuery" type="SS.SU.Query.Hibernate.SuOrganizationLangQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuDivisionLangQuery" type="SS.SU.Query.Hibernate.SuDivisionLangQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuRTENodeQuery" type="SS.SU.Query.Hibernate.SuRTENodeQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuRTEContentQuery" type="SS.SU.Query.Hibernate.SuRTEContentQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuUserLogQuery" type="SS.SU.Query.Hibernate.SuUserLogQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuRolePBQuery" type="SS.SU.Query.Hibernate.SuRolePBQuery, SS.SU.Query.Hibernate" autowire="byName" />
+	<object id="SuRoleServiceQuery" type="SS.SU.Query.Hibernate.SuRoleServiceQuery, SS.SU.Query.Hibernate" autowire="byName" />
+
+	<!-- SCG.GL Module -->
+	<object id="GlQueryProvider"	type="SCG.GL.Query.GlQueryProvider, SCG.GL.Query" autowire="byName" />
+	<object id="GlAccountQuery"		type="SCG.GL.Query.Hibernate.GlAccountQuery, SCG.GL.Query.Hibernate" autowire="byName" />
+	<object id="GlAccountLangQuery" type="SCG.GL.Query.Hibernate.GlAccountLangQuery, SCG.GL.Query.Hibernate" autowire="byName" />
+
+	<!-- SCG.DB Module -->
+	<object id="ScgDbQueryProvider"	type="SCG.DB.Query.ScgDbQueryProvider, SCG.DB.Query" autowire="byName" />
+	<object id="DbBankQuery"		type="SCG.DB.Query.Hibernate.DbBankQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbBankLangQuery"	type="SCG.DB.Query.Hibernate.DbBankLangQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbCountryQuery"		type="SCG.DB.Query.Hibernate.DbCountryQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbCountryLangQuery"	type="SCG.DB.Query.Hibernate.DbCountryLangQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbReasonLangQuery"	type="SCG.DB.Query.Hibernate.DbReasonLangQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbReasonQuery"	type="SCG.DB.Query.Hibernate.DbReasonQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbTaxQuery"			type="SCG.DB.Query.Hibernate.DbTaxQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbVendorQuery"		type="SCG.DB.Query.Hibernate.DbVendorQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbIOQuery"			type="SCG.DB.Query.Hibernate.DbIOQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbAccountQuery"		type="SCG.DB.Query.Hibernate.DbAccountQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbAccountLangQuery"		type="SCG.DB.Query.Hibernate.DbAccountLangQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbExpenseGroupLangQuery" type="SCG.DB.Query.Hibernate.DbExpenseGroupLangQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbCompanyQuery"		type="SCG.DB.Query.Hibernate.DbCompanyQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbLocationQuery"	type="SCG.DB.Query.Hibernate.DbLocationQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbWithHoldingTaxTypeQuery"		type="SCG.DB.Query.Hibernate.DbWithHoldingTaxTypeQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbWithHoldingTaxQuery"		type="SCG.DB.Query.Hibernate.DbWithHoldingTaxQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DBPBLangQuery"		type="SCG.DB.Query.Hibernate.DBPBLangQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbDocumentRunningQuery"		type="SCG.DB.Query.Hibernate.DbDocumentRunningQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+  <object id="TmpDbOrganizationChartQuery" type="SCG.DB.Query.Hibernate.TmpDbOrganizationChartQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+  <object id="DbOrganizationChartQuery" type="SCG.DB.Query.Hibernate.DbOrganizationChartQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+  <!-- SS.DB Module -->
+
+	<!-- SCG.eAccounting Module -->
+
+	<object id="DbCostCenterQuery"		type="SCG.DB.Query.Hibernate.DbCostCenterQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<!--<object id="SuUserProfileQuery"		type="SCG.DB.Query.Hibernate.SuUserProfileQuery, SCG.DB.Query.Hibernate" autowire="byName" />-->
+	<object id="DbPaymentMethodQuery"		type="SCG.DB.Query.Hibernate.DbPaymentMethodQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbServiceTeamQuery"		type="SCG.DB.Query.Hibernate.DbServiceTeamQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbServiceTeamLocationQuery"		type="SCG.DB.Query.Hibernate.DbServiceTeamLocationQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbCompanyPaymentMethodQuery"		type="SCG.DB.Query.Hibernate.DbCompanyPaymentMethodQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="SCGDbStatusLangQuery"		type="SCG.DB.Query.Hibernate.SCGDbStatusLangQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbPBQuery"		type="SCG.DB.Query.Hibernate.DbPBQuery, SCG.DB.Query.Hibernate" autowire="byName" />
+
+	<!-- SCG.eAccounting Module -->
+
+	<object id="TADocumentAdvanceQuery" type="SCG.eAccounting.Query.Hibernate.TADocumentAdvanceQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="ScgeAccountingQueryProvider" type="SCG.eAccounting.Query.ScgeAccountingQueryProvider, SCG.eAccounting.Query" autowire="byName" />
+	<object id="AvAdvanceDocumentQuery" type="SCG.eAccounting.Query.Hibernate.AvAdvanceDocumentQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="AvAdvanceItemQuery" type="SCG.eAccounting.Query.Hibernate.AvAdvanceItemQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="DocumentInitiatorQuery" type="SCG.eAccounting.Query.Hibernate.DocumentInitiatorQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="DocumentAttachmentQuery" type="SCG.eAccounting.Query.Hibernate.DocumentAttachmentQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnRemittanceItemQuery" type="SCG.eAccounting.Query.Hibernate.FnRemittanceItemQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnRemittanceQuery" type="SCG.eAccounting.Query.Hibernate.FnRemittanceQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnRemittanceAdvanceQuery" type="SCG.eAccounting.Query.Hibernate.FnRemittanceAdvanceQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="TADocumentScheduleQuery" type="SCG.eAccounting.Query.Hibernate.TADocumentScheduleQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="TADocumentTravellerQuery" type="SCG.eAccounting.Query.Hibernate.TADocumentTravellerQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="TADocumentQuery" type="SCG.eAccounting.Query.Hibernate.TADocumentQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="SCGDocumentQuery" type="SCG.eAccounting.Query.Hibernate.SCGDocumentQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnExpenseDocumentQuery" type="SCG.eAccounting.Query.Hibernate.FnExpenseDocumentQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnExpenseInvoiceQuery" type="SCG.eAccounting.Query.Hibernate.FnExpenseInvoiceQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnExpenseInvoiceItemQuery" type="SCG.eAccounting.Query.Hibernate.FnExpenseInvoiceItemQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnExpensePerdiemQuery" type="SCG.eAccounting.Query.Hibernate.FnExpensePerdiemQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnExpensePerdiemItemQuery" type="SCG.eAccounting.Query.Hibernate.FnExpensePerdiemItemQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnExpenseMileageQuery" type="SCG.eAccounting.Query.Hibernate.FnExpenseMileageQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+	<object id="FnExpenseMileageItemQuery" type="SCG.eAccounting.Query.Hibernate.FnExpenseMileageItemQuery, SCG.eAccounting.Query.Hibernate" autowire="byName" />
+
+
+	<!-- SS.DB Module -->
+
+	<object id="SsDbQueryProvider" type="SS.DB.Query.SsDbQueryProvider, SS.DB.Query" autowire="byName" />
+	<object id="ParameterServices" type="SS.DB.Query.ParameterServices, SS.DB.Query" autowire="byName"/>
+	<object id="DbParameterQuery" type="SS.DB.Query.Hibernate.DbParameterQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbCurrencyQuery" type="SS.DB.Query.Hibernate.DbCurrencyQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbExchangeRateQuery" type="SS.DB.Query.Hibernate.DbExchangeRateQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbLanguageQuery" type="SS.DB.Query.Hibernate.DbLanguageQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbStatusQuery" type="SS.DB.Query.Hibernate.DbStatusQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbStatusLangQuery" type="SS.DB.Query.Hibernate.DbStatusLangQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbParameterGroupQuery" type="SS.DB.Query.Hibernate.DbParameterGroupQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbProvinceQuery" type="SS.DB.Query.Hibernate.DbProvinceQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbProvinceLangQuery" type="SS.DB.Query.Hibernate.DbProvinceLangQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbRegionQuery" type="SS.DB.Query.Hibernate.DbRegionQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbRegionLangQuery" type="SS.DB.Query.Hibernate.DbRegionLangQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbZoneQuery"		type="SS.DB.Query.Hibernate.DbZoneQuery, SS.DB.Query.Hibernate" autowire="byName" />
+	<object id="DbZoneLangQuery"		type="SS.DB.Query.Hibernate.DbZoneLangQuery, SS.DB.Query.Hibernate" autowire="byName" />
+
+	<!--  FN Module  -->
+	<object id="FnQueryProvider" type="SCG.FN.Query.FnQueryProvider, SCG.FN.Query" autowire="byName" />
+	<object id="FnReceiptTypeQuery" type="SCG.FN.Query.Hibernate.FnReceiptTypeQuery, SCG.FN.Query.Hibernate" autowire="byName" />
+	<object id="FnPaymentTypeQuery" type="SCG.FN.Query.Hibernate.FnPaymentTypeQuery, SCG.FN.Query.Hibernate" autowire="byName" />
+	<object id="FnPaymentTypeLangQuery" type="SCG.FN.Query.Hibernate.FnPaymentTypeLangQuery, SCG.FN.Query.Hibernate" autowire="byName" />
+	<object id="FnCashierQuery" type="SCG.FN.Query.Hibernate.FnCashierQuery, SCG.FN.Query.Hibernate" autowire="byName" />
+	<object id="FnCashierLangQuery" type="SCG.FN.Query.Hibernate.FnCashierLangQuery, SCG.FN.Query.Hibernate" autowire="byName" />
+
+
+</objects>

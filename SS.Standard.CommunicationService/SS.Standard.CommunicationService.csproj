@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6C988C2-ED30-4DEB-ACA7-36340AC13C42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.Standard.CommunicationService</RootNamespace>
+    <AssemblyName>SS.Standard.CommunicationService</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.39065, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\EmailDTO.cs" />
+    <Compile Include="DTO\SMSContainer.cs" />
+    <Compile Include="DTO\SMSCurrencyDTO.cs" />
+    <Compile Include="DTO\SMSDTO.cs" />
+    <Compile Include="IEmail.cs" />
+    <Compile Include="IEmailService.cs" />
+    <Compile Include="Implement\EmailService.cs" />
+    <Compile Include="Implement\Email.cs" />
+    <Compile Include="Implement\SMS.cs" />
+    <Compile Include="Implement\SMSService.cs" />
+    <Compile Include="ISMS.cs" />
+    <Compile Include="SMSSerializer.cs" />
+    <Compile Include="ISMSService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.BLL\SS.SU.BLL.csproj">
+      <Project>{7BDC5E8F-976D-4AFA-95E0-66E1C3E23450}</Project>
+      <Name>SS.SU.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Query.Hibernate\SS.SU.Query.Hibernate.csproj">
+      <Project>{9146E557-7058-4063-A146-36C5A923E61F}</Project>
+      <Name>SS.SU.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Query\SS.SU.Query.csproj">
+      <Project>{4D083F28-AE94-4FF7-B010-9B96701C1B3C}</Project>
+      <Name>SS.SU.Query</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

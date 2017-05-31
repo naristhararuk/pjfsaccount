@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.MPAItem,SCG.eAccounting.DTO" table="MPAItem">
+
+		<id name="MPAItemID" column="MPAItemID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="MPADocumentID" column="MPADocumentID" class="SCG.eAccounting.DTO.MPADocument,SCG.eAccounting.DTO" />
+    <many-to-one name="UserID" column="UserID" class="SS.SU.DTO.SuUser,SS.SU.DTO" />
+		<property column="MobilePhoneNo" type="string" name="MobilePhoneNo" length="30" not-null="true" />
+		<property column="MobileBrand" type="string" name="MobileBrand" length="100" not-null="true" />
+    <property column="MobileModel" type="string" name="MobileModel" length="100" not-null="true" />
+    <property column="ActualAmount" type="Decimal" name="ActualAmount" />
+    <property column="ActualAmountNotExceed" type="Decimal" name="ActualAmountNotExceed" not-null="true" />
+		<property column="AmountCompanyPackage" type="Decimal" name="AmountCompanyPackage" not-null="true" />
+    <property column="TotalAmount" type="Decimal" name="TotalAmount" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode title="Home" url="~/Menu.aspx">
+		<siteMapNode title="Request">
+			<siteMapNode title="TA" url="~/Forms/SCG.eAccounting/Programs/TAForm.aspx"/>
+			<siteMapNode title="Advance (Domestic)" url="~/Forms/SCG.eAccounting/Programs/AdvanceForm.aspx?id=1"/>
+			<siteMapNode title="Advance (Foreign)" url="~/Forms/SCG.eAccounting/Programs/AdvanceForm.aspx?id=2"/>
+			<siteMapNode title="Expense (Domestic)" url="~/Forms/SCG.eAccounting/Programs/ExpenseForm.aspx?id=1"/>
+			<siteMapNode title="Expense (Foreign)" url="~/Forms/SCG.eAccounting/Programs/ExpenseForm.aspx?id=2"/>
+			<siteMapNode title="Remittance" url="~/Forms/SCG.eAccounting/Programs/RemittanceForm.aspx"/>
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

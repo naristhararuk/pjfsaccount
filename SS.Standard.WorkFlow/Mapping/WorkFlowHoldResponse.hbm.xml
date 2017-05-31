@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.Standard.WorkFlow.DTO.WorkFlowHoldResponse,SS.Standard.WorkFlow" table="WorkFlowHoldResponse">
+
+		<id name="WorkFlowHoldResponseID" column="WorkFlowHoldResponseID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="WorkFlowResponse" column="WorkFlowResponseID" class="SS.Standard.WorkFlow.DTO.WorkFlowResponse,SS.Standard.WorkFlow" />
+		<property column="Remark" type="String" name="Remark" length="200" />
+		<property column="IsUnHold" type="Boolean" name="IsUnHold" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

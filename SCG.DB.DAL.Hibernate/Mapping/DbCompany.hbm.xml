@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbCompany,SCG.DB.DTO" table="DbCompany">
+
+		<id name="CompanyID" column="CompanyID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+
+		<!-- more than one foreign column is mapped to CompanyCode - you're on your own. -->
+		<property column="CompanyCode" type="String" name="CompanyCode" not-null="true" length="20" />
+		<property column="CompanyName" type="String" name="CompanyName" not-null="true" length="50" />
+		<property column="PaymentType" type="String" name="PaymentType" not-null="true" length="5" />
+		<many-to-one name="PaymentMethodPetty" column="PaymentMethodPettyID" class="SCG.DB.DTO.DbPaymentMethod,SCG.DB.DTO" />
+		<many-to-one name="PaymentMethodCheque" column="PaymentMethodChequeID" class="SCG.DB.DTO.DbPaymentMethod,SCG.DB.DTO" />
+		<many-to-one name="PaymentMethodTransfer" column="PaymentMethodTransferID" class="SCG.DB.DTO.DbPaymentMethod,SCG.DB.DTO" />
+    <property column="AllowImportUserFromEHr" type="Boolean" name="AllowImportUserFromEHr" />
+    <property column="DefaultTaxID" type="System.Nullable`1[[System.Int64]]" name="DefaultTaxID" not-null="false" />
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false"/>
+
+		<property column="BankName" type="String" name="BankName" not-null="false" length="100"/>
+		<property column="BankBranch" type="String" name="BankBranch" not-null="false" length="100"/>
+		<property column="AccountNo" type="String" name="AccountNo" not-null="false" length="15"/>
+		<property column="AccountType" type="String" name="AccountType" not-null="false" length="50"/>
+
+    <property column="UseSpecialPayIn" type="Boolean" name="UseSpecialPayIn" not-null="false" />
+    <property column="TaxId" type="String" name="TaxId" not-null="false" length="20"/>
+    <property column="KBankCode" type="String" name="KBankCode" not-null="false" length="20"/>
+    <property column="DefaultGLAccount" type="String" name="DefaultGLAccount" length="20"/>
+    <property column="ExpenseRequireAttachment" type="Boolean" name="ExpenseRequireAttachment" not-null="false"/>
+    <property column="UseECC" type="System.Nullable`1[[System.Boolean]]" name="UseEcc"/>
+    <property column="BuCode" type="String" name="BU" length="50"/>
+    <property column="RequireBusinessArea" type="System.Nullable`1[[System.Boolean]]" name="RequireBusinessArea"/>
+    <property column="BusinessArea" type="String" name="BusinessArea" length="10"/>
+    <property column="SAPCode" type="String" name="SapCode" length="50"/>
+     <property column="IsVerifyHardCopyOnly" type="Boolean" name="IsVerifyHardCopyOnly" not-null="true"/>
+    <property column="MileageProfileId" type="System.Nullable`1[[System.Guid]]" name="MileageProfileId" not-null="false" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapiacap09,SCG.eAccounting.SAP" table="BAPIACAP09">
+
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_ID" type="Int64" name="DocId" not-null="true" />
+		<property column="DOC_SEQ" type="String" name="DocSeq" length="10" />
+		<property column="DOC_KIND" type="String" name="DocKind" length="50" />
+		<property column="ITEMNO_ACC" type="String" name="ItemnoAcc" length="50" />
+		<property column="VENDOR_NO" type="String" name="VendorNo" length="50" />
+		<property column="GL_ACCOUNT" type="String" name="GlAccount" length="50" />
+		<property column="REF_KEY_1" type="String" name="RefKey1" length="50" />
+		<property column="REF_KEY_2" type="String" name="RefKey2" length="50" />
+		<property column="REF_KEY_3" type="String" name="RefKey3" length="50" />
+		<property column="COMP_CODE" type="String" name="CompCode" length="50" />
+		<property column="BUS_AREA" type="String" name="BusArea" length="50" />
+		<property column="PMNTTRMS" type="String" name="Pmnttrms" length="50" />
+		<property column="BLINE_DATE" type="String" name="BlineDate" length="50" />
+		<property column="DSCT_DAYS1" type="Decimal" name="DsctDays1" />
+		<property column="DSCT_DAYS2" type="Decimal" name="DsctDays2" />
+		<property column="NETTERMS" type="Decimal" name="Netterms" />
+		<property column="DSCT_PCT1" type="Decimal" name="DsctPct1" />
+		<property column="DSCT_PCT2" type="Decimal" name="DsctPct2" />
+		<property column="PYMT_METH" type="String" name="PymtMeth" length="50" />
+		<property column="PMTMTHSUPL" type="String" name="Pmtmthsupl" length="50" />
+		<property column="PMNT_BLOCK" type="String" name="PmntBlock" length="50" />
+		<property column="SCBANK_IND" type="String" name="ScbankInd" length="50" />
+		<property column="SUPCOUNTRY" type="String" name="Supcountry" length="50" />
+		<property column="SUPCOUNTRY_ISO" type="String" name="SupcountryIso" length="50" />
+		<property column="BLLSRV_IND" type="String" name="BllsrvInd" length="50" />
+		<property column="ALLOC_NMBR" type="String" name="AllocNmbr" length="18" />
+		<property column="ITEM_TEXT" type="String" name="ItemText" length="50" />
+		<property column="PO_SUB_NO" type="String" name="PoSubNo" length="50" />
+		<property column="PO_CHECKDG" type="String" name="PoCheckdg" length="50" />
+		<property column="PO_REF_NO" type="String" name="PoRefNo" length="50" />
+		<property column="W_TAX_CODE" type="String" name="WTaxCode" length="50" />
+		<property column="BUSINESSPLACE" type="String" name="Businessplace" length="50" />
+		<property column="SECTIONCODE" type="String" name="Sectioncode" length="50" />
+		<property column="INSTR1" type="String" name="Instr1" length="50" />
+		<property column="INSTR2" type="String" name="Instr2" length="50" />
+		<property column="INSTR3" type="String" name="Instr3" length="50" />
+		<property column="INSTR4" type="String" name="Instr4" length="50" />
+		<property column="BRANCH" type="String" name="Branch" length="50" />
+		<property column="PYMT_CUR" type="String" name="PymtCur" length="50" />
+		<property column="PYMT_AMT" type="Decimal" name="PymtAmt" />
+		<property column="PYMT_CUR_ISO" type="String" name="PymtCurIso" length="50" />
+		<property column="SP_GL_IND" type="String" name="SpGlInd" length="50" />
+		<property column="TAX_CODE" type="String" name="TaxCode" length="50" />
+		<property column="TAX_DATE" type="String" name="TaxDate" length="50" />
+		<property column="TAXJURCODE" type="String" name="Taxjurcode" length="50" />
+		<property column="ALT_PAYEE" type="String" name="AltPayee" length="50" />
+		<property column="ALT_PAYEE_BANK" type="String" name="AltPayeeBank" length="50" />
+		<property column="PARTNER_BK" type="String" name="PartnerBk" length="50" />
+		<property column="BANK_ID" type="String" name="BankId" length="50" />
+		<property column="PARTNER_GUID" type="String" name="PartnerGuid" length="50" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		
+	</class>
+</hibernate-mapping>

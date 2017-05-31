@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SSLINQDB" EntityNamespace="SS.Standard.Data.Linq" ContextNamespace="SS.Standard.Data.Linq" Class="StandardDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=net49063-3\sql2005db;Initial Catalog=SSLINQDB;User ID=sa" SettingsObjectName="SS.Standard.Properties.Settings" SettingsPropertyName="SSLINQDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DB_Address" Member="DB_Addresses">
+    <Type Name="DB_Address">
+      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProvinceID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DistrictID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PostalID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AddressNumber" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Road" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Map" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rowversion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Address_SU_Organization" Member="SU_Organizations" ThisKey="AddressID" OtherKey="AddressID" Type="SU_Organization" />
+      <Association Name="DB_Address_SuUserProfile" Member="SuUserProfiles" ThisKey="AddressID" OtherKey="AddressID" Type="SuUserProfile" />
+      <Association Name="DB_City_DB_Address" Member="DB_City" ThisKey="CityID" OtherKey="CityID" Type="DB_City" IsForeignKey="true" />
+      <Association Name="DB_District_DB_Address" Member="DB_District" ThisKey="DistrictID" OtherKey="DistrictID" Type="DB_District" IsForeignKey="true" />
+      <Association Name="DB_Postal_DB_Address" Member="DB_Postal" ThisKey="PostalID" OtherKey="PostalID" Type="DB_Postal" IsForeignKey="true" />
+      <Association Name="DB_Province_DB_Address" Member="DB_Province" ThisKey="ProvinceID" OtherKey="ProvinceID" Type="DB_Province" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuUserRole" Member="SuUserRoles">
+    <Type Name="SuUserRole">
+      <Column Name="RoleID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SuRole_SuUserRole" Member="SuRole" ThisKey="RoleID" OtherKey="RoleID" Type="SuRole" IsForeignKey="true" />
+      <Association Name="SuUser_SuUserRole" Member="SuUser" ThisKey="UserID" OtherKey="UserID" Type="SuUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_City" Member="DB_Cities">
+    <Type Name="DB_City">
+      <Column Name="CityID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProvinceID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_City_DB_Address" Member="DB_Addresses" ThisKey="CityID" OtherKey="CityID" Type="DB_Address" />
+      <Association Name="DB_City_DB_CityLang" Member="DB_CityLangs" ThisKey="CityID" OtherKey="CityID" Type="DB_CityLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_CityLang" Member="DB_CityLangs">
+    <Type Name="DB_CityLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_City_DB_CityLang" Member="DB_City" ThisKey="CityID" OtherKey="CityID" Type="DB_City" IsForeignKey="true" />
+      <Association Name="SU_Language_DB_CityLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Country" Member="DB_Countries">
+    <Type Name="DB_Country">
+      <Column Name="CountryID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <!--<Column Name="ZoneID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />-->
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Country_DB_CountryLang" Member="DB_CountryLangs" ThisKey="CountryID" OtherKey="CountryID" Type="DB_CountryLang" />
+      <!--<Association Name="DB_Zone_DB_Country" Member="DB_Zone" ThisKey="ZoneID" OtherKey="ZoneID" Type="DB_Zone" IsForeignKey="true" />-->
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_CountryLang" Member="DB_CountryLangs">
+    <Type Name="DB_CountryLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Country_DB_CountryLang" Member="DB_Country" ThisKey="CountryID" OtherKey="CountryID" Type="DB_Country" IsForeignKey="true" />
+      <Association Name="SU_Language_DB_CountryLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_District" Member="DB_Districts">
+    <Type Name="DB_District">
+      <Column Name="DistrictID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_District_DB_Address" Member="DB_Addresses" ThisKey="DistrictID" OtherKey="DistrictID" Type="DB_Address" />
+      <Association Name="DB_District_DB_DistrictLang" Member="DB_DistrictLangs" ThisKey="DistrictID" OtherKey="DistrictID" Type="DB_DistrictLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_DistrictLang" Member="DB_DistrictLangs">
+    <Type Name="DB_DistrictLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DistrictID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DistrictName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_District_DB_DistrictLang" Member="DB_District" ThisKey="DistrictID" OtherKey="DistrictID" Type="DB_District" IsForeignKey="true" />
+      <Association Name="SU_Language_DB_DistrictLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Parameter" Member="DB_Parameters">
+    <Type Name="DB_Parameter">
+      <Column Name="GROUP_NO" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SEQ_NO" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PARAM_VALUE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PARAM_DESC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PARAM_TYPE" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UPD_BY" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPD_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UPD_PGM" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_BY" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Parameter_DB_Parameter" Member="DB_Parameter2" ThisKey="GROUP_NO,SEQ_NO" OtherKey="GROUP_NO,SEQ_NO" Type="DB_Parameter" Cardinality="One" />
+      <Association Name="DB_Parameter_DB_Parameter" Member="DB_Parameter1" ThisKey="GROUP_NO,SEQ_NO" OtherKey="GROUP_NO,SEQ_NO" Type="DB_Parameter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Parameter_Group" Member="DB_Parameter_Groups">
+    <Type Name="DB_Parameter_Group">
+      <Column Name="GROUP_NO" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GROUP_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UPD_BY" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPD_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UPD_PGM" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_BY" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Parameter_Group_DB_Parameter_Group" Member="DB_Parameter_Group2" ThisKey="GROUP_NO" OtherKey="GROUP_NO" Type="DB_Parameter_Group" Cardinality="One" />
+      <Association Name="DB_Parameter_Group_DB_Parameter_Group" Member="DB_Parameter_Group1" ThisKey="GROUP_NO" OtherKey="GROUP_NO" Type="DB_Parameter_Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Postal" Member="DB_Postals">
+    <Type Name="DB_Postal">
+      <Column Name="PostalID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PostalCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rowversion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Postal_DB_Address" Member="DB_Addresses" ThisKey="PostalID" OtherKey="PostalID" Type="DB_Address" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Prefix" Member="DB_Prefixes">
+    <Type Name="DB_Prefix">
+      <Column Name="PrefixID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Prefix_DB_PrefixLang" Member="DB_PrefixLangs" ThisKey="PrefixID" OtherKey="PrefixID" Type="DB_PrefixLang" />
+      <Association Name="DB_Prefix_SuUserProfile" Member="SuUserProfiles" ThisKey="PrefixID" OtherKey="PrefixID" Type="SuUserProfile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_PrefixLang" Member="DB_PrefixLangs">
+    <Type Name="DB_PrefixLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrefixID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrefixName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Prefix_DB_PrefixLang" Member="DB_Prefix" ThisKey="PrefixID" OtherKey="PrefixID" Type="DB_Prefix" IsForeignKey="true" />
+      <Association Name="SU_Language_DB_PrefixLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Province" Member="DB_Provinces">
+    <Type Name="DB_Province">
+      <Column Name="ProvinceID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Province_DB_Address" Member="DB_Addresses" ThisKey="ProvinceID" OtherKey="ProvinceID" Type="DB_Address" />
+      <Association Name="DB_Province_DB_ProvinceLang" Member="DB_ProvinceLangs" ThisKey="ProvinceID" OtherKey="ProvinceID" Type="DB_ProvinceLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_ProvinceLang" Member="DB_ProvinceLangs">
+    <Type Name="DB_ProvinceLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProvinceID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProvinceName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Province_DB_ProvinceLang" Member="DB_Province" ThisKey="ProvinceID" OtherKey="ProvinceID" Type="DB_Province" IsForeignKey="true" />
+      <Association Name="SU_Language_DB_ProvinceLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Region" Member="DB_Regions">
+    <Type Name="DB_Region">
+      <Column Name="RegionID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Region_DB_RegionLang" Member="DB_RegionLangs" ThisKey="RegionID" OtherKey="RegionID" Type="DB_RegionLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_RegionLang" Member="DB_RegionLangs">
+    <Type Name="DB_RegionLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegionName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Region_DB_RegionLang" Member="DB_Region" ThisKey="RegionID" OtherKey="RegionID" Type="DB_Region" IsForeignKey="true" />
+      <Association Name="SU_Language_DB_RegionLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_Zone" Member="DB_Zones">
+    <Type Name="DB_Zone">
+      <Column Name="ZoneID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <!--<Association Name="DB_Zone_DB_Country" Member="DB_Countries" ThisKey="ZoneID" OtherKey="ZoneID" Type="DB_Country" />-->
+      <Association Name="DB_Zone_DB_ZoneLang" Member="DB_ZoneLangs" ThisKey="ZoneID" OtherKey="ZoneID" Type="DB_ZoneLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_ZoneLang" Member="DB_ZoneLangs">
+    <Type Name="DB_ZoneLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ZoneID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ZoneName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_Zone_DB_ZoneLang" Member="DB_Zone" ThisKey="ZoneID" OtherKey="ZoneID" Type="DB_Zone" IsForeignKey="true" />
+      <Association Name="SU_Language_DB_ZoneLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_AlertGroup" Member="SU_AlertGroups">
+    <Type Name="SU_AlertGroup">
+      <Column Name="AlertGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_AlertGroup_SU_AlertGroupLang" Member="SU_AlertGroupLangs" ThisKey="AlertGroupID" OtherKey="AlertGroupID" Type="SU_AlertGroupLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_AlertGroupLang" Member="SU_AlertGroupLangs">
+    <Type Name="SU_AlertGroupLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AlertGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AlertGroupName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_AlertGroup_SU_AlertGroupLang" Member="SU_AlertGroup" ThisKey="AlertGroupID" OtherKey="AlertGroupID" Type="SU_AlertGroup" IsForeignKey="true" />
+      <Association Name="SU_Language_SU_AlertGroupLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_AlertMessage" Member="SU_AlertMessages">
+    <Type Name="SU_AlertMessage">
+      <Column Name="AlertMessageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AlertGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_AlertMessage_SU_AlertMessageLang" Member="SU_AlertMessageLangs" ThisKey="AlertMessageID" OtherKey="AlertMessageID" Type="SU_AlertMessageLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_AlertMessageLang" Member="SU_AlertMessageLangs">
+    <Type Name="SU_AlertMessageLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AlertMessageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AlertMessageBody" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="AlertMessageTopic" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AlertMessageSolution" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_AlertMessage_SU_AlertMessageLang" Member="SU_AlertMessage" ThisKey="AlertMessageID" OtherKey="AlertMessageID" Type="SU_AlertMessage" IsForeignKey="true" />
+      <Association Name="SU_Language_SU_AlertMessageLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_Application" Member="SU_Applications">
+    <Type Name="SU_Application">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ApplicationName" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="LogoPath" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultHome" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Permission" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultLanguageId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultLanguageName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SessionTimeOut" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_Division" Member="SU_Divisions">
+    <Type Name="SU_Division">
+      <Column Name="DivisionID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrganizationID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Division_SU_DivisionLang" Member="SU_DivisionLangs" ThisKey="DivisionID" OtherKey="DivisionID" Type="SU_DivisionLang" />
+      <Association Name="SU_Division_SuUserDivision" Member="SuUserDivisions" ThisKey="DivisionID" OtherKey="DivisionID" Type="SuUserDivision" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_DivisionLang" Member="SU_DivisionLangs">
+    <Type Name="SU_DivisionLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DivisionID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DivisionName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Division_SU_DivisionLang" Member="SU_Division" ThisKey="DivisionID" OtherKey="DivisionID" Type="SU_Division" IsForeignKey="true" />
+      <Association Name="SU_Language_SU_DivisionLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_EventLogGroup" Member="SU_EventLogGroups">
+    <Type Name="SU_EventLogGroup">
+      <Column Name="EventLogGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_EventLogGroup_SU_EventLogGroupLang" Member="SU_EventLogGroupLangs" ThisKey="EventLogGroupID" OtherKey="EventLogGroupID" Type="SU_EventLogGroupLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_EventLogGroupLang" Member="SU_EventLogGroupLangs">
+    <Type Name="SU_EventLogGroupLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventLogGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventLogGroupName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_EventLogGroup_SU_EventLogGroupLang" Member="SU_EventLogGroup" ThisKey="EventLogGroupID" OtherKey="EventLogGroupID" Type="SU_EventLogGroup" IsForeignKey="true" />
+      <Association Name="SU_Language_SU_EventLogGroupLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_Language" Member="SU_Languages">
+    <Type Name="SU_Language">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LanguageName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ImagePath" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rowversion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Language_DB_CityLang" Member="DB_CityLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="DB_CityLang" />
+      <Association Name="SU_Language_DB_CountryLang" Member="DB_CountryLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="DB_CountryLang" />
+      <Association Name="SU_Language_DB_DistrictLang" Member="DB_DistrictLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="DB_DistrictLang" />
+      <Association Name="SU_Language_DB_PrefixLang" Member="DB_PrefixLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="DB_PrefixLang" />
+      <Association Name="SU_Language_DB_ProvinceLang" Member="DB_ProvinceLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="DB_ProvinceLang" />
+      <Association Name="SU_Language_DB_RegionLang" Member="DB_RegionLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="DB_RegionLang" />
+      <Association Name="SU_Language_DB_ZoneLang" Member="DB_ZoneLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="DB_ZoneLang" />
+      <Association Name="SU_Language_SU_AlertGroupLang" Member="SU_AlertGroupLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_AlertGroupLang" />
+      <Association Name="SU_Language_SU_AlertMessageLang" Member="SU_AlertMessageLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_AlertMessageLang" />
+      <Association Name="SU_Language_SU_DivisionLang" Member="SU_DivisionLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_DivisionLang" />
+      <Association Name="SU_Language_SU_EventLogGroupLang" Member="SU_EventLogGroupLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_EventLogGroupLang" />
+      <Association Name="SU_Language_SU_MenuGroupLang" Member="SU_MenuGroupLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_MenuGroupLang" />
+      <Association Name="SU_Language_SU_OrganizationLang" Member="SU_OrganizationLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_OrganizationLang" />
+      <Association Name="SU_Language_SuProgramLang" Member="SuProgramLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SuProgramLang" />
+      <Association Name="SU_Language_SuRoleGroupLang" Member="SuRoleGroupLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SuRoleGroupLang" />
+      <Association Name="SU_Language_SuUser" Member="SuUsers" ThisKey="LanguageID" OtherKey="LanguageID" Type="SuUser" />
+      <Association Name="SU_Language_SuUserProfileLang" Member="SuUserProfileLangs" ThisKey="LanguageID" OtherKey="LanguageID" Type="SuUserProfileLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_Menu" Member="SU_Menus">
+    <Type Name="SU_Menu">
+      <Column Name="MenuID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MenuGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Menu_SU_MenuLang" Member="SU_MenuLangs" ThisKey="MenuID" OtherKey="MenuID" Type="SU_MenuLang" />
+      <Association Name="SU_Menu_SuProgramMenu" Member="SuProgramMenus" ThisKey="MenuID" OtherKey="MenuID" Type="SuProgramMenu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_MenuGroupLang" Member="SU_MenuGroupLangs">
+    <Type Name="SU_MenuGroupLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MenuGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MenuGroupName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Language_SU_MenuGroupLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+      <Association Name="SU_MenusGroup_SU_MenuGroupLang" Member="SU_MenusGroup" ThisKey="MenuGroupID" OtherKey="MenuGroupID" Type="SU_MenusGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_MenuLang" Member="SU_MenuLangs">
+    <Type Name="SU_MenuLang">
+      <Column Name="MenuLangID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="MenuID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="MenuName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Menu_SU_MenuLang" Member="SU_Menu" ThisKey="MenuID" OtherKey="MenuID" Type="SU_Menu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_MenusGroup" Member="SU_MenusGroups">
+    <Type Name="SU_MenusGroup">
+      <Column Name="MenuGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_MenusGroup_SU_MenuGroupLang" Member="SU_MenuGroupLangs" ThisKey="MenuGroupID" OtherKey="MenuGroupID" Type="SU_MenuGroupLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_Organization" Member="SU_Organizations">
+    <Type Name="SU_Organization">
+      <Column Name="OrganizationID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Organization_SU_OrganizationLang" Member="SU_OrganizationLangs" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="SU_OrganizationLang" />
+      <Association Name="SU_Organization_SuUser" Member="SuUsers" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="SuUser" />
+      <Association Name="SU_Organization_SuUserOrgPermission" Member="SuUserOrgPermissions" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="SuUserOrgPermission" />
+      <Association Name="DB_Address_SU_Organization" Member="DB_Address" ThisKey="AddressID" OtherKey="AddressID" Type="DB_Address" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SU_OrganizationLang" Member="SU_OrganizationLangs">
+    <Type Name="SU_OrganizationLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrganizationID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrganizationName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Language_SU_OrganizationLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+      <Association Name="SU_Organization_SU_OrganizationLang" Member="SU_Organization" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="SU_Organization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuProgram" Member="SuPrograms">
+    <Type Name="SuProgram">
+      <Column Name="ProgramCode" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SuProgram_SuProgramLang" Member="SuProgramLangs" ThisKey="ProgramCode" OtherKey="ProgramCode" Type="SuProgramLang" />
+      <Association Name="SuProgram_SuProgramMenu" Member="SuProgramMenus" ThisKey="ProgramCode" OtherKey="ProgramCode" Type="SuProgramMenu" />
+      <Association Name="SuProgram_SuProgramRole" Member="SuProgramRoles" ThisKey="ProgramCode" OtherKey="ProgramCode" Type="SuProgramRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuProgramLang" Member="SuProgramLangs">
+    <Type Name="SuProgramLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProgramCode" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProgramsName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Language_SuProgramLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+      <Association Name="SuProgram_SuProgramLang" Member="SuProgram" ThisKey="ProgramCode" OtherKey="ProgramCode" Type="SuProgram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuProgramMenu" Member="SuProgramMenus">
+    <Type Name="SuProgramMenu">
+      <Column Name="MenuID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProgramCode" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Menu_SuProgramMenu" Member="SU_Menu" ThisKey="MenuID" OtherKey="MenuID" Type="SU_Menu" IsForeignKey="true" />
+      <Association Name="SuProgram_SuProgramMenu" Member="SuProgram" ThisKey="ProgramCode" OtherKey="ProgramCode" Type="SuProgram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuProgramRole" Member="SuProgramRoles">
+    <Type Name="SuProgramRole">
+      <Column Name="RoleID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProgramCode" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AddState" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditState" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteState" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayState" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SuProgram_SuProgramRole" Member="SuProgram" ThisKey="ProgramCode" OtherKey="ProgramCode" Type="SuProgram" IsForeignKey="true" />
+      <Association Name="SuRole_SuProgramRole" Member="SuRole" ThisKey="RoleID" OtherKey="RoleID" Type="SuRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuRole" Member="SuRoles">
+    <Type Name="SuRole">
+      <Column Name="RoleID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SuRole_SuUserRole" Member="SuUserRoles" ThisKey="RoleID" OtherKey="RoleID" Type="SuUserRole" />
+      <Association Name="SuRole_SuProgramRole" Member="SuProgramRoles" ThisKey="RoleID" OtherKey="RoleID" Type="SuProgramRole" />
+      <Association Name="SuRole_SuSession" Member="SuSessions" ThisKey="RoleID" OtherKey="RoleID" Type="SuSession" />
+      <Association Name="SuRoleGroup_SuRole" Member="SuRoleGroup" ThisKey="RoleGroupID" OtherKey="RoleGroupID" Type="SuRoleGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuRoleGroup" Member="SuRoleGroups">
+    <Type Name="SuRoleGroup">
+      <Column Name="RoleGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SuRoleGroup_SuRole" Member="SuRoles" ThisKey="RoleGroupID" OtherKey="RoleGroupID" Type="SuRole" />
+      <Association Name="SuRoleGroup_SuRoleGroupLang" Member="SuRoleGroupLangs" ThisKey="RoleGroupID" OtherKey="RoleGroupID" Type="SuRoleGroupLang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuRoleGroupLang" Member="SuRoleGroupLangs">
+    <Type Name="SuRoleGroupLang">
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleGroupID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleGroupName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Language_SuRoleGroupLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+      <Association Name="SuRoleGroup_SuRoleGroupLang" Member="SuRoleGroup" ThisKey="RoleGroupID" OtherKey="RoleGroupID" Type="SuRoleGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuSession" Member="SuSessions">
+    <Type Name="SuSession">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SessionID" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SuRole_SuSession" Member="SuRole" ThisKey="RoleID" OtherKey="RoleID" Type="SuRole" IsForeignKey="true" />
+      <Association Name="SuUser_SuSession" Member="SuUser" ThisKey="UserID" OtherKey="UserID" Type="SuUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuUser" Member="SuUsers">
+    <Type Name="SuUser">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrganizationID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FailTime" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="EffDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ChangePassword" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SuUser_SuUserRole" Member="SuUserRoles" ThisKey="UserID" OtherKey="UserID" Type="SuUserRole" />
+      <Association Name="SuUser_SuSession" Member="SuSession" ThisKey="UserID" OtherKey="UserID" Type="SuSession" Cardinality="One" />
+      <Association Name="SuUser_SuUserDivision" Member="SuUserDivisions" ThisKey="UserID" OtherKey="UserID" Type="SuUserDivision" />
+      <Association Name="SuUser_SuUserLog" Member="SuUserLogs" ThisKey="UserID" OtherKey="UserID" Type="SuUserLog" />
+      <Association Name="SuUser_SuUserOrgPermission" Member="SuUserOrgPermissions" ThisKey="UserID" OtherKey="UserID" Type="SuUserOrgPermission" />
+      <Association Name="SuUser_SuUserProfile" Member="SuUserProfile" ThisKey="UserID" OtherKey="UserID" Type="SuUserProfile" Cardinality="One" />
+      <Association Name="SU_Language_SuUser" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+      <Association Name="SU_Organization_SuUser" Member="SU_Organization" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="SU_Organization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuUserDivision" Member="SuUserDivisions">
+    <Type Name="SuUserDivision">
+      <Column Name="DivisionID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Division_SuUserDivision" Member="SU_Division" ThisKey="DivisionID" OtherKey="DivisionID" Type="SU_Division" IsForeignKey="true" />
+      <Association Name="SuUser_SuUserDivision" Member="SuUser" ThisKey="UserID" OtherKey="UserID" Type="SuUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuUserLog" Member="SuUserLogs">
+    <Type Name="SuUserLog">
+      <Column Name="UserLogID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SessionID" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SignInDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SignOutDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="SuUser_SuUserLog" Member="SuUser" ThisKey="UserID" OtherKey="UserID" Type="SuUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuUserOrgPermission" Member="SuUserOrgPermissions">
+    <Type Name="SuUserOrgPermission">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrganizationID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Organization_SuUserOrgPermission" Member="SU_Organization" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="SU_Organization" IsForeignKey="true" />
+      <Association Name="SuUser_SuUserOrgPermission" Member="SuUser" ThisKey="UserID" OtherKey="UserID" Type="SuUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuUserProfile" Member="SuUserProfiles">
+    <Type Name="SuUserProfile">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrefixID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SuUserProfile_SuUserProfileLang" Member="SuUserProfileLangs" ThisKey="UserID" OtherKey="UserID" Type="SuUserProfileLang" />
+      <Association Name="DB_Address_SuUserProfile" Member="DB_Address" ThisKey="AddressID" OtherKey="AddressID" Type="DB_Address" IsForeignKey="true" />
+      <Association Name="DB_Prefix_SuUserProfile" Member="DB_Prefix" ThisKey="PrefixID" OtherKey="PrefixID" Type="DB_Prefix" IsForeignKey="true" />
+      <Association Name="SuUser_SuUserProfile" Member="SuUser" ThisKey="UserID" OtherKey="UserID" Type="SuUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuUserProfileLang" Member="SuUserProfileLangs">
+    <Type Name="SuUserProfileLang">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PersonalWebUrl" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Upd_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_By" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cre_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Upd_Pgm" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="byte[]" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SU_Language_SuUserProfileLang" Member="SU_Language" ThisKey="LanguageID" OtherKey="LanguageID" Type="SU_Language" IsForeignKey="true" />
+      <Association Name="SuUserProfile_SuUserProfileLang" Member="SuUserProfile" ThisKey="UserID" OtherKey="UserID" Type="SuUserProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

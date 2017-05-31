@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BDC5E8F-976D-4AFA-95E0-66E1C3E23450}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.SU.BLL</RootNamespace>
+    <AssemblyName>SS.SU.BLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implement\SuUserPersonalLevelService.cs" />
+    <Compile Include="ISuUserPersonalLevelService.cs" />
+    <Compile Include="IMenuEngineService.cs" />
+    <Compile Include="Implement\ACLService.cs" />
+    <Compile Include="Implement\AuthenticationService.cs" />
+    <Compile Include="Implement\ExceptionService.cs" />
+    <Compile Include="Implement\SuEmailResendingService.cs" />
+    <Compile Include="Implement\MenuEngineService.cs" />
+    <Compile Include="Implement\SuAnnouncementGroupLangService.cs" />
+    <Compile Include="Implement\SuAnnouncementGroupService.cs" />
+    <Compile Include="Implement\SuAnnouncementLangService.cs" />
+    <Compile Include="Implement\SuAnnouncementService.cs" />
+    <Compile Include="Implement\SuDivisionLangService.cs" />
+    <Compile Include="Implement\SuDivisionService.cs" />
+    <Compile Include="Implement\SuEHrProfileLogService.cs" />
+    <Compile Include="Implement\SuGlobalTranslateLangService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\SuGlobalTranslateService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\SuImageToSAPLogService.cs" />
+    <Compile Include="Implement\SuMenuLangService.cs" />
+    <Compile Include="Implement\SuMenuService.cs" />
+    <Compile Include="Implement\SuOrganizationLangService.cs" />
+    <Compile Include="Implement\SuOrganizationService.cs" />
+    <Compile Include="Implement\SuPasswordHistoryService.cs" />
+    <Compile Include="Implement\SuProgramLangService.cs" />
+    <Compile Include="Implement\SuProgramRoleService.cs" />
+    <Compile Include="Implement\SuProgramService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\SuRoleLangService.cs" />
+    <Compile Include="Implement\SuRolepbService.cs" />
+    <Compile Include="Implement\SuRoleService.cs" />
+    <Compile Include="Implement\SuRoleServiceService.cs" />
+    <Compile Include="Implement\SuRTEContentService.cs" />
+    <Compile Include="Implement\SuRTENodeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\SuStatisticService.cs" />
+    <Compile Include="Implement\SuUserFavoriteActorService.cs" />
+    <Compile Include="Implement\SuSmsLogService.cs" />
+    <Compile Include="Implement\SuUserLogService.cs" />
+    <Compile Include="Implement\SuUserRoleService.cs" />
+    <Compile Include="Implement\SuUserService.cs" />
+    <Compile Include="Implement\SuUserLoginTokenService.cs" />
+    <Compile Include="Implement\TmpSuUserService.cs" />
+    <Compile Include="ISimpleMasterService.cs" />
+    <Compile Include="ISuAnnouncementGroupLangService.cs" />
+    <Compile Include="ISuAnnouncementGroupService.cs" />
+    <Compile Include="ISuAnnouncementLangService.cs" />
+    <Compile Include="ISuAnnouncementService.cs" />
+    <Compile Include="ISuDivisionLangService.cs" />
+    <Compile Include="ISuDivisionService.cs" />
+    <Compile Include="ISuEHrProfileLogService.cs" />
+    <Compile Include="ISuEmailResendingService.cs" />
+    <Compile Include="ISuGlobalTranslateLangService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISuGlobalTranslateService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISuImageToSAPLogService.cs" />
+    <Compile Include="ISuMenuLangService.cs" />
+    <Compile Include="ISuMenuService.cs" />
+    <Compile Include="ISuOrganizationLangService.cs" />
+    <Compile Include="ISuOrganizationService.cs" />
+    <Compile Include="ISuPasswordHistoryService.cs" />
+    <Compile Include="ISuProgramLangService.cs" />
+    <Compile Include="ISuProgramRoleService.cs" />
+    <Compile Include="ISuProgramService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISuRoleLangService.cs" />
+    <Compile Include="ISuRolepbService.cs" />
+    <Compile Include="ISuRoleService.cs" />
+    <Compile Include="ISuRoleServiceService.cs" />
+    <Compile Include="ISuRTEContentService.cs" />
+    <Compile Include="ISuRTENodeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISuStatisticService.cs" />
+    <Compile Include="ISuUserFavoriteActorService.cs" />
+    <Compile Include="ISuSmsLogService.cs" />
+    <Compile Include="ISuUserLogService.cs" />
+    <Compile Include="ISuUserRoleService.cs" />
+    <Compile Include="ISuUserService.cs" />
+    <Compile Include="ISuUserLoginTokenService.cs" />
+    <Compile Include="ITmpSuUserService.cs" />
+    <Compile Include="IUserEngineService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Implement\TranslationService.cs" />
+    <Compile Include="Implement\UserEngineService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL\SS.DB.DAL.csproj">
+      <Project>{305467E4-B9C3-4669-9895-F0B8C507479F}</Project>
+      <Name>SS.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query.Hibernate\SS.DB.Query.Hibernate.csproj">
+      <Project>{70BA1C5B-D541-4B84-84BB-137C4A29339C}</Project>
+      <Name>SS.DB.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DAL\SS.SU.DAL.csproj">
+      <Project>{FB3A8590-E912-4328-B94C-635F9F1599B1}</Project>
+      <Name>SS.SU.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Helper\SS.SU.Helper.csproj">
+      <Project>{18DD24FA-7F73-4DA8-AB64-7F569D750D4B}</Project>
+      <Name>SS.SU.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Query\SS.SU.Query.csproj">
+      <Project>{4D083F28-AE94-4FF7-B010-9B96701C1B3C}</Project>
+      <Name>SS.SU.Query</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ServiceTeam.ascx.cs" Inherits="SCG.eAccounting.Web.UserControls.DropdownList.SCG.DB.ServiceTeam" %>
+<asp:DropDownList  ID="ctlServiceTeamDropdown" SkinID="SkGeneralDropdown" runat="server"></asp:DropDownList>

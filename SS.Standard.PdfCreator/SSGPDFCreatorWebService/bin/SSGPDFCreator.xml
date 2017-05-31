@@ -1,0 +1,791 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SSGPDFCreator</name>
+    </assembly>
+    <members>
+        <member name="T:SSG.PDF.Exceptions.UpdateStatusException">
+            <summary>
+            Exception class of updating status into database error event.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.UpdateStatusException.#ctor">
+            <summary>
+            Contructs a UpdateStatusException with no detail message.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.UpdateStatusException.#ctor(System.String)">
+            <summary>
+            Constructs a UpdateStatusException with the specified detail message.
+            A detail message is a String that describes this particular exception.
+            </summary>
+            <param name="strMessage">the detail message.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.UpdateStatusException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a UpdateStatusException with the specified detail message and push the exception object detail.
+            A detail message is a String that describes this particular exception.
+            An exception object that describes details this particular exception.
+            </summary>
+            <param name="strMessage">The error message that explains the reason for the exception.</param>
+            <param name="oInner">The exception that is the cause of 
+            the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.UpdateStatusException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructs a UpdateStatusException with the specified serialize information and stream context.
+            </summary>
+            <param name="oInfo">The System.Runtime.Serialization.SerializationInfo 
+            that holds the serialized object data about the exception being thrown.</param>
+            <param name="oContext">The System.Runtime.Serialization.StreamingContext 
+            that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:SSG.PDF.PDFCreator">
+            <summary>
+            The class PDFCreator contains methods for performing creating tex file from string content, 
+            generate pdf document from tex file, send and receive message in the message queue, 
+            updating and checking status state of generating the pdf documents.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.TEX_FILE_EXTENSION">
+            <summary>
+            Tex file extension
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.PDF_FILE_EXTENSION">
+            <summary>
+            Pdf file extension
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.LOG_FILE_EXTENSION">
+            <summary>
+            Log file extension
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.WILDCARD_FILE_EXTENSION">
+            <summary>
+            Wild card file extension
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.DIRECTORY_SEPARATOR">
+            <summary>
+            Directory separator
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.DOUBLE_QUOTE">
+            <summary>
+            Double quote
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.NON_STOP_MODE">
+            <summary>
+            Set the pdflatex interaction mode to non stop mode.
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.THAI_ENCODING">
+            <summary>
+            Encoding support thai language
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.ZERO_TIMEOUT">
+            <summary>
+            Zero timeout value
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.ZERO_HOUR">
+            <summary>
+            Zero hour value
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.ZERO_MINUTE">
+            <summary>
+            Zero minute value
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.THOUSAND_MILLISECONDS">
+            <summary>
+            Thousand milliseconds value
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.WORKER_LABEL">
+            <summary>
+            Worker label 
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.BEGINING_PROCESS_LABEL">
+            <summary>
+            Begining process label
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.ENDING_PROCESS_LABEL">
+            <summary>
+            Ending process label
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.FAILURE_PROCESS_LABEL">
+            <summary>
+            Failure process label
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.PDF_REQUEST_TABLE">
+            <summary>
+            Database table name
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.#ctor">
+            <summary>
+            Gettering the configuration values when constructor has created. 
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.#ctor(System.String)">
+            <summary>
+            Gettering the specified configuration values when constructor has created. 
+            </summary>
+            <param name="strFilename"></param>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GeneratePDF(System.String)">
+            <summary>
+            Generate a pdf document file from the string content.
+            </summary>
+            <param name="strTexContent">The latex string content.</param>
+            <returns>Return the uniqueidentified of tex and pdf files. 
+            Empty uniqueidentified if creating failure.</returns>
+            <seealso cref="!:SSG.PDF.GeneratePDF(Guid oID)"/>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GeneratePDF(System.Guid)">
+            <summary>
+            Generate a pdf document file from the latex file.
+            </summary>
+            <param name="oID">The uniqueidentified of tex file name.</param>
+            <returns>Return the uniqueidentified of pdf files. 
+            Empty uniqueidentified if creating failure.</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GetTexFileUri(System.String)">
+            <summary>
+            Getting tex file location from specified id.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <returns>The location of tex file name</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GetPdfFileUri(System.String)">
+            <summary>
+            Getting pdf file location from specified id.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <returns>The location of pdf file name</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GetPdfFileName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GetLogFileUri(System.String)">
+            <summary>
+            Getting log file location from specified id.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <returns>The location of log file name</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.CreateTexFile(System.String,System.String)">
+            <summary>
+            Create a tex file from string latex content into tex directory from configuration value.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <param name="strTexContent">The latex string content.</param>
+            <exception cref="T:SSG.PDF.Exceptions.CreateTexException">Thrown when creating tex file has error.</exception>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.CreatePdfFile(System.String)">
+            <summary>
+            Create a pdf file from exist tex file into pdf directory from configuration value.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <exception cref="T:SSG.PDF.Exceptions.CreateTexException">Thrown when creating pdf file has error.</exception>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GetMSMQ">
+            <summary>
+            Get message queue instance object from message queue name
+            and create message queue object if not exist.
+            </summary>
+            <returns>An object instance of message queue</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.ClearExistQueue">
+            <summary>
+            Clear existing messgae queue to empty.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.SendGeneratePDFRequestToMSMQ(System.String)">
+            <summary>
+            Send message require generate a pdf document to windows message queue.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <exception cref="T:SSG.PDF.Exceptions.SendMessageQueueException">Thrown when sending message has error.</exception>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.ReadRequestFromMSMQ">
+            <summary>
+            Read ID of required generate a pdf document message from windows message queue.
+            </summary>
+            <returns>An object instance of requested id in message queue</returns>
+            <exception cref="T:SSG.PDF.Exceptions.ReadMessageQueueException">Thrown when receiving message has error.</exception>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.PerfromGeneratePDF(System.String,System.Guid,System.Boolean)">
+            <summary>
+            Perform generate a pdf document from each thread.
+            </summary>
+            <param name="strWorker">Name of worker from the owner thread.</param>
+            <param name="oID">The ID of requested pdf generate.</param>
+            <param name="bForce">Flag to force perform generate pdf with out checking status</param>
+            <exception cref="T:SSG.PDF.Exceptions.CreatePdfException">Thrown when generating pdf has error.</exception>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.UpdateDatabaseStatus(System.String,SSG.PDF.PDFCreator.PdfRequestStatus)">
+            <summary>
+            Update a status into pdf request table.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <param name="eStatus">The value must be a PdfRequestStatus</param>
+            <exception cref="T:SSG.PDF.Exceptions.UpdateStatusException">Thrown when update database has error.</exception>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GetStatus(System.String)">
+            <summary>
+            Get a pdf requested status from database.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <returns>The status of a pdf requested.</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.IsInProcess(System.String)">
+            <summary>
+            Get a pdf requested still in process status from the database.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <returns>Return true is in processing. Otherwise return false.</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.GetListFromStatus(SSG.PDF.PDFCreator.PdfRequestStatus)">
+            <summary>
+            Get list of requested id from specific status
+            </summary>
+            <param name="eStatus">The status want to get list</param>
+            <returns>List of guid</returns>
+        </member>
+        <member name="M:SSG.PDF.PDFCreator.LoadUncompleted">
+            <summary>
+            Get uncompleted list of requested id from new and inprocess status
+            </summary>S
+            <returns>List of guid</returns>
+        </member>
+        <member name="T:SSG.PDF.PDFCreator.PdfRequestStatus">
+            <summary>
+            The status type of generating pdf document.
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.PdfRequestStatus.None">
+            <summary>
+            Not specific status
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.PdfRequestStatus.New">
+            <summary>
+            Created new request status
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.PdfRequestStatus.InProcess">
+            <summary>
+            In processing status
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.PdfRequestStatus.Success">
+            <summary>
+            Created successful
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.PDFCreator.PdfRequestStatus.Fail">
+            <summary>
+            Creating failure
+            </summary>
+        </member>
+        <member name="T:SSG.Config.SSGConfigFactory">
+            <summary>
+            Configuration factory class for return a singleton instance config object.
+            </summary>
+            
+            <seealso cref="T:SSG.Config.SSGConfig"/>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="F:SSG.Config.SSGConfigFactory.CONFIGURATION_FILE">
+            <summary>
+            The configuration file name
+            </summary>
+        </member>
+        <member name="F:SSG.Config.SSGConfigFactory.DIRECTORY_SEPARATOR">
+            <summary>
+            Directory separator symbol
+            </summary>
+        </member>
+        <member name="M:SSG.Config.SSGConfigFactory.#cctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SSG.Config.SSGConfigFactory.GetConfig">
+            <summary>
+            Gets the singleton instance of configulation object.
+            </summary>
+            <returns>an instance object of SSGConfig has contained the configuration value</returns>
+        </member>
+        <member name="M:SSG.Config.SSGConfigFactory.GetConfig(System.String)">
+            <summary>
+            Gets the configuration object from specified configuration path.
+            </summary>
+            <param name="strFilename">Configuration file with full path</param>
+            <returns>an instance object of SSGConfig has contained the configuration valuef</returns>
+        </member>
+        <member name="M:SSG.Config.SSGConfigFactory.LoadConfig(System.String)">
+            <summary>
+            Load configuration values from the config.xml file.
+            If no exist config.xml file the constructor will be creating with default values.
+            </summary>
+            <param name="strFilename">Configuration file with full path</param>
+        </member>
+        <member name="T:SSG.PDF.Exceptions.ReadMessageQueueException">
+            <summary>
+            Exception class of receiving message queue error event.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.ReadMessageQueueException.#ctor">
+            <summary>
+            Contructs a ReadMessageQueueException with no detail message.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.ReadMessageQueueException.#ctor(System.String)">
+            <summary>
+            Constructs a ReadMessageQueueException with the specified detail message.
+            A detail message is a String that describes this particular exception.
+            </summary>
+            <param name="strMessage">the detail message.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.ReadMessageQueueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a ReadMessageQueueException with the specified detail message and push the exception object detail.
+            A detail message is a String that describes this particular exception.
+            An exception object that describes details this particular exception.
+            </summary>
+            <param name="strMessage">The error message that explains the reason for the exception.</param>
+            <param name="oInner">The exception that is the cause of 
+            the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.ReadMessageQueueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructs a ReadMessageQueueException with the specified serialize information and stream context.
+            </summary>
+            <param name="oInfo">The System.Runtime.Serialization.SerializationInfo 
+            that holds the serialized object data about the exception being thrown.</param>
+            <param name="oContext">The System.Runtime.Serialization.StreamingContext 
+            that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:SSG.Logging.Logger">
+            <summary>
+            Looger class for logging messages into the log file.
+            This class can specific a kind of message type into the log.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="M:SSG.Logging.Logger.#ctor">
+            <summary>
+            Gettering the configuration values when constructor has created. 
+            </summary>
+        </member>
+        <member name="M:SSG.Logging.Logger.GetLogFilename">
+            <summary>
+            Gettering location of the system log filename from the configuration object.
+            </summary>
+            <returns>The string of system log file name.</returns>
+        </member>
+        <member name="M:SSG.Logging.Logger.WriteLog(System.Exception)">
+            <summary>
+            Write the exception information into system log file
+            with the ERROR message type.
+            </summary>
+            <param name="objException">The exception information object.</param>
+        </member>
+        <member name="M:SSG.Logging.Logger.WriteLog(System.String)">
+            <summary>
+            Write the message into system log file
+            with the INFO message type.
+            </summary>
+            <param name="strMessage">The string of message detail.</param>
+        </member>
+        <member name="M:SSG.Logging.Logger.WriteLog(System.String,SSG.Logging.Logger.LogType)">
+            <summary>
+            Write the message into system log file
+            with manual specific message type.
+            </summary>
+            <param name="strMessage">The string of message detail.</param>
+            <param name="eType">Type of message.</param>
+            <seealso cref="!:SSG.Logging.LogType"/>
+        </member>
+        <member name="M:SSG.Logging.Logger.WriteSeparator(System.String)">
+            <summary>
+            Write the separator breaking line into system log file.
+            </summary>
+            <param name="strFilename">The string of system log file location.</param>
+            <returns>True if successful writed. Otherwise false.</returns>
+        </member>
+        <member name="M:SSG.Logging.Logger.WriteException(System.String,System.Exception)">
+            <summary>
+            Write the exception information into system log file.
+            </summary>
+            <param name="strFilename">The string of system log file location.</param>
+            <param name="objException">The exception information object.</param>
+            <returns>True if successful writed. Otherwise false.</returns>
+        </member>
+        <member name="M:SSG.Logging.Logger.WriteMessage(System.String,System.String,SSG.Logging.Logger.LogType)">
+            <summary>
+            Write the message into system log file
+            with manual specific message type.
+            </summary>
+            <param name="strFilename">The string of system log file location.</param>
+            <param name="strMessage">The string of message detail.</param>
+            <param name="eType">Type of message.</param>
+            <returns>True if successful writed. Otherwise false.</returns>
+            <seealso cref="!:SSG.Logging.LogType"/>
+        </member>
+        <member name="T:SSG.Logging.Logger.LogType">
+            <summary>
+            Logging message type
+            </summary>
+        </member>
+        <member name="F:SSG.Logging.Logger.LogType.NONE">
+            <summary>
+            Not specific message type
+            </summary>
+        </member>
+        <member name="F:SSG.Logging.Logger.LogType.INFO">
+            <summary>
+            Information message type
+            </summary>
+        </member>
+        <member name="F:SSG.Logging.Logger.LogType.WARNING">
+            <summary>
+            Warning message type
+            </summary>
+        </member>
+        <member name="F:SSG.Logging.Logger.LogType.ERROR">
+            <summary>
+            Error message type
+            </summary>
+        </member>
+        <member name="F:SSG.Logging.Logger.LogType.DEBUG">
+            <summary>
+            Debug message type
+            </summary>
+        </member>
+        <member name="T:SSG.Config.SSGConfig">
+            <summary>
+            Configuration class for serialize and deserialize from config.xml file.
+            </summary>
+            
+            <seealso cref="T:SSG.Config.SSGConfigFactory"/>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="M:SSG.Config.SSGConfig.#ctor">
+            <summary>
+            Initialize empty value when constructor has created.
+            </summary>
+        </member>
+        <member name="M:SSG.Config.SSGConfig.Serialize(System.String,SSG.Config.SSGConfig)">
+            <summary>
+            Serialize the values of properties member into configuration files.
+            The configuration file has stored in the xml format.
+            </summary>
+            <param name="strFilename">a string of file name for writing the configuration values</param>
+            <param name="oConfig">an object instance has holding the configulation values</param>
+            <seealso cref="M:SSG.Config.SSGConfig.Deserialize(System.String)"/>
+        </member>
+        <member name="M:SSG.Config.SSGConfig.Deserialize(System.String)">
+            <summary>
+            Deserialize the values of properties member from configuration files.
+            The configuration file has stored in the xml format.
+            </summary>
+            <param name="strFilename">a string of file name for reading the configuration values</param>
+            <returns>an instance object of SSGConfig has contained the configuration value</returns>
+            <seealso cref="M:SSG.Config.SSGConfig.Serialize(System.String,SSG.Config.SSGConfig)"/>
+        </member>
+        <member name="M:SSG.Config.SSGConfig.GetDatabaseConnectionString">
+            <summary>
+            Generate the database connection string form the configuration values using for access database server.
+            </summary>
+            <returns>a database connection string</returns>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.TexDirectory">
+            <summary>
+            Gets or sets the directory for storing latex file (.tex)
+            </summary>
+            <value>Directory of storing .tex file.</value>
+            <remarks>The value must be full path directory</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.PdfDirectory">
+            <summary>
+            Gets or sets the directory for storing pdf file (.pdf)
+            </summary>
+            <value>Directory of storing .pdf file.</value>
+            <remarks>The value must be full path directory</remarks> 
+        </member>
+        <member name="P:SSG.Config.SSGConfig.LogDirectory">
+            <summary>
+            Gets or sets the directory for storing log file (.log)
+            </summary>
+            <value>Directory of storing .log file.</value>
+            <remarks>The value must be full path directory</remarks>    
+        </member>
+        <member name="P:SSG.Config.SSGConfig.Latex">
+            <summary>
+            Gets or sets the location for latex.exe
+            </summary>
+            <example>This sample show where is the location of latex.exe
+            <code>
+             SSGConfig oConfig = new SSGConfig();
+             oConfig.Latex = "C:\\Program Files\\MiKTeX 2.7\\miktex\\bin\\latex.exe";
+            </code>
+            </example>
+            <value>Location of latex.exe</value>
+            <remarks>The value must be full path with file name</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.PdfLatex">
+            <summary>
+            Gets or sets the location for pdflatex.exe
+            </summary>
+            <example>This sample show where is the location of pdflatex.exe
+            <code>
+             SSGConfig oConfig = new SSGConfig();
+             oConfig.PdfLatex = "C:\\Program Files\\MiKTeX 2.7\\miktex\\bin\\pdflatex.exe";
+            </code>
+            </example>
+            <value>Location of pdflatex.exe</value>
+            <remarks>The value must be full path with file name</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.ConvertTimeout">
+            <summary>
+            Gets or sets the time out value using for 
+            waiting a process of converting .tex to .pdf file.
+            </summary>
+            <value>The time out value for killing process</value>
+            <remarks>The value must be a numeric in second unit (0..nn). 
+            If value is zero don't wait a process time out.</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.MsmqQueueName">
+            <summary>
+            Gets or sets the message queue name used for send and receive 
+            a requests queue generating the pdf documents.
+            </summary>
+            <example>This sample show formating of message queue name
+            <code>
+             SSGConfig oConfig = new SSGConfig();
+             oConfig.MsmqQueueName = "Develop\private$\PdfRequest";
+            </code>
+            </example>
+            <value>The reference name of message queue</value>
+            <remarks>The value must be a message queue format such as MachineName\private$\QueueName</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.MessageTimeOut">
+            <summary>
+            Gets or sets the time out value of receiving a messages queue 
+            </summary>
+            <value>The time out value for waiting a message in queue</value>
+            <remarks>The value must be a numeric in second unit (1..60)</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.ServicePollingInterval">
+            <summary>
+            Gets or sets the interval value for service polling in each threads
+            </summary>
+            <value>The interval value for service polling</value>
+            <remarks>The value must be a numeric in second unit (1..60)</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.ServiceMaxThread">
+            <summary>
+            Gets or sets the maximum threads amount can growth in windows service
+            for process converting .tex to .pdf
+            </summary>
+            <value>The maximum threads amount value</value>
+            <remarks>The value must be a numeric (1..nn)</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.DatabaseServer">
+            <summary>
+            Gets or sets the name of database server with instance name
+            </summary>
+            <value>The instance database server name</value>
+            <remarks>The value must be database server with instance name</remarks>            
+        </member>
+        <member name="P:SSG.Config.SSGConfig.DatabaseName">
+            <summary>
+            Gets or sets the database name
+            </summary>
+            <value>The name of database</value>
+            <remarks>The database name has holding a tbPdfRequest table</remarks>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.IntegratedSecurity">
+            <summary>
+            Gets or sets using integreated security for accessing the database
+            </summary>
+            <value>Identify using integreated security</value>
+            <remarks>The integreated security must be a boolean value true or false. 
+            If not use integrated security must be identify DBUser and DBPassword.</remarks>
+            <seealso cref="P:SSG.Config.SSGConfig.DBUser"/>
+            <seealso cref="P:SSG.Config.SSGConfig.DBPassword"/>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.DBUser">
+            <summary>
+            Gets or sets user name for authenticate accessing the database
+            </summary>
+            <value>The user name for access database</value>
+            <remarks>The user name must have a permission for read and write the tbPdfRequest table in database</remarks>
+            <seealso cref="P:SSG.Config.SSGConfig.DBPassword"/>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.DBPassword">
+            <summary>
+            Gets or sets password for authenticate accessing the database
+            </summary>
+            <value>The password value for access database</value>
+            <remarks>The password of user name has a permission for read and write the tbPdfRequest table in database</remarks>
+            <seealso cref="P:SSG.Config.SSGConfig.DBUser"/>
+        </member>
+        <member name="P:SSG.Config.SSGConfig.SystemLog">
+            <summary>
+            Gets or sets the file name for writing the system log
+            </summary>
+            <value>The location of file name for writing log</value>
+            <remarks>The value must be full path with file name</remarks>
+        </member>
+        <member name="T:SSG.PDF.Exceptions.SendMessageQueueException">
+            <summary>
+            Exception class of sending message queue error event.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.SendMessageQueueException.#ctor">
+            <summary>
+            Contructs a SendMessageQueueException with no detail message.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.SendMessageQueueException.#ctor(System.String)">
+            <summary>
+            Constructs a SendMessageQueueException with the specified detail message.
+            A detail message is a String that describes this particular exception.
+            </summary>
+            <param name="strMessage">the detail message.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.SendMessageQueueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a SendMessageQueueException with the specified detail message and push the exception object detail.
+            A detail message is a String that describes this particular exception.
+            An exception object that describes details this particular exception.
+            </summary>
+            <param name="strMessage">The error message that explains the reason for the exception.</param>
+            <param name="oInner">The exception that is the cause of 
+            the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.SendMessageQueueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructs a SendMessageQueueException with the specified serialize information and stream context.
+            </summary>
+            <param name="oInfo">The System.Runtime.Serialization.SerializationInfo 
+            that holds the serialized object data about the exception being thrown.</param>
+            <param name="oContext">The System.Runtime.Serialization.StreamingContext 
+            that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:SSG.PDF.Exceptions.CreatePdfException">
+            <summary>
+            Exception class of creating pdf error event.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreatePdfException.#ctor">
+            <summary>
+            Contructs a CreatePdfException with no detail message.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreatePdfException.#ctor(System.String)">
+            <summary>
+            Constructs a CreatePdfException with the specified detail message.
+            A detail message is a String that describes this particular exception.
+            </summary>
+            <param name="strMessage">the detail message.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreatePdfException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a CreatePdfException with the specified detail message and push the exception object detail.
+            A detail message is a String that describes this particular exception.
+            An exception object that describes details this particular exception.
+            </summary>
+            <param name="strMessage">The error message that explains the reason for the exception.</param>
+            <param name="oInner">The exception that is the cause of 
+            the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreatePdfException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructs a CreatePdfException with the specified serialize information and stream context.
+            </summary>
+            <param name="oInfo">The System.Runtime.Serialization.SerializationInfo 
+            that holds the serialized object data about the exception being thrown.</param>
+            <param name="oContext">The System.Runtime.Serialization.StreamingContext 
+            that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:SSG.PDF.Exceptions.CreateTexException">
+            <summary>
+            Exception class of creating tex error event.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreateTexException.#ctor">
+            <summary>
+            Contructs a CreateTexException with no detail message.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreateTexException.#ctor(System.String)">
+            <summary>
+            Constructs a CreateTexException with the specified detail message.
+            A detail message is a String that describes this particular exception.
+            </summary>
+            <param name="strMessage">the detail message.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreateTexException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a CreateTexException with the specified detail message and push the exception object detail.
+            A detail message is a String that describes this particular exception.
+            An exception object that describes details this particular exception.
+            </summary>
+            <param name="strMessage">The error message that explains the reason for the exception.</param>
+            <param name="oInner">The exception that is the cause of 
+            the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:SSG.PDF.Exceptions.CreateTexException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructs a CreateTexException with the specified serialize information and stream context.
+            </summary>
+            <param name="oInfo">The System.Runtime.Serialization.SerializationInfo 
+            that holds the serialized object data about the exception being thrown.</param>
+            <param name="oContext">The System.Runtime.Serialization.StreamingContext 
+            that contains contextual information about the source or destination.</param>
+        </member>
+    </members>
+</doc>

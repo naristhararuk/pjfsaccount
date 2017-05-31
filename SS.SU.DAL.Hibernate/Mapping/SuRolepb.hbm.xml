@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuRolepb,SS.SU.DTO" table="SuRolePB">
+
+		<id name="RolePBID" column="RolePBID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="RoleID" column="RoleID" class="SS.SU.DTO.SuRole,SS.SU.DTO" />
+		<many-to-one name="PBID" column="PBID" class="SCG.DB.DTO.Dbpb,SCG.DB.DTO" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PopupMasterPage.master.cs"
+    Inherits="SCG.eAccounting.Web.PopupMasterPage" EnableTheming="true" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/Ajax.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/global.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/NumberFormat154.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-1.10.2.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-ui.js")%>"></script>
+<script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/fs.popup.js")%>"></script>
+<script type="text/javascript" language="javascript">
+    var jq = jQuery.noConflict();
+</script>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="Stylesheet" type="text/css" href="~/App_Themes/Default/default.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ToolkitScriptManager1" ScriptMode="Release" CombineScripts="true" EnablePageMethods="true" EnablePartialRendering="true" />
+    <div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="X" runat="server"></asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

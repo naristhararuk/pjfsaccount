@@ -1,0 +1,117 @@
+\documentclass[a4paper,12pt]{report}
+
+
+\usepackage[english,thai]{babel}
+\usepackage{thswitch}
+
+\usepackage{hyperref}
+
+\usepackage{geometry}
+
+
+\geometry{top=1in,bottom=1in,left=1.in,right=1in}
+
+
+
+\sloppy
+
+\def\thairmdefault{angsana}
+
+\newcommand{\TEXTS}[2]{
+\renewcommand{\thairmdefault}{#1}
+\usefont{LTH}{#1}{m}{n}\selectfont
+\chapter{ฟอนต์~#2}
+\section*{๏~ค้นพบ\wbr สาร\wbr ตัวกลาง\wbr แสง\wbr ใหม่\wbr ที่\wbr มี\wbr ค่า\wbr ดรรชนีหักเห\wbr เป็น\wbr ลบ}
+
+ตัวกลาง\wbr ชนิด\wbr ใหม่\wbr นี้\wbr มี\wbr ค่า\wbr ดรรชนีหักเห (เป็น\wbr บวก\wbr หรือ\wbr ลบ\wbr ก็ได้) ขึ้น\wbr อยู่\wbr กับ\wbr มุม\wbr ตก\wbr กระทบ\wbr ของ\wbr แสง หรือ\wbr ที่\wbr เรียก\wbr กัน\wbr ว่า amphoteric refraction นี้\wbr สามารถ\wbr นำมา\wbr ใช้\wbr ควบคุม\wbr ทิศทาง\wbr การ\wbr หักเห\wbr ของ\wbr แสง\wbr ได้ ไม่\wbr เพียงแต่\wbr เท่านี้ ยัง\wbr สาม\wbr รถ\wbr ควบคุม\wbr ทิศทาง\wbr การ\wbr หักเห\wbr ของ\wbr ลำ\wbr อิเล็กตรอน\wbr แบบ\wbr กลุ่ม (ballistic beam ซึ่ง\wbr เคลื่อนที่\wbr ไป\wbr พร้อมกับ\wbr คลื่น\wbr แม่เหล็กไฟฟ้า\wbr ที่\wbr เกิด\wbr จาก\wbr ตัว\wbr ลำ\wbr อิเลกต\wbr รอน\wbr เอง) ได้\wbr อีก\wbr ด้วย  \\
+
+โดย\wbr ทั่วไป การ\wbr หักเห\wbr แสง\wbr เกิด\wbr ขึ้น\wbr เมื่อ แสง\wbr เคลื่อนที่\wbr จาก\wbr ตัวกลาง\wbr หนึ่ง\wbr ไป\wbr ยัง\wbr อีก\wbr ตัวกลาง\wbr หนึ่ง ที่\wbr มี\wbr ค่า\wbr ดรรชนีหักเห\wbr แตกต่าง\wbr กัน นักฟิสิกส์\wbr ที่ National Renewable Energy Lab ที่ Colorado สร้าง\wbr สาร\wbr ที่\wbr จะ\wbr ใช้\wbr เป็น\wbr ตัวกลาง\wbr ชนิด\wbr ใหม่\wbr นี้\wbr ได้\wbr สำเร็จ\wbr จาก YVO4 bicrystal ซึ่ง\wbr แตกต่าง\wbr ไป\wbr อย่าง\wbr สิ้นเชิง จาก\wbr วิธี\wbr ที่\wbr เคย\wbr มี\wbr คน\wbr ทำ\wbr มา\wbr ก่อน จาก\wbr การ\wbr ดัดแปลง\wbr รูปร่าง\wbr ของ\wbr สาร\wbr ตัวนำ(ทองแดง)เล็กๆ ให้\wbr เป็น\wbr แท่ง\wbr และ\wbr วงแหวน แล้ว\wbr นำมา\wbr เรียง\wbr กัน\wbr บน\wbr แผ่น\wbr ปรินต์ \\
+
+ตัวกลาง\wbr ที่\wbr มี\wbr ค่า\wbr ดรรชนีหักเห\wbr เป็น\wbr ลบ\wbr นี้ เรียก\wbr ได้\wbr อีก\wbr อย่างหนึ่ง\wbr ว่า Left Handed Material (LHM --- สสาร\wbr ภายใต้\wbr กฎ\wbr มือ\wbr ซ้าย)  เพราะ\wbr มัน\wbr หักเห\wbr แสง\wbr ใน\wbr ทิศทาง\wbr ตรงกันข้าม\wbr กับ\wbr ส\wbr สาร\wbr ปกติ ที่\wbr คำนวณ\wbr ทิศทาง\wbr การ\wbr หักเห\wbr ได้\wbr จาก\wbr กฎ\wbr มือขวา\wbr ของ\wbr อิ\wbr เล็ก\wbr โทร\wbr แมก\wbr เนติกส์ \\
+
+คุณสมบัติ\wbr ที่\wbr ค่อนข้าง\wbr แปลก\wbr ของ\wbr ตัวกลาง\wbr ชนิด\wbr ใหม่\wbr นี้ สามารถ\wbr นำมา\wbr สร้าง superior lens (เลนส์\wbr ที่\wbr มี\wbr ลักษณะ\wbr เป็น\wbr แผ่น\wbr แบน) ได้ และ\wbr นอกจากนี้\wbr ยัง\wbr สร้าง\wbr โอกาส\wbr ที่\wbr จะ\wbr ศึกษา ปรากฏการณ์\wbr แปลกๆ เช่น ดอปเปลอร์และ\wbr การ\wbr แผ่\wbr รังสี\wbr เซ\wbr อเรน\wbr คอ\wbr ฟ\wbr ภายใต้\wbr กฎ\wbr มือ\wbr ซ้าย\wbr อีก\wbr ด้วย ซึ่ง\wbr จะ\wbr มี\wbr ลักษณะ\wbr ที่\wbr แปลก\wbr ไป\wbr จาก\wbr ปรากฏการณ์\wbr ดอปเปลอร์\wbr และ\wbr การ\wbr แผ่\wbr รังสี\wbr เซ\wbr อเรน\wbr คอ\wbr ฟ\wbr ภายใต้\wbr ตัวกลาง\wbr ปกติ คุณสมบัติ\wbr ที่\wbr สำคัญ\wbr อีก\wbr อย่างหนึ่ง\wbr ที่\wbr ได้\wbr ศึกษา\wbr โดย Yong Zhang คือ\wbr เมื่อ\wbr แสง\wbr เดินทาง\wbr ผ่าน\wbr รอย\wbr ต่อ\wbr ของ\wbr ตัวกลาง LHM นั้น\wbr มัน\wbr จะ\wbr ไม่\wbr สะท้อน\wbr กลับ\wbr ออก\wbr มา ดังนั้น\wbr จึง\wbr ไม่\wbr มี\wbr การ\wbr สูญเสีย\wbr พลังงาน\wbr ไป\wbr ใน\wbr การ\wbr ถ่ายทอด คุณสมบัติ\wbr นี้\wbr สำคัญ\wbr ต่อ\wbr การ\wbr ประยุกต์\wbr ใช้\wbr ใน\wbr การ\wbr ทำ\wbr ท่อ\wbr ส่ง\wbr แสง\wbr เลเซอร์\wbr พลังงาน\wbr สูง และ\wbr ระบบ\wbr คมนาคม\wbr ไฟเบอร์\wbr ออ\wbr ป\wbr ติ\wbr ก\wbr เป็น\wbr อย่าง\wbr มาก  \\
+
+\renewcommand{\thairmdefault}{angsana}
+}
+
+
+\title{\bfseries การทดสอบฟอนต์ภาษาไทยใน \LaTeXe\\ %
+(ภาค~1)}
+\author{\textbf{\LARGE Anonymous}}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%\pagestyle{empty}
+
+\fontsize{12}{12}\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{NECTEC Fonts}
+
+\TEXTS{norasi}{Norasi}
+
+\TEXTS{kinnari}{Kinnari}
+
+\TEXTS{garuda}{Garuda}
+
+%\TEXTS{dbtt}{Dbtt}
+
+\TEXTS{loma}{Loma}
+
+%\TEXTS{pmono}{Pmono}
+
+\TEXTS{purisa}{Purisa}
+
+\TEXTS{ttype}{Ttype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Windows Fonts}
+
+\TEXTS{angsana}{Angsana~New}
+
+\TEXTS{browallia}{Browallia~New}
+
+\TEXTS{cordia}{Cordia~New}
+
+\TEXTS{uangsana}{Angsana~UPC}
+
+\TEXTS{ubrowallia}{Browallia~UPC}
+
+\TEXTS{ucordia}{Cordia~UPC}
+
+\TEXTS{udillenia}{Dillenia~UPC}
+
+%\TEXTS{ueucrosia}{Eucrosia~UPC}
+
+\TEXTS{ufreesia}{Freesia~UPC}
+
+\TEXTS{uiris}{Iris~UPC}
+
+\TEXTS{ujasmine}{Jasmine~UPC}
+
+\TEXTS{ukodchiang}{KodchiangUPC}
+
+\TEXTS{ulily}{Lily~UPC}
+
+\TEXTS{tahoma}{Tahoma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{JS Fonts}
+
+\TEXTS{jswannaree}{JS~Wannaree}
+
+\TEXTS{jswansika}{JS~Wansika}
+
+\TEXTS{jswanida}{JS~Wanida}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

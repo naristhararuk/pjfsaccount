@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnehRexpenseTemp,SCG.eAccounting.DTO" table="FnEHRexpenseTemp">
+
+		<id name="EHRExpenseTempID" column="EHRExpenseTempID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="EHRExpenseID" type="String" name="EHRExpenseID" length="50" />
+		<property column="ExpenseDate" type="DateTime" name="ExpenseDate" not-null="true" length="15" />
+    <property column="ReceiverUserID" type="Int64" name="ReceiverUserID" not-null="false" />
+		<property column="ApproveUserID" type="Int64" name="ApproveUserID" not-null="false" />
+		<property column="CreateUserID" type="Int64" name="CreateUserID" not-null="false" />
+		<property column="ApproveDate" type="DateTime" name="ApproveDate" not-null="false" />
+		<property column="PaymentType" type="String" name="PaymentType" not-null="false" length="1" />
+		<property column="ExpenseComID" type="Int64" name="ExpenseComID" not-null="false" />
+		<property column="ItemID" type="String" name="ItemID" not-null="false" length="5" />
+		<property column="AccountID" type="Int64" name="AccountID" not-null="false" />
+		<property column="CostCenterID" type="Int64" name="CostCenterID" not-null="false" />
+		<property column="InvoiceDescription" type="String" name="InvoiceDescription" not-null="false" length="100" />
+		<property column="InvoiceBaseAmount" type="Double" name="InvoiceBaseAmount" not-null="false" />
+		<property column="Flag_NR" type="String" name="Flag_NR" not-null="false" length="1" />
+		<property column="ReferID" type="String" name="ReferID" not-null="false" length="15" />
+		<property column="ReceiverUserCode" type="String" name="ReceiverUserCode" not-null="false" length="50" />
+		<property column="ApproverUserCode" type="String" name="ApproverUserCode" not-null="false" length="50" />
+		<property column="CreateUserCode" type="String" name="CreateUserCode" not-null="false" length="50" />
+		<property column="ExpenseComCode" type="String" name="ExpenseComCode" not-null="false" length="10" />
+		<property column="AccountCode" type="String" name="AccountCode" not-null="false" length="10" />
+		<property column="CostCentercode" type="String" name="CostCentercode" not-null="false" length="50" />
+    <property column="ServiceTeamID" type="Int64" name="ServiceTeamID" not-null="false" />
+    <property column="PBID" type="Int64" name="PBID" not-null="false" />
+    <property column="TotalExpense" type="Double" name="TotalExpense" not-null="false" />
+    <property column="TotalAdvance" type="Double" name="TotalAdvance" not-null="false" />
+    <property column="IONumber" type="String" name="IONumber" not-null="false" length="20" />
+    <property column="IOID" type="Int64" name="IOID" not-null="false" />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.DbDocumentImagePosting,SCG.eAccounting.DTO" table="DbDocumentImagePosting">
+
+		<id name="DocumentID" column="DocumentID" type="Int64" unsaved-value="0">
+			<generator class="assigned"/>
+		</id>
+		<property column="FIDocNumber" type="String" name="FIDocNumber" length="20" />
+		<property column="Status" type="String" name="Status" length="10" />
+		<property column="GUID" type="String" name="GUID" length="100" />
+		<property column="ImageDocID" type="String" name="ImageDocID" length="255" />
+		<property column="Message" type="String" name="Message" length="50" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="eAccounting">
+      <DataSourceReference>eAccounting</DataSourceReference>
+      <rd:DataSourceID>75eb447e-78fc-4e77-81fc-2e20a0acd25a</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PositionName">
+          <DataField>PositionName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ResponseDate">
+          <DataField>ResponseDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DocumentID">
+          <DataField>DocumentID</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>eAccounting</DataSourceName>
+        <CommandText>SELECT  usr.UserName,usr.EmployeeName,usr.PositionName,wfr.ResponseDate ,doc.DocumentID 
+FROM [Document] doc 
+LEFT JOIN WorkFlow wf 
+ON doc.DocumentID = wf.DocumentID
+LEFT JOIN WorkFlowResponse wfr
+ON wfr.workFlowID = wf.WorkFlowID
+  
+LEFT JOIN WorkFlowStateEvent wfse 
+ON wfse.WorkFlowStateEventID = wfr.WorkflowStateEventID 
+LEFT JOIN WorkFlowState wfs
+ON wfse.WorkFlowStateID = wfs.WorkFlowStateID
+LEFT JOIN SuUser usr
+ON wfr.ResponseBy = usr.UserID 
+
+WHERE 1=1 
+AND (wfse.Name = 'Approve' AND wfs.Name = 'WaitApproveVerify'
+OR wfse.Name = 'VerifyAndApproveVerify' AND wfs.Name = 'WaitVerify')
+AND wfr.Active=1
+AND doc.documentID = @DocID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DocID">
+            <Value>=Parameters!DocID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle1">
+        <ReportItems>
+          <Textbox Name="textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!UserName.Value) + "  "+First(Fields!EmployeeName.Value)+ "  "+First(Fields!PositionName.Value)+ "  "+Format(First(Fields!ResponseDate.Value),"dd/MM/yyyy")+" "+FormatDateTime(First(Fields!ResponseDate.Value),3)</Value>
+                    <Style>
+                      <FontFamily>Arial Unicode MS</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>5in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Height>0.25in</Height>
+        <Width>5in</Width>
+        <Style />
+      </Rectangle>
+    </ReportItems>
+    <Height>0.25in</Height>
+    <Style>
+      <LeftBorder>
+        <Color>Black</Color>
+        <Style>Solid</Style>
+        <Width>1pt</Width>
+      </LeftBorder>
+    </Style>
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="DocID">
+      <DataType>String</DataType>
+      <Prompt>DocID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>5in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>5091878a-5c65-4cfd-997e-315d1fc94d5c</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

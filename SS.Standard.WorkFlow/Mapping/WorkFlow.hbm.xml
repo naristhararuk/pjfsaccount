@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.Standard.WorkFlow.DTO.WorkFlow,SS.Standard.WorkFlow" table="WorkFlow">
+
+		<id name="WorkFlowID" column="WorkFlowID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Document" column="documentID" class="SS.Standard.WorkFlow.DTO.Document,SS.Standard.WorkFlow" />
+		<many-to-one name="WorkFlowType" column="WorkFlowTypeID" class="SS.Standard.WorkFlow.DTO.WorkFlowType,SS.Standard.WorkFlow" />
+		<property column="Description" type="String" name="Description" length="100" />
+		<many-to-one name="CurrentState" column="CurrentState" class="SS.Standard.WorkFlow.DTO.WorkFlowState,SS.Standard.WorkFlow" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

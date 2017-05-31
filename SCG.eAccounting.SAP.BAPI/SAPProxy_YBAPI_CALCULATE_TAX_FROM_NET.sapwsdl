@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:s0="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:s0="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="YBAPI_CALCULATE_TAX_FROM_NET">
+        <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:all>
+            <xsd:element name="T_MWDAT">
+              <xsd:annotation>
+                <xsd:documentation>Table of tax values and percentage rates</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:RTAX1U15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="I_ACCNT_EXT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Kontonummer ext. Steuersystem (Befreiung)</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="16" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="I_BUKRS">
+              <xsd:annotation>
+                <xsd:documentation>Company code</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="4" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="I_MWSKZ">
+              <xsd:annotation>
+                <xsd:documentation>Tax code</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="2" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="I_PROTOKOLL" minOccurs="0" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Change type from C (VCA 13.10.2006)</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="I_PRSDT" minOccurs="0" type="s0:date" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Datum zur Steuerfindung</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="I_TAXPS" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Change type from C (VCA 13.10.2006)</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:pattern value="\d+" />
+                  <xsd:maxLength value="6" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="I_TXJCD" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Tax jurisdiction code</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="15" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="I_WAERS">
+              <xsd:annotation>
+                <xsd:documentation>Currency key</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="5" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="I_WRBTR">
+              <xsd:annotation>
+                <xsd:documentation>Net amount</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:decimal">
+                  <xsd:totalDigits value="13" />
+                  <xsd:fractionDigits value="2" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="I_ZBD1P" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Cash discount percentage rate</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:decimal">
+                  <xsd:totalDigits value="5" />
+                  <xsd:fractionDigits value="3" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="YBAPI_CALCULATE_TAX_FROM_NET.Response">
+        <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:all>
+            <xsd:element name="T_MWDAT">
+              <xsd:annotation>
+                <xsd:documentation>Table of tax values and percentage rates</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:RTAX1U15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="E_FWAST" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Calculated deductible tax</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:decimal">
+                  <xsd:totalDigits value="13" />
+                  <xsd:fractionDigits value="2" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="E_FWNAV" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Non-deductible tax calculated (total)</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:decimal">
+                  <xsd:totalDigits value="13" />
+                  <xsd:fractionDigits value="2" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="E_FWNVV" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Non-deductible tax calculated which is allocated</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:decimal">
+                  <xsd:totalDigits value="13" />
+                  <xsd:fractionDigits value="2" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="E_FWSTE" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:annotation>
+                <xsd:documentation>Tax calculated (total)</xsd:documentation>
+              </xsd:annotation>
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:decimal">
+                  <xsd:totalDigits value="13" />
+                  <xsd:fractionDigits value="2" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="YBAPI_CALCULATE_TAX_FROM_NET.Exception">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Name">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="ACCOUNT_NOT_FOUND" />
+                  <xsd:enumeration value="BUKRS_NOT_FOUND" />
+                  <xsd:enumeration value="COUNTRY_NOT_FOUND" />
+                  <xsd:enumeration value="KALSM_NOT_FOUND" />
+                  <xsd:enumeration value="KNUMH_NOT_FOUND" />
+                  <xsd:enumeration value="KSCHL_NOT_FOUND" />
+                  <xsd:enumeration value="KTOSL_NOT_FOUND" />
+                  <xsd:enumeration value="MWSKZ_NOT_DEFINED" />
+                  <xsd:enumeration value="MWSKZ_NOT_VALID" />
+                  <xsd:enumeration value="PARAMETER_ERROR" />
+                  <xsd:enumeration value="TXJCD_NOT_VALID" />
+                  <xsd:enumeration value="UNKNOWN_ERROR" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Text" minOccurs="0" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+            <xsd:element name="Message" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ID">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20" />
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="Number">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="\d+" />
+                        <xsd:maxLength value="3" />
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Attributes" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="V1" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50" />
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="V2" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50" />
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="V3" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50" />
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="V4" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50" />
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="RTAX1U15">
+        <xsd:sequence>
+          <xsd:element name="WMWST" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Tax amount in document currency</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="13" />
+                <xsd:fractionDigits value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="MSATZ" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Tax rate</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="7" />
+                <xsd:fractionDigits value="3" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KTOSL" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Transaction Key</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="3" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="TXJCD" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Jurisdiction for Tax Calculation - Tax Jurisdiction Code</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="15" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KNUMH" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Condition record number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KBETR" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Rate (condition amount or percentage) where no scale exists</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="11" />
+                <xsd:fractionDigits value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KAWRT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Condition base value</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="15" />
+                <xsd:fractionDigits value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="HKONT" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>General Ledger Account</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="KSCHL" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Condition type</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="TXJCD_DEEP" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Jurisdiction for Tax Calculation - Tax Jurisdiction Code</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="15" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="TXJLV" minOccurs="0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:annotation>
+              <xsd:documentation>Tax jurisdiction code level</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="date">
+        <xsd:union memberTypes="xsd:date s0:genericDate" />
+      </xsd:simpleType>
+      <xsd:simpleType name="genericDate">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="....-..-.." />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:portType name="dummy.PortType">
+    <wsdl:operation name="YBAPI_CALCULATE_TAX_FROM_NET">
+      <wsdl:input message="s0:YBAPI_CALCULATE_TAX_FROM_NET.Input" />
+      <wsdl:output message="s0:YBAPI_CALCULATE_TAX_FROM_NET.Output" />
+      <wsdl:fault message="s0:YBAPI_CALCULATE_TAX_FROM_NET.Exception" name="YBAPI_CALCULATE_TAX_FROM_NET.Exception" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="dummy.SAPBinding" type="s0:dummy.PortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <s0:binding style="rfc" />
+    <wiz:GeneratorSettings xmlns:wiz="urn:sap:mw:dotnet:wizard">
+      <wiz:ProxyType>Client</wiz:ProxyType>
+      <wiz:ClassName>SAPProxy_YBAPI_CALCULATE_TAX_FROM_NET</wiz:ClassName>
+      <wiz:Beautify>True</wiz:Beautify>
+      <wiz:CreateAsyncs>False</wiz:CreateAsyncs>
+      <wiz:CreateQRFC>False</wiz:CreateQRFC>
+      <wiz:CreateTRFC>False</wiz:CreateTRFC>
+      <wiz:ShowTypes>True</wiz:ShowTypes>
+      <wiz:MapBapiExceptions>False</wiz:MapBapiExceptions>
+    </wiz:GeneratorSettings>
+    <wsdl:operation name="YBAPI_CALCULATE_TAX_FROM_NET">
+      <ifr:container xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+        <ifr:descriptor>
+          <ifr:description language="EN">Ermittlung der Steuerprozentsaetze und des Steuerbetrages</ifr:description>
+        </ifr:descriptor>
+        <ifr:properties>
+          <ifr:sourceSystem />
+          <ifr:sourceClient>240</ifr:sourceClient>
+          <ifr:release>620 </ifr:release>
+          <ifr:package>ZSD0</ifr:package>
+          <ifr:akhNode />
+          <ifr:released>no</ifr:released>
+          <ifr:outbound>false</ifr:outbound>
+          <ifr:synchronous>true</ifr:synchronous>
+          <ifr:asynchronous>false</ifr:asynchronous>
+          <ifr:unicode1>true</ifr:unicode1>
+          <ifr:unicode2>true</ifr:unicode2>
+        </ifr:properties>
+        <ifr:definition>
+          <ifr:exceptions>
+            <ifr:exception name="ACCOUNT_NOT_FOUND">
+              <ifr:descriptor>
+                <ifr:description language="EN">Fehler bei der Kontenfindung</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="BUKRS_NOT_FOUND">
+              <ifr:descriptor>
+                <ifr:description language="EN">Company code specified does not exist</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="COUNTRY_NOT_FOUND">
+              <ifr:descriptor>
+                <ifr:description language="EN">The country specified in T001 does not exist</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="KALSM_NOT_FOUND">
+              <ifr:descriptor>
+                <ifr:description language="EN">Kalkulationsschema wurde nicht gefunden</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="KNUMH_NOT_FOUND">
+              <ifr:descriptor>
+                <ifr:description language="EN">Konditionssatz nicht gefunden</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="KSCHL_NOT_FOUND">
+              <ifr:descriptor>
+                <ifr:description language="EN">Konditionsart nicht gefunden</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="KTOSL_NOT_FOUND">
+              <ifr:descriptor>
+                <ifr:description language="EN">Vorgangsschl#ssel nicht gefunden</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="MWSKZ_NOT_DEFINED">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax code not defined in calculation procedure</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="MWSKZ_NOT_VALID">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax code not allowed in the calculation procedure</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="PARAMETER_ERROR">
+              <ifr:descriptor>
+                <ifr:description language="EN">Aufruf einer Funktion mit falschen Parametern</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="TXJCD_NOT_VALID">
+              <ifr:descriptor>
+                <ifr:description language="EN">Jurisdiction nict zulไssig oder fehlerhafte Lไnge</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+            <ifr:exception name="UNKNOWN_ERROR">
+              <ifr:descriptor>
+                <ifr:description language="EN">Unbekannter Fehler</ifr:description>
+              </ifr:descriptor>
+            </ifr:exception>
+          </ifr:exceptions>
+          <ifr:parameters>
+            <ifr:parameter name="E_FWAST">
+              <ifr:descriptor>
+                <ifr:description language="EN">Calculated deductible tax</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSET.FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:referenceField>WAERS</ifr:referenceField>
+                    <ifr:referenceTable>BKPF</ifr:referenceTable>
+                    <ifr:offset1>63</ifr:offset1>
+                    <ifr:offset2>103</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>13</ifr:length>
+                    <ifr:internalLength1>7</ifr:internalLength1>
+                    <ifr:internalLength2>7</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>out</ifr:direction>
+                <ifr:class>export</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="E_FWNAV">
+              <ifr:descriptor>
+                <ifr:description language="EN">Non-deductible tax calculated (total)</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSET.FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:referenceField>WAERS</ifr:referenceField>
+                    <ifr:referenceTable>BKPF</ifr:referenceTable>
+                    <ifr:offset1>63</ifr:offset1>
+                    <ifr:offset2>103</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>13</ifr:length>
+                    <ifr:internalLength1>7</ifr:internalLength1>
+                    <ifr:internalLength2>7</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>out</ifr:direction>
+                <ifr:class>export</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="E_FWNVV">
+              <ifr:descriptor>
+                <ifr:description language="EN">Non-deductible tax calculated which is allocated</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSET.FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:referenceField>WAERS</ifr:referenceField>
+                    <ifr:referenceTable>BKPF</ifr:referenceTable>
+                    <ifr:offset1>63</ifr:offset1>
+                    <ifr:offset2>103</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>13</ifr:length>
+                    <ifr:internalLength1>7</ifr:internalLength1>
+                    <ifr:internalLength2>7</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>out</ifr:direction>
+                <ifr:class>export</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="E_FWSTE">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax calculated (total)</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSET.FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:referenceField>WAERS</ifr:referenceField>
+                    <ifr:referenceTable>BKPF</ifr:referenceTable>
+                    <ifr:offset1>63</ifr:offset1>
+                    <ifr:offset2>103</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="FWSTE">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>13</ifr:length>
+                    <ifr:internalLength1>7</ifr:internalLength1>
+                    <ifr:internalLength2>7</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>out</ifr:direction>
+                <ifr:class>export</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_ACCNT_EXT">
+              <ifr:descriptor>
+                <ifr:description language="EN">Kontonummer ext. Steuersystem (Befreiung)</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="COM_TAX.ACCNT_NO">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:offset1>30</ifr:offset1>
+                    <ifr:offset2>60</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="KONTO">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>16</ifr:length>
+                    <ifr:internalLength1>16</ifr:internalLength1>
+                    <ifr:internalLength2>32</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_BUKRS">
+              <ifr:descriptor>
+                <ifr:description language="EN">Company code</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BKPF.BUKRS">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:checkTable>T001</ifr:checkTable>
+                    <ifr:offset1>3</ifr:offset1>
+                    <ifr:offset2>6</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="BUKRS">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_MWSKZ">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax code</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSEG.MWSKZ">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:checkTable>T007A</ifr:checkTable>
+                    <ifr:offset1>66</ifr:offset1>
+                    <ifr:offset2>132</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="MWSKZ">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>2</ifr:length>
+                    <ifr:internalLength1>2</ifr:internalLength1>
+                    <ifr:internalLength2>4</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>2</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_PROTOKOLL">
+              <ifr:descriptor>
+                <ifr:description language="EN">Change type from C (VCA 13.10.2006)</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:abapType>
+                  <ifr:definition>
+                    <ifr:abapType>g</ifr:abapType>
+                    <ifr:internalLength1>0</ifr:internalLength1>
+                    <ifr:internalLength2>0</ifr:internalLength2>
+                    <ifr:internalLength4>0</ifr:internalLength4>
+                  </ifr:definition>
+                </ifr:abapType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>false</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_PRSDT">
+              <ifr:descriptor>
+                <ifr:description language="EN">Datum zur Steuerfindung</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="KOMK.PRSDT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:offset1>189</ifr:offset1>
+                    <ifr:offset2>372</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="PRSDT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>DATS</ifr:type>
+                    <ifr:abapType>D</ifr:abapType>
+                    <ifr:length>8</ifr:length>
+                    <ifr:internalLength1>8</ifr:internalLength1>
+                    <ifr:internalLength2>16</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_TAXPS">
+              <ifr:descriptor>
+                <ifr:description language="EN">Change type from C (VCA 13.10.2006)</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:scalarType name="TAX_POSNR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>NUMC</ifr:type>
+                    <ifr:abapType>N</ifr:abapType>
+                    <ifr:length>6</ifr:length>
+                    <ifr:internalLength1>6</ifr:internalLength1>
+                    <ifr:internalLength2>12</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>6</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_TXJCD">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax jurisdiction code</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSEG.TXJCD">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:checkTable>TTXJ</ifr:checkTable>
+                    <ifr:offset1>1104</ifr:offset1>
+                    <ifr:offset2>1894</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="TXJCD">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>15</ifr:length>
+                    <ifr:internalLength1>15</ifr:internalLength1>
+                    <ifr:internalLength2>30</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>15</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+                <ifr:defaultDefinition>SPACE</ifr:defaultDefinition>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_WAERS">
+              <ifr:descriptor>
+                <ifr:description language="EN">Currency key</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BKPF.WAERS">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:checkTable>TCURC</ifr:checkTable>
+                    <ifr:offset1>192</ifr:offset1>
+                    <ifr:offset2>384</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="WAERS">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CUKY</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>5</ifr:length>
+                    <ifr:internalLength1>5</ifr:internalLength1>
+                    <ifr:internalLength2>10</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>5</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_WRBTR">
+              <ifr:descriptor>
+                <ifr:description language="EN">Net amount</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSEG.WRBTR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:referenceField>WAERS</ifr:referenceField>
+                    <ifr:referenceTable>BKPF</ifr:referenceTable>
+                    <ifr:offset1>77</ifr:offset1>
+                    <ifr:offset2>147</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="WRBTR">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>13</ifr:length>
+                    <ifr:internalLength1>7</ifr:internalLength1>
+                    <ifr:internalLength2>7</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="I_ZBD1P">
+              <ifr:descriptor>
+                <ifr:description language="EN">Cash discount percentage rate</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:field name="BSEG.ZBD1P">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:offset1>547</ifr:offset1>
+                    <ifr:offset2>966</ifr:offset2>
+                  </ifr:properties>
+                </ifr:field>
+                <ifr:scalarType name="DZBD1P">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>DEC</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>5</ifr:length>
+                    <ifr:internalLength1>3</ifr:internalLength1>
+                    <ifr:internalLength2>3</ifr:internalLength2>
+                    <ifr:decimals>3</ifr:decimals>
+                    <ifr:outputLength>6</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+                <ifr:defaultDefinition>0</ifr:defaultDefinition>
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>in</ifr:direction>
+                <ifr:class>import</ifr:class>
+                <ifr:type>scalar</ifr:type>
+                <ifr:optional>true</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+            <ifr:parameter name="T_MWDAT">
+              <ifr:descriptor>
+                <ifr:description language="EN">Table of tax values and percentage rates</ifr:description>
+              </ifr:descriptor>
+              <ifr:definition>
+                <ifr:complexType name="RTAX1U15" type="structure" xlink:role="type" xlink:href="/Content?TYPE=type&amp;NAME=RTAX1U15" xmlns:ifr="urn:sap-com:ifr:v2:metamodel" xmlns:xlink="http://www.w3.org/1999/xlink" />
+              </ifr:definition>
+              <ifr:properties>
+                <ifr:direction>inout</ifr:direction>
+                <ifr:class>tables</ifr:class>
+                <ifr:type>structure</ifr:type>
+                <ifr:optional>false</ifr:optional>
+                <ifr:basedOnDictionaryReference>true</ifr:basedOnDictionaryReference>
+              </ifr:properties>
+            </ifr:parameter>
+          </ifr:parameters>
+        </ifr:definition>
+      </ifr:container>
+    </wsdl:operation>
+    <s0:type name="RTAX1U15">
+      <ifr:container xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+        <ifr:descriptor>
+          <ifr:description language="EN">Tax Rate and Tax Amount for a Tax Code</ifr:description>
+        </ifr:descriptor>
+        <ifr:properties>
+          <ifr:sourceSystem />
+          <ifr:sourceClient>240</ifr:sourceClient>
+          <ifr:release>620 </ifr:release>
+          <ifr:category>structure</ifr:category>
+          <ifr:unicode1>true</ifr:unicode1>
+          <ifr:unicode2>true</ifr:unicode2>
+          <ifr:isFlatStructure>true</ifr:isFlatStructure>
+        </ifr:properties>
+        <ifr:definition>
+          <ifr:internalLength1>83</ifr:internalLength1>
+          <ifr:internalLength2>142</ifr:internalLength2>
+          <ifr:fields>
+            <ifr:field name="WMWST" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax amount in document currency</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:referenceField>WAERS</ifr:referenceField>
+                <ifr:referenceTable>BKPF</ifr:referenceTable>
+                <ifr:offset1>0</ifr:offset1>
+                <ifr:offset2>0</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="WMWST">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>13</ifr:length>
+                    <ifr:internalLength1>7</ifr:internalLength1>
+                    <ifr:internalLength2>7</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="MSATZ" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax rate</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>7</ifr:offset1>
+                <ifr:offset2>7</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="MSATZ_F05L">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>true</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>DEC</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>7</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>4</ifr:internalLength2>
+                    <ifr:decimals>3</ifr:decimals>
+                    <ifr:outputLength>9</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KTOSL" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Transaction Key</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>11</ifr:offset1>
+                <ifr:offset2>12</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KTOSL">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>3</ifr:length>
+                    <ifr:internalLength1>3</ifr:internalLength1>
+                    <ifr:internalLength2>6</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>3</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="TXJCD" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Jurisdiction for Tax Calculation - Tax Jurisdiction Code</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>14</ifr:offset1>
+                <ifr:offset2>18</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="TXJCD">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>15</ifr:length>
+                    <ifr:internalLength1>15</ifr:internalLength1>
+                    <ifr:internalLength2>30</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>15</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KNUMH" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Condition record number</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>29</ifr:offset1>
+                <ifr:offset2>48</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KNUMH">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KBETR" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Rate (condition amount or percentage) where no scale exists</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:referenceField>KONWA</ifr:referenceField>
+                <ifr:referenceTable>RV13A</ifr:referenceTable>
+                <ifr:offset1>39</ifr:offset1>
+                <ifr:offset2>68</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KBETR_KOND">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>true</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>11</ifr:length>
+                    <ifr:internalLength1>6</ifr:internalLength1>
+                    <ifr:internalLength2>6</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>16</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KAWRT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Condition base value</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:referenceField>AWEI1</ifr:referenceField>
+                <ifr:referenceTable>RV61A</ifr:referenceTable>
+                <ifr:offset1>45</ifr:offset1>
+                <ifr:offset2>74</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KAWRT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>true</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CURR</ifr:type>
+                    <ifr:abapType>P</ifr:abapType>
+                    <ifr:length>15</ifr:length>
+                    <ifr:internalLength1>8</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>2</ifr:decimals>
+                    <ifr:outputLength>21</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="HKONT" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">General Ledger Account</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>53</ifr:offset1>
+                <ifr:offset2>82</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="HKONT">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>10</ifr:length>
+                    <ifr:internalLength1>10</ifr:internalLength1>
+                    <ifr:internalLength2>20</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>10</ifr:outputLength>
+                    <ifr:conversionExit>ALPHA</ifr:conversionExit>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="KSCHL" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Condition type</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>63</ifr:offset1>
+                <ifr:offset2>102</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="KSCHL">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>4</ifr:length>
+                    <ifr:internalLength1>4</ifr:internalLength1>
+                    <ifr:internalLength2>8</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>4</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="TXJCD_DEEP" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Jurisdiction for Tax Calculation - Tax Jurisdiction Code</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>67</ifr:offset1>
+                <ifr:offset2>110</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="TXJCD">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>true</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>15</ifr:length>
+                    <ifr:internalLength1>15</ifr:internalLength1>
+                    <ifr:internalLength2>30</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>15</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+            <ifr:field name="TXJLV" category="simple" xmlns:ifr="urn:sap-com:ifr:v2:metamodel">
+              <ifr:descriptor>
+                <ifr:description language="EN">Tax jurisdiction code level</ifr:description>
+              </ifr:descriptor>
+              <ifr:properties>
+                <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                <ifr:offset1>82</ifr:offset1>
+                <ifr:offset2>140</ifr:offset2>
+              </ifr:properties>
+              <ifr:definition>
+                <ifr:scalarType name="TXJCD_LEVEL">
+                  <ifr:properties>
+                    <ifr:helpValuesSupported>false</ifr:helpValuesSupported>
+                    <ifr:fixedValuesListDefined>false</ifr:fixedValuesListDefined>
+                    <ifr:mixedCaseSupported>false</ifr:mixedCaseSupported>
+                    <ifr:signedNumber>false</ifr:signedNumber>
+                  </ifr:properties>
+                  <ifr:definition>
+                    <ifr:type>CHAR</ifr:type>
+                    <ifr:abapType>C</ifr:abapType>
+                    <ifr:length>1</ifr:length>
+                    <ifr:internalLength1>1</ifr:internalLength1>
+                    <ifr:internalLength2>2</ifr:internalLength2>
+                    <ifr:decimals>0</ifr:decimals>
+                    <ifr:outputLength>1</ifr:outputLength>
+                  </ifr:definition>
+                </ifr:scalarType>
+              </ifr:definition>
+            </ifr:field>
+          </ifr:fields>
+        </ifr:definition>
+      </ifr:container>
+    </s0:type>
+  </wsdl:binding>
+  <wsdl:binding name="dummy.Binding" type="s0:dummy.PortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+  </wsdl:binding>
+  <wsdl:message name="YBAPI_CALCULATE_TAX_FROM_NET.Input">
+    <wsdl:part name="parameters" element="s0:YBAPI_CALCULATE_TAX_FROM_NET" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+  </wsdl:message>
+  <wsdl:message name="YBAPI_CALCULATE_TAX_FROM_NET.Output">
+    <wsdl:part name="parameters" element="s0:YBAPI_CALCULATE_TAX_FROM_NET.Response" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+  </wsdl:message>
+  <wsdl:message name="YBAPI_CALCULATE_TAX_FROM_NET.Exception">
+    <wsdl:part name="parameters" element="s0:YBAPI_CALCULATE_TAX_FROM_NET.Exception" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+  </wsdl:message>
+</wsdl:definitions>

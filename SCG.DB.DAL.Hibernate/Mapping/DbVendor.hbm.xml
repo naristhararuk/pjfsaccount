@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbVendor,SCG.DB.DTO" table="DbVendor">
+
+		<id name="VendorID" column="VendorID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="VendorCode" type="String" name="VendorCode" not-null="true" length="20" />
+		<property column="VendorTitle" type="String" name="VendorTitle" length="50" />
+		<property column="VendorName1" type="String" name="VendorName1" not-null="true" length="100" />
+		<property column="VendorName2" type="String" name="VendorName2" not-null="true" length="100" />
+		<property column="Street" type="String" name="Street" length="100" />
+		<property column="City" type="String" name="City" length="100" />
+		<property column="District" type="String" name="District" length="100" />
+		<property column="Country" type="String" name="Country" length="100" />
+		<property column="PostalCode" type="String" name="PostalCode" length="20" />
+		<property column="TaxNo1" type="String" name="TaxNo1" length="20" />
+		<property column="TaxNo2" type="String" name="TaxNo2" length="20" />
+		<property column="BlockDelete" type="Boolean" name="BlockDelete" />
+		<property column="BlockPost" type="Boolean" name="BlockPost" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="TaxNo3" type="String" name="TaxNo3" length="13" />
+    <property column="TaxNo4" type="String" name="TaxNo4" length="20" />
+
+	</class>
+</hibernate-mapping>

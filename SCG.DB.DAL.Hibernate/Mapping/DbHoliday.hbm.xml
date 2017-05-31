@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SCG.DB.DTO.DbHoliday,SCG.DB.DTO" table="DbHoliday">
+
+    <id name="Id" column="Id" type="Int32"  unsaved-value="0" >
+      <generator class="native"/>
+    </id>
+    <property column="HolidayProfileId" type="Int32" name="HolidayProfileId"/>
+    <property column="Date" type="DateTime" name="Date" />
+    <property column="Description" type="String" name="Description"/>
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    <property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+  </class>
+</hibernate-mapping>

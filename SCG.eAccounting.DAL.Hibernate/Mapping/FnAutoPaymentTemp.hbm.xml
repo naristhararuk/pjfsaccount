@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnAutoPaymentTemp,SCG.eAccounting.DTO" table="FnAutoPaymentTemp">
+
+		<id name="AutoPaymentID" column="AutoPaymentID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+    <property column="DocumentID" type="Int64" name="DocumentID" not-null="false" />
+    <property column="FIDoc" type="String" name="FIDoc" not-null="false" length="15" />
+		<property column="Status" type="Int32" name="Status" not-null="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="false" />
+    <property column="ChequeNumber" type="String" name="ChequeNumber" length="50" />
+    <property column="ClearingDocID" type="String" name="ClearingDocID" length="50" />
+		<property column="ChequeBankName" type="String" name="ChequeBankName" length="200" />
+    <property column="ChequeDate" type="System.Nullable`1[[System.DateTime]]" name="ChequeDate"   />
+    <property column="PayeeBankAccountNumber" type="String" name="PayeeBankAccountNumber" length="200" />
+		<property column="PayeeBankName" type="String" name="PayeeBankName" length="50" />
+		<property column="Amount" type="Decimal" name="Amount" />
+    <property column="PaymentDate" type="System.Nullable`1[[System.DateTime]]" name="PaymentDate"  />
+    <property column="CreBy" type="Int64" name="CreBy"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" />
+		<property column="UpdPgm" type="String" name="UpdPgm" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<property column="CurrencyDoc" type="String" name="CurrencyDoc" length="10" />
+		<property column="CurrencyPay" type="String" name="CurrencyPay" length="10" />
+    <property column="companycode" type="String" name="companycode" length="10" not-null="false"/>
+    <property column="year" type="String" name="year" length="4" not-null="false"/>
+	</class>
+</hibernate-mapping>

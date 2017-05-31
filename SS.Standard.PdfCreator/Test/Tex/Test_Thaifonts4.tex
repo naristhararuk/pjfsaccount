@@ -1,0 +1,172 @@
+\documentclass[twocolumn,a4paper]{report}
+
+
+\usepackage[english,thai]{babel}
+\usepackage{thswitch}
+
+\usepackage{geometry}
+
+
+\def\thairmdefault{angsana}
+
+\setlength{\columnsep}{0.75cm} \setlength{\columnseprule}{1pt}
+
+
+\geometry{top=1in,bottom=1in,left=1.in,right=1in}
+
+
+\renewcommand{\thesection}{\arabic{section}}
+
+
+
+
+\newcommand{\poem}{%
+เป็นมนุษย์สุดประเสริฐเลิศคุณค่า\\
+กว่าบรรดาฝูงสัตว์เดรัจฉาน \\
+จงฝ่าฟันพัฒนาวิชาการ \\
+อย่าล้างผลาญฤๅเข่นฆ่าบีฑาใคร\\
+ไม่ถือโทษโกรธแช่งซัดฮึดฮัดด่า \\
+หัดอภัยเหมือนกีฬาอัชฌาสัย \\
+ปฏิบัติประพฤติกฎกำหนดใจ \\
+พูดจาให้จ๊ะๆ จ๋าๆ น่าฟังเอยฯ %
+}
+\newcommand{\Allpoems}[1]{%
+\usefont{LTH}{#1}{m}{n}\selectfont
+\poem\newline
+
+\usefont{LTH}{#1}{b}{n}\selectfont
+\poem\newline
+
+\usefont{LTH}{#1}{m}{it}\selectfont
+\poem\newline
+
+\usefont{LTH}{#1}{b}{it}\selectfont
+\poem\newline %
+}
+
+
+\newcommand{\quickfox}{The quick brown fox jumps over the lazy dog.}
+\newcommand{\Allquickfoxs}[1]{%
+\usefont{LTH}{#1}{m}{n}\selectfont
+\quickfox\newline
+\usefont{LTH}{#1}{b}{n}\selectfont
+\quickfox\newline
+\usefont{LTH}{#1}{m}{it}\selectfont
+\quickfox\newline
+\usefont{LTH}{#1}{b}{it}\selectfont
+\quickfox\newline
+\usefont{LTH}{#1}{m}{n}\selectfont
+\MakeUppercase{\quickfox}\newline
+\usefont{LTH}{#1}{b}{n}\selectfont
+\MakeUppercase{\quickfox}\newline
+\usefont{LTH}{#1}{m}{it}\selectfont
+\MakeUppercase{\quickfox}\newline
+\usefont{LTH}{#1}{b}{it}\selectfont
+\MakeUppercase{\quickfox}\newline %
+}
+
+
+\newcommand{\specialchar}{ที่ ท่า ทิ้ง ท้า กิ๊ง ก๊ง ตี๋ ต๋า บ่น ป่น, บ้น ป้น, บ๊น ป๊น, บ๋น ป๋น บิน ปิน บีน ปีน บิ่น ปิ่น บัน ปั่น บั่น ก็ ป็ ญ ญุ ญู ญฺ ฐ ฐุ ฐู ฐฺ กุ ฎุ ฎู ฎฺ ฏุ ฏู ฏฺ บำ บ่ำ ปำ ป่ำ -\textyamakkan{} \textfongmun{} \textangkhankhu{} \textkhomut{} - -- --- `` '' ff fi tt ti AV}
+\newcommand{\Allspecialchar}[1]{%
+\usefont{LTH}{#1}{m}{n}\selectfont
+\specialchar\newline
+\usefont{LTH}{#1}{b}{n}\selectfont
+\specialchar\newline
+\usefont{LTH}{#1}{m}{it}\selectfont
+\specialchar\newline
+\usefont{LTH}{#1}{b}{it}\selectfont
+\specialchar\newline %
+}
+
+
+\newcommand{\Testfont}[2]{%
+\section{\usefont{LTH}{#1}{b}{n}\selectfont \underline{#2}}
+\subsection{ตัวอย่างประโยคภาษาไทย} \Allpoems{#1}
+\newpage
+
+\subsection{ตัวอย่างภาษาอังกฤษ} \Allquickfoxs{#1}
+
+\subsection{การจัดระดับตัวอักษรและตัวอักษรพิเศษ}
+\noindent \Allspecialchar{#1} \vfil %
+}
+
+
+
+\title{\bfseries การทดสอบฟอนต์ภาษาไทยใน \LaTeXe\\ %
+(ภาค~4)}
+\author{\textbf{\LARGE Anonymous}}
+
+
+
+
+\begin{document}
+
+\pagestyle{plain}
+
+\maketitle
+
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{NECTEC Fonts}
+
+\Testfont{norasi}{Norasi}
+
+\Testfont{kinnari}{Kinnari}
+
+\Testfont{garuda}{Garuda}
+
+\Testfont{loma}{Loma}
+
+\Testfont{purisa}{Purisa}
+
+\Testfont{ttype}{Ttype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Windows Fonts}
+
+\Testfont{angsana}{Angsana~New}
+
+\Testfont{browallia}{Browallia~New}
+
+\Testfont{cordia}{Cordia~New}
+
+\Testfont{uangsana}{Angsana~UPC}
+
+\Testfont{ubrowallia}{Browallia~UPC}
+
+\Testfont{ucordia}{Cordia~UPC}
+
+\Testfont{udillenia}{Dillenia~UPC}
+
+%\Testfont{ueucrosia}{Eucrosia~UPC}
+
+\Testfont{ufreesia}{Freesia~UPC}
+
+\Testfont{uiris}{Iris~UPC}
+
+\Testfont{ujasmine}{Jasmine~UPC}
+
+\Testfont{ukodchiang}{Kodchiang~UPC}
+
+\Testfont{ulily}{Lily~UPC}
+
+\Testfont{tahoma}{Tahoma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{JS Fonts}
+
+\Testfont{jswannaree}{JS~Wannaree}
+
+\Testfont{jswansika}{JS~Wansika}
+
+\Testfont{jswanida}{JS~Wanida}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

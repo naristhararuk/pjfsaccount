@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SS.SU.DTO.SuRole,SS.SU.DTO" table="SuRole">
+
+		<id name="RoleID" column="RoleID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+
+    <!--<property column="RoleCode" type="String" name="RoleCode" length="20" />
+    <property column="RoleName" type="String" name="RoleName" length="100" />
+    <property column="ReceiveDocument" type="Boolean" name="ReceiveDocument" />
+    <property column="VerifyDocument" type="Boolean" name="VerifyDocument" />
+    <property column="VerifyMinLimit" type="Double" name="VerifyMinLimit" />
+    <property column="VerifyMaxLimit" type="Double" name="VerifyMaxLimit" />
+    <property column="ApproveVerifyDocument" type="Boolean" name="ApproveVerifyDocument" />
+    <property column="ApproveVerifyMinLimit" type="Double" name="ApproveVerifyMinLimit" />
+    <property column="ApproveVerifyMaxLimit" type="Double" name="ApproveVerifyMaxLimit" />
+    <property column="VerifyPayment" type="Boolean" name="VerifyPayment" />
+    <property column="ApproveVerifyPayment" type="Boolean" name="ApproveVerifyPayment" />
+    <property column="CounterCashier" type="Boolean" name="CounterCashier" />-->
+		<!--<property column="Comment" type="String" name="Comment" length="500" />-->
+
+		<property column="RoleCode" type="String" name="RoleCode" not-null="true" length="20" />
+		<property column="RoleName" type="String" name="RoleName" not-null="true" length="100" />
+		<property column="ReceiveDocument" type="Boolean" name="ReceiveDocument" />
+		<property column="VerifyDocument" type="Boolean" name="VerifyDocument" />
+		<property column="VerifyMinLimit" type="Double" name="VerifyMinLimit" />
+		<property column="VerifyMaxLimit" type="Double" name="VerifyMaxLimit" />
+		<property column="ApproveVerifyDocument" type="Boolean" name="ApproveVerifyDocument" />
+		<property column="ApproveVerifyMinLimit" type="Double" name="ApproveVerifyMinLimit" />
+		<property column="ApproveVerifyMaxLimit" type="Double" name="ApproveVerifyMaxLimit" />
+		<property column="VerifyPayment" type="Boolean" name="VerifyPayment" />
+		<property column="ApproveVerifyPayment" type="Boolean" name="ApproveVerifyPayment" />
+		<property column="CounterCashier" type="Boolean" name="CounterCashier" />
+
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="AllowMultipleApproveAccountant" type="Boolean" name="AllowMultipleApproveAccountant" />
+    <property column="AllowMultipleApprovePayment" type="Boolean" name="AllowMultipleApprovePayment" />
+
+    <property column="LimitAmountForVerifierChange" type="Double" name="LimitAmountForVerifierChange" />
+    <property column="UseCustomizationLimitAmount" type="Boolean" name="UseCustomizationLimitAmount" />
+		
+	</class>
+</hibernate-mapping>

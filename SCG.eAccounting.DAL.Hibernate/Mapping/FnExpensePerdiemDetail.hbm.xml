@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnExpensePerdiemDetail,SCG.eAccounting.DTO" table="FnExpensePerdiemDetail">
+
+		<id name="ExpensePerdiemDetailID" column="ExpensePerdiemDetailID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="Description" type="String" name="Description" length="100" />
+		<property column="CurrencyID" type="Int64" name="CurrencyID" />
+		<property column="ExchangeRate" type="Double" name="ExchangeRate" />
+		<property column="Amount" type="Double" name="Amount" />
+		<many-to-one name="ExpensePerdiem" column="ExpensePerdiemID" class="SCG.eAccounting.DTO.FnExpensePerdiem,SCG.eAccounting.DTO" />
+		
+	</class>
+</hibernate-mapping>

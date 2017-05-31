@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.FN.DTO.FnCashier, SCG.FN.DTO" table="FnCashier">
+		<id name="CashierID" column="CashierID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Organization" column="OrganizationID" class="SS.SU.DTO.SuOrganization, SS.SU.DTO" />
+		<many-to-one name="Division" column="DivisionID" class="SS.SU.DTO.SuDivision, SS.SU.DTO" />
+		<many-to-one name="User" column="UserID" class="SS.SU.DTO.SuUser, SS.SU.DTO" />
+		<property column="CashierCode" type="String" name="CashierCode" length="5" not-null="true" />
+		<property column="CashierLevel" type="String" name="CashierLevel" length="1" not-null="true" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+	</class>
+</hibernate-mapping>

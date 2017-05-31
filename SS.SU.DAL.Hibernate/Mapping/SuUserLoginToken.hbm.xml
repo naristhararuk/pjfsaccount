@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SS.SU.DTO.SuUserLoginToken,SS.SU.DTO" table="SuUserLoginToken">
+
+    <id name="UserId" column="UserId" type="Int64" unsaved-value="0">
+      <generator class="assigned"/>
+    </id>
+    <property column="UserName" type="String" name="UserName" length="50" />
+    <property column="Token" type="String" name="Token"/>
+
+  </class>
+</hibernate-mapping>

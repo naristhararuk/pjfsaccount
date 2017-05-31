@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.FN.DTO.FnReceiptType,SCG.FN.DTO" table="FnReceiptType">
+
+		<id name="ReceiptTypeID" column="ReceiptTypeID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="ReceiptTypeCode" type="String" name="ReceiptTypeCode" length="50" not-null="true" />
+		<property column="RecFlag" type="String" name="RecFlag" length="1" />
+    <property column="AccID" type="String" name="AccID" length="20" />
+    <property column="AccName" type="String" name="AccName" length="100" />
+    <property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

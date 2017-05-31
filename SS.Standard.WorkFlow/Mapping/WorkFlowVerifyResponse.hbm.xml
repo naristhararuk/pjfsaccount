@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.Standard.WorkFlow.DTO.WorkFlowVerifyResponse,SS.Standard.WorkFlow" table="WorkFlowVerifyResponse">
+
+		<id name="WorkFlowVerifyResponseID" column="WorkFlowVerifyResponseID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="WorkFlowResponse" column="WorkFlowResponseID" class="SS.Standard.WorkFlow.DTO.WorkFlowResponse,SS.Standard.WorkFlow" />
+		<property column="BranchCode" type="String" name="BranchCode" length="20" />
+		<!--<property column="PaymentMethod" type="String" name="PaymentMethod" length="10" />-->
+		<property column="PostingDate" type="System.Nullable`1[[System.DateTime]]" name="PostingDate" />
+		<property column="BaseLineDate" type="System.Nullable`1[[System.DateTime]]" name="BaseLineDate" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+    <property column="AmountBeforeVerify" type="Double" name="AmountBeforeVerify" />
+    <property column="AmountVerified" type="Double" name="AmountVerified" />
+	</class>
+</hibernate-mapping>

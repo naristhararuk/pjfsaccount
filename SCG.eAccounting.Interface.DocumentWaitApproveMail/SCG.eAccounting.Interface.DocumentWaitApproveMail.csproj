@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24434D1C-86DD-4FCD-8A80-3881954B4371}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.Interface.DocumentWaitApproveMail</RootNamespace>
+    <AssemblyName>SCG.eAccounting.Interface.DocumentWaitApproveMail</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\SCG.eAccounting.Interface\</OutputPath>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\SCG.eAccounting.Interface\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate">
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\Factory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.eAccounting.BLL\SCG.eAccounting.BLL.csproj">
+      <Project>{A44769B3-3B65-411D-A878-D70E10F6B538}</Project>
+      <Name>SCG.eAccounting.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DTO\SCG.eAccounting.DTO.csproj">
+      <Project>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</Project>
+      <Name>SCG.eAccounting.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Interface.Utilities\SCG.eAccounting.Interface.Utilities.csproj">
+      <Project>{A5B1C7B5-E95B-476C-93D6-582541677F99}</Project>
+      <Name>SCG.eAccounting.Interface.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Query\SCG.eAccounting.Query.csproj">
+      <Project>{A133B337-8915-4934-BC9C-D26D30485147}</Project>
+      <Name>SCG.eAccounting.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.CommunicationService\SS.Standard.CommunicationService.csproj">
+      <Project>{A6C988C2-ED30-4DEB-ACA7-36340AC13C42}</Project>
+      <Name>SS.Standard.CommunicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.BLL\SS.SU.BLL.csproj">
+      <Project>{7BDC5E8F-976D-4AFA-95E0-66E1C3E23450}</Project>
+      <Name>SS.SU.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

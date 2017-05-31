@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.AvAdvanceDocument,SCG.eAccounting.DTO" table="AvAdvanceDocument">
+
+		<id name="AdvanceID" column="AdvanceID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="DocumentID" column="DocumentID" class="SCG.eAccounting.DTO.SCGDocument,SCG.eAccounting.DTO" />
+		<property column="TADocumentID" name="TADocumentID" type="System.Nullable`1[[System.Int64]]"/>
+		<many-to-one name="PBID" column="PBID" class="SCG.DB.DTO.Dbpb,SCG.DB.DTO" not-null="false"/>
+		<many-to-one name="ServiceTeamID" column="ServiceTeamID" class="SCG.DB.DTO.DbServiceTeam,SCG.DB.DTO" not-null="false" />
+		<property column="RequestDateOfAdvance" type="DateTime" name="RequestDateOfAdvance" not-null="true" />
+		<property column="DueDateOfRemittance" type="DateTime" name="DueDateOfRemittance" />
+		<property column="RequestDateOfRemittance" type="DateTime" name="RequestDateOfRemittance" not-null="true" />
+		<property column="ArrivalDate" type="System.Nullable`1[[System.DateTime]]" name="ArrivalDate"/>
+		<property column="Reason" type="String" name="Reason" length="100" />
+		<property column="PerDiemExRateUSD" type="Double" name="PerDiemExRateUSD" />
+		<property column="AdvanceType" type="String" name="AdvanceType" length="5" />
+    <property column="Amount" type="Double" name="Amount" />
+    <property column="RemittanceAmount" type="Double" name="RemittanceAmount" />
+    <property column="ExpenseAmount" type="Double" name="ExpenseAmount" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="MainCurrencyID" type="System.Nullable`1[[System.Int16]]" name="MainCurrencyID" />
+    <property column="MainCurrencyAmount" type="System.Nullable`1[[System.Double]]" name="MainCurrencyAmount" />
+    <property column="ExchangeRateMainToTHBCurrency" type="System.Nullable`1[[System.Double]]" name="ExchangeRateMainToTHBCurrency" />
+    <property column="ExchangeRateForLocalCurrency" type="System.Nullable`1[[System.Double]]" name="ExchangeRateForLocalCurrency" />
+    <property column="RemittanceAmountMainCurrency" type="System.Nullable`1[[System.Double]]" name="RemittanceAmountMainCurrency" />
+    <property column="ExpenseAmountMainCurrency" type="System.Nullable`1[[System.Double]]" name="ExpenseAmountMainCurrency" />
+    <property column="LocalCurrencyAmount" type="System.Nullable`1[[System.Double]]" name="LocalCurrencyAmount" />
+    <property column="IsRepOffice" name="IsRepOffice" type="System.Nullable`1[[System.Boolean]]"/>
+    <property column="RequestDateOfAdvanceApproved" type="System.Nullable`1[[System.DateTime]]" name="RequestDateOfAdvanceApproved"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,126 @@
+\documentclass[twocolumn,a4paper]{report}
+
+
+\usepackage[english,thai]{babel}
+\usepackage{thswitch}
+
+\usepackage{geometry}
+
+
+\setlength{\columnsep}{2cm} \setlength{\columnseprule}{1pt}
+
+\def\thairmdefault{angsana}
+
+
+\geometry{top=1in,bottom=1in,left=1.in,right=1in}
+
+
+
+
+
+
+\newcommand{\poem}{%
+เป็นมนุษย์สุดประเสริฐเลิศคุณค่า\\
+กว่าบรรดาฝูงสัตว์เดรัจฉาน \\
+จงฝ่าฟันพัฒนาวิชาการ \\
+อย่าล้างผลาญฤๅเข่นฆ่าบีฑาใคร\\
+ไม่ถือโทษโกรธแช่งซัดฮึดฮัดด่า \\
+หัดอภัยเหมือนกีฬาอัชฌาสัย \\
+ปฏิบัติประพฤติกฎกำหนดใจ \\
+พูดจาให้จ๊ะๆ จ๋าๆ น่าฟังเอยฯ %
+}
+
+\newcommand{\Choosefont}[2]{%
+\usefont{LTH}{#1}{m}{n}\selectfont
+\begin{center}{\Large \underline{#2}: ที่อยู่ปู่ป้าญู}\end{center}
+
+\usefont{LTH}{#1}{m}{n}\selectfont
+\poem\newline
+
+\usefont{LTH}{#1}{b}{n}\selectfont
+\poem\newline
+
+\usefont{LTH}{#1}{m}{it}\selectfont
+\poem\newline
+
+\usefont{LTH}{#1}{b}{it}\selectfont
+\poem %
+}
+
+
+
+\title{\bfseries การทดสอบฟอนต์ภาษาไทยใน \LaTeXe\\ %
+(ภาค~3)}
+\author{\textbf{\LARGE Anonymous}}
+
+
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents
+
+\fontsize{12}{14}\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{NECTEC Fonts}
+
+\Choosefont{norasi}{Norasi} \newpage
+\Choosefont{kinnari}{Kinnari} \vfil \pagebreak
+
+
+\Choosefont{garuda}{Garuda} \newpage
+\Choosefont{loma}{Loma} \vfil \pagebreak
+
+
+\Choosefont{purisa}{Purisa} \newpage
+\Choosefont{ttype}{Ttype} \vfil \pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{Windows Fonts}
+
+\Choosefont{angsana}{Angsana~New} \newpage
+\Choosefont{uangsana}{Angsana~UPC} \vfil \pagebreak
+
+
+\Choosefont{browallia}{Browallia~New} \newpage
+\Choosefont{ubrowallia}{Browallia~UPC} \vfil \pagebreak
+
+
+\Choosefont{cordia}{Cordia~New} \newpage
+\Choosefont{ucordia}{Cordia~UPC} \vfil \pagebreak
+
+
+\Choosefont{udillenia}{Dillenia~UPC} \newpage
+%\Choosefont{ueucrosia}{Eucrosia~UPC} \vfil
+\pagebreak
+
+
+\Choosefont{ufreesia}{Freesia~UPC} \newpage
+\Choosefont{uiris}{Iris~UPC} \vfil \pagebreak
+
+
+\Choosefont{ujasmine}{Jasmine~UPC} \newpage
+\Choosefont{ukodchiang}{Kodchiang~UPC} \vfil \pagebreak
+
+
+\Choosefont{ulily}{Lily~UPC} \newpage
+\Choosefont{tahoma}{Tahoma}\vfil \pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{JS Fonts}
+
+\Choosefont{jswannaree}{JS~Wannaree} \newpage
+\Choosefont{jswansika}{JS~Wansika}\vfil \pagebreak
+
+
+\Choosefont{jswanida}{JS~Wanida} \newpage \pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

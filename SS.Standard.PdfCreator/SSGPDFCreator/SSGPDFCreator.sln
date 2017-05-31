@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSGPDFCreator", "SSGPDFCreator.csproj", "{658FAFAA-5FE7-4684-AA17-E88904C1F696}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF913D7A-8AC5-47A2-8682-A076178C5712}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		SSGPDFCreator.vsmdi = SSGPDFCreator.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Test\Test.csproj", "{C4D8EB42-8C66-4B86-8AEA-76E44E76A578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSGPDFCreatorService", "..\SSGPDFCreatorService\SSGPDFCreatorService.csproj", "{38A94FFF-3607-4544-8610-042F63D069CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSGPDFCreatorWebService", "..\SSGPDFCreatorWebService\SSGPDFCreatorWebService.csproj", "{15BA07F9-1843-4DAF-A01A-97522F349A4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{658FAFAA-5FE7-4684-AA17-E88904C1F696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{658FAFAA-5FE7-4684-AA17-E88904C1F696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{658FAFAA-5FE7-4684-AA17-E88904C1F696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{658FAFAA-5FE7-4684-AA17-E88904C1F696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D8EB42-8C66-4B86-8AEA-76E44E76A578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D8EB42-8C66-4B86-8AEA-76E44E76A578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D8EB42-8C66-4B86-8AEA-76E44E76A578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D8EB42-8C66-4B86-8AEA-76E44E76A578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A94FFF-3607-4544-8610-042F63D069CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A94FFF-3607-4544-8610-042F63D069CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A94FFF-3607-4544-8610-042F63D069CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A94FFF-3607-4544-8610-042F63D069CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15BA07F9-1843-4DAF-A01A-97522F349A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15BA07F9-1843-4DAF-A01A-97522F349A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15BA07F9-1843-4DAF-A01A-97522F349A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15BA07F9-1843-4DAF-A01A-97522F349A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

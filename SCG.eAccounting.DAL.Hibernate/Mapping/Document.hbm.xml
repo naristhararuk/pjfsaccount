@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.SCGDocument, SCG.eAccounting.DTO" table="[Document]">
+		<id name="DocumentID" column="DocumentID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<!--<property column="RequesterID" type="long" name="RequesterID" />
+		<property column="CreatorID" type="long" name="CreatorID" />
+		<property column="ReceiverID" type="long" name="ReceiverID" />
+		<property column="ApproverID" type="long" name="ApproverID" />-->
+		<property column="DocumentNo" type="string" name="DocumentNo" length="20" />
+    <many-to-one name="DocumentType" column="DocumentTypeID" class="SS.Standard.WorkFlow.DTO.DocumentType,SS.Standard.WorkFlow" />
+    <property column="DocumentStatus" type="string" name="DocumentStatus" length="2" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+
+		<many-to-one name="Organization" column="OrganizationID" class="SS.SU.DTO.SuOrganization, SS.SU.DTO" />
+		<many-to-one name="Creator" column="CreatorID" class="SS.SU.DTO.SuUser, SS.SU.DTO" />
+		<many-to-one name="Requester" column="RequesterID" class="SS.SU.DTO.SuUser, SS.SU.DTO" />
+		<many-to-one name="Receiver" column="ReceiverID" class="SS.SU.DTO.SuUser, SS.SU.DTO" />
+		<many-to-one name="Approver" column="ApproverID" class="SS.SU.DTO.SuUser, SS.SU.DTO" />
+	</class>
+</hibernate-mapping>

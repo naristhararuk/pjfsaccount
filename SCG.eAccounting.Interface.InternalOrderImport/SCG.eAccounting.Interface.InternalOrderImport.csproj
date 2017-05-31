@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00A00624-2972-4CF2-B3B5-A9EF4F7F5AAF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.Interface.InternalOrderImport</RootNamespace>
+    <AssemblyName>SCG.eAccounting.Interface.InternalOrderImport</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\SCG.eAccounting.Interface\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\SCG.eAccounting.Interface\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20820.29330, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net, Version=1.2.0.2, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="FissionSoft.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\FissionSoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.6.3.22451, Culture=neutral, PublicKeyToken=4f86767c9b519a06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.0.3, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TeamSystem.Data.UnitTesting, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="StringTemplate, Version=3.0.1.17176, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceConfig\DLL\StringTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\Factory.cs" />
+    <Compile Include="Importer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.BLL\SCG.DB.BLL.csproj">
+      <Project>{F710CA0A-7490-4B61-AE96-0E46F7B7702C}</Project>
+      <Name>SCG.DB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DAL.Hibernate\SCG.DB.DAL.Hibernate.csproj">
+      <Project>{107882FA-CD93-4D59-9C58-6AA554BA3883}</Project>
+      <Name>SCG.DB.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DAL\SCG.DB.DAL.csproj">
+      <Project>{C8A062D6-03AE-4376-A714-2792B7055899}</Project>
+      <Name>SCG.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Helper\SCG.DB.Helper.csproj">
+      <Project>{A7A80FAE-7432-442D-BD5B-B931B72A9FEC}</Project>
+      <Name>SCG.DB.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Query.Hibernate\SCG.DB.Query.Hibernate.csproj">
+      <Project>{28B95EEB-670E-4F5E-AFBD-240BF193C7C1}</Project>
+      <Name>SCG.DB.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Query\SCG.DB.Query.csproj">
+      <Project>{66CBB214-DA80-40EF-917C-DEB3DAC72AF7}</Project>
+      <Name>SCG.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.BLL\SCG.eAccounting.BLL.csproj">
+      <Project>{A44769B3-3B65-411D-A878-D70E10F6B538}</Project>
+      <Name>SCG.eAccounting.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DAL.Hibernate\SCG.eAccounting.DAL.Hibernate.csproj">
+      <Project>{9D4A8C5C-D6CE-4E73-9727-08237CB5342E}</Project>
+      <Name>SCG.eAccounting.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DAL\SCG.eAccounting.DAL.csproj">
+      <Project>{D8377A07-E8CF-4EFD-9814-5C10EFF09281}</Project>
+      <Name>SCG.eAccounting.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DTO\SCG.eAccounting.DTO.csproj">
+      <Project>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</Project>
+      <Name>SCG.eAccounting.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Helper\SCG.eAccounting.Helper.csproj">
+      <Project>{8242573D-841E-46C5-A1EE-9D67685C5229}</Project>
+      <Name>SCG.eAccounting.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Interface.Utilities\SCG.eAccounting.Interface.Utilities.csproj">
+      <Project>{A5B1C7B5-E95B-476C-93D6-582541677F99}</Project>
+      <Name>SCG.eAccounting.Interface.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Query.Hibernate\SCG.eAccounting.Query.Hibernate.csproj">
+      <Project>{62013F38-D560-4FB7-A679-2EE341EC4D39}</Project>
+      <Name>SCG.eAccounting.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Query\SCG.eAccounting.Query.csproj">
+      <Project>{A133B337-8915-4934-BC9C-D26D30485147}</Project>
+      <Name>SCG.eAccounting.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.SAP.BAPI.Service\SCG.eAccounting.SAP.BAPI.Service.csproj">
+      <Project>{07467D12-9910-4545-AC73-2B5E44336A1D}</Project>
+      <Name>SCG.eAccounting.SAP.BAPI.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.SAP.BAPI\SCG.eAccounting.SAP.BAPI.csproj">
+      <Project>{D952F23A-B5C2-4447-B2A9-A78219F3481F}</Project>
+      <Name>SCG.eAccounting.SAP.BAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.SAP\SCG.eAccounting.SAP.csproj">
+      <Project>{DB3E9E59-A972-4CAD-9328-8569D4F6980B}</Project>
+      <Name>SCG.eAccounting.SAP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.BLL\SS.DB.BLL.csproj">
+      <Project>{8A6CCEE6-C339-4451-B9C2-2093E0DB1121}</Project>
+      <Name>SS.DB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL.Hibernate\SS.DB.DAL.Hibernate.csproj">
+      <Project>{E145299E-7512-4CAB-8697-5F2F879F05FC}</Project>
+      <Name>SS.DB.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL\SS.DB.DAL.csproj">
+      <Project>{305467E4-B9C3-4669-9895-F0B8C507479F}</Project>
+      <Name>SS.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query.Hibernate\SS.DB.Query.Hibernate.csproj">
+      <Project>{70BA1C5B-D541-4B84-84BB-137C4A29339C}</Project>
+      <Name>SS.DB.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.References\SS.References.csproj">
+      <Project>{F5ED6F2D-CC07-4BAA-93F8-36580F0FE6D4}</Project>
+      <Name>SS.References</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.CommunicationService\SS.Standard.CommunicationService.csproj">
+      <Project>{A6C988C2-ED30-4DEB-ACA7-36340AC13C42}</Project>
+      <Name>SS.Standard.CommunicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security.Implement\SS.Standard.Security.Implement.csproj">
+      <Project>{0A58EB72-1BAF-4E23-B1B6-C50B2B58D65F}</Project>
+      <Name>SS.Standard.Security.Implement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Spring.UI\SS.Standard.UI.Spring.csproj">
+      <Project>{D70D1009-50C3-4171-A51C-97B7ACD7D42F}</Project>
+      <Name>SS.Standard.UI.Spring</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.UI\SS.Standard.UI.csproj">
+      <Project>{BB10E1E3-9788-4CB6-9180-0E0D7BBB66F8}</Project>
+      <Name>SS.Standard.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.WorkFlow\SS.Standard.WorkFlow.csproj">
+      <Project>{FAB1E069-C432-4CEE-8182-833595F486AA}</Project>
+      <Name>SS.Standard.WorkFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard\SS.Standard.csproj">
+      <Project>{EA7F90F8-FC93-4896-9D9A-9192F5803D37}</Project>
+      <Name>SS.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.BLL\SS.SU.BLL.csproj">
+      <Project>{7BDC5E8F-976D-4AFA-95E0-66E1C3E23450}</Project>
+      <Name>SS.SU.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DAL.Hibernate\SS.SU.DAL.Hibernate.csproj">
+      <Project>{7B4673A6-8617-4D2C-B275-D356696AA00D}</Project>
+      <Name>SS.SU.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DAL\SS.SU.DAL.csproj">
+      <Project>{FB3A8590-E912-4328-B94C-635F9F1599B1}</Project>
+      <Name>SS.SU.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Helper\SS.SU.Helper.csproj">
+      <Project>{18DD24FA-7F73-4DA8-AB64-7F569D750D4B}</Project>
+      <Name>SS.SU.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Query.Hibernate\SS.SU.Query.Hibernate.csproj">
+      <Project>{9146E557-7058-4063-A146-36C5A923E61F}</Project>
+      <Name>SS.SU.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Query\SS.SU.Query.csproj">
+      <Project>{4D083F28-AE94-4FF7-B010-9B96701C1B3C}</Project>
+      <Name>SS.SU.Query</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

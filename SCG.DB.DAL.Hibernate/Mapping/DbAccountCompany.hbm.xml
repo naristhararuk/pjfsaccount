@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbAccountCompany,SCG.DB.DTO" table="DbAccountCompany">
+
+		<id name="ID" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="AccountID" column="AccountID" class="SCG.DB.DTO.DbAccount,SCG.DB.DTO" />
+		<many-to-one name="CompanyID" column="CompanyID" class="SCG.DB.DTO.DbCompany,SCG.DB.DTO" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    
+    <property column="UseParent" type="Boolean" name="UseParent" />
+    <property column="TaxCode" type="Int32" name="TaxCode" />
+    <property column="CostCenter" type="Int32" name="CostCenter" />
+    <property column="InternalOrder" type="Int32" name="InternalOrder" />
+    <property column="SaleOrder" type="Int32" name="SaleOrder" />
+    
+	</class>
+</hibernate-mapping>

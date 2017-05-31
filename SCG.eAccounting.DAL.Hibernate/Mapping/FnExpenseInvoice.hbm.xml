@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnExpenseInvoice,SCG.eAccounting.DTO" table="FnExpenseInvoice">
+
+		<id name="InvoiceID" column="InvoiceID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Expense" column="ExpenseID" class="SCG.eAccounting.DTO.FnExpenseDocument,SCG.eAccounting.DTO" />
+		<property column="InvoiceDocumentType" type="String" name="InvoiceDocumentType" length="5" />
+		<property column="InvoiceNo" type="String" name="InvoiceNo" length="30" />
+		<property column="VendorCode" type="String" name="VendorCode" length="20" />
+		<property column="VendorName" type="String" name="VendorName" length="100" />
+		<property column="Street" type="String" name="Street" length="100" />
+		<property column="City" type="String" name="City" length="100" />
+		<property column="Country" type="String" name="Country" length="100" />
+		<property column="PostalCode" type="String" name="PostalCode" length="20" />
+		<property column="InvoiceDate" type="DateTime" name="InvoiceDate" />
+		<property column="VendorID" type="System.Nullable`1[[System.Int64]]" name="VendorID" />
+		<property column="TotalAmount" type="Double" name="TotalAmount" />
+		<property column="VatAmount" type="Double" name="VatAmount" />
+		<property column="WHTAmount" type="Double" name="WHTAmount" />
+		<property column="NetAmount" type="Double" name="NetAmount" />
+		<property column="Description" type="String" name="Description" length="50" />
+		<property column="isVAT" type="Boolean" name="IsVAT" />
+		<property column="isWHT" type="Boolean" name="IsWHT" />
+		<property column="TaxID" type="System.Nullable`1[[System.Int64]]" name="TaxID" />
+		<property column="NonDeductAmount" type="Double" name="NonDeductAmount" />
+		<property column="TotalBaseAmount" type="Double" name="TotalBaseAmount" />
+		<property column="WHTRate1" type="System.Nullable`1[[System.Double]]" name="WHTRate1" />
+		<property column="WHTTypeID1" type="System.Nullable`1[[System.Int64]]" name="WHTTypeID1" />
+		<property column="BaseAmount1" type="System.Nullable`1[[System.Double]]" name="BaseAmount1" />
+		<property column="WHTAmount1" type="Double" name="WHTAmount1" />
+		<property column="WHTRate2" type="System.Nullable`1[[System.Double]]" name="WHTRate2" />
+		<property column="WHTTypeID2" type="System.Nullable`1[[System.Int64]]" name="WHTTypeID2" />
+		<property column="BaseAmount2" type="System.Nullable`1[[System.Double]]" name="BaseAmount2" />
+		<property column="WHTAmount2" type="System.Nullable`1[[System.Double]]" name="WHTAmount2" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="WHTID1" type="System.Nullable`1[[System.Int64]]" name="WHTID1" />
+    <property column="WHTID2" type="System.Nullable`1[[System.Int64]]" name="WHTID2" />
+    <property column="VendorTaxCode" type="String" name="VendorTaxCode" length="20" />
+    <property column="BranchCode" type="String" name="BranchCode" length="20" />
+    <property column="TotalAmountLocalCurrency" type="System.Nullable`1[[System.Double]]" name="TotalAmountLocalCurrency" />
+    <property column="TotalBaseAmountLocalCurrency" type="System.Nullable`1[[System.Double]]" name="TotalBaseAmountLocalCurrency" />
+    <property column="NetAmountLocalCurrency" type="System.Nullable`1[[System.Double]]" name="NetAmountLocalCurrency" />
+    <property column="ExchangeRateForLocalCurrency" type="System.Nullable`1[[System.Double]]" name="ExchangeRateForLocalCurrency" />
+    <property column="ExchangeRateMainToTHBCurrency" type="System.Nullable`1[[System.Double]]" name="ExchangeRateMainToTHBCurrency" />
+    <property column="VendorBranch" type="String" name="VendorBranch" length="20" />
+  </class>
+</hibernate-mapping>

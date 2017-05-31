@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>eAccounting</Name>
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=HQSQLSVR\SQL2008;Initial Catalog=expQas2008Dev</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>ea1c01b6-8df8-490f-ae10-e17f256b48b1</DataSourceID>
+</RptDataSource>

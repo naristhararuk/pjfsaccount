@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuDivision,SS.SU.DTO" table="SuDivision">
+
+		<id name="Divisionid" column="DivisionID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Organization" column="OrganizationID" class="SS.SU.DTO.SuOrganization,SS.SU.DTO" />
+		<property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="50" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+
+		<!--<set name="DivisionLang">
+			<key column="DivisionId"/>
+			<one-to-many class="SS.SU.DTO.SuDivisionLang, SS.SU.DTO" />
+		</set>-->
+	</class>
+</hibernate-mapping>

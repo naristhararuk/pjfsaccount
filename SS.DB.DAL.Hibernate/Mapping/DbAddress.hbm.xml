@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.DB.DTO.DbAddress,SS.DB.DTO" table="DbAddress">
+
+		<id name="Addressid" column="AddressID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Country" column="CountryID" class="SS.DB.DTO.DbCountry,SS.DB.DTO" />
+		<many-to-one name="Province" column="ProvinceID" class="SS.DB.DTO.DbProvince,SS.DB.DTO" />
+		<many-to-one name="District" column="DistrictID" class="SS.DB.DTO.DbDistrict,SS.DB.DTO" />
+		<many-to-one name="City" column="CityID" class="SS.DB.DTO.DbCity,SS.DB.DTO" />
+		<many-to-one name="Postal" column="PostalID" class="SS.DB.DTO.DbPostal,SS.DB.DTO" />
+		<property column="AddressNumber" type="String" name="AddressNumber" length="500" />
+		<property column="Road" type="String" name="Road" length="200" />
+		<property column="Telephone" type="String" name="Telephone" length="50" />
+		<property column="Fax" type="String" name="Fax" length="50" />
+		<property column="Email" type="String" name="Email" length="100" />
+		<property column="Map" type="String" name="Map" length="500" />
+		<property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="50" />
+		<property column="Rowversion" type="Byte[]" name="Rowversion" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,1746 @@
+﻿/*
+* {
+    padding: 0; 
+    margin: 0;
+}
+*/
+p 
+  { 
+    padding: 0;
+    margin: 0px;
+  }
+body 
+  {
+	margin: 0px 0px 0px 0px;
+	background-color: #FFFFFF;
+	text-align: left;
+   }
+
+#wrapper 
+   { 
+   margin: 0px 5px 0px 5px
+	width: 1000px;
+   }
+ .ControlCenter
+ {
+    vertical-align:bottom;    
+ }
+/* below are all header Eliments */
+.logo {
+    width:204px;
+}
+.sysLabel {
+    font-family:Tahoma;
+	font-size:22px;
+	font-weight:bold;
+	color:white;
+	padding-left:10px;
+}
+
+.hiddenText 
+{
+    visibility:hidden
+}
+
+
+#header SPAN.log a {
+    background-image:url(../images/B/bsg_no.png);
+	background-repeat: no-repeat;
+	display:block;
+	height: 42px;
+	width:63px;
+	float:right;
+	margin:57px 12px 0px 0px;
+}
+#header SPAN.log a:hover{
+    background-image:url(../images/B/bsg_mo.png);
+}
+
+/* below are all Navigation & Menu */
+
+#nav {
+    width: 900px;
+	margin: 0px 0px 3px 0px;
+
+
+ }
+#nav SPAN.info {
+	color: #b3b3b3;
+	font-family:  Tahoma,Arial,verdana,sans-serif ;
+	font-size: 10px;
+	padding: 0px 0px 8px 0px;
+	text-align:right;
+	float:right;
+	background-color:#FFF;
+	height:23px;
+	width:100%;
+	margin: 0px;
+    
+}
+#nav SPAN.info A {
+	color: #b3b3b3;
+	text-decoration:none;
+    
+}
+#nav SPAN.info A:hover {
+	color: #222222;
+    
+}
+#nav .icon {
+    padding:0px 10px 0px 0px;
+	vertical-align:bottom;
+    
+}
+
+
+#nav UL  {
+    float:right;
+	width:400px;
+	height:23px;
+	list-style-type:none;
+	display:block;
+	padding-top:0px;
+
+}
+#nav LI  {
+    list-style-type: none;
+	display:inline;
+
+}
+
+#nav ul li.graduate A {
+    background-image:url(../images/bgnav01_no.jpg);
+	background-repeat:no-repeat;
+	height:23px;
+	width:94px;
+	text-decoration:none;
+	float:right;
+
+}
+#nav ul li.graduate A:hover {
+    background-image:url(../images/bgnav01_mo.jpg);	
+	background-position:0 0;
+
+}
+#nav ul li.master A {
+    background-image:url(../images/bgnav02_no.jpg);	
+	background-repeat:no-repeat;
+	height:23px;
+	width:94px;	
+	text-decoration:none;
+	float:right;
+	padding-left:5px;
+
+}
+#nav ul li.master A:hover {
+    background-image:url(../images/bgnav02_mo.jpg);	
+}
+#nav ul li.doctor A {
+    background-image:url(../images/bgnav03_no.jpg);	
+	background-repeat:no-repeat;	
+	height:23px;
+	width:94px;
+	text-decoration:none;
+	float:right;
+	padding-left:5px;
+
+}
+#nav ul li.doctor A:hover {
+    background-image:url(../images/bgnav03_mo.jpg);		
+
+}
+
+.SetMenuL1
+{
+    background:none;
+}
+.SetMenu { 
+
+    width: 957px;
+	/*height:500px;*/
+	margin-top: 0px;
+	padding:0px;
+	background-color:#fffde3;
+	background-repeat:no-repeat;
+	background-position:top left;
+}
+
+.menu { 
+
+    width: 30%;
+	height:100%;
+	margin-top: 0px;
+	padding-top:0px;
+	background-image:url(../images/pattern.jpg);
+	background-repeat:no-repeat;
+	background-position:top left;
+    vertical-align:top;
+    text-align:left;
+
+}
+
+#menu UL  {
+    float:left;
+	padding-top:10px;
+	margin-top:10px;
+
+}
+#menu LI  {
+	font-size:12px;
+	text-align: left;
+	color:#3e3e3e;
+	padding:5px 5px 5px 15px;
+	font-family:Tahoma, Arial, sans-serif, verdana;
+
+}
+#menu LI A {
+	color:#3e3e3e;
+	text-decoration:none;
+
+}
+#menu LI A:hover{ 
+
+	color:#7d7d7d;
+
+}
+
+#menu LI.2  {
+	font-size:12px;
+	text-align: left;
+	color:#3e3e3e;
+	padding:5px 5px 5px 15px;
+	font-family:Tahoma, Arial, sans-serif, verdana;
+	margin-left:100px;
+
+}
+#menu LI.2 A {
+	color:red;
+	text-decoration:none;
+	margin-left:150px;
+}
+#menu LI.2 A:hover{ 
+
+	color:red;
+
+}
+
+
+#topMenu { 
+
+    width: 900px;
+	height:119px;
+	margin-top: 0px;
+	padding:0px;
+	background-image:url(../images/head2.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align:left;
+
+	
+
+}
+#topMenu UL {
+	padding:95px 3px 3px 20px;
+	display:block;
+	font-family:Tahoma,Arial,verdana,sans-serif;
+	font-size:11px;
+	font-weight:bold;
+
+}
+#topMenu LI {
+	display:inline;
+	
+
+}
+#topMenu LI A{
+	text-decoration:none;
+	padding:5px 5px 5px 5px;
+	color:#c7c8c8;
+
+	
+
+}
+#topMenu LI A:hover{
+    color:#fff;
+}
+
+ul.AspNet-Menu   {
+       display:block;
+	   display: inline-block;
+	   }
+ul.AspNet-Menu>li
+   {
+   display: table-cell;
+   position: relative;
+   float:none;
+   background-image:url(../images/menuBack.png);
+   background-repeat:no-repeat;
+   text-align:left;
+   }
+ ul.AspNet-Menu li>ul{
+    /*Make the sub list items invisible*/
+	display: none;
+	position: absolute;
+	max-width: 40ex;
+	margin-left: -6px;
+	margin-top: 0px;   }
+ul.AspNet-Menu li:hover>ul{
+  /*When hovered, make them appear*/
+   display : block;
+   }
+.AspNet-Menu ul li a
+   {
+   /*Make the hyperlinks as a block element, sort of a hover effect*/
+   /*display: block;
+   padding: 2px 10px;*/
+
+	margin-top: 0px;
+	padding:0px;
+	background-color:#f0f1f3;
+	background-image:url(../App_Themes/Default/images/pattern.jpg);
+	background-repeat:no-repeat;
+	background-position:top left;
+
+
+   }
+/*below are all contents Eliments */
+   
+#content { 
+
+    width: 900px;
+	margin: 0px;
+	padding:0px;
+	height: 350px;
+	background-color:#f0f1f3;
+	font-family:Tahoma, Arial, sans-serif, verdana;
+	font-size:12px;
+	text-align: left;
+
+}
+div.aspnet-tabcontainer .ajax__tab_header {
+  padding-left: 5px;
+  border-bottom: 1px solid #e2e2e2;
+}
+.TableInTab{
+   background-color:#E3E3E3;	
+   font-family: Tahoma, Arial, sans-serif, verdana;
+   font-size: 12px;
+   color:#606060;
+   width:880px;
+}
+.GridViewsInTab{
+   background-color:#E3E3E3;	
+   font-family: Tahoma, Arial, sans-serif, verdana;
+   font-size: 12px;
+   color:#606060;
+   width:880px;
+}
+
+.form{
+   background-color:#E3E3E3;	
+   font-family: Tahoma, Arial, sans-serif, verdana;
+   font-size: 12px;
+   color:#606060;
+   width:900px;
+}
+.panel{
+   background-color:#E3E3E3;	
+   font-family: Tahoma, Arial, sans-serif, verdana;
+   font-size: 12px;
+   color:#606060;
+   width:880px;
+}
+.formHead  {
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:underline;
+	padding: 10px 10px 10px 0px;
+	background-color:#E3E3E3;
+	text-align:center;
+}
+.form .Label {
+	font-size:12px;
+	padding: 10px 10px 10px 0px;
+	background-color:#E3E3E3;
+	color:#606060;
+	text-align:left;
+	float:left;
+
+}
+.form fieldset {
+  clear: both;
+  border-color: #00C0FF;
+  border-width: 2px 0 0 0;
+  border-style: solid none none none;
+  padding: 10px 10px 5px 10px;
+  margin: 0 0 0 0;
+  color:#606060;
+  font-size: 12px;
+
+}
+.form fieldset legend {
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  color:white;
+  font-weight:bold;
+  background-color:#00C0FF;
+}
+.form td.labelL {
+    color:#606060;
+    padding: 3px 10px 3px 22px;
+    width:50px;
+}
+.form td.boxL {
+    padding: 3px 10px 3px 10px;
+    width:250px;
+    vertical-align:middle;
+}
+.form td.labelR {
+    color:#606060;
+    padding: 3px 10px 3px 22px;
+      width:15%
+}
+.form td.boxR {
+    padding: 3px 10px 3px 10px;
+    width:35%;
+    vertical-align:middle;
+}
+
+
+.headTitle {
+    color:#282828;
+	font-family:Tahoma,Arial,verdana,sans-serif ;
+	font-size:10px;
+	font-weight:bold;
+	text-align:left;
+	padding:5px 0px 0px 40px;
+	background-repeat:no-repeat;
+	background-position:left;
+	margin-top:10px;
+	margin-bottom:5px;
+	height:18px;
+
+    
+}
+
+legend {
+    color:#606060;
+	padding:0px 2px 0px 18px;
+	margin-left:10px;
+	font-weight:bold;
+	/*background-image:url(../images/legendHead.gif);*/
+	background-repeat:no-repeat;
+	background-position:left;
+    
+}
+.tab UL,LI {
+    border:0; 
+	margin:0; 
+	padding:0; 
+	height:29px;
+	display:block;
+}
+
+.tab a:link, .tab a:visited{
+	background:url(../images/tab-round.png) right 90px;
+	color:#fff;
+	display:block;
+	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	text-decoration:none;
+}
+.tab a span{
+	background:url(../images/tab-round.png) left 60px;
+	display:block;
+	height:30px;
+	margin-right:14px;
+	padding-left:14px;
+
+}
+.tab a:hover{
+	background:url(../images/tab-round.png) right 30px;
+	display:block;
+	color:#e0ded0;
+}
+.tab a:hover span{
+	background:url(../images/tab-round.png) left 30px;
+	display:block;
+}
+/* 	ACTIVE Tab ELEMENTS					*/
+.active a:link, .active a:visited, .active a:visited, .active a:hover{
+	color:#1c4e7e;
+	background:url(../images/tab-round.png) right 0 no-repeat;
+} 
+.active a span, .active a:hover span{
+	background:url(../images/tab-round.png) left 0 no-repeat;
+}
+
+#tab {
+    width:900px;
+	margin-top:20px;
+	height:22px;
+}
+#tab UL {
+	padding:3px 3px 3px 0px;
+	display:block;
+}
+#tab UL LI {
+	display:inline;
+	
+
+}
+#tab UL LI.tabCurent A{
+    background-image:url(../images/bgTab.gif) ;
+	width:113px;
+	height:22px;
+	background-repeat:no-repeat;
+	text-decoration:none;
+	padding:5px 5px 5px 5px;
+	text-align:center;
+	margin-right:5px;
+	
+
+}
+#tab UL LI.tabCurent SPAN.labelTab  {
+    color:#000;
+	font-family:Tahoma,Arial,verdana,sans-serif;
+	font-size:11px;
+	
+}
+#tab UL LI.tabNext A{
+    background-image:url(../images/bgTabNext.gif);
+	width:113px;
+	height:22px;
+	background-repeat:no-repeat;
+	text-decoration:none;
+	padding:5px 5px 5px 5px;
+	text-align:center;
+	text-decoration:none;
+	margin-right:5px;
+	color:#828282;
+	font-family:Tahoma,Arial,verdana,sans-serif;
+	font-size:11px;
+}
+#tab UL LI.tabNext A:hover{
+    background-image:url(../images/bgTab.gif);
+	color:#000;
+}
+
+#dataTab  {
+    border:#606060 solid 1px;
+}
+.table  {
+    font-family:Tahoma,Arial,verdana,sans-serif;
+	font-size:12px;
+	text-align: left;
+	/*padding: 0px 10px 3px 0px;*/
+}
+.table TD.headName						{
+	background-image:url('../images/htb.jpg');
+	background-repeat:no-repeat;
+    height:30px;	
+    color: black;
+	font-weight: bold;
+	padding: 3px 10px 0px 10px;
+	width:273px;
+	
+}
+.table TR.head        {
+   background-color:#757575;
+   color:white;
+   padding: 5px 10px 5px 10px;
+   font-weight:bold;
+
+}
+.table TD.head        {
+   padding: 3px 10px 3px 10px;
+   border-bottom: 1px solid #ffffff;
+   border-right: 1px solid #ffffff;
+   font-size:11px
+
+}
+.table TR.content  {
+    background-color: #d1d1d1;
+	color:#757575;
+	padding: 3px 10px 3px 10px;	
+	font-size:11px;
+}
+.table TR.content  {
+    background-color: #d1d1d1;
+	color:#757575;
+	padding: 3px 10px 3px 10px;	
+	font-size:11px;
+	cursor:pointer;
+}
+.table TD.content  {
+	padding: 3px 10px 3px 10px;	
+	border-bottom: 1px solid #ffffff;
+	border-right: 1px solid #ffffff;
+}
+
+
+/*Begin Login Page*/
+
+/*End Login Page*/
+.logincontrol {
+background-image:url(../login_bg.jpg);
+	background-repeat:no-repeat;
+	background-position:top;
+	margin-top:50px;
+	padding-top: 150px;
+	width:498px;
+	height: 265px;
+
+}
+.loginLabel   {
+    font-family:Tahoma, Arial, sans-serif, verdana;
+	font-size:11px;
+	color:#5f5e5e;
+	font-weight:bold;
+	float: left;
+	text-align: left;
+}
+.loginTextbox 
+{
+    font-family:Tahoma, Arial, sans-serif, verdana;
+	width: 212px;
+	border-style: none;	
+	color:#5f5e5e;
+	float: left;
+	padding:1px 1px 1px 1px;
+}
+.loginForm
+{
+	background-repeat:no-repeat;
+	background-position:top;
+	margin-top:50px;
+	padding-top: 150px;
+	width:498px;
+	height: 265px;
+}
+/*begin progress bar*/
+.ProgressOverlay
+    {
+        position: fixed;
+        overflow:auto;
+        z-index: 99;
+        top: 0px;
+        left: 0px;
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 100%;
+        filter: Alpha(Opacity=80);
+        opacity: 0.70;
+        -moz-opacity: 0.70;
+    }
+.ProgressContainer
+    {
+        border: solid 1px #808080;
+        border-width: 1px 0px;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+    }
+.ProgressHeader
+    {
+        /*background: url('~/App_Themes/DefaultThemes/Images/sprite.png') repeat-x 0px 0px;*/
+        border-color: #808080 #808080 #ccc;
+        border-style: solid;
+        border-width: 0px 1px 1px;
+        padding: 0px 10px;
+        color: #000000;
+        font-size: 9pt;
+        font-weight: bold;
+        line-height: 1.9;
+        font-family: arial,helvetica,clean,sans-serif;
+    }
+.SCGLoading
+    {
+        border: solid 1px #808080;
+        border-color: #808080 #808080;
+        border-style: solid;
+        border-width: 1px 1px;
+        padding: 0px 10px;
+        color: #000000;
+        line-height: 1.9;
+        top: 35%;
+        left: 30%;
+    }
+.ProgressBody
+    {
+        background-color: #f2f2f2;
+        border-color: #808080;
+        border-style: solid;
+        border-width: 0px 1px;
+        padding: 10px;
+    }
+  /*end progress bar*/
+  
+  /*begin popup control extender*/
+.watermark
+    {
+	    background: #FFAAFF;
+    }
+
+.popupControl
+    {
+	    background-color:#AAD4FF;
+	    position:absolute;
+	    visibility:hidden;
+	    border-style:solid;
+	    border-color: Black;
+	    border-width: 2px;
+    }
+.modalBackground {
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 1;
+}
+.modalPopup {
+	background-color: #f0f1f3;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:600px;
+	z-index: 10001;
+}
+.modalHeader{
+	font-weight:bold;
+	
+}
+.modalTopic{
+	font-weight:bold;
+	
+}
+.modalMsg{
+    font-family:Tahoma, Arial, sans-serif, verdana;
+	font-size:11px;
+	color:#5f5e5e;
+	font-weight:bold;
+
+}
+.modalPopup.modalSolution
+{
+	 text-align:left;
+	 background-color:Gray;
+	 overflow:auto;
+	 font-size:15px;
+	 height:130px;
+	 
+	 margin:10px;
+	 padding:10px;
+	 
+	 
+}
+  /*end popup control extender*/
+
+
+
+
+/*content header*/
+.ContentHeader {
+
+    width: 900px;
+    height: 92px;
+    margin: 3px 0px 3px 0px;
+	background-image:url(../images/head.jpg);
+    background-repeat:no-repeat;
+    background-position:top;
+
+}
+.menuMaster
+    {
+        float:left;
+        background-repeat:no-repeat;
+    }
+.InputTextBox
+   {
+   width:200px; border-style:none;font-size:11px 
+    }
+  .LogOut
+  {
+   font-family:Tahoma, Arial, sans-serif, verdana;
+  padding-right:8px;    
+  }
+  .Clock
+  {
+        font-family:Tahoma, Arial, sans-serif, verdana;
+  padding-right:8px;    
+ 
+ }
+ .HiddenLabel
+ {
+ width:0px;
+ height:0px;
+ visibility:hidden;    
+ }
+ 
+ /* Ajax Calendar StyleSheet */
+.ajaxCalendar .ajax__calendar_container 
+{
+	background-color: #e2e2e2; border:solid 1px #cccccc; 
+}
+
+.ajaxCalendar .ajax__calendar_header
+{
+	background-color: #ffffff; margin-bottom: 4px; 
+}
+
+.ajaxCalendar .ajax__calendar_title, 
+.ajaxCalendar .ajax__calendar_next, 
+.ajaxCalendar .ajax__calendar_prev
+{
+	color: #004080; padding-top: 3px; 
+}
+
+.ajaxCalendar .ajax__calendar_body
+{
+	background-color: #e9e9e9; border: solid 1px #cccccc; 
+}
+
+.ajaxCalendar .ajax__calendar_dayname
+{
+	text-align:center; font-weight:bold; margin-bottom: 4px; margin-top: 2px; 
+}
+
+.ajaxCalendar .ajax__calendar_day 
+{
+	text-align:center; 
+}
+
+.ajaxCalendar .ajax__calendar_hover .ajax__calendar_day, 
+.ajaxCalendar .ajax__calendar_hover .ajax__calendar_month, 
+.ajaxCalendar .ajax__calendar_hover .ajax__calendar_year, 
+.ajaxCalendar .ajax__calendar_active
+{ 
+	color: #004080; font-weight:bold; background-color: #ffffff; 
+}
+
+.ajaxCalendar .ajax__calendar_today
+{ 
+	font-weight:bold; 
+}
+
+.ajaxCalendar .ajax__calendar_other,
+.ajaxCalendar .ajax__calendar_hover .ajax__calendar_today, 
+.ajaxCalendar .ajax__calendar_hover .ajax__calendar_title
+{
+	color: #bbbbbb; 
+}
+
+/* Use iFrame for show calendar popup other control */
+.ajaxCalendar 
+{
+    position: relative;
+    left: 0px !important;
+    top: 0px !important;
+    visibility: visible; display: block;
+}
+.ajaxCalendar iframe 
+{
+    left: 0px !important;
+    top: 0px !important;
+}
+
+
+/*AutoComplete flyout */
+
+.autocomplete_completionListElement 
+{  
+	visibility : hidden;
+	margin : 0px!important;
+	background-color : inherit;
+	color : windowtext;
+	border : buttonshadow;
+	border-width : 1px;
+	border-style : solid;
+	cursor : 'default';
+	overflow : auto;
+	height : 200px;
+    text-align : left; 
+}
+
+/* AutoComplete highlighted item */
+
+.autocomplete_highlightedListItem
+{
+	list-style-type:none;
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.autocomplete_listItem 
+{
+	list-style-type:none;
+	background-color : window;
+	color : windowtext;
+	padding : 1px;
+}
+
+
+.image_loading
+{
+	position: absolute;
+	filter: alpha(opacity=70);
+	MozOpacity: 0.7;
+	opacity: 0.7;
+	padding: 0px;
+	margin: 0px;
+}
+
+.page_header_content_login {	
+	width: 1000px;
+	height: 242px;
+	background-image: url('../Default/images/head_eAccLogin.png');
+	background-repeat: no-repeat;
+}
+
+.page_header_content {	
+	width: 1000px;
+	height: 160px;
+	background-image: url('../Default/images/Head-eAcc.png');
+	background-repeat: no-repeat;
+}
+.page_bottom_content {	
+	width: 1000px;
+	height: 52px;
+	background-image: url('../Default/images/Bottom-eAcc.png');
+	background-repeat: no-repeat;
+	
+}
+
+.header_link {
+	font-family: Verdana;
+	font-size: small;
+	color: #FFFFFF;
+	text-align: right;	
+	width: 1000px;
+	height: auto;
+}
+.bottom_link {
+	font-family: Verdana;
+	font-size: small;
+	color: #FFFFFF;
+	text-align: left;	
+}
+.dataFont{
+	font-family: Verdana;
+	font-size: small;	
+	height: 20px;
+	float: left;
+	vertical-align : middle;
+	padding-left: 5px;
+	font-weight: bold;
+}
+.LoginControl{
+	font-family: Verdana;
+	font-size: small;	
+	height: 20px;
+	float: left;
+	vertical-align : middle;
+	padding-left: 5px;
+	font-weight: bold;
+}
+.UserInfoWelcomeControl{
+	font-family: Verdana;
+	font-size: small;	
+	height: 20px;
+	float: left;
+	vertical-align : top;
+	padding-left: 5px;
+	font-weight: bold;
+}
+.FlagControl{
+	font-family: Verdana;
+	font-size: small;	
+	height: 20px;
+	float: right;
+	vertical-align : inherit;
+	padding-left: 0px;
+	padding-right:10px;
+	font-weight: bold;
+}
+.MasterLayout
+{
+    margin: 0px 0px 0px 0px;
+}
+.PasswordStrengthIndicator
+{
+     background-color:Blue;
+     color:Yellow;
+     font-size:small;
+     font-variant:small-caps;
+     padding: 2px 3px 2px 3px;
+     z-index: 10001;
+}
+.PasswordStrengthPolicy
+{
+	width:16px;
+	height:14px;
+	/*background-image:url(images/MsgInfomaton.gif);*/
+	background-image:url(images/MsgInfomaton.gif);
+	overflow:hidden;
+	cursor:help;
+	z-index: 10001;
+}
+.PasswordStrengthPolicyTextStyle
+{
+     background-color:Gray;
+     color:White;
+     font-family:Arial;
+     font-size:x-small;
+     font-style:italic;
+     padding: 2px 3px 2px 3px;
+     z-index: 10001;
+}
+.PasswordStrengthPolicyStrength1
+{
+     background-color:Gray;
+     color:White;
+     font-family:Arial;
+     font-size:x-small;
+     font-style:italic;
+     padding: 2px 3px 2px 3px;
+     font-weight:bold;
+     z-index:10001;
+}
+.PasswordStrengthPolicyStrength2
+{
+     background-color:Gray;
+     color:Yellow;
+     font-family:Arial;
+     font-size:x-small;
+     font-style:italic;
+     padding: 2px 3px 2px 3px;
+     font-weight:bold;
+     z-index:10001;
+}
+.PasswordStrengthPolicyStrength3
+{
+     background-color:Gray;
+     color: #FFCAAF;
+     font-family:Arial;
+     font-size:x-small;
+     font-style:italic;
+     padding: 2px 3px 2px 3px;
+     font-weight:bold;
+     z-index:10001;
+}
+.PasswordStrengthPolicyStrength4
+{
+     background-color:Gray;
+     color:Aqua;
+     font-family:Arial;
+     font-size:x-small;
+     font-style:italic;
+     padding: 2px 3px 2px 3px;
+     font-weight:bold;
+     z-index:10001;
+}
+.PasswordStrengthPolicyStrength5
+{
+     background-color:Gray;
+     color: #93FF9E;
+     font-family:Arial;
+     font-size:x-small;
+     font-style:italic;
+     padding: 2px 3px 2px 3px;
+     font-weight:bold;
+     z-index:10001;
+}
+
+/*Initiator Reorder List*/
+.InitiatorProgressOverlay
+    {
+        position: fixed;
+        overflow:auto;
+        z-index: 10001;
+        top: 0px;
+        left: 0px;
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 100%;
+        filter: Alpha(Opacity=80);
+        opacity: 0.70;
+        -moz-opacity: 0.70;
+    }
+    .InitiatorProgressContainer
+    {
+        border: solid 1px #808080;
+        border-width: 1px 0px;
+        position: absolute;
+        top: 45%;
+        left: 45%;
+    }
+.InitiatorProgressHeader
+    {
+        /*background: url('~/App_Themes/DefaultThemes/Images/sprite.png') repeat-x 0px 0px;*/
+        border-color: #808080 #808080 #ccc;
+        border-style: solid;
+        border-width: 0px 1px 1px;
+        padding: 0px 10px;
+        color: #000000;
+        font-size: 9pt;
+        font-weight: bold;
+        line-height: 1.9;
+        font-family: arial,helvetica,clean,sans-serif;
+    }
+.InitiatorProgressBody
+    {
+        background-color: #f2f2f2;
+        border-color: #808080;
+        border-style: solid;
+        border-width: 0px 1px;
+        padding: 10px;
+    }
+
+.InitiatorDragHandle {
+	width:15px;
+	height:15px;
+	background-color:Transparent;
+	background-image:url(../Default/images/HandleHand.png);
+	cursor:move;
+	border:outset thin white;
+}
+
+.InitiatorCallbackStyle {
+	border:thin Transparent inset;	
+}
+
+.InitiatorCallbackStyle table {
+	background-color:#5377A9;	
+	color:Black;
+}
+
+
+.InitiatorReorderList li {
+	margin:2px;
+	background-color:Transparent;
+	/*background-image:url(../Default/images/bg-menu-main.png);*/
+	background-repeat:repeat-x;
+	color:#777777;
+	font-family:Tahoma;
+	font-size:12px;
+	padding-left:10px;
+
+}
+
+.InitiatorReorderList li a {color:#FFF !important; font-weight:bold;}
+
+.InitiatorReorderCue {
+	border:dashed thin black;
+	width:100%;
+	height:25px;
+}
+
+.InitiatorItemArea {
+	margin-left:15px;
+	font-family:Tahoma;
+	font-size:12px;
+	text-align:left;
+    
+}
+.InitiatorTextReadOnly {
+    background-color:Gray;
+}
+
+a:visited 
+{
+	color:Blue;
+}
+
+
+
+/*GridView*/
+
+
+
+.Grid  
+{
+    border: solid 1px #FFFFFF; 
+    font-family : Tahoma;
+    font-size:small; 
+    margin:0;
+    padding:0;    
+}
+.Grid td
+{
+border: solid 1px #FFFFFF;
+margin: 1px 1px 1px 1px;
+padding: 1px 1px 1px 1px;
+}
+.GridHeader
+{
+font-weight: bold;
+color : #EEEEEE ;
+background-color: #777777;
+font-size:11px;
+}
+.GridHeader a:link {
+    color : white;
+    text-decoration : underline;
+
+}
+.GridHeader a:visited {
+    color : white;
+    text-decoration : underline;
+}
+
+.GridHeader a:hover {
+    color : white;
+    text-decoration : underline;
+}
+
+.GridHeader a:active {
+    color : white;
+    text-decoration : underline;
+}
+
+.GridItem
+{
+background-color: #CCCCCC;
+Color:#777777;
+font-size:12px;
+}
+
+.GridAltItem
+{
+background-color: #CCCCCC;
+Color:#777777;
+font-size:12px;
+}
+
+
+.noborder td
+{
+	border: none 0px;
+}
+
+
+.showContent {
+	VISIBILITY: visible; POSITION: relative; HEIGHT: 3px
+}
+.hideContent {
+	VISIBILITY: hidden; POSITION: absolute; TOP: -500px
+}
+.dataFont {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Tahoma,tahoma; height:25px
+}
+
+/******* CSS Sprite *******/
+
+/* Combine Login */
+.bannerLogIn
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:0px 0px;
+	width:957px;
+	height:122px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.backGroundService
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:0px -123px;
+	width:308px;
+	height:581px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.lineBackGroundService
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-309px -226px;
+	width:308px;
+	height:6px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.ServiceRow
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-309px -130px;
+	width:270px;
+	height:45px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.lineNews
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-309px -123px;
+	width:527px;
+	height:6px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.lineService
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-309px -201px;
+	width:272px;
+	height:4px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.lineWelcome
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-309px -224px;
+	width:421px;
+	height:1px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.backGroundLanguageLogIn
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-580px -130px;
+	width:96px;
+	height:34px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.logoSCGLogIn
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-677px -130px;
+	width:146px;
+	height:59px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.menuSeperateLogIn
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-824px -130px;
+	width:5px;
+	height:59px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.btnLogIn
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-477px -206px;
+	width:72px;
+	height:17px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.btnForgetPassword
+{
+	background-image: url("../Default/images/CombineLogInArchive.gif");
+	background-color: transparent;
+	background-position:-309px -206px;
+	width:167px;
+	height:17px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+
+/* Combine MenuButtom */
+.FooterLeft
+{
+	background-image: url("../Default/images/CombineMenuButtom.gif");
+	background-color: transparent;
+	background-position:-395px -26px;
+	width:12px;
+	height:25px;
+	float:right;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	padding:0;
+	margin:0;
+}
+
+.FooterRight
+{
+	background-image: url("../Default/images/CombineMenuButtom.gif");
+	background-color: transparent;
+	background-position:-408px -26px;
+	width:12px;
+	height:25px;
+	float:right;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	padding:0;
+	margin:0;
+}
+
+.FooterLine
+{
+	background-image: url("../Default/images/CombineMenuButtom.gif");
+	background-color: transparent;
+	background-position:0px 0px;
+	width:100%;
+	height:25px;
+	float:left;
+	overflow:hidden;
+	background-repeat: repeat-x;
+	padding:0;
+	margin:0;
+}
+
+.CopyRight
+{
+	background-image: url("../Default/images/CombineMenuButtom.gif");
+	background-color: transparent;
+	background-position:0px -26px;
+	width:394px;
+	height:22px;
+	float:right;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+	
+/* Combine Button */
+.btnCheck
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-371px -50px;
+	width:16px;
+	height:14px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnDownArrow
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-373px 0px;
+	width:24px;
+	height:21px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnFile
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-359px -50px;
+	width:11px;
+	height:15px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnGeneralExpense
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-73px 0px;
+	width:130px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnMileage
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-204px 0px;
+	width:87px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnPerdiem
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-292px 0px;
+	width:80px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnSearch
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:0px -25px;
+	width:80px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnAdd
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-81px -25px;
+	width:62px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnCalendar
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-334px -50px;
+	width:24px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnCopy
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-239px -50px;
+	width:69px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnDelete
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-156px -50px;
+	width:82px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnEdit
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-88px -50px;
+	width:67px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnCancel
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:0px -50px;
+	width:87px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnFavorites
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-294px -25px;
+	width:92px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnPrint
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-224px -25px;
+	width:69px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnRetrieve
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-309px -50px;
+	width:24px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnSubmit
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:-144px -25px;
+	width:79px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnSave
+{
+	background-image: url("../Default/images/CombineButton.gif");
+	background-color: transparent;
+	background-position:0px 0px;
+	width:72px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+.btnTASearch
+{
+	background-image: url("../Default/images/TA.gif");
+	background-color: transparent;
+	background-position:0px 0px;
+	width:24px;
+	height:24px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	
+}
+/* ProgramPage Master */
+.bannerExpense
+{
+	background-image: url("../Default/images/CombineProgramPageMasterArchive.gif");
+	background-color: transparent;
+	background-position:0px 0px;
+	width:798px;
+	height:130px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.logoSCG
+{
+	background-image: url("../Default/images/CombineProgramPageMasterArchive.gif");
+	background-color: transparent;
+	background-position:0px -131px;
+	width:157px;
+	height:130px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.iconUser
+{
+	background-image: url("../Default/images/CombineProgramPageMasterArchive.gif");
+	background-color: transparent;
+	background-position:-158px -131px;
+	width:35px;
+	height:35px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.backGroundLanguage
+{
+	background-image: url("../Default/images/CombineProgramPageMasterArchive.gif");
+	background-color: transparent;
+	background-position:-271px -131px;
+	width:96px;
+	height:50px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.menuLine1
+{
+	background-image: url("../Default/images/CombineProgramPageMasterArchive.gif");
+	background-color: transparent;
+	background-position:-368px -131px;
+	width:163px;
+	height:10px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.backgroundLeftMenu
+{
+    width:100%;
+    height:100%;
+    background-color:#ffb024;
+}
+.backgroundContent
+{
+    width:100%;
+    background-color:#fffde3;
+}
+.backgroundPanelServiceMsg
+{
+    background-color:#fffde4;
+}
+.backgroundWelcomeMsg
+{
+    background-image: url("../Default/images/REACH_Archive.gif");
+    width:628px;
+    height:272px;
+    vertical-align:top;
+    background-repeat:no-repeat
+}
+.backgroundHeaderCenter
+{
+    background-image: url("../Default/images/MasterPage/Menu_HeadArchive.png");
+    width:100%;
+}
+.menuLine2
+{
+	background-image: url("../Default/images/CombineProgramPageMasterArchive.gif");
+	background-color: transparent;
+	background-position:-368px -142px;
+	width:163px;
+	height:10px;
+	overflow:hidden;
+	background-repeat: repeat-y;
+}
+.backGroundMenu
+{
+	background-image: url("../Default/images/CombineProgramPageMasterArchive.gif");
+	background-position:-799px 0px;
+	width:160px;
+	height:340px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+
+/* Language Flag */
+.ThaiFlag
+{
+	background-image: url("../Default/images/CombineLanguageFlag.gif");
+	background-position:0px 0px;
+	width:24px;
+	height:19px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+.EngFlag
+{
+	background-image: url("../Default/images/CombineLanguageFlag.gif");
+	background-position:-25px 0px;
+	width:24px;
+	height:19px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}

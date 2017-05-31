@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SSGPDFCreatorWebService</name>
+    </assembly>
+    <members>
+        <member name="T:SSG.PDF.WebService.PDFCreatorWebService">
+            <summary>
+            The class PDFCreatorWebService contains methods for performing creating tex file from string content, 
+            generate pdf document from tex file, checking status state of generating the pdf documents and 
+            get location of generated a pdf file.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="F:SSG.PDF.WebService.PDFCreatorWebService.START_PATH_INDEX">
+            <summary>
+            Starting index of path file
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.WebService.PDFCreatorWebService.GeneratePDFFromContent(System.String)">
+            <summary>
+            Generate a pdf document file from the string content.
+            </summary>
+            <param name="strContent">The latex string content.</param>
+            <returns>Return the uniqueidentified of tex and pdf files. 
+            Empty uniqueidentified if creating failure.</returns>
+            <seealso cref="!:SSG.PDF.PDFCreator.GeneratePDF(Guid oID)"/>
+        </member>
+        <member name="M:SSG.PDF.WebService.PDFCreatorWebService.GeneratePDFFromFile(System.String)">
+            <summary>
+            Generate a pdf document file from the latex file.
+            </summary>
+            <param name="strID">The uniqueidentified string of tex file name.</param>
+            <returns>Return the uniqueidentified of pdf files. 
+            Empty uniqueidentified if creating failure.</returns>
+        </member>
+        <member name="M:SSG.PDF.WebService.PDFCreatorWebService.GetStatus(System.String)">
+            <summary>
+            Get a pdf requested status from database.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <returns>The status of a pdf requested.</returns>
+        </member>
+        <member name="M:SSG.PDF.WebService.PDFCreatorWebService.GetPdfUri(System.String)">
+            <summary>
+            Getting pdf file location from specified id.
+            </summary>
+            <param name="strID">The uniqueidentified string</param>
+            <returns>The location of pdf file name</returns>
+        </member>
+        <member name="M:SSG.PDF.WebService.PDFCreatorWebService.InitializeComponent">
+            <summary>
+            The dummy initialize component
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.WebService.PDFCreatorWebService.GetConfigFile">
+            <summary>
+            Get configuration file from execution path
+            </summary>
+            <returns>Configuration file name</returns>
+        </member>
+    </members>
+</doc>

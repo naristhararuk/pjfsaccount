@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66CBB214-DA80-40EF-917C-DEB3DAC72AF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.DB.Query</RootNamespace>
+    <AssemblyName>SCG.DB.Query</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IDbBuQuery.cs" />
+    <Compile Include="IDbHolidayProfileQuery.cs" />
+    <Compile Include="IDbHolidayQuery.cs" />
+    <Compile Include="IDbMileageRateRevisionDetailQuery.cs" />
+    <Compile Include="IDbMileageRateRevisionQuery.cs" />
+    <Compile Include="IDbProfileListQuery.cs" />
+    <Compile Include="IDbSapInstanceQuery.cs" />
+    <Compile Include="IDbSellingRunningQuery.cs" />
+    <Compile Include="IDbSellingLetterQuery.cs" />
+    <Compile Include="IDbBuyingLetterDetailQuery.cs" />
+    <Compile Include="IDbBuyingLetterQuery.cs" />
+    <Compile Include="IDbBuyingRunningQuery.cs" />
+    <Compile Include="IDbCompanyTaxQuery.cs" />
+    <Compile Include="IDbCostCenterImportLogQuery.cs" />
+    <Compile Include="IDbAccountCompanyQuery.cs" />
+    <Compile Include="IDbDictionaryQuery.cs" />
+    <Compile Include="IDbDocumentRunningQuery.cs" />
+    <Compile Include="IDbioImportLogQuery.cs" />
+    <Compile Include="IDbMoneyRequestQuery.cs" />
+    <Compile Include="IDbOrganizationChartQuery.cs" />
+    <Compile Include="IDbLocationLangQuery.cs" />
+    <Compile Include="IDbPBCurrencyQuery.cs" />
+    <Compile Include="IDbPBLangQuery.cs" />
+    <Compile Include="IDbPBQuery.cs" />
+    <Compile Include="IDbCompanyPaymentMethodQuery.cs" />
+    <Compile Include="IDbCompanyQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDbCostCenterQuery.cs" />
+    <Compile Include="IDbAccountLangQuery.cs" />
+    <Compile Include="IDbAccountQuery.cs" />
+    <Compile Include="IDbExpenseGroupLangQuery.cs" />
+    <Compile Include="IDbExpenseGroupQuery.cs" />
+    <Compile Include="IDbIOQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDbLocationQuery.cs" />
+    <Compile Include="IDbPaymentMethodQuery.cs" />
+    <Compile Include="IDbPbRateQuery.cs" />
+    <Compile Include="IDbReasonLangQuery.cs" />
+    <Compile Include="IDbReasonQuery.cs" />
+    <Compile Include="IDbRejectReasonLangQuery.cs" />
+    <Compile Include="IDbRejectReasonQuery.cs" />
+    <Compile Include="IDbSellingLetterDetailQuery.cs" />
+    <Compile Include="IDbServiceTeamLocationQuery.cs" />
+    <Compile Include="IDbServiceTeamQuery.cs" />
+    <Compile Include="IDbStatusLangQuery.cs" />
+    <Compile Include="IDbVendorQuery.cs" />
+    <Compile Include="IDbTaxQuery.cs" />
+    <Compile Include="IDbCountryLangQuery.cs" />
+    <Compile Include="IDbCountryQuery.cs" />
+    <Compile Include="IDbWithHoldingTaxQuery.cs" />
+    <Compile Include="IDbWithHoldingTaxTypeQuery.cs" />
+    <Compile Include="ITmpDbCostCenterQuery.cs" />
+    <Compile Include="ITmpDbInternalOrderQuery.cs" />
+    <Compile Include="ITmpDbOrganizationChartQuery.cs" />
+    <Compile Include="IRejectReasonLangQuery.cs" />
+    <Compile Include="IRejectReasonQuery.cs" />
+    <Compile Include="ScgDbQueryProvider.cs" />
+    <Compile Include="IDbBankLangQuery.cs" />
+    <Compile Include="IDbBankQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL\SS.DB.DAL.csproj">
+      <Project>{305467E4-B9C3-4669-9895-F0B8C507479F}</Project>
+      <Name>SS.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

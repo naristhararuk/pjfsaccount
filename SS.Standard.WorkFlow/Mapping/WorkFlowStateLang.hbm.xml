@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.Standard.WorkFlow.DTO.WorkFlowStateLang,SS.Standard.WorkFlow" table="WorkFlowStateLang">
+
+		<id name="WorkFlowStateLangID" column="WorkFlowStateLangID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="WorkFlowState" column="WorkFlowStateID" class="SS.Standard.WorkFlow.DTO.WorkFlowState,SS.Standard.WorkFlow" />
+		<many-to-one name="Language" column="LanguageID" class="SS.DB.DTO.DbLanguage,SS.DB.DTO" />
+		<property column="DisplayName" type="String" name="DisplayName" length="50" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

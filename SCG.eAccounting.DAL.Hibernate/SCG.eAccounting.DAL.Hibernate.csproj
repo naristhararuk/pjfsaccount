@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D4A8C5C-D6CE-4E73-9727-08237CB5342E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.DAL.Hibernate</RootNamespace>
+    <AssemblyName>SCG.eAccounting.DAL.Hibernate</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AvAdvanceDocumentDao.cs" />
+    <Compile Include="AvAdvanceItemDao.cs" />
+    <Compile Include="CADocumentDao.cs" />
+    <Compile Include="FixedAdvanceDocumentDao.cs" />
+    <Compile Include="ExpensesCADao.cs" />
+    <Compile Include="ExpensesMPADao.cs" />
+    <Compile Include="MPADocumentDao.cs" />
+    <Compile Include="DocumentViewLockDao.cs" />
+    <Compile Include="FnEACAdvanceImportTempDao.cs" />
+    <Compile Include="FnEACAdvanceImportLogDao.cs" />
+    <Compile Include="FnEHRexpenseTempDao.cs" />
+    <Compile Include="FnPerdiemProfileCountryDao.cs" />
+    <Compile Include="FnPerdiemProfileDao.cs" />
+    <Compile Include="FnPerdiemRateDao.cs" />
+    <Compile Include="MPAItemDao.cs" />
+    <Compile Include="SuEmailLogDao.cs" />
+    <Compile Include="DbDocumentBoxIDPostingDao.cs" />
+    <Compile Include="DbDocumentImagePostingDao.cs" />
+    <Compile Include="FnAutoPaymentDao.cs" />
+    <Compile Include="FnAutoPaymentTempDao.cs" />
+    <Compile Include="FnExpenseMileageDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseMileageInvoiceDao.cs" />
+    <Compile Include="FnExpensePerdiemDetailDao.cs" />
+    <Compile Include="FnExpenseAdvanceDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseDocumentDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseRemittanceDao.cs" />
+    <Compile Include="TADocumentAdvanceDao.cs" />
+    <Compile Include="DocumentAttachmentDao.cs" />
+    <Compile Include="DocumentInitiatorDao.cs" />
+    <Compile Include="FnExpenseInvoiceItemDao.cs" />
+    <Compile Include="FnExpenseInvoicetDao.cs" />
+    <Compile Include="FnExpenseMileageItemDao.cs" />
+    <Compile Include="FnExpensePerdiemDao.cs" />
+    <Compile Include="FnExpensePerdiemItemDao.cs" />
+    <Compile Include="FnRemittanceAdvanceDao.cs" />
+    <Compile Include="FnRemittanceDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnRemittanceItemDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCGDocumentDao.cs" />
+    <Compile Include="TADocumentDao.cs" />
+    <Compile Include="TADocumentScheduleDao.cs" />
+    <Compile Include="TADocumentTravellerDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\AvAdvanceDocument.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AvAdvanceItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DAL\SCG.DB.DAL.csproj">
+      <Project>{C8A062D6-03AE-4376-A714-2792B7055899}</Project>
+      <Name>SCG.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DAL\SCG.eAccounting.DAL.csproj">
+      <Project>{D8377A07-E8CF-4EFD-9814-5C10EFF09281}</Project>
+      <Name>SCG.eAccounting.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DTO\SCG.eAccounting.DTO.csproj">
+      <Project>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</Project>
+      <Name>SCG.eAccounting.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.WorkFlow\SS.Standard.WorkFlow.csproj">
+      <Project>{FAB1E069-C432-4CEE-8182-833595F486AA}</Project>
+      <Name>SS.Standard.WorkFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SCGDocument.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DocumentInitiator.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DocumentAttachment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\FnRemittance.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnRemittanceAdvance.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnRemittanceItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\TADocument.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TADocumentTraveller.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\FnExpenseAdvance.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TADocumentAdvance.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpenseMileage.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpenseMileageItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpenseDocument.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\FnExpenseInvoice.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\FnExpenseInvoiceItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpensePerdiemItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnAutoPayment.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbDocumentBoxidPosting.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbDocumentImagePosting.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnAutoPaymentTemp.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnehRexpenseTemp.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DocumentViewLock.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FneacAdvanceImportTemp.hbm.xml" />
+    <EmbeddedResource Include="Mapping\MPADocument.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CADocument.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpensesMPA.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpensesCA.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FixedAdvanceDocument.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\FnPerdiemProfile.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnPerdiemRate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpenseMileageInvoice.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpensePerdiemDetail.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpenseRemittance.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TADocumentSchedule.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\FnEACAdvanceImportLog.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpenseAdvanceExchangeRate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FnExpensePerdiem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuEMailLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\FnPerdiemProfileCountry.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\MPAItem.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapiacextc,SCG.eAccounting.SAP" table="BAPIACEXTC">
+
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_ID" type="Int64" name="DocId" not-null="true" />
+		<property column="DOC_SEQ" type="String" name="DocSeq" length="10" />
+		<property column="DOC_KIND" type="String" name="DocKind" length="50" />
+		<property column="FIELD1" type="String" name="Field1" length="250" />
+		<property column="FIELD2" type="String" name="Field2" length="250" />
+		<property column="FIELD3" type="String" name="Field3" length="250" />
+		<property column="FIELD4" type="String" name="Field4" length="250" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		
+	</class>
+</hibernate-mapping>

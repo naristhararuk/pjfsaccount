@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbioImportLog,SCG.DB.DTO" table="DbIOImportLog">
+
+		<id name="ID" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="IONumber" type="String" name="IONumber" length="20" />
+		<property column="IOType" type="String" name="IOType" length="50" />
+		<property column="IOText" type="String" name="IOText" length="100" />
+		<property column="CompanyCode" type="String" name="CompanyCode" length="20" />
+		<property column="CostCenterCode" type="String" name="CostCenterCode" length="20" />
+		<property column="EffectiveDate" type="DateTime" name="EffectiveDate" />
+		<property column="ExpireDate" type="DateTime" name="ExpireDate" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="ErrorCode" type="Int32" name="ErrorCode" />
+		<property column="Message" type="String" name="Message" length="100" />
+		<property column="Line" type="Int64" name="Line" />
+		
+	</class>
+</hibernate-mapping>

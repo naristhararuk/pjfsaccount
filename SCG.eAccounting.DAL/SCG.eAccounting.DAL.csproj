@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8377A07-E8CF-4EFD-9814-5C10EFF09281}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.DAL</RootNamespace>
+    <AssemblyName>SCG.eAccounting.DAL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IFixedAdvanceDocumentDao.cs" />
+    <Compile Include="IExpensesCADao.cs" />
+    <Compile Include="IExpensesMPADao.cs" />
+    <Compile Include="ICADocumentDao.cs" />
+    <Compile Include="IMPADocumentDao.cs" />
+    <Compile Include="IDocumentViewLockDao.cs" />
+    <Compile Include="IFnEACAdvanceImportLogDao.cs" />
+    <Compile Include="IFnEACAdvanceImportTempDao.cs" />
+    <Compile Include="IFnEHRexpenseTempDao.cs" />
+    <Compile Include="IFnPerdiemProfileCountryDao.cs" />
+    <Compile Include="IFnPerdiemProfileDao.cs" />
+    <Compile Include="IFnPerdiemRateDao.cs" />
+    <Compile Include="IMPAItemDao.cs" />
+    <Compile Include="ISuEmailLogDao.cs" />
+    <Compile Include="IAvAdvanceDocumentDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IAvAdvanceItemDao.cs" />
+    <Compile Include="IDbDocumentBoxIDPostingDao.cs" />
+    <Compile Include="IDbDocumentImagePostingDao.cs" />
+    <Compile Include="IDocumentAttachmentDao.cs" />
+    <Compile Include="IDocumentInitiatorDao.cs" />
+    <Compile Include="IFnAutoPaymentDao.cs" />
+    <Compile Include="IFnAutoPaymentTempDao.cs" />
+    <Compile Include="IFnExpenseAdvanceDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFnExpenseDocumentDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFnExpenseInvoiceDao.cs" />
+    <Compile Include="IFnExpenseInvoiceItemDao.cs" />
+    <Compile Include="IFnExpenseMileageDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFnExpenseMileageInvoiceDao.cs" />
+    <Compile Include="IFnExpenseMileageItemDao.cs" />
+    <Compile Include="IFnExpensePerdiemDao.cs" />
+    <Compile Include="IFnExpensePerdiemDetailDao.cs" />
+    <Compile Include="IFnExpensePerdiemItemDao.cs" />
+    <Compile Include="IFnExpenseRemittanceDao.cs" />
+    <Compile Include="IFnRemittanceAdvanceDao.cs" />
+    <Compile Include="IFnRemittanceDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFnRemittanceItemDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITADocumentAdvanceDao.cs" />
+    <Compile Include="ITADocumentDao.cs" />
+    <Compile Include="ISCGDocumentDao.cs" />
+    <Compile Include="ITADocumentScheduleDao.cs" />
+    <Compile Include="ITADocumentTravellerDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScgeAccountingDaoProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.eAccounting.DTO\SCG.eAccounting.DTO.csproj">
+      <Project>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</Project>
+      <Name>SCG.eAccounting.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.WorkFlow\SS.Standard.WorkFlow.csproj">
+      <Project>{FAB1E069-C432-4CEE-8182-833595F486AA}</Project>
+      <Name>SS.Standard.WorkFlow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

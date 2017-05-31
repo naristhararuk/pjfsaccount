@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapirunning,SCG.eAccounting.SAP" table="BAPIRUNNING">
+
+		<!-- could not find a primary key for this table/view. NHibernate requires an 'id' element, so you'll have to define one manually. -->
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="YEAR" type="String" name="Year" length="4" />
+		<property column="PERIOD" type="String" name="Period" length="2" />
+		<property column="RUNING" type="Int64" name="Runing" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		
+	</class>
+</hibernate-mapping>

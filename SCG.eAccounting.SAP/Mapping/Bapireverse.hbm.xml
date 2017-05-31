@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapireverse,SCG.eAccounting.SAP" table="BAPIREVERSE">
+
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_KIND" type="String" name="DocKind" length="50" />
+		<property column="DOC_ID" type="Int64" name="DocId" not-null="true" />
+		<property column="DOC_SEQ" type="String" name="DocSeq" length="10" />
+		<property column="DOC_YEAR" type="String" name="DocYear" length="4" />
+		<property column="DOC_APP_FLAG" type="String" name="DocAppFlag" length="1" />
+		<property column="FI_DOC" type="String" name="FiDoc" length="15" />
+		<property column="OBJ_TYPE" type="String" name="ObjType" length="5" />
+		<property column="OBJ_KEY" type="String" name="ObjKey" length="20" />
+		<property column="OBJ_SYS" type="String" name="ObjSys" length="10" />
+		<property column="REVERSE_DOC" type="String" name="ReverseDoc" length="15" />
+		<property column="ReverseDocYear" type="String" name="ReverseDocYear" length="10" />
+		<property column="ReverseDocFlag" type="String" name="ReverseDocFlag" length="10" />
+		<property column="ReverseDocMsg" type="String" name="ReverseDocMsg" length="200" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		
+	</class>
+</hibernate-mapping>

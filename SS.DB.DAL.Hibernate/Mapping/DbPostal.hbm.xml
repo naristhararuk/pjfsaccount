@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.DB.DTO.DbPostal,SS.DB.DTO" table="DbPostal">
+
+		<id name="Postalid" column="PostalID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="PostalCode" type="Int16" name="PostalCode" not-null="true" />
+		<property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="50" />
+		<property column="Rowversion" type="Byte[]" name="Rowversion" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

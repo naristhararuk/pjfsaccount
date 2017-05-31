@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapiacgl09,SCG.eAccounting.SAP" table="BAPIACGL09">
+
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_ID" type="Int64" name="DocId" not-null="true" />
+		<property column="DOC_SEQ" type="String" name="DocSeq" length="10" />
+		<property column="DOC_KIND" type="String" name="DocKind" length="50" />
+		<property column="ITEMNO_ACC" type="String" name="ItemnoAcc" length="10" />
+		<property column="GL_ACCOUNT" type="String" name="GlAccount" length="10" />
+		<property column="ITEM_TEXT" type="String" name="ItemText" length="50" />
+		<property column="STAT_CON" type="String" name="StatCon" length="1" />
+		<property column="LOG_PROC" type="String" name="LogProc" length="6" />
+		<property column="AC_DOC_NO" type="String" name="AcDocNo" length="10" />
+		<property column="REF_KEY_1" type="String" name="RefKey1" length="12" />
+		<property column="REF_KEY_2" type="String" name="RefKey2" length="12" />
+		<property column="REF_KEY_3" type="String" name="RefKey3" length="20" />
+		<property column="ACCT_KEY" type="String" name="AcctKey" length="3" />
+		<property column="ACCT_TYPE" type="String" name="AcctType" length="1" />
+		<property column="COMP_CODE" type="String" name="CompCode" length="4" />
+		<property column="BUS_AREA" type="String" name="BusArea" length="4" />
+		<property column="FUNC_AREA" type="String" name="FuncArea" length="4" />
+		<property column="PLANT" type="String" name="Plant" length="4" />
+		<property column="FIS_PERIOD" type="String" name="FisPeriod" length="2" />
+		<property column="FISC_YEAR" type="String" name="FiscYear" length="4" />
+		<property column="PSTNG_DATE" type="String" name="PstngDate" length="8" />
+		<property column="VALUE_DATE" type="String" name="ValueDate" length="8" />
+		<property column="FM_AREA" type="String" name="FmArea" length="4" />
+		<property column="CUSTOMER" type="String" name="Customer" length="10" />
+		<property column="CSHDIS_IND" type="String" name="CshdisInd" length="1" />
+		<property column="VENDOR_NO" type="String" name="VendorNo" length="10" />
+		<property column="ALLOC_NMBR" type="String" name="AllocNmbr" length="18" />
+		<property column="TAX_CODE" type="String" name="TaxCode" length="2" />
+		<property column="TAXJURCODE" type="String" name="Taxjurcode" length="15" />
+		<property column="EXT_OBJECT_ID" type="String" name="ExtObjectId" length="34" />
+		<property column="BUS_SCENARIO" type="String" name="BusScenario" length="16" />
+		<property column="COSTOBJECT" type="String" name="Costobject" length="12" />
+		<property column="COSTCENTER" type="String" name="Costcenter" length="10" />
+		<property column="ACTTYPE" type="String" name="Acttype" length="6" />
+		<property column="PROFIT_CTR" type="String" name="ProfitCtr" length="10" />
+		<property column="PART_PRCTR" type="String" name="PartPrctr" length="10" />
+		<property column="NETWORK" type="String" name="Network" length="12" />
+		<property column="WBS_ELEMENT" type="String" name="WbsElement" length="24" />
+		<property column="ORDERID" type="String" name="Orderid" length="12" />
+		<property column="ORDER_ITNO" type="String" name="OrderItno" length="4" />
+		<property column="ROUTING_NO" type="String" name="RoutingNo" length="10" />
+		<property column="ACTIVITY" type="String" name="Activity" length="4" />
+		<property column="COND_TYPE" type="String" name="CondType" length="4" />
+		<property column="COND_COUNT" type="String" name="CondCount" length="2" />
+		<property column="COND_ST_NO" type="String" name="CondStNo" length="3" />
+		<property column="FUND" type="String" name="Fund" length="10" />
+		<property column="FUNDS_CTR" type="String" name="FundsCtr" length="16" />
+		<property column="CMMT_ITEM" type="String" name="CmmtItem" length="14" />
+		<property column="CO_BUSPROC" type="String" name="CoBusproc" length="12" />
+		<property column="ASSET_NO" type="String" name="AssetNo" length="12" />
+		<property column="SUB_NUMBER" type="String" name="SubNumber" length="4" />
+		<property column="BILL_TYPE" type="String" name="BillType" length="4" />
+		<property column="SALES_ORD" type="String" name="SalesOrd" length="10" />
+		<property column="S_ORD_ITEM" type="String" name="SOrdItem" length="6" />
+		<property column="DISTR_CHAN" type="String" name="DistrChan" length="2" />
+		<property column="DIVISION" type="String" name="Division" length="2" />
+		<property column="SALESORG" type="String" name="Salesorg" length="4" />
+		<property column="SALES_GRP" type="String" name="SalesGrp" length="3" />
+		<property column="SALES_OFF" type="String" name="SalesOff" length="4" />
+		<property column="SOLD_TO" type="String" name="SoldTo" length="10" />
+		<property column="DE_CRE_IND" type="String" name="DeCreInd" length="1" />
+		<property column="P_EL_PRCTR" type="String" name="PElPrctr" length="10" />
+		<property column="XMFRW" type="String" name="Xmfrw" length="1" />
+		<property column="QUANTITY" type="Decimal" name="Quantity" />
+		<property column="BASE_UOM" type="String" name="BaseUom" length="3" />
+		<property column="BASE_UOM_ISO" type="String" name="BaseUomIso" length="3" />
+		<property column="INV_QTY" type="Decimal" name="InvQty" />
+		<property column="INV_QTY_SU" type="Decimal" name="InvQtySu" />
+		<property column="SALES_UNIT" type="String" name="SalesUnit" length="3" />
+		<property column="SALES_UNIT_ISO" type="String" name="SalesUnitIso" length="3" />
+		<property column="PO_PR_QNT" type="Decimal" name="PoPrQnt" />
+		<property column="PO_PR_UOM" type="String" name="PoPrUom" length="3" />
+		<property column="PO_PR_UOM_ISO" type="String" name="PoPrUomIso" length="3" />
+		<property column="ENTRY_QNT" type="Decimal" name="EntryQnt" />
+		<property column="ENTRY_UOM" type="String" name="EntryUom" length="3" />
+		<property column="ENTRY_UOM_ISO" type="String" name="EntryUomIso" length="3" />
+		<property column="VOLUME" type="Decimal" name="Volume" />
+		<property column="VOLUMEUNIT" type="String" name="Volumeunit" length="3" />
+		<property column="VOLUMEUNIT_ISO" type="String" name="VolumeunitIso" length="3" />
+		<property column="GROSS_WT" type="Decimal" name="GrossWt" />
+		<property column="NET_WEIGHT" type="Decimal" name="NetWeight" />
+		<property column="UNIT_OF_WT" type="String" name="UnitOfWt" length="3" />
+		<property column="UNIT_OF_WT_ISO" type="String" name="UnitOfWtIso" length="3" />
+		<property column="ITEM_CAT" type="String" name="ItemCat" length="1" />
+		<property column="MATERIAL" type="String" name="Material" length="18" />
+		<property column="MATL_TYPE" type="String" name="MatlType" length="4" />
+		<property column="MVT_IND" type="String" name="MvtInd" length="1" />
+		<property column="REVAL_IND" type="String" name="RevalInd" length="1" />
+		<property column="ORIG_GROUP" type="String" name="OrigGroup" length="4" />
+		<property column="ORIG_MAT" type="String" name="OrigMat" length="1" />
+		<property column="SERIAL_NO" type="String" name="SerialNo" length="2" />
+		<property column="PART_ACCT" type="String" name="PartAcct" length="10" />
+		<property column="TR_PART_BA" type="String" name="TrPartBa" length="4" />
+		<property column="TRADE_ID" type="String" name="TradeId" length="6" />
+		<property column="VAL_AREA" type="String" name="ValArea" length="4" />
+		<property column="VAL_TYPE" type="String" name="ValType" length="10" />
+		<property column="ASVAL_DATE" type="String" name="AsvalDate" length="8" />
+		<property column="PO_NUMBER" type="String" name="PoNumber" length="10" />
+		<property column="PO_ITEM" type="String" name="PoItem" length="5" />
+		<property column="ITM_NUMBER" type="String" name="ItmNumber" length="6" />
+		<property column="COND_CATEGORY" type="String" name="CondCategory" length="1" />
+		<property column="FUNC_AREA_LONG" type="String" name="FuncAreaLong" length="16" />
+		<property column="CMMT_ITEM_LONG" type="String" name="CmmtItemLong" length="24" />
+		<property column="GRANT_NBR" type="String" name="GrantNbr" length="20" />
+		<property column="CS_TRANS_T" type="String" name="CsTransT" length="3" />
+		<property column="DOC_TYPE" type="String" name="DocType" length="2" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.DB.DTO.DbCurrency,SS.DB.DTO" table="DbCurrency">
+
+		<id name="CurrencyID" column="CurrencyID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="Symbol" type="String" name="Symbol" length="100" not-null="true" />
+		<property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="CurrencySymbol" type="String" name="CurrencySymbol" length="50"/>
+	</class>
+</hibernate-mapping>

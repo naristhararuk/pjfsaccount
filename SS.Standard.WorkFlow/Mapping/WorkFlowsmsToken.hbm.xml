@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SS.Standard.WorkFlow.DTO.WorkFlowsmsToken,SS.Standard.WorkFlow" table="WorkFlowSMSToken">
+
+    <id name="ID" column="ID" type="Int64" unsaved-value="0">
+      <generator class="assigned"/>
+    </id>
+    <property column="Running" type="Int64" name="Running" not-null="true" />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+
+  </class>
+</hibernate-mapping>

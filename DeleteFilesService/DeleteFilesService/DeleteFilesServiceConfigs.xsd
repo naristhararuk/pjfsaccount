@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema  id="DeleteFilesService" elementFormDefault="unqualified" attributeFormDefault="unqualified"   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="Authentication">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="ServerName" />
+        <xs:element ref="UserName" />
+        <xs:element ref="Password" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="Days">
+    <xs:complexType mixed="true" />
+  </xs:element>
+<xs:element name="Extension">
+    <xs:complexType mixed="true" />
+  </xs:element>
+<xs:element name="FileName">
+    <xs:complexType mixed="true" />
+  </xs:element>
+<xs:element name="Files">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="FolderFilesName" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="FolderFilesName">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="FileName" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="RootName" type="xs:NMTOKEN" use="required" />
+      <xs:attribute name="Name" type="xs:NMTOKEN" use="required" />
+    </xs:complexType>
+  </xs:element>
+<xs:element name="FolderName">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="Extension" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="RootName" type="xs:NMTOKEN" use="required" />
+      <xs:attribute name="Name" type="xs:NMTOKEN" use="required" />
+    </xs:complexType>
+  </xs:element>
+<xs:element name="FolderRootName">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="PathName" />
+      </xs:sequence>
+      <xs:attribute name="Name" type="xs:NMTOKEN" use="required" />
+    </xs:complexType>
+  </xs:element>
+<xs:element name="FolderRootPathNames">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="FolderRootName" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="Folders">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="FolderName" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="OverDate">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="Days" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="Password">
+    <xs:complexType mixed="true" />
+  </xs:element>
+<xs:element name="PathName">
+    <xs:complexType mixed="true" />
+  </xs:element>
+<xs:element name="ServerName">
+    <xs:complexType mixed="true" />
+  </xs:element>
+<xs:element name="Settings">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="Authentication" />
+        <xs:element ref="OverDate" />
+        <xs:element ref="FolderRootPathNames" />
+        <xs:element ref="Folders" />
+        <xs:element ref="Files" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="UserName">
+    <xs:complexType mixed="true" />
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbCostCenterImportLog,SCG.DB.DTO" table="DbCostCenterImportLog">
+
+		<id name="ID" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="CostCenterCode" type="String" name="CostCenterCode" length="20" />
+		<property column="ValidFrom" type="DateTime" name="ValidFrom" />
+		<property column="ExpireDate" type="DateTime" name="ExpireDate" />
+		<property column="Description" type="String" name="Description" length="100" />
+		<property column="CompanyCode" type="String" name="CompanyCode" length="20" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="ErrorCode" type="Int32" name="ErrorCode" />
+		<property column="Message" type="String" name="Message" length="100" />
+		<property column="Line" type="Int64" name="Line" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!-- SS.SU Module -->
+  <object id="SuUserService" type="SS.SU.BLL.Implement.SuUserService, SS.SU.BLL" autowire="byName" />
+  <!--<object id="SuUserLangService" type="SS.SU.BLL.Implement.SuUserLangService, SS.SU.BLL" autowire="byName" />-->
+  <object id="UserEngineService" type="SS.SU.BLL.Implement.UserEngineService, SS.SU.BLL" autowire="byName" />
+  <object id="SuRoleService" type="SS.SU.BLL.Implement.SuRoleService, SS.SU.BLL" autowire="byName" />
+  <object id="SuProgramRoleService" type="SS.SU.BLL.Implement.SuProgramRoleService, SS.SU.BLL" autowire="byName" />
+  <object id="SuUserRoleService" type="SS.SU.BLL.Implement.SuUserRoleService, SS.SU.BLL" autowire="byName" />
+  <object id="SuGlobalTranslateService" type="SS.SU.BLL.Implement.SuGlobalTranslateService, SS.SU.BLL" autowire="byName"/> 
+  <object id="MenuEngineService" type="SS.SU.BLL.Implement.MenuEngineService, SS.SU.BLL" autowire="byName" />
+  <object id="SuGlobalTranslateLangService" type="SS.SU.BLL.Implement.SuGlobalTranslateLangService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuProgramService" type="SS.SU.BLL.Implement.SuProgramService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuProgramLangService" type="SS.SU.BLL.Implement.SuProgramLangService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuRoleLangService" type="SS.SU.BLL.Implement.SuRoleLangService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuAnnouncementGroupService" type="SS.SU.BLL.Implement.SuAnnouncementGroupService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuAnnouncementGroupLangService" type="SS.SU.BLL.Implement.SuAnnouncementGroupLangService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuMenuService" type="SS.SU.BLL.Implement.SuMenuService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuMenuLangService" type="SS.SU.BLL.Implement.SuMenuLangService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuAnnouncementService" type="SS.SU.BLL.Implement.SuAnnouncementService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuAnnouncementLangService" type="SS.SU.BLL.Implement.SuAnnouncementLangService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuOrganizationService" type="SS.SU.BLL.Implement.SuOrganizationService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuOrganizationLangService" type="SS.SU.BLL.Implement.SuOrganizationLangService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuDivisionService" type="SS.SU.BLL.Implement.SuDivisionService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuDivisionLangService" type="SS.SU.BLL.Implement.SuDivisionLangService, SS.SU.BLL" autowire="byName"/>  
+  <object id="SuRTENodeService" type="SS.SU.BLL.Implement.SuRTENodeService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuPasswordHistoryService" type="SS.SU.BLL.Implement.SuPasswordHistoryService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuRTEContentService" type="SS.SU.BLL.Implement.SuRTEContentService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuUserLogService" type="SS.SU.BLL.Implement.SuUserLogService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuSmsLogService" type="SS.SU.BLL.Implement.SuSmsLogService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuRolepbService" type="SS.SU.BLL.Implement.SuRolepbService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuRoleServiceService" type="SS.SU.BLL.Implement.SuRoleServiceService, SS.SU.BLL" autowire="byName"/>
+  <object id="TmpSuUserService" type="SS.SU.BLL.Implement.TmpSuUserService, SS.SU.BLL" autowire="byName"/>
+  <object id="SuEHrProfileLogService" type="SS.SU.BLL.Implement.SuEHrProfileLogService, SS.SU.BLL" autowire="byName"/>
+  <!--CommunicationService-->
+  <object id="SMSService" type="SS.Standard.CommunicationService.Imlement.SMSService, SS.Standard.CommunicationService" autowire="byName"/>
+  <object id="SMS" type="SS.Standard.CommunicationService.Imlement.SMS, SS.Standard.CommunicationService" autowire="byName"/>
+
+  
+
+
+  <!-- SCG.GL Module -->
+  <object id="GlAccountLangService" type="SCG.GL.BLL.Implement.GlAccountLangService, SCG.GL.BLL" autowire="byName"/>
+  <object id="GlAccountService" type="SCG.GL.BLL.Implement.GlAccountService, SCG.GL.BLL" autowire="byName"/>
+
+  <!-- SCG.DB Module -->
+  <object id="DbBankLangService" type="SCG.DB.BLL.Implement.DbBankLangService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbBankService" type="SCG.DB.BLL.Implement.DbBankService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbCompanyService" type="SCG.DB.BLL.Implement.DbCompanyService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbCompanyPaymentMethodService" type="SCG.DB.BLL.Implement.DbCompanyPaymentMethodService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbLocationService" type="SCG.DB.BLL.Implement.DbLocationService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbLocationLangService" type="SCG.DB.BLL.Implement.DbLocationLangService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbPaymentMethodService" type="SCG.DB.BLL.Implement.DbPaymentMethodService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbServiceTeamService" type="SCG.DB.BLL.Implement.DbServiceTeamService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbServiceTeamLocationService" type="SCG.DB.BLL.Implement.DbServiceTeamLocationService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbDocumentRunningService" type="SCG.DB.BLL.Implement.DbDocumentRunningService, SCG.DB.BLL" autowire="byName"/>
+
+  <object id="TmpDbOrganizationChartService" type="SCG.DB.BLL.Implement.TmpDbOrganizationChartService, SCG.DB.BLL" autowire="byName" />
+  <object id="DbOrganizationChartService" type="SCG.DB.BLL.Implement.DbOrganizationChartService, SCG.DB.BLL" autowire="byName" />
+
+  <!--SS.DB.Query-->
+  <object id="ParameterServices" type="SS.DB.Query.ParameterServices, SS.DB.Query" autowire="byName"/>
+  <object id="DbCountryService" type="SCG.DB.BLL.Implement.DbCountryService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbCountryLangService" type="SCG.DB.BLL.Implement.DbCountryLangService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbReasonService" type="SCG.DB.BLL.Implement.DbReasonService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbReasonLangService" type="SCG.DB.BLL.Implement.DbReasonLangService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbTaxService" type="SCG.DB.BLL.Implement.DbTaxService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbAccountService" type="SCG.DB.BLL.Implement.DbAccountService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbVendorService" type="SCG.DB.BLL.Implement.DbVendorService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbWithHoldingTaxTypeService" type="SCG.DB.BLL.Implement.DbWithHoldingTaxTypeService, SCG.DB.BLL" autowire="byName"/>
+  <object id="DbWithHoldingTaxService" type="SCG.DB.BLL.Implement.DbWithHoldingTaxService, SCG.DB.BLL" autowire="byName"/>
+
+	<!-- SCG.eAccounting Module -->
+  <object id="AvAdvanceDocumentService" type="SCG.eAccounting.BLL.Implement.AvAdvanceDocumentService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="AvAdvanceItemService" type="SCG.eAccounting.BLL.Implement.AvAdvanceItemService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="DocumentAttachmentService" type="SCG.eAccounting.BLL.Implement.DocumentAttachmentService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="DocumentInitiatorService" type="SCG.eAccounting.BLL.Implement.DocumentInitiatorService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="TransactionService" type="SCG.eAccounting.BLL.Implement.TransactionService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="TADocumentService" type="SCG.eAccounting.BLL.Implement.TADocumentService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="TADocumentScheduleService" type="SCG.eAccounting.BLL.Implement.TADocumentScheduleService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="TADocumentTravellerService" type="SCG.eAccounting.BLL.Implement.TADocumentTravellerService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="TADocumentAdvanceService" type="SCG.eAccounting.BLL.Implement.TADocumentAdvanceService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="SCGDocumentService" type="SCG.eAccounting.BLL.Implement.SCGDocumentService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnRemittanceService" type="SCG.eAccounting.BLL.Implement.FnRemittanceService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnRemittanceItemService" type="SCG.eAccounting.BLL.Implement.FnRemittanceItemService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnRemittanceAdvanceService" type="SCG.eAccounting.BLL.Implement.FnRemittanceAdvanceService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnExpenseDocumentService" type="SCG.eAccounting.BLL.Implement.FnExpenseDocumentService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnExpenseInvoiceService" type="SCG.eAccounting.BLL.Implement.FnExpenseInvoiceService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnExpenseInvoiceItemService" type="SCG.eAccounting.BLL.Implement.FnExpenseInvoiceItemService, SCG.eAccounting.BLL" autowire="byName"/>  
+  <object id="FnExpensePerdiemService" type="SCG.eAccounting.BLL.Implement.FnExpensePerdiemService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnExpensePerdiemItemService" type="SCG.eAccounting.BLL.Implement.FnExpensePerdiemItemService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnExpenseMileageService" type="SCG.eAccounting.BLL.Implement.FnExpenseMileageService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="FnExpenseMileageItemService" type="SCG.eAccounting.BLL.Implement.FnExpenseMileageItemService, SCG.eAccounting.BLL" autowire="byName"/>
+  <!--<object id="SCGSMSService" type="SCG.eAccounting.BLL.Implement.SCGSMSService,  SCG.eAccounting.BLL" autowire="byName"/>-->
+
+  <!--<object id="SCGEmailService" type="SCG.eAccounting.BLL.Implement.SCGEmailService, SCG.eAccounting.BLL" autowire="byName"/>-->
+
+  <!-- SS.DB Module -->
+  <object id="DbLanguageService" type="SS.DB.BLL.Implement.DbLanguageService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbCurrencyService" type="SS.DB.BLL.Implement.DbCurrencyService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbExchangeRateService" type="SS.DB.BLL.Implement.DbExchangeRateService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbStatusService" type="SS.DB.BLL.Implement.DbStatusService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbStatusLangService" type="SS.DB.BLL.Implement.DbStatusLangService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbParameterService" type="SS.DB.BLL.Implement.DbParameterService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbParameterGroupService" type="SS.DB.BLL.Implement.DbParameterGroupService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbProvinceService" type="SS.DB.BLL.Implement.DbProvinceService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbProvinceLangService" type="SS.DB.BLL.Implement.DbProvinceLangService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbRegionService" type="SS.DB.BLL.Implement.DbRegionService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbZoneService" type="SS.DB.BLL.Implement.DbZoneService, SS.DB.BLL" autowire="byName"/>
+  <object id="DbZoneLangService" type="SS.DB.BLL.Implement.DbZoneLangService, SS.DB.BLL" autowire="byName"/>
+
+	<!-- SCG.FN Module -->
+
+	<object id="FnReceiptTypeService" type="SCG.FN.BLL.Implement.FnReceiptTypeService, SCG.FN.BLL" autowire="byName"/>
+	<object id="FnCashierService" type="SCG.FN.BLL.Implement.FnCashierService, SCG.FN.BLL" autowire="byName"/>
+	<object id="FnCashierLangService" type="SCG.FN.BLL.Implement.FnCashierLangService, SCG.FN.BLL" autowire="byName"/>
+
+
+  <!-- SCG eAccounting WorkFlow Service-->
+  <object id="GeneralWorkFlowService" type="SCG.eAccounting.BLL.Implement.WorkFlowService.GeneralWorkFlowService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="RemittanceWorkFlowService" type="SCG.eAccounting.BLL.Implement.WorkFlowService.RemittanceWorkFlowService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="AdvanceForeignWorkFlowService" type="SCG.eAccounting.BLL.Implement.WorkFlowService.AdvanceForeignWorkFlowService, SCG.eAccounting.BLL" autowire="byName"/>
+  <object id="AdvanceWorkFlowService" type="SCG.eAccounting.BLL.Implement.WorkFlowService.AdvanceWorkFlowService, SCG.eAccounting.BLL" autowire="byName" parent="ExpenseWorkFlowService"/>
+  <object id="ExpenseWorkFlowService" type="SCG.eAccounting.BLL.Implement.WorkFlowService.ExpenseWorkFlowService, SCG.eAccounting.BLL" autowire="byName" parent="GeneralWorkFlowService"/>
+  <object id="TAWorkFlowService" type="SCG.eAccounting.BLL.Implement.WorkFlowService.TAWorkFlowService, SCG.eAccounting.BLL" autowire="byName"/> 
+
+
+</objects>

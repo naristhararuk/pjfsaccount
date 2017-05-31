@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log4net debug="false">
+    
+	<appender name="RollingFileAppender1" type="log4net.Appender.RollingFileAppender">
+        <file value="Logs/Standard_Log.txt" />
+        <appendToFile value="true" />
+        <rollingStyle value="Size" />
+		<maxSizeRollBackups value="50" />
+        <maximumFileSize value="5120KB" />
+        <staticLogFileName value="true" />
+		<lockingModel type="log4net.Appender.FileAppender+ExclusiveLock" />
+        <layout type="log4net.Layout.PatternLayout">
+            <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+        </layout>
+    </appender>
+ 
+	<appender name="RollingFileAppender2" type="log4net.Appender.RollingFileAppender">
+		<file value="Logs/TransactionService_Log.txt" />
+		<appendToFile value="true" />
+		<rollingStyle value="Size" />
+		<maxSizeRollBackups value="50" />
+		<maximumFileSize value="5120KB" />
+		<staticLogFileName value="true" />
+		<lockingModel type="log4net.Appender.FileAppender+ExclusiveLock" />
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+		</layout>
+	</appender>
+
+  <appender name="RollingFileAppender3" type="log4net.Appender.RollingFileAppender">
+    <file value="Logs/Bapi_log.txt" />
+    <appendToFile value="true" />
+    <rollingStyle value="Size" />
+    <maxSizeRollBackups value="50" />
+    <maximumFileSize value="5120KB" />
+    <staticLogFileName value="true" />
+    <lockingModel type="log4net.Appender.FileAppender+ExclusiveLock" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+    </layout>
+  </appender>
+  
+    <root>
+        <level value="ERROR" />
+		<appender-ref ref="RollingFileAppender1" />
+    </root>
+
+	<logger name="TransactionService" additivity="false">
+		<level value="ERROR" />
+		<appender-ref ref="RollingFileAppender2" />
+	</logger>
+	
+  <logger name="BapiLog" additivity="false">
+    <level value="OFF" />
+    <appender-ref ref="RollingFileAppender3" />
+  </logger>
+  
+</log4net>

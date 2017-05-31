@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SCG.DB.DTO.DbPBCurrency,SCG.DB.DTO" table="DbPBCurrency">
+
+    <id name="ID" column="ID" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <!--<property column="ID" type="String" name="ID" not-null="true" length="20" />-->
+    <property column="PBID" type="Int64" name="PBID" not-null="true" />
+    <property column="CurrencyID" type="Int16" name="CurrencyID"  />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" />
+    <property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+    
+  </class>
+</hibernate-mapping>

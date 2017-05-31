@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.FN.DTO.FnExpenseDocument,SCG.FN.DTO" table="FnExpenseDocument">
+
+		<id name="ExpenseID" column="ExpenseID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Document" column="DocumentID" class="SCG.eAccounting.DTO.SCGDocument,SCG.eAccounting.DTO" />
+		<many-to-one name="ServiceTeam" column="ServiceTeamID" class="SCG.DB.DTO.DbServiceTeam,SCG.DB.DTO" />
+		<many-to-one name="PB" column="PBID" class="SCG.DB.DTO.Dbpb,SCG.DB.DTO" />
+		<property column="PaymentType" type="String" name="PaymentType" not-null="true" length="5" />
+		<property column="TotalExpense" type="Double" name="TotalExpense" />
+		<property column="TotalAdvance" type="Double" name="TotalAdvance" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

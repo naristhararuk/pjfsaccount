@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A44769B3-3B65-411D-A878-D70E10F6B538}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.BLL</RootNamespace>
+    <AssemblyName>SCG.eAccounting.BLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\sapnco_utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SCG.eAccounting.Report, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\SCG.eAccounting.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="StringTemplate, Version=3.0.1.17176, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\StringTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BapiService\AdvancePostingService.cs" />
+    <Compile Include="BapiService\ApproveService.cs" />
+    <Compile Include="BapiService\Const\DocTypeConst.cs" />
+    <Compile Include="BapiService\Const\DocTypeNameConst.cs" />
+    <Compile Include="BapiService\Const\DocumentKindEnum.cs" />
+    <Compile Include="BapiService\Const\PaymentTypeConst.cs" />
+    <Compile Include="BapiService\Const\PostingConst.cs" />
+    <Compile Include="BapiService\Const\SpGlIndConst.cs" />
+    <Compile Include="BapiService\Const\TaxCodeConst.cs" />
+    <Compile Include="BapiService\Const\WorkFlowEventNameConst.cs" />
+    <Compile Include="BapiService\Const\WorkFlowStatEventNameConst.cs" />
+    <Compile Include="BapiService\Const\WorkFlowTypeID.cs" />
+    <Compile Include="BapiService\Const\ZoneTypeConst.cs" />
+    <Compile Include="BapiService\FixedAdvancePostingReturnService.cs" />
+    <Compile Include="BapiService\FixedAdvancePostingService.cs" />
+    <Compile Include="BapiService\ExpensePostingService.cs" />
+    <Compile Include="BapiService\ExpenseRemittancePostingService.cs" />
+    <Compile Include="BapiService\Posting\PostingService.cs" />
+    <Compile Include="BapiService\RemittancePostingService.cs" />
+    <Compile Include="BapiService\SIMULATOR\GenerateRunning.cs" />
+    <Compile Include="ConfigurationService.cs" />
+    <Compile Include="IFixedAvAdvanceDocumentService.cs" />
+    <Compile Include="IFnExpensCAService.cs" />
+    <Compile Include="ICADocumentService.cs" />
+    <Compile Include="EmailSerializer.cs" />
+    <Compile Include="IAvAdvanceDocumentService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IAvAdvanceItemService.cs" />
+    <Compile Include="IDbDocumentBoxIDPostingService.cs" />
+    <Compile Include="IDbDocumentImagePostingService.cs" />
+    <Compile Include="IDocumentAttachmentService.cs" />
+    <Compile Include="IDocumentInitiatorService.cs" />
+    <Compile Include="IDocumentViewLockService.cs" />
+    <Compile Include="IFnAutoPaymentService.cs" />
+    <Compile Include="IFnAutoPaymentTempService.cs" />
+    <Compile Include="IFnEACAdvanceImportLogService.cs" />
+    <Compile Include="IFnEACAdvanceImportTempService.cs" />
+    <Compile Include="IFnEHRexpenseTempService.cs" />
+    <Compile Include="IFnExpenseAdvanceService.cs" />
+    <Compile Include="IFnExpenseDocumentService.cs" />
+    <Compile Include="IFnExpenseInvoiceItemService.cs" />
+    <Compile Include="IFnExpenseInvoiceService.cs" />
+    <Compile Include="IFnExpenseMileageInvoiceService.cs" />
+    <Compile Include="IFnExpenseMileageItemService.cs" />
+    <Compile Include="IFnExpenseMileageService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFnExpensePerdiemDetailService.cs" />
+    <Compile Include="IFnExpensePerdiemItemService.cs" />
+    <Compile Include="IFnExpensePerdiemService.cs" />
+    <Compile Include="IFnExpenseRemittanceService.cs" />
+    <Compile Include="IFnExpensMPAService.cs" />
+    <Compile Include="IFnPerdiemProfileCountryService.cs" />
+    <Compile Include="IFnPerdiemProfileService.cs" />
+    <Compile Include="IFnPerdiemRateService.cs" />
+    <Compile Include="IFnRemittanceAdvanceService.cs" />
+    <Compile Include="IFnRemittanceItemService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFnRemittanceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IMPADocumentService.cs" />
+    <Compile Include="IMPAItemService.cs" />
+    <Compile Include="Implement\CADocumentService.cs" />
+    <Compile Include="Implement\FixedAdvanceDocumentService.cs" />
+    <Compile Include="Implement\FnExpensCAService.cs" />
+    <Compile Include="Implement\FnExpensMPAService.cs" />
+    <Compile Include="Implement\MPAItemService.cs" />
+    <Compile Include="Implement\WorkFlowService\CAWorkflowService.cs" />
+    <Compile Include="Implement\WorkFlowService\FixedAdvanceWorkflowService.cs" />
+    <Compile Include="WorkFlowService\IFixedAdvanceWorkflowService.cs" />
+    <Compile Include="WorkFlowService\ICAWorkflowService.cs" />
+    <Compile Include="WorkFlowService\IMPAWorkflowService.cs" />
+    <Compile Include="Implement\AvAdvanceDocumentService.cs" />
+    <Compile Include="Implement\AvAdvanceItemService.cs" />
+    <Compile Include="Implement\DbDocumentBoxIDPostingService.cs" />
+    <Compile Include="Implement\DbDocumentImagePostingService.cs" />
+    <Compile Include="Implement\DocumentAttachmentService.cs" />
+    <Compile Include="Implement\DocumentInitiatorService.cs" />
+    <Compile Include="Implement\DocumentViewLockService.cs" />
+    <Compile Include="Implement\FnAutoPaymentService.cs" />
+    <Compile Include="Implement\FnAutoPaymentTempService.cs" />
+    <Compile Include="Implement\FnEACAdvanceImportLogService.cs" />
+    <Compile Include="Implement\FnEACAdvanceImportTempService.cs" />
+    <Compile Include="Implement\FnEHRexpenseTempService.cs" />
+    <Compile Include="Implement\FnExpenseAdvanceService.cs" />
+    <Compile Include="Implement\FnExpenseDocumentService.cs" />
+    <Compile Include="Implement\FnExpenseInvoiceItemService.cs" />
+    <Compile Include="Implement\FnExpenseInvoiceService.cs" />
+    <Compile Include="Implement\FnExpenseMileageItemService.cs" />
+    <Compile Include="Implement\FnExpenseMileageService.cs" />
+    <Compile Include="Implement\FnExpensePerdiemDetailService.cs" />
+    <Compile Include="Implement\FnExpensePerdiemItemService.cs" />
+    <Compile Include="Implement\FnExpensePerdiemService.cs" />
+    <Compile Include="Implement\FnPerdiemProfileCountryService.cs" />
+    <Compile Include="Implement\FnPerdiemProfileService.cs" />
+    <Compile Include="Implement\FnPerdiemRateService.cs" />
+    <Compile Include="Implement\FnRemittanceAdvanceService.cs" />
+    <Compile Include="Implement\FnRemittanceItemService.cs" />
+    <Compile Include="Implement\FnRemittanceService.cs" />
+    <Compile Include="Implement\MPADocumentService.cs" />
+    <Compile Include="Implement\SCGDocumentService.cs" />
+    <Compile Include="Implement\SCGEmailService.cs" />
+    <Compile Include="Implement\SCGSMSService.cs" />
+    <Compile Include="Implement\TADocumentAdvanceService.cs" />
+    <Compile Include="Implement\TADocumentScheduleService.cs" />
+    <Compile Include="Implement\TADocumentService.cs" />
+    <Compile Include="Implement\TADocumentTravellerService.cs" />
+    <Compile Include="Implement\TransactionService.cs" />
+    <Compile Include="Implement\WorkFlowService\AdvanceForeignWorkFlowService.cs" />
+    <Compile Include="Implement\WorkFlowService\AdvanceWorkFlowService.cs" />
+    <Compile Include="Implement\WorkFlowService\ExpenseWorkFlowService.cs" />
+    <Compile Include="Implement\WorkFlowService\GeneralWorkFlowService.cs" />
+    <Compile Include="Implement\WorkFlowService\MPAWorkflowService.cs" />
+    <Compile Include="Implement\WorkFlowService\RemittanceWorkFlowService.cs" />
+    <Compile Include="Implement\WorkFlowService\TAWorkFlowService.cs" />
+    <Compile Include="ISCGEmailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISCGSMSService.cs" />
+    <Compile Include="WorkFlowService\IGeneralWorkFlowService.cs" />
+    <Compile Include="ISCGDocumentService.cs" />
+    <Compile Include="ITADocumentAdvanceService.cs" />
+    <Compile Include="ITADocumentScheduleService.cs" />
+    <Compile Include="ITADocumentService.cs" />
+    <Compile Include="ITADocumentTravellerService.cs" />
+    <Compile Include="ITransactionService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCGEnum.cs" />
+    <Compile Include="WorkFlowService\IAdvanceWorkFlowService.cs" />
+    <Compile Include="WorkFlowService\IExpenseWorkFlowService.cs" />
+    <Compile Include="WorkFlowService\IRemittanceWorkFlowService.cs" />
+    <Compile Include="WorkFlowService\ITAWorkFlowService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.BLL\SCG.DB.BLL.csproj">
+      <Project>{F710CA0A-7490-4B61-AE96-0E46F7B7702C}</Project>
+      <Name>SCG.DB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Query\SCG.DB.Query.csproj">
+      <Project>{66CBB214-DA80-40EF-917C-DEB3DAC72AF7}</Project>
+      <Name>SCG.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DAL\SCG.eAccounting.DAL.csproj">
+      <Project>{D8377A07-E8CF-4EFD-9814-5C10EFF09281}</Project>
+      <Name>SCG.eAccounting.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DTO\SCG.eAccounting.DTO.csproj">
+      <Project>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</Project>
+      <Name>SCG.eAccounting.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Helper\SCG.eAccounting.Helper.csproj">
+      <Project>{8242573D-841E-46C5-A1EE-9D67685C5229}</Project>
+      <Name>SCG.eAccounting.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Query\SCG.eAccounting.Query.csproj">
+      <Project>{A133B337-8915-4934-BC9C-D26D30485147}</Project>
+      <Name>SCG.eAccounting.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.SAP.BAPI\SCG.eAccounting.SAP.BAPI.csproj">
+      <Project>{D952F23A-B5C2-4447-B2A9-A78219F3481F}</Project>
+      <Name>SCG.eAccounting.SAP.BAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.SAP\SCG.eAccounting.SAP.csproj">
+      <Project>{DB3E9E59-A972-4CAD-9328-8569D4F6980B}</Project>
+      <Name>SCG.eAccounting.SAP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.BLL\SS.DB.BLL.csproj">
+      <Project>{8A6CCEE6-C339-4451-B9C2-2093E0DB1121}</Project>
+      <Name>SS.DB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.CommunicationService\SS.Standard.CommunicationService.csproj">
+      <Project>{A6C988C2-ED30-4DEB-ACA7-36340AC13C42}</Project>
+      <Name>SS.Standard.CommunicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.UI\SS.Standard.UI.csproj">
+      <Project>{BB10E1E3-9788-4CB6-9180-0E0D7BBB66F8}</Project>
+      <Name>SS.Standard.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.WorkFlow\SS.Standard.WorkFlow.csproj">
+      <Project>{FAB1E069-C432-4CEE-8182-833595F486AA}</Project>
+      <Name>SS.Standard.WorkFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard\SS.Standard.csproj">
+      <Project>{EA7F90F8-FC93-4896-9D9A-9192F5803D37}</Project>
+      <Name>SS.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.BLL\SS.SU.BLL.csproj">
+      <Project>{7BDC5E8F-976D-4AFA-95E0-66E1C3E23450}</Project>
+      <Name>SS.SU.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Query\SS.SU.Query.csproj">
+      <Project>{4D083F28-AE94-4FF7-B010-9B96701C1B3C}</Project>
+      <Name>SS.SU.Query</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

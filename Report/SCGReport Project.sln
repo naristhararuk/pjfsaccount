@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SCGReport", "SCGReport Project\SCGReport.rptproj", "{5200D680-3F98-4131-9240-0863033515FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5200D680-3F98-4131-9240-0863033515FE}.Debug|Default.ActiveCfg = Debug
+		{5200D680-3F98-4131-9240-0863033515FE}.Debug|Default.Build.0 = DebugLocal
+		{5200D680-3F98-4131-9240-0863033515FE}.Debug|Default.Deploy.0 = DebugLocal
+		{5200D680-3F98-4131-9240-0863033515FE}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{5200D680-3F98-4131-9240-0863033515FE}.DebugLocal|Default.Build.0 = DebugLocal
+		{5200D680-3F98-4131-9240-0863033515FE}.Production|Default.ActiveCfg = Production
+		{5200D680-3F98-4131-9240-0863033515FE}.Production|Default.Build.0 = Production
+		{5200D680-3F98-4131-9240-0863033515FE}.Production|Default.Deploy.0 = Production
+		{5200D680-3F98-4131-9240-0863033515FE}.Release|Default.ActiveCfg = Production
+		{5200D680-3F98-4131-9240-0863033515FE}.Release|Default.Build.0 = Production
+		{5200D680-3F98-4131-9240-0863033515FE}.Release|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

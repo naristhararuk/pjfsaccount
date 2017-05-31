@@ -1,0 +1,2 @@
+format => [program_path] [o] [sap_upload_root_path] [export_folder_name]
+C:\eAccountingInterface\SCG.eAccounting.Interface.BoxIDIO.exe o  E:\SCG.eAccounting.Web\SAPUpload\batch\eacc\ tne19_boxidupdate

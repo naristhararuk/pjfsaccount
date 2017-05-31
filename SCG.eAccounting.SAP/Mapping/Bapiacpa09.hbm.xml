@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SCG.eAccounting.SAP.DTO.Bapiacpa09,SCG.eAccounting.SAP" table="BAPIACPA09">
+
+    <id name="Id" column="ID" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property column="DOC_ID" type="Int64" name="DocId" not-null="true" />
+    <property column="DOC_SEQ" type="String" name="DocSeq" length="10" />
+    <property column="DOC_KIND" type="String" name="DocKind" length="50" />
+    <property column="NAME" type="String" name="Name" length="35" />
+    <property column="NAME_2" type="String" name="Name2" length="35" />
+    <property column="NAME_3" type="String" name="Name3" length="35" />
+    <property column="NAME_4" type="String" name="Name4" length="35" />
+    <property column="POSTL_CODE" type="String" name="PostlCode" length="10" />
+    <property column="CITY" type="String" name="City" length="35" />
+    <property column="COUNTRY" type="String" name="Country" length="3" />
+    <property column="COUNTRY_ISO" type="String" name="CountryIso" length="2" />
+    <property column="STREET" type="String" name="Street" length="35" />
+    <property column="PO_BOX" type="String" name="PoBox" length="10" />
+    <property column="POBX_PCD" type="String" name="PobxPcd" length="10" />
+    <property column="POBK_CURAC" type="String" name="PobkCurac" length="16" />
+    <property column="BANK_ACCT" type="String" name="BankAcct" length="18" />
+    <property column="BANK_NO" type="String" name="BankNo" length="15" />
+    <property column="BANK_CTRY" type="String" name="BankCtry" length="3" />
+    <property column="BANK_CTRY_ISO" type="String" name="BankCtryIso" length="2" />
+    <property column="TAX_NO_1" type="String" name="TaxNo1" length="16" />
+    <property column="TAX_NO_2" type="String" name="TaxNo2" length="11" />
+    <property column="TAX_NO_3" type="String" name="TaxNo3" length="16" />
+    <property column="TAX_NO_4" type="String" name="TaxNo4" length="11" />
+    <property column="TAX" type="String" name="Tax" length="1" />
+    <property column="EQUAL_TAX" type="String" name="EqualTax" length="1" />
+    <property column="REGION" type="String" name="Region" length="3" />
+    <property column="CTRL_KEY" type="String" name="CtrlKey" length="2" />
+    <property column="INSTR_KEY" type="String" name="InstrKey" length="2" />
+    <property column="DME_IND" type="String" name="DmeInd" length="1" />
+    <property column="LANGU_ISO" type="String" name="LanguIso" length="2" />
+    <property column="ANRED" type="String" name="Anred" length="15" />
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    <property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.DB.DTO</RootNamespace>
+    <AssemblyName>SS.DB.DTO</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbCity.cs" />
+    <Compile Include="DbCityLang.cs" />
+    <Compile Include="DbCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DbCurrencyLang.cs" />
+    <Compile Include="DbDistrict.cs" />
+    <Compile Include="DbDistrictLang.cs" />
+    <Compile Include="DbExchangeRate.cs" />
+    <Compile Include="DbParameter.cs" />
+    <Compile Include="DbParameterGroup.cs" />
+    <Compile Include="DbPostal.cs" />
+    <Compile Include="DbPrefix.cs" />
+    <Compile Include="DbPrefixLang.cs" />
+    <Compile Include="DbProvince.cs" />
+    <Compile Include="DbProvinceLang.cs" />
+    <Compile Include="DbRegion.cs" />
+    <Compile Include="DbRegionLang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DbStatus.cs" />
+    <Compile Include="DbStatusLang.cs" />
+    <Compile Include="DbZone.cs" />
+    <Compile Include="DbZoneLang.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DbLanguage.cs" />
+    <Compile Include="ValueObject\CurrencyAutoCompleteParameter.cs" />
+    <Compile Include="ValueObject\DBCurrencyLanguage.cs" />
+    <Compile Include="ValueObject\DBProvinceAutoCompleteParameter.cs" />
+    <Compile Include="ValueObject\DbZoneResult.cs" />
+    <Compile Include="ValueObject\HashBox.cs" />
+    <Compile Include="ValueObject\Language.cs" />
+    <Compile Include="ValueObject\DbLanguageSearchResult.cs" />
+    <Compile Include="ValueObject\ParameterGroup.cs" />
+    <Compile Include="ValueObject\ProvinceLang.cs" />
+    <Compile Include="ValueObject\DBProvinceLovReturn.cs" />
+    <Compile Include="ValueObject\StatusLang.cs" />
+    <Compile Include="ValueObject\Parameter.cs" />
+    <Compile Include="ValueObject\TranslatedListItem.cs" />
+    <Compile Include="ValueObject\VOUCurrencySetup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

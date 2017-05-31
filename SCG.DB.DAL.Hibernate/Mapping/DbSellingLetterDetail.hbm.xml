@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbSellingLetterDetail,SCG.DB.DTO" table="DbSellingLetterDetail">
+
+		<id name="LetterID" column="LetterID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+
+		<!-- more than one foreign column is mapped to CompanyCode - you're on your own. -->
+		<property column="LetterNo" type="String" name="LetterNo" not-null="true" />
+		<property column="BuyingDate" type="DateTime" name="BuyingDate" not-null="true" />
+		<property column="CompanyName" type="String" name="CompanyName" not-null="true" />
+		<property column="AccountNo" type="String" name="AccountNo" not-null="true" />
+		<property column="AccountType" type="String" name="AccountType" not-null="true" />
+		<property column="BankName" type="String" name="BankName" not-null="true" />
+		<property column="BankBranch" type="String" name="BankBranch" not-null="true" />
+		
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false"/>
+
+	</class>
+</hibernate-mapping>

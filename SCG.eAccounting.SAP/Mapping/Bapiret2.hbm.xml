@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapiret2,SCG.eAccounting.SAP" table="BAPIRET2">
+
+		<id name="Id1" column="ID1" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_ID" type="Int64" name="DocId" not-null="true" />
+		<property column="DOC_SEQ" type="String" name="DocSeq" length="10" />
+		<property column="DOC_KIND" type="String" name="DocKind" length="50" />
+		<property column="TYPE" type="String" name="Type" length="1" />
+		<property column="ID" type="String" name="Id" length="20" />
+		<property column="NUMBER" type="String" name="Number" length="3" />
+		<property column="MESSAGE" type="String" name="Message" length="220" />
+		<property column="LOG_NO" type="String" name="LogNo" length="20" />
+		<property column="LOG_MSG_NO" type="String" name="LogMsgNo" length="6" />
+		<property column="MESSAGE_V1" type="String" name="MessageV1" length="50" />
+		<property column="MESSAGE_V2" type="String" name="MessageV2" length="50" />
+		<property column="MESSAGE_V3" type="String" name="MessageV3" length="50" />
+		<property column="MESSAGE_V4" type="String" name="MessageV4" length="50" />
+		<property column="PARAMETER" type="String" name="Parameter" length="32" />
+		<property column="ROW" type="Int32" name="Row" />
+		<property column="FIELD" type="String" name="Field" length="4" />
+		<property column="SYSTEM" type="String" name="System" length="10" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbMileageRateRevision,SCG.DB.DTO" table="MileageRateRevision">
+
+		<id name="Id" column="Id" type="Guid">
+      <generator class="guid.comb" />
+		</id>
+    <property column="ApprovedDate" type="DateTime" name="ApprovedDate"/>
+    <property column="EffectiveFromDate" type="DateTime" name="EffectiveFromDate"/>
+    <property column="EffectiveToDate" type="DateTime" name="EffectiveToDate"/>
+    <property column="Status" type="Byte" name="Status" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="20" />
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapiaccait,SCG.eAccounting.SAP" table="BAPIACCAIT">
+
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_NO" type="String" name="DocNo" not-null="true" length="20" />
+		<property column="ITEMNO_ACC" type="String" name="ItemnoAcc" length="10" />
+		<property column="CONT_ACCT" type="String" name="ContAcct" length="12" />
+		<property column="MAIN_TRANS" type="String" name="MainTrans" length="4" />
+		<property column="SUB_TRANS" type="String" name="SubTrans" length="4" />
+		<property column="FUNC_AREA" type="String" name="FuncArea" length="4" />
+		<property column="FM_AREA" type="String" name="FmArea" length="4" />
+		<property column="CMMT_ITEM" type="String" name="CmmtItem" length="14" />
+		<property column="FUNDS_CTR" type="String" name="FundsCtr" length="16" />
+		<property column="FUND" type="String" name="Fund" length="10" />
+		<property column="FUNC_AREA_LONG" type="String" name="FuncAreaLong" length="16" />
+		<property column="CMMT_ITEM_LONG" type="String" name="CmmtItemLong" length="24" />
+		<property column="GRANT_NBR" type="String" name="GrantNbr" length="20" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false"/>
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		
+	</class>
+</hibernate-mapping>

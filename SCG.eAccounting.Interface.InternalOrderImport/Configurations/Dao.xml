@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:aop="http://www.springframework.net/aop"
+         xmlns:tx="http://www.springframework.net/tx">
+
+  <db:provider id="DbProvider" provider="SqlServer-2.0" connectionString="Database=eAccounting;Server=172.16.2.27\SCG;Integrated Security=false;User ID=account;pwd=account;"/>
+  <object name="WebConfigPropertyHolder" type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+    <property name="ConfigSections">
+      <value>databaseSettings</value>
+    </property>
+  </object>
+
+  <!--<databaseSettings>
+    <add key="ServerName" value="HQSQLSVR\SCG" />
+    <add key="UserName" value="account" />
+    <add key="Password" value="account" />
+    <add key="DatabaseName" value="eAccounting" />
+  </databaseSettings>-->
+
+  <object id="SessionFactory" type="Spring.Data.NHibernate.LocalSessionFactoryObject, Spring.Data.NHibernate12">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="MappingAssemblies">
+      <list>
+			<!-- SS.SU System-->
+			<value>SS.SU.DAL.Hibernate</value>
+			<value>SS.SU.Query.Hibernate</value>
+		  
+			<!-- SCG.GL System-->
+			<value>SCG.GL.DAL.Hibernate</value>
+			<value>SCG.GL.Query.Hibernate</value>
+
+			<!-- SCG.DB System-->
+			<value>SCG.DB.DAL.Hibernate</value>
+			<value>SCG.DB.Query.Hibernate</value>
+
+			<!-- SS.DB System-->
+			<value>SS.DB.DAL.Hibernate</value>
+			<value>SS.DB.Query.Hibernate</value>
+        
+			<!-- SCG.FN System-->
+			<value>SCG.FN.DAL.Hibernate</value>
+			<value>SCG.FN.Query.Hibernate</value>
+
+			<!-- SCG.eAccounting System-->
+			<value>SCG.eAccounting.DAL.Hibernate</value>
+			<value>SCG.eAccounting.Query.Hibernate</value>
+
+			<!-- WorkFlow -->
+			<value>SS.Standard.WorkFlow</value>
+
+			<!-- SAP.BAPI System-->
+			<value>SCG.eAccounting.SAP</value>
+	  </list>
+    </property>
+    <property name="HibernateProperties">
+      <dictionary>
+        <entry key="hibernate.connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+        <entry key="hibernate.dialect" value="NHibernate.Dialect.MsSql2005Dialect"/>
+        <entry key="hibernate.connection.driver_class" value="NHibernate.Driver.SqlClientDriver"/>
+        <entry key="hibernate.show_sql" value="true"/>
+        <!--<entry key="hibernate.hbm2ddl.auto" value="create"/>-->
+      </dictionary>
+    </property>
+  </object>
+
+  <object id="HibernateTemplate" type="Spring.Data.NHibernate.Generic.HibernateTemplate">
+    <property name="SessionFactory" ref="SessionFactory" />
+    <property name="TemplateFlushMode" value="Auto" />
+    <property name="CacheQueries" value="true" />
+  </object>
+
+  <object id="HibernateTransactionManager" type="Spring.Data.NHibernate.HibernateTransactionManager, Spring.Data.NHibernate12">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="SessionFactory" ref="SessionFactory"/>
+  </object>
+
+  <tx:advice id="HibernateTransactionAdvice" transaction-manager="HibernateTransactionManager">
+    <tx:attributes>
+      <tx:method name="Find*" read-only="true" />
+      <tx:method name="Get*" read-only="true" />
+      <tx:method name="Load*" read-only="true" />
+      <tx:method name="*" read-only="false"/>
+    </tx:attributes>
+  </tx:advice>
+
+  <tx:advice id="HibernateQueryAdvice" transaction-manager="HibernateTransactionManager">
+    <tx:attributes>
+      <tx:method name="*" read-only="true"/>
+    </tx:attributes>
+  </tx:advice>
+
+  <object id="ServiceTransactionPointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
+    <property name="Patterns">
+      <list>
+        <value>SS.SU.BLL.*</value>
+		<value>SCG.GL.BLL.*</value>
+		<value>SCG.DB.BLL.*</value>
+		<value>SCG.eAccounting.BLL.*</value>
+		<value>SS.DB.BLL.*</value>
+        <value>SS.Standard.Data.NHibernate.Service.*</value>
+        <value>SCG.FN.BLL.*</value>
+        <value>SS.Standard.WorkFlow.Service.*</value>
+		  
+		<value>SCG.eAccounting.SAP.Service.Interface.*</value>
+      </list>
+    </property>
+  </object>
+
+  <object id="QueryTransactionPointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
+    <property name="Patterns">
+      <list>
+        <value>SS.SU.Query.Hibernate.*</value>
+		<value>SCG.GL.Query.Hibernate.*</value>
+		<value>SCG.DB.Query.Hibernate.*</value>
+		<value>SCG.eAccounting.Query.Hibernate.*</value>
+		<value>SS.DB.Query.Hibernate.*</value>
+        <value>SS.Standard.Data.NHibernate.QueryDao.*</value>
+        <value>SCG.FN.Query.Hibernate.*</value>
+        <value>SS.Standard.WorkFlow.Query.Hibernate.*</value>
+
+		<value>SCG.eAccounting.SAP.Query.Hibernate.*</value>
+      </list>
+    </property>
+  </object>
+
+  <aop:config>
+    <aop:advisor pointcut-ref="ServiceTransactionPointcut" advice-ref="HibernateTransactionAdvice"/>
+    <aop:advisor pointcut-ref="QueryTransactionPointcut" advice-ref="HibernateQueryAdvice"/>
+  </aop:config>
+
+	<!-- SS.SU System -->
+	<object id="DaoProvider" type="SS.SU.DAL.DaoProvider, SS.SU.DAL" autowire="byName" />
+	<object id="SuUserDao" type="SS.SU.DAL.Hibernate.SuUserDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<!--<object id="SuUserLangDao" type="SS.SU.DAL.Hibernate.SuUserLangDao, SS.SU.DAL.Hibernate" autowire="byName" />-->
+  <object id="SuRoleDao" type="SS.SU.DAL.Hibernate.SuRoleDao, SS.SU.DAL.Hibernate" autowire="byName" />
+  <object id="SuRolepbDao" type="SS.SU.DAL.Hibernate.SuRolepbDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="UserEngineDao" type="SS.SU.DAL.Hibernate.UserEngineDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuSessionDao" type="SS.SU.DAL.Hibernate.SuSessionDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuGlobalTranslateDao" type="SS.SU.DAL.Hibernate.SuGlobalTranslateDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="MenuEngineDao" type="SS.SU.DAL.Hibernate.MenuEngineDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuUserRoleDao" type="SS.SU.DAL.Hibernate.SuUserRoleDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuProgramDao" type="SS.SU.DAL.Hibernate.SuProgramDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuGlobalTranslateLangDao" type="SS.SU.DAL.Hibernate.SuGlobalTranslateLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuProgramLangDao" type="SS.SU.DAL.Hibernate.SuProgramLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuAnnouncementGroupDao" type="SS.SU.DAL.Hibernate.SuAnnouncementGroupDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuAnnouncementGroupLangDao" type="SS.SU.DAL.Hibernate.SuAnnouncementGroupLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuProgramRoleDao" type="SS.SU.DAL.Hibernate.SuProgramRoleDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuRoleLangDao" type="SS.SU.DAL.Hibernate.SuRoleLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuMenuDao" type="SS.SU.DAL.Hibernate.SuMenuDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuMenuLangDao" type="SS.SU.DAL.Hibernate.SuMenuLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuAnnouncementDao" type="SS.SU.DAL.Hibernate.SuAnnouncementDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuAnnouncementLangDao" type="SS.SU.DAL.Hibernate.SuAnnouncementLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuOrganizationDao" type="SS.SU.DAL.Hibernate.SuOrganizationDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuOrganizationLangDao" type="SS.SU.DAL.Hibernate.SuOrganizationLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuDivisionDao" type="SS.SU.DAL.Hibernate.SuDivisionDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuDivisionLangDao" type="SS.SU.DAL.Hibernate.SuDivisionLangDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuRTENodeDao" type="SS.SU.DAL.Hibernate.SuRTENodeDao, SS.SU.DAL.Hibernate" autowire="byName" />
+	<object id="SuPasswordHistoryDao" type="SS.SU.DAL.Hibernate.SuPasswordHistoryDao, SS.SU.DAL.Hibernate" autowire="byName" />
+    <object id="SuRTEContentDao" type="SS.SU.DAL.Hibernate.SuRTEContentDao, SS.SU.DAL.Hibernate" autowire="byName" />
+  <object id="SuUserLogDao" type="SS.SU.DAL.Hibernate.SuUserLogDao, SS.SU.DAL.Hibernate" autowire="byName" />
+  <object id="SuSmsLogDao" type="SS.SU.DAL.Hibernate.SuSmsLogDao, SS.SU.DAL.Hibernate" autowire="byName" />
+  <object id="SuRoleServiceDao" type="SS.SU.DAL.Hibernate.SuRoleServiceDao, SS.SU.DAL.Hibernate" autowire="byName" />
+
+	<!-- SCG.GL System -->
+	<object id="GlDaoProvider" type="SCG.GL.DAL.GlDaoProvider, SCG.GL.DAL" autowire="byName" />
+	<object id="GlAccountDao" type="SCG.GL.DAL.Hibernate.GlAccountDao, SCG.GL.DAL.Hibernate" autowire="byName" />
+	<object id="GlAccountLangDao" type="SCG.GL.DAL.Hibernate.GlAccountLangDao, SCG.GL.DAL.Hibernate" autowire="byName" />
+
+	<!-- SCG.DB System -->
+	<object id="ScgDbDaoProvider" type="SCG.DB.DAL.ScgDbDaoProvider, SCG.DB.DAL" autowire="byName" />
+	<object id="DbBankDao" type="SCG.DB.DAL.Hibernate.DbBankDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbBankLangDao" type="SCG.DB.DAL.Hibernate.DbBankLangDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbCompanyDao" type="SCG.DB.DAL.Hibernate.DbCompanyDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbCountryDao" type="SCG.DB.DAL.Hibernate.DbCountryDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbCountryLangDao" type="SCG.DB.DAL.Hibernate.DbCountryLangDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbTaxDao" type="SCG.DB.DAL.Hibernate.DbTaxDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbCompanyPaymentMethodDao" type="SCG.DB.DAL.Hibernate.DbCompanyPaymentMethodDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbLocationDao" type="SCG.DB.DAL.Hibernate.DbLocationDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbLocationLangDao" type="SCG.DB.DAL.Hibernate.DbLocationLangDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+
+	<object id="DbAccountDao" type="SCG.DB.DAL.Hibernate.DbAccountDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbAccountLangDao" type="SCG.DB.DAL.Hibernate.DbAccountLangDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbExpenseGroupDao" type="SCG.DB.DAL.Hibernate.DbExpenseGroupDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbExpenseGroupLangDao" type="SCG.DB.DAL.Hibernate.DbExpenseGroupLangDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbWithHoldingTaxTypeDao" type="SCG.DB.DAL.Hibernate.DbWithHoldingTaxTypeDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbWithHoldingTaxDao" type="SCG.DB.DAL.Hibernate.DbWithHoldingTaxDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbVendorDao" type="SCG.DB.DAL.Hibernate.DbVendorDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbPaymentMethodDao" type="SCG.DB.DAL.Hibernate.DbPaymentMethodDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbServiceTeamDao" type="SCG.DB.DAL.Hibernate.DbServiceTeamDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbServiceTeamLocationDao" type="SCG.DB.DAL.Hibernate.DbServiceTeamLocationDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+
+  
+	<object id="DbReasonDao" type="SCG.DB.DAL.Hibernate.DbReasonDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbReasonLangDao" type="SCG.DB.DAL.Hibernate.DbReasonLangDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+  <object id="DbDocumentRunningDao" type="SCG.DB.DAL.Hibernate.DbDocumentRunningDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+
+  <object id="DbCostCenterDao" type="SCG.DB.DAL.Hibernate.DbCostCenterDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+  <object id="TmpDbCostCenterDao" type="SCG.DB.DAL.Hibernate.TmpDbCostCenterDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+  <object id="DbCostCenterImportLogDao" type="SCG.DB.DAL.Hibernate.DbCostCenterImportLogDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+  <object id="TmpDbInternalOrderDao" type="SCG.DB.DAL.Hibernate.TmpDbInternalOrderDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+  <object id="DbioImportLogDao" type="SCG.DB.DAL.Hibernate.DbioImportLogDao, SCG.DB.DAL.Hibernate" autowire="byName" />
+  <!-- SCG.eAccounting System -->
+	<object id="ScgeAccountingDaoProvider" type="SCG.eAccounting.DAL.ScgeAccountingDaoProvider, SCG.eAccounting.DAL" autowire="byName" />
+	<object id="AvAdvanceDocumentDao" type="SCG.eAccounting.DAL.Hibernate.AvAdvanceDocumentDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="AvAdvanceItemDao" type="SCG.eAccounting.DAL.Hibernate.AvAdvanceItemDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="DocumentAttachmentDao" type="SCG.eAccounting.DAL.Hibernate.DocumentAttachmentDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="DocumentInitiatorDao" type="SCG.eAccounting.DAL.Hibernate.DocumentInitiatorDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="TADocumentDao" type="SCG.eAccounting.DAL.Hibernate.TADocumentDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="TADocumentTravellerDao" type="SCG.eAccounting.DAL.Hibernate.TADocumentTravellerDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="TADocumentScheduleDao" type="SCG.eAccounting.DAL.Hibernate.TADocumentScheduleDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="TADocumentAdvanceDao" type="SCG.eAccounting.DAL.Hibernate.TADocumentAdvanceDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+    <object id="SCGDocumentDao" type="SCG.eAccounting.DAL.Hibernate.SCGDocumentDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+    <object id="FnRemittanceDao" type="SCG.eAccounting.DAL.Hibernate.FnRemittanceDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+    <object id="FnRemittanceItemDao" type="SCG.eAccounting.DAL.Hibernate.FnRemittanceItemDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+    <object id="FnRemittanceAdvanceDao" type="SCG.eAccounting.DAL.Hibernate.FnRemittanceAdvanceDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+    <object id="FnExpenseDocumentDao" type="SCG.eAccounting.DAL.Hibernate.FnExpenseDocumentDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+    <object id="FnExpenseInvoiceDao" type="SCG.eAccounting.DAL.Hibernate.FnExpenseInvoiceDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+    <object id="FnExpenseInvoiceItemDao" type="SCG.eAccounting.DAL.Hibernate.FnExpenseInvoiceItemDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+  
+	<object id="FnExpensePerdiemDao" type="SCG.eAccounting.DAL.Hibernate.FnExpensePerdiemDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="FnExpensePerdiemItemDao" type="SCG.eAccounting.DAL.Hibernate.FnExpensePerdiemItemDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="FnExpenseMileageDao" type="SCG.eAccounting.DAL.Hibernate.FnExpenseMileageDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	<object id="FnExpenseMileageItemDao" type="SCG.eAccounting.DAL.Hibernate.FnExpenseMileageItemDao, SCG.eAccounting.DAL.Hibernate" autowire="byName" />
+	
+	<!-- SS.DB System -->
+	<object id="SsDbDaoProvider" type="SS.DB.DAL.SsDbDaoProvider, SS.DB.DAL" autowire="byName" />
+	<object id="DbCurrencyDao" type="SS.DB.DAL.Hibernate.DbCurrencyDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbExchangeRateDao" type="SS.DB.DAL.Hibernate.DbExchangeRateDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbStatusDao" type="SS.DB.DAL.Hibernate.DbStatusDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbStatusLangDao" type="SS.DB.DAL.Hibernate.DbStatusLangDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DBLanguageDao" type="SS.DB.DAL.Hibernate.DbLanguageDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DBParameterDao" type="SS.DB.DAL.Hibernate.DBParameterDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DBParameterGroupDao" type="SS.DB.DAL.Hibernate.DBParameterGroupDao, SS.DB.DAL.Hibernate" autowire="byName" />
+  	<object id="DBZoneDao" type="SS.DB.DAL.Hibernate.DBZoneDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DBZoneLangDao" type="SS.DB.DAL.Hibernate.DBZoneLangDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DBProvinceDao" type="SS.DB.DAL.Hibernate.DBProvinceDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DBProvinceLangDao" type="SS.DB.DAL.Hibernate.DBProvinceLangDao, SS.DB.DAL.Hibernate" autowire="byName" />
+	<object id="DbRegionDao" type="SS.DB.DAL.Hibernate.DbRegionDao, SS.DB.DAL.Hibernate" autowire="byName" />
+ 
+
+	<!-- SCG.FN System -->
+	<object id="FnDaoProvider" type="SCG.FN.DAL.DaoProvider, SCG.FN.DAL" autowire="byName" />
+	<object id="FnReceiptTypeDao" type="SCG.FN.DAL.Hibernate.FnReceiptTypeDao, SCG.FN.DAL.Hibernate" autowire="byName" />
+	<object id="FnReceiptTypeLangDao" type="SCG.FN.DAL.Hibernate.FnReceiptTypeLangDao, SCG.FN.DAL.Hibernate" autowire="byName" />
+	<object id="FnCashierDao" type="SCG.FN.DAL.Hibernate.FnCashierDao, SCG.FN.DAL.Hibernate" autowire="byName" />
+	<object id="FnCashierLangDao" type="SCG.FN.DAL.Hibernate.FnCashierLangDao, SCG.FN.DAL.Hibernate" autowire="byName" />
+
+
+</objects>

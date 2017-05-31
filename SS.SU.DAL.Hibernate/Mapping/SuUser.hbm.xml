@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SS.SU.DTO.SuUser,SS.SU.DTO" table="SuUser">
+
+    <id name="Userid" column="UserID" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <many-to-one name="Language" column="LanguageID" class="SS.DB.DTO.DbLanguage,SS.DB.DTO" />
+    <property column="EmployeeCode" type="String" name="EmployeeCode" not-null="true" length="20" />
+    <many-to-one name="Company" column="CompanyID" class="SCG.DB.DTO.DbCompany,SCG.DB.DTO" />
+    <property column="CompanyCode" type="String" name="CompanyCode" length="20" />
+    <many-to-one name="CostCenter" column="CostCenterID" class="SCG.DB.DTO.DbCostCenter,SCG.DB.DTO" />
+    <property column="CostCenterCode" type="String" name="CostCenterCode" length="20" />
+    <many-to-one name="Location" column="LocationID" class="SCG.DB.DTO.DbLocation,SCG.DB.DTO" />
+    <property column="LocationCode" type="String" name="LocationCode" length="20" />
+    <property column="UserName" type="String" name="UserName" not-null="true" length="50" />
+    <property column="Password" type="String" name="Password" not-null="true" length="50" />
+    <property column="SetFailTime" type="Int16" name="SetFailTime" not-null="true" />
+    <property column="FailTime" type="Int16" name="FailTime" not-null="true" />
+    <property column="ChangePassword" type="Boolean" name="ChangePassword" not-null="true" />
+    <property column="AllowPasswordChangeDate" type="System.Nullable`1[[System.DateTime]]" name="AllowPasswordChangeDate" />
+    <property column="PasswordExpiryDate" type="System.Nullable`1[[System.DateTime]]" name="PasswordExpiryDate" />
+    <property column="PeopleID" type="String" name="PeopleID" not-null="true" length="20" />
+    <property column="EmployeeName" type="String" name="EmployeeName" not-null="true" length="100" />
+    <property column="SectionName" type="String" name="SectionName" length="150" />
+    <property column="PersonalLevel" type="String" name="PersonalLevel" length="10" />
+    <property column="PersonalDescription" type="String" name="PersonalDescription" length="100" />
+    <property column="PersonalGroup" type="String" name="PersonalGroup" length="10" />
+    <property column="PersonalLevelGroupDescription" type="String" name="PersonalLevelGroupDescription" length="100" />
+    <property column="PositionName" type="String" name="PositionName" length="150" />
+    <property column="Supervisor" type="Int64" name="Supervisor" />
+    <property column="PhoneNo" type="String" name="PhoneNo" length="20" />
+    <property column="MobilePhoneNo" type="String" name="MobilePhoneNo" length="20" />
+    <property column="SMSApproveOrReject" type="Boolean" name="SMSApproveOrReject" />
+    <property column="SMSReadyToReceive" type="Boolean" name="SMSReadyToReceive" />
+    <!--<property column="SMS" type="Boolean" name="SMS" />-->
+    <!--<property column="TerminateDate" type="DateTime" name="TerminateDate" />-->
+    <property column="HireDate" type="System.Nullable`1[[System.DateTime]]" name="HireDate" />
+    <property column="ApprovalFlag" type="Boolean" name="ApprovalFlag" />
+    <property column="Email" type="String" name="Email" not-null="true" length="250" />
+    <property column="FromEHr" type="Boolean" name="FromEHr" />
+    <property column="Comment" type="String" name="Comment" length="500" />
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    <property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="IsAdUser" type="Boolean" name="IsAdUser" />
+    <property column="VendorCode" type="String" name="VendorCode" length="20" />
+    <property column="IsNotifyRemindWaitApprove" type="Boolean" name="EmailActive" not-null="true" />
+    
+  </class>
+</hibernate-mapping>

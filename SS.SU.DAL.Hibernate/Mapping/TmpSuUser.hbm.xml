@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.TmpSuUser,SS.SU.DTO" table="tmp_SuUser">
+
+		<id name="Tmp_SuUserID" column="Tmp_SuUserID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="EmployeeCode" type="String" name="EmployeeCode" not-null="true" length="20" />
+		<property column="CompanyID" type="Int64" name="CompanyID" />
+		<property column="CompanyCode" type="String" name="CompanyCode" length="20" />
+		<property column="CostCenterID" type="Int64" name="CostCenterID" />
+		<property column="CostCenterCode" type="String" name="CostCenterCode" length="20" />
+		<property column="LocationID" type="Int64" name="LocationID" />
+		<property column="LocationCode" type="String" name="LocationCode" length="20" />
+		<property column="UserName" type="String" name="UserName" not-null="true" length="50" />
+		<property column="Password" type="String" name="Password" not-null="true" length="50" />
+		<property column="PasswordExpiryDate" type="DateTime" name="PasswordExpiryDate" />
+		<property column="PeopleID" type="String" name="PeopleID" not-null="true" />
+		<property column="EmployeeName" type="String" name="EmployeeName" not-null="true" length="100" />
+		<property column="SectionName" type="String" name="SectionName" length="150" />
+		<property column="PersonalLevel" type="String" name="PersonalLevel" length="10" />
+		<property column="PersonalDescription" type="String" name="PersonalDescription" length="100" />
+		<property column="PersonalGroup" type="String" name="PersonalGroup" length="10" />
+		<property column="PersonalLevelGroupDescription" type="String" name="PersonalLevelGroupDescription" length="100" />
+		<property column="PositionName" type="String" name="PositionName" length="150" />
+		<property column="Supervisor" type="Int64" name="Supervisor" />
+		<property column="SupervisorName" type="String" name="SupervisorName" length="20" />
+		<property column="PhoneNo" type="String" name="PhoneNo" length="20" />
+		<property column="HireDate" type="DateTime" name="HireDate" />
+		<property column="TerminateDate" type="DateTime" name="TerminateDate" />
+		<property column="ApprovalFlag" type="Boolean" name="ApprovalFlag" />
+		<property column="Email" type="String" name="Email" not-null="true" length="250" />
+		<property column="FromEHr" type="Boolean" name="FromEHr" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="isNewUser" type="Boolean" name="isNewUser" />
+		<property column="OldPassword" type="String" name="OldPassword" not-null="true" length="50" />
+		<property column="LineNumber" type="Int64" name="LineNumber" not-null="true" />
+    <property column="isAdUser" type="Boolean" name="isAdUser" />
+    <property column="VendorCode" type="String" name="VendorCode" length="20"/>
+    <property column="SelectedCostCenterID" type="Int64" name="SelectedCostCenterID" />
+    <property column="SelectedCostCenterCode" type="String" name="SelectedCostCenterCode" length="20"/>
+    <property column="PayrollCostCenter" type="String" name="PayrollCostCenter" length="20"/>
+	</class>
+</hibernate-mapping>

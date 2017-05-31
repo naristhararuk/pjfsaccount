@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuGlobalTranslate,SS.SU.DTO" table="SuGlobalTranslate">
+
+		<id name="TranslateId" column="TranslateID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<!--<many-to-one name="ProgramCode" column="ProgramCode" class="SS.SU.DTO.SuProgram,SS.SU.DTO" />-->
+    <property column="ProgramCode" type="String" name="ProgramCode" length="50" />
+		<property column="TranslateControl" type="String" name="TranslateControl" not-null="false" length="200" />
+		<property column="TranslateSymbol" type="String" name="TranslateSymbol" not-null="false" length="200" />
+		<property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="50" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

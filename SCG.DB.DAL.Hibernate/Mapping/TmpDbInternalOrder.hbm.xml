@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.TmpDbInternalOrder,SCG.DB.DTO" table="Tmp_DbInternalOrder">
+
+		<id name="ID" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="IONumber" type="String" name="IONumber" length="20" />
+		<property column="IOType" type="String" name="IOType" length="50" />
+		<property column="IOText" type="String" name="IOText" length="100" />
+		<property column="CostCenterID" type="Int64" name="CostCenterID" />
+		<property column="CostCenterCode" type="String" name="CostCenterCode" length="20" />
+		<property column="CompanyID" type="Int64" name="CompanyID" />
+		<property column="CompanyCode" type="String" name="CompanyCode" length="20" />
+		<property column="EffectiveDate" type="DateTime" name="EffectiveDate" />
+		<property column="ExpireDate" type="DateTime" name="ExpireDate" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<property column="Line" type="Int64" name="Line" not-null="true" />
+    <property column="BusinessArea" type="String" name="BusinessArea" length="10" />
+    <property column="ProfitCenter" type="String" name="ProfitCenter" length="20" />
+	</class>
+</hibernate-mapping>

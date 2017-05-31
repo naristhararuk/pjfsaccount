@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.TADocumentTraveller, SCG.eAccounting.DTO" table="TADocumentTraveller">
+		<id name="TravellerID" column="TravellerID" type="Int32" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="TADocumentID" column="TADocumentID" class="SCG.eAccounting.DTO.TADocument,SCG.eAccounting.DTO" />
+		<many-to-one name="UserID" column="UserID" class="SS.SU.DTO.SuUser,SS.SU.DTO" />
+		<property column="EmployeeNameEng" type="String" name="EmployeeNameEng" length="100" />
+		<property column="AirLineMember" type="String" name="AirLineMember" length="50" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+    <many-to-one name="CostCenterID" column="CostCenterID" class="SCG.DB.DTO.DbCostCenter, SCG.DB.DTO" />
+    <many-to-one name="Account" column="AccountID" class="SCG.DB.DTO.DbAccount, SCG.DB.DTO" />
+    <many-to-one name="IOID" column="IOID" class="SCG.DB.DTO.DbInternalOrder, SCG.DB.DTO" />
+	</class>
+</hibernate-mapping>

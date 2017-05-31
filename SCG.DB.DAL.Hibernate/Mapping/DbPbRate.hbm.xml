@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SCG.DB.DTO.DbPbRate,SCG.DB.DTO" table="DbPbRate">
+
+    <id name="ID" column="ID" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property column="PBID" type="Int64" name="PBID" not-null="true"/>
+    <property column="EffectiveDate" type="System.Nullable`1[[System.DateTime]]" name="EffectiveDate" not-null="true"/>
+    <property column="MainCurrencyID" type="Int16" name="MainCurrencyID" not-null="true" />
+    <property column="FromAmount" type="Double" name="FromAmount" not-null="true" />
+    <property column="CurrencyID" type="Int16" name="CurrencyID" not-null="true" />
+    <property column="ToAmount" type="Double" name="ToAmount" not-null="true"/>
+    <property column="ExchangeRate" type="Double" name="ExchangeRate" not-null="true"/>
+    <property column="UpdateBy" type="String" name="UpdateBy" length="100" not-null="true"/>
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    <property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+
+  </class>
+</hibernate-mapping>

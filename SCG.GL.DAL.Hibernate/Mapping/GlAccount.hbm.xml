@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.GL.DTO.GlAccount,SCG.GL.DTO" table="GlAccount">
+
+		<id name="AccId" column="AccId" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="AccNo" type="String" name="AccNo" not-null="true" length="20" />
+		<property column="AccType" type="Int16" name="AccType" not-null="true" />
+		<property column="AccLevel" type="Int16" name="AccLevel" not-null="true" />
+		<property column="MainAccID" type="String" name="MainAccid" length="10" />
+		<property column="TransactionYN" type="Boolean" name="Transactionyn" />
+		<property column="BgSecCode" type="String" name="BgSecCode" length="10" />
+		<property column="FSourceCode" type="String" name="FsourceCode" length="10" />
+		<property column="CenterAccID" type="String" name="CenterAccid" length="10" />
+		<property column="RevType" type="String" name="RevType" length="5" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+
+	</class>
+</hibernate-mapping>

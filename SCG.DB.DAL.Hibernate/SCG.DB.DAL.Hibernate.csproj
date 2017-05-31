@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{107882FA-CD93-4D59-9C58-6AA554BA3883}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.DB.DAL.Hibernate</RootNamespace>
+    <AssemblyName>SCG.DB.DAL.Hibernate</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbHolidayDao.cs" />
+    <Compile Include="DbHolidayProfileDao.cs" />
+    <Compile Include="DbMileageRateRevisionDao.cs" />
+    <Compile Include="DbMileageRateRevisionDetailDao.cs" />
+    <Compile Include="DbProfileListDao.cs" />
+    <Compile Include="DbSapInstanceDao.cs" />
+    <Compile Include="DbSellingLetterDao.cs" />
+    <Compile Include="DbSellingLetterDetailDao.cs" />
+    <Compile Include="DbSellingRunningDao.cs" />
+    <Compile Include="DbAccountCompanyDao.cs" />
+    <Compile Include="DbAccountDao.cs" />
+    <Compile Include="DbAccountLangDao.cs" />
+    <Compile Include="DbBuyingLetterDao.cs" />
+    <Compile Include="DbBuyingLetterDetailDao.cs" />
+    <Compile Include="DbBuyingRunningDao.cs" />
+    <Compile Include="DbCompanyDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DbCompanyPaymentMethodDao.cs" />
+    <Compile Include="DbCompanyTaxDao.cs" />
+    <Compile Include="DbCostCenterDao.cs" />
+    <Compile Include="DbCostCenterImportLogDao.cs" />
+    <Compile Include="DbDocumentRunningDao.cs" />
+    <Compile Include="DbExpenseGroupDao.cs" />
+    <Compile Include="DbExpenseGroupLangDao.cs.cs" />
+    <Compile Include="DbioImportLogDao.cs" />
+    <Compile Include="DbIODao.cs" />
+    <Compile Include="DbLocationDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DbLocationLangDao.cs" />
+    <Compile Include="DbOrganizationChartDao.cs" />
+    <Compile Include="DbPaymentMethodDao.cs" />
+    <Compile Include="DbPBCurrencyDao.cs" />
+    <Compile Include="DbPBDao.cs" />
+    <Compile Include="DbPBLangDao.cs" />
+    <Compile Include="DbPbRateDao.cs" />
+    <Compile Include="DbReasonDao.cs" />
+    <Compile Include="DbReasonLangDao.cs" />
+    <Compile Include="DbServiceTeamDao.cs" />
+    <Compile Include="DbServiceTeamLocationDao.cs" />
+    <Compile Include="DbTaxDao.cs" />
+    <Compile Include="DbBankDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DbCountryLangDao.cs" />
+    <Compile Include="DbCountryDao.cs" />
+    <Compile Include="DbBankLangDao.cs" />
+    <Compile Include="DbVendorDao.cs" />
+    <Compile Include="DbVendorTempDao.cs" />
+    <Compile Include="DbWithHoldingTaxDao.cs" />
+    <Compile Include="DbWithHoldingTaxTypeDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TmpDbCostCenterDao.cs" />
+    <Compile Include="TmpDbInternalOrderDao.cs" />
+    <Compile Include="TmpDbOrganizationChartDao.cs" />
+    <Compile Include="RejectReasonDao.cs" />
+    <Compile Include="RejectReasonLangDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DAL\SCG.DB.DAL.csproj">
+      <Project>{C8A062D6-03AE-4376-A714-2792B7055899}</Project>
+      <Name>SCG.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbBank.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbBankLang.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbCountry.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbCountryLang.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbInternalOrder.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbTax.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbAccount.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbAccountLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbExpenseGroupLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbExpenseGroup.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbVendor.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbCompany.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbCostCenter.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbCompanyPaymentMethod.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Dbpb.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbCompanyTax.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbBuyingRunning.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbBuyingLetterDetail.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbBuyingLetter.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbSellingLetter.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbSellingRunning.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbSellingLetterDetail.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbPbRate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbPBCurrency.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbSapInstance.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbBU.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbHoliday.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbHolidayProfile.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbMileageRateRevision.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbMileageRateRevisionDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbProfileList.hbm.xml" />
+    <Content Include="Mapping\DbStatus.hbm.xml" />
+    <Content Include="Mapping\DbStatusLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbWithHoldingTax.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbPaymentMethod.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbWithHoldingTaxType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DbLocation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\DbServiceTeam.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbDocumentRunning.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbCostCenterImportLog.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbioImportLog.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbAccountCompany.hbm.xml" />
+    <Content Include="Mapping\DbLocationLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbOrganizationChart.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbpbLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbRejectReason.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbRejectReasonLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbLoactionLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbScgReason.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbScgReasonLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbServiceTeamLocation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TmpDbOrganizationChart.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TmpDbInternalOrder.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TmpDbCostCenter.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DbVendorTemp.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

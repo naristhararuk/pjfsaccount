@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.softsquaregroup.com/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.softsquaregroup.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web service for generate pdf documents.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.softsquaregroup.com/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GeneratePDFFromContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratePDFFromContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeneratePDFFromContentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratePDFFromFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratePDFFromFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeneratePDFFromFileResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetStatusResult" type="tns:PdfRequestStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="PdfRequestStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="New" />
+          <s:enumeration value="InProcess" />
+          <s:enumeration value="Success" />
+          <s:enumeration value="Fail" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetPdfUri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPdfUriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPdfUriResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GeneratePDFFromContentSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneratePDFFromContent" />
+  </wsdl:message>
+  <wsdl:message name="GeneratePDFFromContentSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneratePDFFromContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneratePDFFromFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneratePDFFromFile" />
+  </wsdl:message>
+  <wsdl:message name="GeneratePDFFromFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneratePDFFromFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPdfUriSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPdfUri" />
+  </wsdl:message>
+  <wsdl:message name="GetPdfUriSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPdfUriResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap">
+    <wsdl:operation name="GeneratePDFFromContent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate the PDF document form string content.</wsdl:documentation>
+      <wsdl:input message="tns:GeneratePDFFromContentSoapIn" />
+      <wsdl:output message="tns:GeneratePDFFromContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePDFFromFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate the PDF document form exist latex file.</wsdl:documentation>
+      <wsdl:input message="tns:GeneratePDFFromFileSoapIn" />
+      <wsdl:output message="tns:GeneratePDFFromFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the status of generating a pdf document.</wsdl:documentation>
+      <wsdl:input message="tns:GetStatusSoapIn" />
+      <wsdl:output message="tns:GetStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPdfUri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the location of generated a pdf document.</wsdl:documentation>
+      <wsdl:input message="tns:GetPdfUriSoapIn" />
+      <wsdl:output message="tns:GetPdfUriSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap" type="tns:PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GeneratePDFFromContent">
+      <soap:operation soapAction="http://www.softsquaregroup.com/GeneratePDFFromContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePDFFromFile">
+      <soap:operation soapAction="http://www.softsquaregroup.com/GeneratePDFFromFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="http://www.softsquaregroup.com/GetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPdfUri">
+      <soap:operation soapAction="http://www.softsquaregroup.com/GetPdfUri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap12" type="tns:PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GeneratePDFFromContent">
+      <soap12:operation soapAction="http://www.softsquaregroup.com/GeneratePDFFromContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePDFFromFile">
+      <soap12:operation soapAction="http://www.softsquaregroup.com/GeneratePDFFromFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap12:operation soapAction="http://www.softsquaregroup.com/GetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPdfUri">
+      <soap12:operation soapAction="http://www.softsquaregroup.com/GetPdfUri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PDF_x0020_Creator_x0020_Web_x0020_Service">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web service for generate pdf documents.</wsdl:documentation>
+    <wsdl:port name="PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap" binding="tns:PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap">
+      <soap:address location="http://172.16.0.42/PdfCreator/PDFCreatorWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap12" binding="tns:PDF_x0020_Creator_x0020_Web_x0020_ServiceSoap12">
+      <soap12:address location="http://172.16.0.42/PdfCreator/PDFCreatorWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

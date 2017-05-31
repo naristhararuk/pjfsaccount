@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.TADocumentSchedule, SCG.eAccounting.DTO" table="TADocumentSchedule">
+		<id name="ScheduleID" column="ScheduleID" type="Int32" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="TADocumentID" column="TADocumentID" class="SCG.eAccounting.DTO.TADocument,SCG.eAccounting.DTO" />
+		<property column="Date" type="System.Nullable`1[[System.DateTime]]" name="Date" />
+		<property column="DepartureFrom" type="String" name="DepartureFrom" length="100" />
+		<property column="ArrivalAt" type="String" name="ArrivalAt" length="100" />
+		<property column="TravelBy" type="String" name="TravelBy" length="10" />
+		<property column="Time" type="String" name="Time" length="50" />
+		<property column="FlightNo" type="String" name="FlightNo" length="20" />
+		<property column="TravellingDetail" type="String" name="TravellingDetail" length="200" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+	</class>
+</hibernate-mapping>

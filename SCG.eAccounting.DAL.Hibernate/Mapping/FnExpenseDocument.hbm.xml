@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnExpenseDocument,SCG.eAccounting.DTO" table="FnExpenseDocument">
+
+		<id name="ExpenseID" column="ExpenseID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Document" column="DocumentID" class="SCG.eAccounting.DTO.SCGDocument,SCG.eAccounting.DTO" />
+		<many-to-one name="TADocument" column="TADocumentID" class="SCG.eAccounting.DTO.TADocument,SCG.eAccounting.DTO" />
+		<many-to-one name="ServiceTeam" column="ServiceTeamID" class="SCG.DB.DTO.DbServiceTeam,SCG.DB.DTO" />
+    <many-to-one name="FixedAdvanceDocument" column="FixedAdvanceID" class="SCG.eAccounting.DTO.FixedAdvanceDocument,SCG.eAccounting.DTO" />
+		<many-to-one name="PB" column="PBID" class="SCG.DB.DTO.Dbpb,SCG.DB.DTO" />
+		<property column="ExpenseType" type="String" name="ExpenseType" length="5" />
+		<property column="RemittancePostingStatus" type="String" name="RemittancePostingStatus" length="2" />
+		<property column="PaymentType" type="String" name="PaymentType" not-null="true" length="50" />
+		<property column="TotalExpense" type="Double" name="TotalExpense" />
+		<property column="TotalAdvance" type="Double" name="TotalAdvance" />
+		<property column="IsBusinessPurpose" type="System.Nullable`1[[System.Boolean]]" name="IsBusinessPurpose" />
+		<property column="IsTrainningPurpose" type="System.Nullable`1[[System.Boolean]]" name="IsTrainningPurpose" />
+		<property column="IsOtherPurpose" type="System.Nullable`1[[System.Boolean]]" name="IsOtherPurpose" />
+		<property column="OtherPurposeDescription" type="String" name="OtherPurposeDescription" length="100" />
+		<property column="FromDate" type="System.Nullable`1[[System.DateTime]]" name="FromDate" />
+		<property column="ToDate" type="System.Nullable`1[[System.DateTime]]" name="ToDate" />
+		<property column="Country" type="String" name="Country" length="100" />
+		<property column="PersonalLevel" type="String" name="PersonalLevel" length="50" />
+		<property column="ExchangeRateForUSD" type="System.Nullable`1[[System.Double]]" name="ExchangeRateForUSD" />
+		<property column="ExchangeRateForUSDAdvance" type="System.Nullable`1[[System.Double]]" name="ExchangeRateForUSDAdvance" />
+		<property column="TotalRemittance" type="Double" name="TotalRemittance" />
+    <property column="DifferenceAmount" type="Double" name="DifferenceAmount" />
+    <property column="BoxID" type="String" name="BoxID" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="MainCurrencyID" type="System.Nullable`1[[System.Int16]]" name="MainCurrencyID" />
+    <property column="LocalCurrencyID" type="System.Nullable`1[[System.Int16]]" name="LocalCurrencyID" />
+    <property column="TotalExpenseLocalCurrency" type="System.Nullable`1[[System.Double]]" name="TotalExpenseLocalCurrency" />
+    <property column="TotalAdvanceLocalCurrency" type="System.Nullable`1[[System.Double]]" name="TotalAdvanceLocalCurrency" />
+    <property column="TotalRemittanceLocalCurrency" type="System.Nullable`1[[System.Double]]" name="TotalRemittanceLocalCurrency" />
+    <property column="DifferenceAmountLocalCurrency" type="System.Nullable`1[[System.Double]]" name="DifferenceAmountLocalCurrency" />
+    <property column="TotalExpenseMainCurrency" type="System.Nullable`1[[System.Double]]" name="TotalExpenseMainCurrency" />
+    <property column="TotalAdvanceMainCurrency" type="System.Nullable`1[[System.Double]]" name="TotalAdvanceMainCurrency" />
+    <property column="TotalRemittanceMainCurrency" type="System.Nullable`1[[System.Double]]" name="TotalRemittanceMainCurrency" />
+    <property column="DifferenceAmountMainCurrency" type="System.Nullable`1[[System.Double]]" name="DifferenceAmountMainCurrency" />
+    <property column="ExchangeRateForLocalCurrency" type="System.Nullable`1[[System.Double]]" name="ExchangeRateForLocalCurrency" />
+    <property column="ExchangeRateMainToTHBCurrency" type="System.Nullable`1[[System.Double]]" name="ExchangeRateMainToTHBCurrency" />
+    <property column="IsRepOffice" name="IsRepOffice" type="System.Nullable`1[[System.Boolean]]"/>
+    <property column="ReceivedMethod" type="String" name="ReceivedMethod" />
+    <property column="PayInGLAccount" type="String" name="PayInGLAccount" />
+    <property column="PayInValueDate" type="System.Nullable`1[[System.DateTime]]" name="PayInValueDate" />
+    <property column="AmountApproved" type="System.Nullable`1[[System.Double]]" name="AmountApproved" />
+    <property column="AmountBeforeVerify" type="System.Nullable`1[[System.Double]]" name="AmountBeforeVerify" />
+  </class>
+</hibernate-mapping>

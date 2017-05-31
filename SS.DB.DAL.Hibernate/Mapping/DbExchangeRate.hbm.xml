@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.DB.DTO.DbExchangeRate,SS.DB.DTO" table="DbExchangeRate">
+
+		<id name="ExchangeRateID" column="ExchangeRateID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+    <many-to-one name="Currency" column="CurrencyID" class="SS.DB.DTO.DbCurrency,SS.DB.DTO" />
+    <property column="FromDate" type="DateTime" name="FromDate" not-null="true" />
+    <property column="ToDate" type="DateTime" name="ToDate" not-null="true" />
+    <property column="BuyRate" type="float" name="BuyRate" not-null="true" />
+    <property column="SellRate" type="float" name="SellRate" not-null="true" />
+    <property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<publishData>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\PdfCreator\">
+    <file relUrl="bin/SSGPDFCreator.dll" publishTime="04/01/2009 21:43:06" />
+    <file relUrl="bin/SSGPDFCreatorWebService.dll" publishTime="04/02/2009 21:12:16" />
+    <file relUrl="PDFCreatorWebService.asmx" publishTime="03/24/2009 15:33:18" />
+    <file relUrl="bin/SSGPDFCreatorWebService.XML" publishTime="04/02/2009 21:12:16" />
+    <file relUrl="Web.config" publishTime="03/23/2009 21:10:29" />
+    <file relUrl="bin/SSGPDFCreatorWebService.pdb" publishTime="04/02/2009 21:12:16" />
+    <file relUrl="bin/SSGPDFCreator.pdb" publishTime="04/02/2009 21:12:14" />
+    <file relUrl="bin/SSGPDFCreator.xml" publishTime="04/02/2009 21:12:14" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\">
+    <file relUrl="Web.config" publishTime="03/23/2009 21:10:29" />
+    <file relUrl="bin/SSGPDFCreator.pdb" publishTime="03/24/2009 15:24:27" />
+    <file relUrl="bin/SSGPDFCreator.dll" publishTime="03/24/2009 15:24:27" />
+    <file relUrl="bin/SSGPDFCreatorWebService.dll" publishTime="03/24/2009 15:24:29" />
+    <file relUrl="bin/SSGPDFCreatorWebService.pdb" publishTime="03/24/2009 15:24:28" />
+    <file relUrl="bin/Config.xml" publishTime="03/24/2009 00:03:28" />
+    <file relUrl="PDFCreatoWebService.asmx" publishTime="03/23/2009 21:08:17" />
+  </publishTarget>
+</publishData>

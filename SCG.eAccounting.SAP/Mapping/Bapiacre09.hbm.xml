@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapiacre09,SCG.eAccounting.SAP" table="BAPIACRE09">
+
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_NO" type="String" name="DocNo" not-null="true" length="20" />
+		<property column="ITEMNO_ACC" type="String" name="ItemnoAcc" length="10" />
+		<property column="BUSINESS_ENTITY" type="String" name="BusinessEntity" length="8" />
+		<property column="BUILDING" type="String" name="Building" length="8" />
+		<property column="PROPERTY" type="String" name="Property" length="8" />
+		<property column="RENTAL_OBJECT" type="String" name="RentalObject" length="8" />
+		<property column="SERV_CHARGE_KEY" type="String" name="ServChargeKey" length="4" />
+		<property column="SETTLEMENT_UNIT" type="String" name="SettlementUnit" length="5" />
+		<property column="CONTRACT_NO" type="String" name="ContractNo" length="13" />
+		<property column="FLOW_TYPE" type="String" name="FlowType" length="4" />
+		<property column="CORR_ITEM" type="String" name="CorrItem" length="10" />
+		<property column="REF_DATE" type="String" name="RefDate" length="8" />
+		<property column="OPTION_RATE" type="Decimal" name="OptionRate" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false"/>
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PaymentMethod.ascx.cs" Inherits="SCG.eAccounting.Web.UserControls.DropdownList.SCG.DB.PaymentMethod" %>
+<asp:DropDownList ID="ctlPaymentMethodDropdown" SkinID="SkCtlDropDownList" runat="server"></asp:DropDownList>

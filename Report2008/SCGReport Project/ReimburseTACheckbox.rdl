@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="eAccounting1">
+      <DataSourceReference>eAccounting</DataSourceReference>
+      <rd:DataSourceID>72e9a8fa-017b-4df4-838f-96e2c6755aa3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="eAccounting">
+      <Fields>
+        <Field Name="IsBusinessPurpose">
+          <DataField>IsBusinessPurpose</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IsTranningPurpose">
+          <DataField>IsTranningPurpose</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IsOtherPurpose">
+          <DataField>IsOtherPurpose</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OtherPurposeDescription">
+          <DataField>OtherPurposeDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>eAccounting1</DataSourceName>
+        <CommandText>select (case when expense.IsBusinessPurpose is null then 0 else expense.IsBusinessPurpose end) as IsBusinessPurpose
+, (case when expense.IsTrainningPurpose is null then 0 else expense.IsTrainningPurpose end) as IsTranningPurpose
+, (case when expense.IsOtherPurpose is null then 0 else expense.IsOtherPurpose end) as IsOtherPurpose
+, expense.OtherPurposeDescription as OtherPurposeDescription
+from FnExpenseDocument expense
+where expense.Active = 1 and expense.ExpenseID = @expenseId</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@expenseId">
+            <Value>=Parameters!expenseId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle4">
+        <ReportItems>
+          <Rectangle Name="rectangle2">
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>0.125in</Top>
+            <Left>0.75in</Left>
+            <Height>0.125in</Height>
+            <Width>0.125in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="rectangle3">
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>0.125in</Top>
+            <Left>1.5in</Left>
+            <Height>0.125in</Height>
+            <Width>0.125in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Textbox Name="textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!OtherPurposeDescription.Value, "eAccounting")</Value>
+                    <Style>
+                      <FontFamily>Arial Unicode MS</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>textbox4</rd:DefaultName>
+            <Left>2in</Left>
+            <Height>0.375in</Height>
+            <Width>1in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>ฝึกอบรม</Value>
+                    <Style>
+                      <FontFamily>Arial Unicode MS</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Left>0.875in</Left>
+            <Height>0.375in</Height>
+            <Width>0.625in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>อื่นๆ</Value>
+                    <Style>
+                      <FontFamily>Arial Unicode MS</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Left>1.625in</Left>
+            <Height>0.375in</Height>
+            <Width>0.375in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>ปฏิบัติงาน</Value>
+                    <Style>
+                      <FontFamily>Arial Unicode MS</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Left>0.125in</Left>
+            <Height>0.375in</Height>
+            <Width>0.625in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Rectangle Name="rectangle1">
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>0.125in</Top>
+            <Height>0.125in</Height>
+            <Width>0.125in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Image Name="image1">
+            <Source>Embedded</Source>
+            <Value>icon_correct</Value>
+            <Sizing>Fit</Sizing>
+            <Top>0.125in</Top>
+            <Height>0.125in</Height>
+            <Width>0.125in</Width>
+            <ZIndex>7</ZIndex>
+            <Visibility>
+              <Hidden>=Not CBool(First(Fields!IsBusinessPurpose.Value, "eAccounting"))</Hidden>
+            </Visibility>
+            <DataElementOutput>NoOutput</DataElementOutput>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="image3">
+            <Source>Embedded</Source>
+            <Value>icon_correct</Value>
+            <Sizing>Fit</Sizing>
+            <Top>0.125in</Top>
+            <Left>0.75in</Left>
+            <Height>0.125in</Height>
+            <Width>0.125in</Width>
+            <ZIndex>8</ZIndex>
+            <Visibility>
+              <Hidden>=Not CBool(First(Fields!IsTranningPurpose.Value, "eAccounting"))</Hidden>
+            </Visibility>
+            <DataElementOutput>NoOutput</DataElementOutput>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="image2">
+            <Source>Embedded</Source>
+            <Value>icon_correct</Value>
+            <Sizing>Fit</Sizing>
+            <Top>0.125in</Top>
+            <Left>1.5in</Left>
+            <Height>0.125in</Height>
+            <Width>0.125in</Width>
+            <ZIndex>9</ZIndex>
+            <Visibility>
+              <Hidden>=Not CBool(First(Fields!IsOtherPurpose.Value, "eAccounting"))</Hidden>
+            </Visibility>
+            <DataElementOutput>NoOutput</DataElementOutput>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Left>0.125in</Left>
+        <Height>0.375in</Height>
+        <Width>3in</Width>
+        <Style />
+      </Rectangle>
+    </ReportItems>
+    <Height>0.375in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="expenseId">
+      <DataType>String</DataType>
+      <Prompt>expenseId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>3.125in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="icon_correct">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhEAAPANUnAPn5+UhISPb29lpaWhISEgYGBj8/PxUVFcPDwx4eHqioqOrq6sbGxuHh4ZaWlt7e3vPz8/z8/LGxsc/Pz35+fr29vTw8PGNjY3V1dS0tLQMDA8DAwG9vb4qKimZmZpycnOTk5K6urldXV7q6uvDw8AwMDAAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAACcALAAAAAAQAA8AAAZdwJNwSBxuRsWkEGOSKIsek4nxHHakJkT1hChgHdVFAktQEAVU4QBrWBBDCQLpNMEGBMNHAEs5WaQBAEQRHwdSJQpSGXhJIAZSXgcNVQAiUhoVW2omHJpCABcQnp5BADs=</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>700abffd-f90f-4312-b712-15c02779d63b</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

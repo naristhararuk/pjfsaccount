@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62013F38-D560-4FB7-A679-2EE341EC4D39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.Query.Hibernate</RootNamespace>
+    <AssemblyName>SCG.eAccounting.Query.Hibernate</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AvAdvanceDocumentQuery.cs" />
+    <Compile Include="AvAdvanceItemQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CADocumentQuery.cs" />
+    <Compile Include="FixedAdvanceDocumentQuery.cs" />
+    <Compile Include="FnExpensMPAQuery.cs" />
+    <Compile Include="MPADocumentQuery.cs" />
+    <Compile Include="DbDocumentBoxIDPostingQuery.cs" />
+    <Compile Include="DbDocumentImagePostingQuery.cs" />
+    <Compile Include="DbMonitoringDocumentQuery.cs" />
+    <Compile Include="DbMonitoringInboxQuery.cs" />
+    <Compile Include="DocumentAttachmentQuery.cs" />
+    <Compile Include="DocumentInitiatorQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentViewLockQuery.cs" />
+    <Compile Include="EmailLogQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnAutoPaymentQuery.cs" />
+    <Compile Include="FnEACAdvanceImportLogQuery.cs" />
+    <Compile Include="FnEHRexpenseTempQuery.cs" />
+    <Compile Include="FnExpenseAdvanceQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseInvoiceItemQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseInvoiceQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseMileageInvoiceQuery.cs" />
+    <Compile Include="FnExpenseMileageItemQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseMileageQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpensePerdiemDetailQuery.cs" />
+    <Compile Include="FnExpensePerdiemItemQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpensePerdiemQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnExpenseRemittanceQuery.cs" />
+    <Compile Include="FnFnExpenseDocumentQuery.cs" />
+    <Compile Include="FnPerdiemProfileCountryQuery.cs" />
+    <Compile Include="FnPerdiemProfileQuery.cs" />
+    <Compile Include="FnPerdiemRateQuery.cs" />
+    <Compile Include="FnRemittanceAdvanceQuery.cs" />
+    <Compile Include="FnRemittanceItemQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FnRemittanceQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MPAItemQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCGDocumentQuery.cs" />
+    <Compile Include="TADocumentAdvanceQuery.cs" />
+    <Compile Include="TADocumentQuery.cs" />
+    <Compile Include="TADocumentScheduleQuery.cs" />
+    <Compile Include="TADocumentTravellerQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DAL\SCG.eAccounting.DAL.csproj">
+      <Project>{D8377A07-E8CF-4EFD-9814-5C10EFF09281}</Project>
+      <Name>SCG.eAccounting.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DTO\SCG.eAccounting.DTO.csproj">
+      <Project>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</Project>
+      <Name>SCG.eAccounting.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Query\SCG.eAccounting.Query.csproj">
+      <Project>{A133B337-8915-4934-BC9C-D26D30485147}</Project>
+      <Name>SCG.eAccounting.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.WorkFlow\SS.Standard.WorkFlow.csproj">
+      <Project>{FAB1E069-C432-4CEE-8182-833595F486AA}</Project>
+      <Name>SS.Standard.WorkFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbBuyingRunning,SCG.DB.DTO" table="DbBuyingRunning">
+
+		<id name="RunningID" column="RunningID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+
+		<!-- more than one foreign column is mapped to CompanyCode - you're on your own. -->
+		<property column="CompanyID" type="Int64" name="CompanyID" not-null="false" />
+		<property column="Year" type="Int32" name="Year" not-null="false" />
+		<property column="RunningNo" type="Int64" name="RunningNo" not-null="false" />
+		
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false"/>
+
+	</class>
+</hibernate-mapping>

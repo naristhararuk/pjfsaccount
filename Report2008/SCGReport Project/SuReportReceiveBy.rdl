@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="eAccounting">
+      <DataSourceReference>eAccounting</DataSourceReference>
+      <rd:DataSourceID>7c990b72-53e2-413e-a696-abe631608bf4</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="userName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="employeeName">
+          <DataField>EmployeeName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PositionName">
+          <DataField>PositionName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ResponseDate">
+          <DataField>ResponseDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>eAccounting</DataSourceName>
+        <CommandText>SELECT us.UserName,Us.EmployeeName,us.PositionName,wfr.ResponseDate 
+FROM [document] doc
+
+INNER JOIN WorkFlow wf 
+ON doc.DocumentID = wf.documentID 
+
+INNER JOIN WorkFlowResponse wfr 
+ON wf.workflowID = wfr.workflowID 
+
+INNER JOIN WorkFlowStateEvent wfse 
+ON wfr.WorkFlowStateEventID = wfse.WorkFlowStateEventID 
+AND wfse.Name = 'Receive'
+
+INNER JOIN WorkFlowState wfs 
+ON wfs.WorkFlowStateID =  wfse.WorkFlowStateID 
+AND wfs.Name IN (
+'WaitVerify',
+'WaitApproveVerify',
+'Hold',
+'WaitPayment',
+'WaitApproveRejection',
+'WaitDocument',
+'WaitPaymentFromSAP',
+'Complete'
+) 
+
+LEFT JOIN SuUSer us 
+ON us.UserID = wfr.responseby
+
+WHERE doc.DocumentID = @DocumentID
+and wfr.active = 1</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DocumentID">
+            <Value>=Parameters!DocumentID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!userName.Value) + "  "+First(Fields!employeeName.Value)+ "  "+First(Fields!PositionName.Value)+" "+ Format(First(Fields!ResponseDate.Value),"dd/MM/yyyy")+" "+ FormatDateTime(First(Fields!ResponseDate.Value),3)</Value>
+                <Style>
+                  <FontFamily>Arial Unicode MS</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>5in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>0.25in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="DocumentID">
+      <DataType>String</DataType>
+      <Prompt>DocumentID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>5in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>6791fcca-57c2-4df4-9ca8-d7803d4ebc81</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

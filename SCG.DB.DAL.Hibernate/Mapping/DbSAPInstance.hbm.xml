@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbSapInstance,SCG.DB.DTO" table="DbSapInstance">
+
+		<id name="Code" column="Code" type="String" length="50">
+      <generator class="assigned"/>
+		</id>
+		<property column="AliasName" type="String" name="AliasName" length="50" />
+    <property column="SystemID" type="String" name="SystemID" length="50" />
+		<property column="Client" type="String" name="Client"/>
+    <property column="UserName" type="String" name="UserName" length="50" />
+    <property column="Password" type="String" name="Password" length="50" />
+    <property column="Language" type="String" name="Language" length="5" />
+    <property column="SystemNumber" type="String" name="SystemNumber"  />
+    <property column="MsgServerHost" type="String" name="MsgServerHost" length="200" />
+    <property column="LogonGroup" type="String" name="LogonGroup" length="50" />
+    <property column="UserCPIC" type="String" name="UserCPIC" length="50" />
+    <property column="DocTypeExpPostingDM" type="String" name="DocTypeExpPostingDM" length="2" />
+    <property column="DocTypeExpRmtPostingDM" type="String" name="DocTypeExpRmtPostingDM" length="2" />
+    <property column="DocTypeExpPostingFR" type="String" name="DocTypeExpPostingFR" length="2" />
+    <property column="DocTypeExpRmtPostingFR" type="String" name="DocTypeExpRmtPostingFR" length="2" />
+    <property column="DocTypeExpICPostingFR" type="String" name="DocTypeExpICPostingFR" length="2" />
+    <property column="DocTypeAdvancePostingDM" type="String" name="DocTypeAdvancePostingDM" length="2" />
+    <property column="DocTypeAdvancePostingFR" type="String" name="DocTypeAdvancePostingFR" length="2" />
+    <property column="DocTypeRmtPosting" type="String" name="DocTypeRmtPosting" length="2" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+    <property column="DocTypeFixedAdvance" type="String" name="DocTypeFixedAdvancePosting" length="2" />
+    <property column="DocTypeFixedAdvanceReturn" type="String" name="DocTypeFixedAdvanceReturnPosting" length="2" />
+	</class>
+</hibernate-mapping>

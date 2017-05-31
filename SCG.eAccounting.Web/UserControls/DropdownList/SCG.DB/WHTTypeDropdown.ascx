@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WHTTypeDropdown.ascx.cs" Inherits="SCG.eAccounting.Web.UserControls.DropdownList.SCG.DB.WHTTypeDropdown" %>
+<asp:DropDownList ID="ctlWHTTypeDropdown" SkinID="SkCtlDropDownList" runat="server"></asp:DropDownList>

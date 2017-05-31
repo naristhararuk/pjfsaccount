@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SS.SU.DTO.SuUserPersonalLevel,SS.SU.DTO" table="SuUserPersonalLevel">
+    
+    <id name="PersonalLevel" column="Code" type="String" length="20">
+      <generator class="assigned"/>
+    </id>
+    <property column="Description" name="Description" type="String" length="100" />
+    <property column="Active" name="Active" type="Boolean" />
+    <property column="Ordinal" name="Ordinal" type="String" />
+  </class>
+</hibernate-mapping>

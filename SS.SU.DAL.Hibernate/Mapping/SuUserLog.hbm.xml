@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuUserLog,SS.SU.DTO" table="SuUserLog">
+
+		<id name="UserLogID" column="UserLogID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="SessionID" type="String" name="SessionID"  length="300" />
+		<property column="IPAddress" type="String" name="IPAddress" not-null="true" length="50" />
+		<property column="SignInDate" type="DateTime" name="SignInDate"  not-null="true"/>
+		<property column="SignOutDate" type="DateTime" name="SignOutDate" />
+		<property column="Status" type="String" name="Status" length="20" />
+		<property column="UserName" type="String" name="UserName" length="50" />
+		
+	</class>
+</hibernate-mapping>

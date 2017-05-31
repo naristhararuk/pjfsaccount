@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle1">
+        <ReportItems>
+          <Textbox Name="textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!UserName.Value) + "  "+First(Fields!EmployeeName.Value)+ "  "+First(Fields!PositionName.Value)+ "  "+Format(First(Fields!ResponseDate.Value),"dd/MM/yyyy")+" "+IIF(First(Fields!ResponseDate.Value) is nothing,"",FormatDateTime(First(Fields!ResponseDate.Value),3))</Value>
+                    <Style>
+                      <FontFamily>Arial Unicode MS</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>5.875in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Height>0.25in</Height>
+        <Width>5.875in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+    </ReportItems>
+    <Height>0.25in</Height>
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
+  </Body>
+  <Width>5.875in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="eAccounting">
+      <DataSourceReference>eAccounting</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>e2ec5672-e638-4b40-a947-31d6ef6499f7</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>eAccounting</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@DocID">
+            <Value>=Parameters!DocID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT  usr.UserName,usr.EmployeeName,usr.PositionName,wfr.ResponseDate ,doc.DocumentID 
+FROM [Document] doc 
+
+LEFT JOIN WorkFlow wf 
+ON doc.DocumentID = wf.DocumentID
+
+LEFT JOIN WorkFlowResponse wfr
+ON wfr.workFlowID = wf.WorkFlowID
+  
+LEFT JOIN WorkFlowStateEvent wfse 
+ON wfse.WorkFlowStateEventID = wfr.WorkflowStateEventID 
+
+LEFT JOIN WorkFlowState wfs
+ON wfse.WorkFlowStateID = wfs.WorkFlowStateID
+
+LEFT JOIN SuUser usr
+ON wfr.ResponseBy = usr.UserID 
+
+WHERE 1=1 AND wfse.Name = 'Verify' 
+AND wfs.Name = 'WaitVerify' 
+AND wfr.Active=1
+AND doc.documentID = @DocID</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PositionName">
+          <DataField>PositionName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ResponseDate">
+          <DataField>ResponseDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DocumentID">
+          <DataField>DocumentID</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="DocID">
+      <DataType>String</DataType>
+      <Prompt>DocID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>610d9f94-f7f2-4323-8e83-dd17b9a29ef2</rd:ReportID>
+</Report>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SCG.DB.DTO.DbLocation,SCG.DB.DTO" table="DbLocation">
+
+    <id name="LocationID" column="LocationID" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property column="LocationCode" type="String" name="LocationCode" not-null="true" length="20" />
+    <many-to-one name="CompanyID" column="CompanyID" class="SCG.DB.DTO.DbCompany,SCG.DB.DTO" />
+    <!--<many-to-one name="CompanyCode" column="CompanyCode" class="SCG.DB.DTO.DbCompany,SCG.DB.DTO" />-->
+    <property column="CompanyCode" type="String" name="CompanyCode"  length="4" not-null="false" />
+    <property column="Description" type="String" name="LocationName"  length="100" />
+
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="IsAllowImportExpense" type="Boolean" name="IsAllowImportExpense" not-null="false" />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    <property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+    <property column="DefaultPBID" type="System.Nullable`1[[System.Int64]]" name="DefaultPBID" />
+  </class>
+</hibernate-mapping>

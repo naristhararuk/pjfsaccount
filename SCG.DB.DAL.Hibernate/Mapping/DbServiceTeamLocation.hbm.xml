@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbServiceTeamLocation,SCG.DB.DTO" table="DbServiceTeamLocation">
+
+		<id name="ServiceTeamLocationID" column="ServiceTeamLocationID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="ServiceTeamID" column="ServiceTeamID" class="SCG.DB.DTO.DbServiceTeam,SCG.DB.DTO" />
+		<many-to-one name="LocationID" column="LocationID" class="SCG.DB.DTO.DbLocation,SCG.DB.DTO" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

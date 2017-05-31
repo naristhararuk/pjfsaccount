@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnEACAdvanceImportLog,SCG.eAccounting.DTO" table="FnEACAdvanceImportLog">
+
+		<id name="LogID" column="LogID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="EACRequestNo" type="String" name="EACRequestNo" length="50" />
+		<property column="EXPRequestNo" type="String" name="EXPRequestNo" length="50" />
+    <property column="Status" type="String" name="Status" length="50"/>
+		<property column="Message" type="String" name="Message" length="255"/>
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+	</class>
+</hibernate-mapping>

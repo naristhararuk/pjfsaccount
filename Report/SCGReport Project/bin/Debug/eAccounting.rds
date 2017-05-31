@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="eAccounting">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=172.24.1.27\sql2012;Initial Catalog=expenseECC</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>ea1c01b6-8df8-490f-ae10-e17f256b48b1</DataSourceID>
+</RptDataSource>

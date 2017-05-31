@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B4673A6-8617-4D2C-B275-D356696AA00D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.SU.DAL.Hibernate</RootNamespace>
+    <AssemblyName>SS.SU.DAL.Hibernate</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACLDao.cs" />
+    <Compile Include="AuthenticationDao.cs" />
+    <Compile Include="ExceptionDao.cs" />
+    <Compile Include="MenuEngineDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuAnnouncementDao.cs" />
+    <Compile Include="SuAnnouncementGroupDao.cs" />
+    <Compile Include="SuAnnouncementGroupLangDao.cs" />
+    <Compile Include="SuAnnouncementLangDao.cs" />
+    <Compile Include="SuDivisionDao.cs" />
+    <Compile Include="SuDivisionLangDao.cs" />
+    <Compile Include="SuEHRExpenseLogDao.cs" />
+    <Compile Include="SuEHrProfileLogDao.cs" />
+    <Compile Include="SuEMailLogDao.cs" />
+    <Compile Include="SuEmailResendingDao.cs" />
+    <Compile Include="SuGlobalTranslateDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuGlobalTranslateLangDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuImageToSAPLogDao.cs" />
+    <Compile Include="SuMenuDao.cs" />
+    <Compile Include="SuMenuLangDao.cs" />
+    <Compile Include="SuOrganizationDao.cs" />
+    <Compile Include="SuOrganizationLangDao.cs" />
+    <Compile Include="SuPasswordHistoryDao.cs" />
+    <Compile Include="SuProgramDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuProgramRoleDao.cs" />
+    <Compile Include="SuProgramLangDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuRoleDao.cs" />
+    <Compile Include="SuRoleLangDao.cs" />
+    <Compile Include="SuRolepbDao.cs" />
+    <Compile Include="SuRoleServiceDao.cs" />
+    <Compile Include="SuRTEContentDao.cs" />
+    <Compile Include="SuRTENodeDao.cs" />
+    <Compile Include="SuSessionDao.cs" />
+    <Compile Include="SuSmsLogDao.cs" />
+    <Compile Include="SuStatisticDao.cs" />
+    <Compile Include="SuUserDao.cs" />
+    <Compile Include="SuUserFavoriteActorDao.cs" />
+    <Compile Include="SuUserLangDao.cs" />
+    <Compile Include="SuUserLogDao.cs" />
+    <Compile Include="SuUserPersonalLevelDao.cs" />
+    <Compile Include="SuUserRoleDao.cs" />
+    <Compile Include="SuUserLoginTokenDao.cs" />
+    <Compile Include="TmpSuUserDao.cs" />
+    <Compile Include="TranslationDao.cs" />
+    <Compile Include="UserEngineDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DAL\SS.SU.DAL.csproj">
+      <Project>{FB3A8590-E912-4328-B94C-635F9F1599B1}</Project>
+      <Name>SS.SU.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuMenu.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuMenuLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuOrganization.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuOrganizationLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuUser.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuAlertMessage.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuAlertMessageLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuAnnouncement.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuAnnouncementGroup.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuAnnouncementGroupLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuAnnouncementLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuDivision.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuDivisionLang.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\SuEventLogGroup.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuEventLogGroupLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuGlobalTranslate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuGlobalTranslateLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuProgramLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuProgramRole.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuRole.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\SuRoleLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuSession.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuUserLog.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuUserProfile.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuUserProfileLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuUserRole.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuProgram.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuRTENode.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuPasswordHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuRTEContent.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuUserFavoriteActor.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuRolepb.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuRoleService.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuSmsLog.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuUserLang.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuEMailLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuPostSAPLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuImageTosapLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\TmpSuUser.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SueHrProfileLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SuUserPersonalLevel.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuUserLoginToken.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\SuEmailResending.hbm.xml" />
+    <Content Include="Mapping\SueHrExpenseLog.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SuStatistic.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

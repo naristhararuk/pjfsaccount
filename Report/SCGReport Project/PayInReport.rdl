@@ -1,0 +1,1657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>4.46875in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.5in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.05in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.26083in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="rectangle2">
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>วันที่</Value>
+                                  <Style>
+                                    <FontFamily>Browallia New</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Height>0.24in</Height>
+                          <Width>0.34375in</Width>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>6pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox8">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox8</rd:DefaultName>
+                          <Left>0.29167in</Left>
+                          <Height>0.24in</Height>
+                          <Width>2.22916in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <DataElementOutput>ContentsOnly</DataElementOutput>
+                      <ZIndex>6</ZIndex>
+                      <Style />
+                    </Rectangle>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="rectangle3">
+                      <ReportItems>
+                        <Image Name="image2">
+                          <Source>Embedded</Source>
+                          <Value>checkbox_1</Value>
+                          <Sizing>Fit</Sizing>
+                          <Top>0.00001in</Top>
+                          <Height>0.24999in</Height>
+                          <Width>0.25in</Width>
+                          <Style />
+                        </Image>
+                        <Image Name="image6">
+                          <Source>Embedded</Source>
+                          <Value>logo_kbank</Value>
+                          <Sizing>Fit</Sizing>
+                          <Left>0.25in</Left>
+                          <Height>0.25in</Height>
+                          <Width>0.25in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style />
+                        </Image>
+                        <Textbox Name="textbox42">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="ธนาคารกสิกรไทย KASIKORNBANK (Code "+ First(Fields!KBankCode.Value, "table1") +")"</Value>
+                                  <Style>
+                                    <FontFamily>Browallia New</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox42</rd:DefaultName>
+                          <Top>0.00001in</Top>
+                          <Left>0.5in</Left>
+                          <Height>0.24999in</Height>
+                          <Width>3.875in</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <DataElementOutput>ContentsOnly</DataElementOutput>
+                      <ZIndex>5</ZIndex>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="รหัสพนักงาน"+chr(10)+"Employee ID (Ref 1)"</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox23</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!EmployeeCode.Value, "table1")</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox45">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="เลขที่ใบเบิก" +chr(10)+ "Expense No (Ref 2)"</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox45</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!DocTypeToNumber.Value, "table1") + First(Fields!Ref2.Value, "table1")</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <Top>4.28126in</Top>
+        <Left>0.72917in</Left>
+        <Height>0.76083in</Height>
+        <Width>7.01875in</Width>
+        <Style />
+      </Tablix>
+      <Tablix Name="table2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.62403in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.09375in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.0625in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.23958in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.36458in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox37">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>เช็คเลขที่ CHEQUE NUMBER</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox37</rd:DefaultName>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <BackgroundColor>MediumSpringGreen</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>เช็คลงวันที่ DATE</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <BackgroundColor>MediumSpringGreen</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>ธนาคาร/สาขา BANK/BRANCH</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox17</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>MediumSpringGreen</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>จำนวนเงิน AMOUNT</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <BackgroundColor>MediumSpringGreen</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox38">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox38</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox18">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox18</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.48958in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="rectangle1">
+                      <ReportItems>
+                        <Textbox Name="textbox43">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value> เงินสด CASH</Value>
+                                  <Style>
+                                    <FontFamily>Browallia New</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox43</rd:DefaultName>
+                          <Top>0.125in</Top>
+                          <Left>0.46876in</Left>
+                          <Height>0.25in</Height>
+                          <Width>0.95833in</Width>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Image Name="image4">
+                          <Source>Embedded</Source>
+                          <Value>checkbox_1</Value>
+                          <Sizing>Fit</Sizing>
+                          <Top>0.125in</Top>
+                          <Left>0.19792in</Left>
+                          <Height>0.25in</Height>
+                          <Width>0.27084in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style />
+                        </Image>
+                      </ReportItems>
+                      <DataElementOutput>ContentsOnly</DataElementOutput>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox21">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="รวมยอดเงินเป็นตัวอักษร"+chr(10)+"TOTAL AMOUNT IN WORDS"</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox27">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TotalExpense.Value</Value>
+                              <Style>
+                                <FontFamily>Browallia New</FontFamily>
+                                <FontSize>14pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox27</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>10pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="table2_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <Top>5.22916in</Top>
+        <Left>0.72918in</Left>
+        <Height>1.10416in</Height>
+        <Width>7.01986in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </TopBorder>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </BottomBorder>
+          <LeftBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </LeftBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </RightBorder>
+        </Style>
+      </Tablix>
+      <Image Name="image3">
+        <Source>Database</Source>
+        <Value>=Code.barcode.Encode(BarcodeLib.Type.Code128,"|" 
++ Fields!TaxId.Value.ToString() + "00"  + chr(13)
++ Fields!EmployeeCode.Value.ToString() + chr(13)
++ Fields!DocTypeToNumber.Value.ToString() + Fields!Ref2.Value.ToString() + chr(13)
++ Fields!Amount.Value.ToString(),400,53,"",True,BarcodeLib.AlignmentPositions.RIGHT)</Value>
+        <MIMEType>image/jpeg</MIMEType>
+        <Top>6.6354in</Top>
+        <Left>3.54166in</Left>
+        <Height>0.50001in</Height>
+        <Width>2.9in</Width>
+        <ZIndex>2</ZIndex>
+        <Style />
+      </Image>
+      <Line Name="line1">
+        <Top>3.55208in</Top>
+        <Height>0in</Height>
+        <Width>7.75001in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Dashed</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Image Name="image5">
+        <Source>Database</Source>
+        <Value>=Code.barcode.Encode(BarcodeLib.Type.Code128,"|" 
++ Fields!TaxId.Value.ToString() + "00"  + chr(13)
++ Fields!EmployeeCode.Value.ToString() + chr(13)
++ Fields!DocTypeToNumber.Value.ToString() + Fields!Ref2.Value.ToString() + chr(13)
++ Fields!Amount.Value.ToString(),400,42,"90")</Value>
+        <MIMEType>image/jpeg</MIMEType>
+        <Top>3.78125in</Top>
+        <Height>2.9in</Height>
+        <Width>0.425in</Width>
+        <ZIndex>4</ZIndex>
+        <Style />
+      </Image>
+      <Textbox Name="textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>*** หลังจากบริษัทได้รับชำระเงินและตรวจสอบความถูกต้องเรียบร้อยแล้ว จะทำการบันทึกรายการ
+รับคืนเงินจากท่าน โดยจะมี eMail แจ้งยืนยันให้ท่านทราบ ***</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox32</rd:DefaultName>
+        <Top>2.39584in</Top>
+        <Height>0.96876in</Height>
+        <Width>7.75001in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>18pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox36">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>หมายเหตุ:</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox36</rd:DefaultName>
+        <Top>1.84376in</Top>
+        <Left>3.87716in</Left>
+        <Height>0.25in</Height>
+        <Width>0.59375in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ก่อนชำระเงินผ่านช่องทางต่างๆ ของธนาคาร จะต้องลงทะเบียนหรือสมัครใช้บริการตามเงื่อนไขของทางธนาคาร</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox35</rd:DefaultName>
+        <Top>1.84376in</Top>
+        <Left>4.47091in</Left>
+        <Height>0.25in</Height>
+        <Width>3.2791in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1. เข้า Internet ไปที่ www.kasikornbank.com ไปที่ “บริการออนไลน์ (K-Online Services)” 
+และคลิกเลือก “K-Cyber Banking”
+2. Log in เข้าระบบ โดยใส่ User Name และ Password
+3. เลือกแถบด้านซ้ายมือชื่อ “ชำระค่าสินค้าและบริการ” เพื่อแสดงเมนูย่อย
+4. เลือกแถบด้านซ้ายมือชื่อ “ชำระค่าสินค้าและบริการ” อีกครั้ง
+5. เลือกปุ่ม “สร้างแบบฟอร์มการชำระเงิน / New Billing Template”
+6. เลือกประเภทธุรกิจ “ สินค้า &amp; บริการ “
+7. เลือกบริษัทที่ต้องการชำระ “ (Remit) รหัสบริษัท-ชื่อบริษัท “
+8. เลือกบัญชีที่ต้องการชำระเงิน (กระแสรายวัน หรือ ออมทรัพย์)
+9. ใส่ “รหัสอ้างอิงที่ 1” / “รหัสอ้างอิงที่ 2” (ถ้ามี)
+10. ใส่จำนวนเงินที่ต้องการชำระ แล้วกดปุ่มชำระเงิน
+11. ตรวจสอบรายการ และทำการกดปุ่ม “ยืนยัน“ เพื่อทำรายการชำระเงิน</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <Top>0.47917in</Top>
+        <Height>0.76042in</Height>
+        <Width>3.76042in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox20">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ผ่านช่องทาง Internet</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox20</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Height>0.22917in</Height>
+        <Width>3.76042in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1. สอด บัตร ATM หรือ บัตรเครดิต
+2. กด รหัสประจำตัว (รหัสผ่าน 4 หลัก)
+3. กดปุ่ม “ ซื้อ / ชำระเงิน / กองทุนรวม” แล้วกดปุ่ม “อื่น ๆ (ระบุรหัส) ”
+4. เลือก บัญชีที่ต้องการชำระ (ออมทรัพย์หรือ กระแสรายวัน)
+5. ใส่รหัส บริษัท 5 หลัก (XXXXX)
+6. กด “รหัสอ้างอิงที่ 1” ตามด้วย กดปุ่ม “หมายเลข ถูกต้อง”
+7. กด “รหัสอ้างอิงที่ 2” (ถ้ามี) ตามด้วย กดปุ่ม “หมายเลขถูกต้อง”
+8. ใส่จำนวนเงินที่ต้องการชำระ ตามด้วย กดปุ่ม “จำนวนเงินถูกต้อง”
+9. ตรวจสอบและกดปุ่ม "ยืนยันการทำรายการ"
+10. รอรับหลักฐานการชำระเงิน Slip ATM</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.47917in</Top>
+        <Left>3.87195in</Left>
+        <Height>0.46875in</Height>
+        <Width>3.87806in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ผ่านช่องทาง ATM</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.25in</Top>
+        <Left>3.87195in</Left>
+        <Height>0.22917in</Height>
+        <Width>3.87806in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox40">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>วิธีการชำระเงิน (Payment Method)</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox40</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>7.75001in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1. เลือก icon K-Mobile Banking PLUS
+2. เลือกธนาคารบนมือถือ แล้วใส่รหัสผ่าน 6 หลัก
+3. เลือกเมนู “จ่าย/ซื้อ”
+4. เลือกเมนู “จ่ายค่าอื่นๆ” หรือ “จ่ายโดยระบุรหัสบริษัท”
+    4.1 เมนู “จ่ายค่าอื่นๆ”
+          4.1.1 เลือกประเภทร้านค้า แล้วเลือกบริษัทที่ต้องการชำระ
+    4.2 เมนู “จ่ายโดยระบุรหัสบริษัท”
+          4.2.1 ใส่รหัสบริษัท แล้วกดยืนยันร้านค้า
+5. เลือกบัญชีที่ต้องการชำระเงิน (กระแสรายวัน หรือ ออมทรัพย์)
+6. ใส่ “เลขที่อ้างอิงที่ 1” และ “เลขที่อ้างอิงที่ 2” (ถ้ามี)
+7. ใส่จำนวนเงินที่ต้องการชำระ
+8. ตรวจสอบรายการ และกดยืนยันการทำรายการ
+9. ระบบจะแสดงผลการทำรายการทางหน้าจอมือถือ</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.46876in</Top>
+        <Height>0.76042in</Height>
+        <Width>3.76042in</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ผ่านช่องทางโทรศัพท์มือถือ</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.23959in</Top>
+        <Height>0.22917in</Height>
+        <Width>3.76042in</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox28">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1. โทรติดต่อระบบที่หมายเลข 0-2888-8888
+2. กด 3 บริการเติมเงินโทรศัพท์ โอนเงิน ชำระเงิน
+3. กด 2 บริการโอนเงินและชำระเงิน
+4. กด “เลขที่บัญชี 10 หลัก หรือ เลข 16 หลักบนหน้าบัตร” ตามด้วย #
+5. กด “รหัสประจำตัว” ตามด้วย #
+6. กด 2 ชำระเงิน แล้วกด 1 ชำระค่าสินค้าและบริการ
+7. ใส่รหัสบริษัท “XXXXX” ตามด้วย #
+8. กดปุ่มเครื่องหมาย # เพื่อยืนยันบริษัทถูกต้อง
+9. กด 1 ชำระจากบัญชีกระแสรายวัน หรือ กด 2 ชำระจากบัญชีออมทรัพย์
+10. กด “รหัสอ้างอิงที่ 1” ตามด้วย # แล้วกด “รหัสอ้างอิงที่ 2” (ถ้ามี) ตามด้วย #
+11. ใส่ จำนวนเงินที่ต้องการชำระ รวมทศนิยม 2 ตำแหน่ง ตามด้วย #
+12. กดเครื่องหมาย # เพื่อยืนยันการทำรายการ หรือ กด 1 เพื่อเปลี่ยนแปลง
+13. กด 2 เพื่อขอแฟกซ์ (จะต้องโทรทำรายการจากเครื่องแฟกซ์) Slip ATM</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.17709in</Top>
+        <Left>3.87716in</Left>
+        <Height>0.66667in</Height>
+        <Width>3.87285in</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ผ่านช่องทางโทรศัพท์</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.94792in</Top>
+        <Left>3.87716in</Left>
+        <Height>0.22917in</Height>
+        <Width>3.87285in</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(K-Cyber Banking)</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.25in</Top>
+        <Left>1.10417in</Left>
+        <Height>0.22917in</Height>
+        <Width>1.28125in</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox34">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(K-ATM)</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.25in</Top>
+        <Left>4.75521in</Left>
+        <Height>0.22917in</Height>
+        <Width>1.28125in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox39">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(K-Mobile Banking PLUS)</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.23959in</Top>
+        <Left>1.40625in</Left>
+        <Height>0.22917in</Height>
+        <Width>2.29167in</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(K-Contact Center)</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.94792in</Top>
+        <Left>4.94792in</Left>
+        <Height>0.22917in</Height>
+        <Width>2.29167in</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox44">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="แบบฟอร์มการชำระเงิน Pay-In Slip"</Value>
+                <Style>
+                  <FontFamily>Browallia New</FontFamily>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox44</rd:DefaultName>
+        <Top>3.68751in</Top>
+        <Left>0.71875in</Left>
+        <Height>0.29167in</Height>
+        <Width>7.02542in</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>7.13541in</Height>
+    <Style />
+  </Body>
+  <Width>7.75001in</Width>
+  <Page>
+    <PageHeight>11.69in</PageHeight>
+    <PageWidth>8.27in</PageWidth>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="eAccounting">
+      <DataSourceReference>eAccounting</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>f6d759ec-c9a3-4c34-b4ed-6854b5edb7e8</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>eAccounting</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@DocumentID">
+            <Value>=Parameters!DocumentID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT d.DocumentNo,c.TaxId,c.KBankCode,u.EmployeeCode,e.DifferenceAmount * -1 as TotalExpense
+,SUBSTRING(d.DocumentNo,1,3) as DocType
+,SUBSTRING(d.DocumentNo,9,7) as Ref2
+FROM Document d 
+LEFT JOIN SuUser u on d.RequesterID = u.UserID
+LEFT JOIN FnExpenseDocument e on d.DocumentID = e.DocumentID
+LEFT JOIN DbCompany c on d.CompanyID = c.CompanyID
+WHERE d.DocumentID = @DocumentID</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TaxId">
+          <DataField>TaxId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="KBankCode">
+          <DataField>KBankCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeCode">
+          <DataField>EmployeeCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalExpense">
+          <DataField>TotalExpense</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DocType">
+          <DataField>DocType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Ref2">
+          <DataField>Ref2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocTypeToNumber">
+          <Value>=IIF(Fields!DocType.Value = "EXF", "2" ,"1")</Value>
+        </Field>
+        <Field Name="Amount">
+          <Value>=Replace(CStr(Fields!TotalExpense.Value),".","")</Value>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="DocumentID">
+      <DataType>String</DataType>
+      <Prompt>DocumentID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="kbank">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAABkAAAAaCAIAAADNH2CaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUuSURBVEhLfZULTBRHGICXh5gSaBShaY3GpEkjWtraGhNT+zBN2xhrqkUeokBraVRIlQZogUAqtIJQ0AoCQYuIFXncAcfdckcO76CeQApFRIoclPD2cbsLh95xx3EwM53Z3TuuremfyWZm95/vf8w//1IcxyEXgQg6BoKIDCwQCwDCnCzF9+S1cyvmUM9i8dpYdLfh6Uxw+Ajcsxd+vAeEhYPvUkCDDJrNTjP/zyIgoNGCgyHQ6zlIUfxwxwOIcwruegdUXAO2RdeAiF8sy4pxCM4/fQqTU4GnF0aAV4NAWhqUSKC2Fba2wUY5PJsDPvxINICNjY0JGcBPnsXni88RgrOzICQUqyK/APRjNjQYXGMR5nDRjmqkaEsQMbbtLdB3b4XFccQvomSzweijxOZrb8zpNMCZZqJLLAv2sOBPzPBdiP3CuDe3C5G6xojAxWIC2rwFDQzST3trpzXiqfEek1DEU0WND3XXmTaEs3EgmGxxxsixfIx/jcD1G6DP80Ddgpf1o+qNqijZVJsLjkxtS5b66d82qmNKRurJrolJuDUINsgcfhmNCNdOQhKxkJIqRFE/pXWTB/vTEVmDv9qWrQJRx/Z90pHuS4dTsv1lo3LRjEQKdr6Nlpe5uTmKs1jQ/UHwyma4xg8O/Cmwuph+P2WEOx1KyT871nPOYjdJpzQvqKIpefCqpnCfpsNNjzrFLFus0NMLDQxgDsXaF1FVNfRcDd7bDRcWBNYSsKf2l62iw7yaDq2Sh+Tqr2/TnvSgw1YrI9aoIo90Zminb4t+4UjxuVfXcHY7xS4uouyz5EROfbNyIxBahkuZ+kpvOhx7d7Dz+w0tMW506Os34+L+yHu/9VThUI3ol8DKy+cAoFirFSV9S5J1
+OsOVRcxCWDmmeqn580870jepY/a3pyf1nN+qiaMaDxQOS/jv/Blj1g9nCIvDrESelZHpynLe26Jh6T5dypfdOZG/ZwWootyawrCz2sddvF8OVlY2z8Ix5uUT1vHYf7AcBTVmmoq5m5s4XBrQ/AVFh3grQvOGqnBCBRZ5Yr/yz/EsO74TtST3u97FuRc952tdcG3KaogfKIgdvuirCA/UnJCMtyBILoXTccKqqSW55+bNaHwC7NgJvX1Ik3FkQTgmLA+shuSe/NjBC5HtmXrTqPO9mCyDAfj4ovFxzKHY2Rli5EIBOcqDoU7VBcu8kWMWrdYpGxs1dD5k4jxtuoOW0RzHmp7MrRBzfoKHIvCSm53FvZC/2w8f4nJFHh7W65WGJ8a+7g61rEZRXaFplLZ1qX8eqSkcb5D0K2/RMkVVuVJa2dPe+sDIznd3wRfXQ52OsJz9i4R2tQJRlHmdf1vumarqcum1S8q6SunVEklZkaauulUmrb9SIrlSrKy70VBZduPaJXVZMRcUhLcIJyb0L0fPwbfyZDzB+Qe0pyc3KiQqlUxaUYr3y6vK5dUV0ivFkvISlUIqb6prycsyBAYS0O4PXFh8XxUSCcxm8NUxrGHz8poODXnUptWPDGpvtdAtCvom3axR3rvfO6Hvn0hMMK9dK4JGRlz6qpPFVwBcsMHss2idP1ZFm15GcV9bCguZS6VM2WVTURFKS0fbd5BPbu7w2HH4+DHf2xw9+l//IfGW3emFJ+Kg3zpSOy6DlLS7J9y7D8oVrj80MV8zM6Qmni16Pbr8C4pPQNFHUWQ0OhGHCgpRZydaWvqvPuZQk5OT+FckCMMyKzIzw5rNjMXCzs8zJhMeeIkbAWuxMEYjg5UZ/FgRzPkb/W7z7yeY4FcAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="ID9mil">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="checkbox">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAABoAAAAXCAIAAACatshHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABKSURBVEhLY/hPVcAANM3AwICBYgA0BGgUyDigUZQ7EWLIqHHkhORo2JETahA9o2E3GnZEhcAITSgCAgIUVxUMQEOghTtRQU2cIgCd+/vMIwlWBQAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logo_kbank">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhKwArAOYAAAGoTa/mxuoeKvRyfJiIe0G+e9zRy+M3Qv/j6Kyelveco7mvqmHJks/v3Z6QhchKTx61Y9pSXN7a1Z7evK+KhO/69OkiMvaNlBCtWv///3HPnP3Fy/m4vQGnUO8pOv/e5snEvvBGVPRjbvnFx9bv3n7VqLGnnrNlY7zcxPR+ilDFh/qorwCqTqaVjZqHgL7q0DC5ccuPjvzU2OTj3u0aKvJUYv3x84/Zs77r09FucQCrT9DLx5qGe+4aMO84R/7w8b60rPj49m7Rm/eqsMDp1N7z552Oh6GQg+bh3vrFzNrTzeFZY4HUpuzo5bWknfSAi8zDvLvArOHZ1cHhzNbOxQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAArACsAAAf/gBmCg4SFhoeIiYqEMisXNZCQAxcbi5aGCCk+NJw9npygHgNJl4sIA56pPaCsrD4cpYcXqa0+kTWqqjUIsYIIIaugPk+khjIKIa0esKUyHqo+Q5cyIq3Sls6qF70ZSZug14kIz54+URXcFSjVqeGHwJ4hNkQl3ExEGQOsMogXwj8ZXgBoEKsBC3z5QIU4hEAVvwxEWGBAuGgChg4IbSTjtK2QPo6DIrJgMUFRERUdUuIYJEOAJw82CCEQRkjkSAaIbmAAMPIgIX+cFBBKAY4Qjp4jC6Ab1AAG0pEvCNnwwMkHIR/lChVJybUDBoIZLD4duZIQKk8PZYBKYahAh6cY/4o00EG3Ll0IYFmC6rhCgN9ihBpgGKuBwciuXhlQHESVRg1Bszwhaoq4QIGeXAswwGgIVw+rGWpwWoioguGelrti0ABBpSGgNASJdlwx
+8+Wkm7kuhgxKtsvHiwR3SI1BSOuuuzMM6R2aE/DgACxDYNIBgPXrRV6nku28lArLJcayUCGL+cfYl25YZnCdK4OlHrdngM3LEhHLbntiCJAIHvAkoAhlCQ74caUCfJisNQgozylyn2XWlaSIAqAwk4EIqdSnyAsFSqgIVp4AJAgHoAwwIH4wWJJEKiZelcpDgzQBAggSBAERfgUIgsSMUth4FSgwCjJEKvJkEMQOCbTQQvECDrQAxBQaRMmAEkkm4IQDDkDhI2wiHDIbDUuY0EKTDlg5pgtLOnElAS0ckYAJWDrgghMxsKIhI43REEGcS4pJAJtWOjFmkyaIOWgM5PQg4CErsPJACzw4oOaYlDrBZAsESCooAS6cYIFfAnSpCFGgHECBA4UOWqYJSZKZqgsPsBKCiIqc5YkFOcwwgwEmRNqCoAnwkMAOusZwgKwxXaJALj5cwAsSQFiZwAJKZGDDCriwUgOtl3iTSw8hTMJBEkko8EgrIHGTwQ+woQuKKgwGqW4miX77CScijKBuIhykkG0tAwyR7L6WBDHCBhvcGUsgADs=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="checkbox_1">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAACcAAAAfCAIAAADr6EOiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABtSURBVEhL7ZbLDQAgCEMZgVHYfzkl0YMaP5cSPJQB2vjyMEjJGMkoLR+0mpnEjCePUKe3emMQ8CWZrXDOJNyQ0mGEWrSJNiE82lLk749D25O4r9xXnFT/2aSqMeewePLxHsYRfSRFnd332pzWCoLh3E5U2mC5AAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <CodeModules>
+    <CodeModule>System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</CodeModule>
+    <CodeModule>BarcodeLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</CodeModule>
+  </CodeModules>
+  <Classes>
+    <Class>
+      <ClassName>BarcodeLib.Barcode</ClassName>
+      <InstanceName>barcode</InstanceName>
+    </Class>
+  </Classes>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>1fca3776-3109-4a3f-9516-a0eccf0c0b01</rd:ReportID>
+</Report>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SCG.eAccounting.DTO.DocumentViewLock,SCG.eAccounting.DTO" table="DocumentViewLock">
+    <id name="DocumentID" column="DocumentID" type="Int64" unsaved-value="0">
+      <generator class="assigned"/>
+    </id>
+    <many-to-one name="UserID" column="UserID" class="SS.SU.DTO.SuUser,SS.SU.DTO" />
+    <property column="Locked" type="Boolean" name="Locked" not-null="true" />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+  </class>
+</hibernate-mapping>

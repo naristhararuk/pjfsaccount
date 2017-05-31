@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnExpensePerdiemItem,SCG.eAccounting.DTO" table="FnExpensePerdiemItem">
+
+		<id name="PerdiemItemID" column="PerdiemItemID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+    <many-to-one name="ExpensePerdiem" column="ExpensePerdiemID" class="SCG.eAccounting.DTO.FnExpensePerdiem,SCG.eAccounting.DTO" />
+		<property column="FromDate" type="System.Nullable`1[[System.DateTime]]" name="FromDate" not-null="true" />
+		<property column="ToDate" type="System.Nullable`1[[System.DateTime]]" name="ToDate" not-null="true" />
+		<property column="FromTime" type="DateTime" name="FromTime" not-null="true" />
+		<property column="ToTime" type="DateTime" name="ToTime" not-null="true" />
+		<property column="AdjustedDay" type="Double" name="AdjustedDay" />
+		<property column="HalfDay" type="Double" name="HalfDay" />
+		<property column="FullDay" type="Double" name="FullDay" />
+		<property column="NetDay" type="Double" name="NetDay" not-null="true" />
+		<property column="CountryID" type="System.Nullable`1[[System.Int16]]" name="CountryID" />
+		<property column="CountryZoneID" type="Int64" name="CountryZoneID" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="Remark" type="String" name="Remark" not-null="true" length="100" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

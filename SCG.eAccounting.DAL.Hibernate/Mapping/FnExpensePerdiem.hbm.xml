@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnExpensePerdiem,SCG.eAccounting.DTO" table="FnExpensePerdiem">
+
+		<id name="ExpensePerdiemID" column="ExpensePerdiemID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Expense" column="ExpenseID" class="SCG.eAccounting.DTO.FnExpenseDocument,SCG.eAccounting.DTO" />
+		<property column="Description" type="String" name="Description" not-null="true" length="500" />
+		<property column="PerdiemRateUSD" type="System.Nullable`1[[System.Double]]" name="PerdiemRateUSD" />
+		<property column="PerdiemRateUSDHigh" type="System.Nullable`1[[System.Double]]" name="PerdiemRateUSDHigh" />
+		<property column="TotalFullDayPerdiem" type="Double" name="TotalFullDayPerdiem" />
+		<property column="FullDayPerdiemRate" type="Double" name="FullDayPerdiemRate" />
+		<property column="TotalFullDayPerdiemAmount" type="Double" name="TotalFullDayPerdiemAmount" />
+		<property column="TotalHalfDayPerdiem" type="Double" name="TotalHalfDayPerdiem" />
+		<property column="HalfDayPerdiemRate" type="Double" name="HalfDayPerdiemRate" />
+		<property column="TotalHalfDayPerdiemAmount" type="Double" name="TotalHalfDayPerdiemAmount" />
+		<property column="TotalFullDayPerdiemHigh" type="Double" name="TotalFullDayPerdiemHigh" />
+		<property column="FullDayPerdiemRateHigh" type="Double" name="FullDayPerdiemRateHigh" />
+		<property column="TotalFullDayPerdiemAmountHigh" type="Double" name="TotalFullDayPerdiemAmountHigh" />
+		<property column="TotalHalfDayPerdiemHigh" type="Double" name="TotalHalfDayPerdiemHigh" />
+		<property column="HalfDayPerdiemRateHigh" type="Double" name="HalfDayPerdiemRateHigh" />
+		<property column="TotalHalfDayPerdiemAmountHigh" type="Double" name="TotalHalfDayPerdiemAmountHigh" />
+		<property column="PerdiemRateGov" type="Double" name="PerdiemRateGov" />
+		<property column="PerdiemRateGovHigh" type="Double" name="PerdiemRateGovHigh" />
+		<property column="PerdiemGovernmentAmount" type="Double" name="PerdiemGovernmentAmount" />
+		<property column="PerdiemPrivateAmount" type="Double" name="PerdiemPrivateAmount" />
+		<property column="PerdiemTotalAmount" type="Double" name="PerdiemTotalAmount" />
+		<property column="PerdiemTaxAmount" type="Double" name="PerdiemTaxAmount" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<many-to-one name="Invoice" column="InvoiceID" class="SCG.eAccounting.DTO.FnExpenseInvoice,SCG.eAccounting.DTO" />
+		<many-to-one name="CostCenter" column="CostCenterID" class="SCG.DB.DTO.DbCostCenter,SCG.DB.DTO" />
+		<many-to-one name="Account" column="AccountID" class="SCG.DB.DTO.DbAccount,SCG.DB.DTO" />
+		<many-to-one name="IO" column="IOID" class="SCG.DB.DTO.DbInternalOrder,SCG.DB.DTO" />
+		<property column="ReferenceNo" type="String" name="ReferenceNo" length="30" />
+		<property column="SaleOrder" type="String" name="SaleOrder" length="10" />
+		<property column="SaleItem" type="String" name="SaleItem" length="6" />
+		<property column="PerdiemRate" type="Double" name="PerdiemRate" />
+		<property column="PerdiemTotalAmountHigh" type="Double" name="PerdiemTotalAmountHigh" />
+    <property column="PerdiemTotalAmountLocalCurrency" type="Double" name="PerdiemTotalAmountLocalCurrency" />
+    <property column="PerdiemTotalAmountMainCurrency" type="Double" name="PerdiemTotalAmountMainCurrency" />
+		<property column="ExchangeRate" type="Double" name="ExchangeRate" />
+    
+    <property column="PerdiemRateUSDThaiZone" type="Double" name="PerdiemRateUSDThaiZone" />
+    <property column="PerdiemTotalAmountThaiZone" type="Double" name="PerdiemTotalAmountThaiZone" />
+    <property column="TotalFullDayPerdiemThaiZone" type="Double" name="TotalFullDayPerdiemThaiZone" />
+    <property column="FullDayPerdiemRateThaiZone" type="Double" name="FullDayPerdiemRateThaiZone" />
+    <property column="TotalFullDayPerdiemAmountThaiZone" type="Double" name="TotalFullDayPerdiemAmountThaiZone" />
+    <property column="TotalHalfDayPerdiemThaiZone" type="Double" name="TotalHalfDayPerdiemThaiZone" />
+    <property column="HalfDayPerdiemRateThaiZone" type="Double" name="HalfDayPerdiemRateThaiZone" />
+    <property column="TotalHalfDayPerdiemAmountThaiZone" type="Double" name="TotalHalfDayPerdiemAmountThaiZone" />
+	</class>
+</hibernate-mapping>

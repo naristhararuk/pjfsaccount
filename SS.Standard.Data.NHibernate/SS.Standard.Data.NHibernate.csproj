@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.Standard.Data.NHibernate</RootNamespace>
+    <AssemblyName>SS.Standard.Data.NHibernate</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20820.19051, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net, Version=1.2.0.2, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="FissionSoft.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\FissionSoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.0.3, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="StringTemplate, Version=3.0.1.17176, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\StringTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\Callback\CountByCriteriaCallback.cs" />
+    <Compile Include="Dao\Callback\FindByCriteriaCallback.cs" />
+    <Compile Include="Dao\Callback\FindByExampleCallback.cs" />
+    <Compile Include="Dao\IDao.cs" />
+    <Compile Include="Dao\NHibernateAdapter.cs" />
+    <Compile Include="Dao\NHibernateDaoBase.cs" />
+    <Compile Include="Dao\NHibernateDaoHelper.cs" />
+    <Compile Include="DTO\INHibernateAdapterDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryCreator\Describer\IIdentityTraversalDescribable.cs" />
+    <Compile Include="QueryCreator\Describer\UniqueIdentityTraversalDescriber.cs" />
+    <Compile Include="QueryCreator\Descriptor\FindByExampleDescriptor.cs" />
+    <Compile Include="QueryCreator\Descriptor\QueryDescriptor.cs" />
+    <Compile Include="QueryCreator\HqlCreator.cs" />
+    <Compile Include="QueryCreator\IQueryCreator.cs" />
+    <Compile Include="QueryCreator\QueryCreatorBase.cs" />
+    <Compile Include="QueryCreator\QueryParameterBuilder.cs" />
+    <Compile Include="QueryCreator\QueryPartCollector.cs" />
+    <Compile Include="QueryParts\Constants\ComparisonOperator.cs" />
+    <Compile Include="QueryParts\Constants\LogicalOperator.cs" />
+    <Compile Include="QueryParts\Constants\Manipulators\ComparisonOperatorManipulator.cs" />
+    <Compile Include="QueryParts\Constants\Manipulators\LogicalOperatorManipulator.cs" />
+    <Compile Include="QueryParts\Constants\Manipulators\MatchOptionManipulator.cs" />
+    <Compile Include="QueryParts\Constants\Manipulators\OrderDirectionManipulator.cs" />
+    <Compile Include="QueryParts\Constants\MatchOption.cs" />
+    <Compile Include="QueryParts\Constants\OrderDirection.cs" />
+    <Compile Include="QueryParts\CriterionBase.cs" />
+    <Compile Include="QueryParts\FromBase.cs" />
+    <Compile Include="QueryParts\Hql\FromClass.cs" />
+    <Compile Include="QueryParts\Hql\HqlValueOperand.cs" />
+    <Compile Include="QueryParts\Hql\OrderProperty.cs" />
+    <Compile Include="QueryParts\Hql\PropertyComparisonCriterion.cs" />
+    <Compile Include="QueryParts\Hql\PropertyIsNotNullCriterion.cs" />
+    <Compile Include="QueryParts\Hql\PropertyIsNullCriterion.cs" />
+    <Compile Include="QueryParts\Hql\PropertyLikeCriterion.cs" />
+    <Compile Include="QueryParts\Hql\PropertyOperand.cs" />
+    <Compile Include="QueryParts\Hql\SelectProperty.cs" />
+    <Compile Include="QueryParts\IParameterFillable.cs" />
+    <Compile Include="QueryParts\IPatternMatchCriterion.cs" />
+    <Compile Include="QueryParts\IPhraseGenerator.cs" />
+    <Compile Include="QueryParts\ISingleParameterCriterion.cs" />
+    <Compile Include="QueryParts\OperandBase.cs" />
+    <Compile Include="QueryParts\OrderBase.cs" />
+    <Compile Include="QueryParts\SelectBase.cs" />
+    <Compile Include="QueryParts\Sql\FieldComparisonCriterion.cs" />
+    <Compile Include="QueryParts\Sql\FieldIsNotNullCriterion.cs" />
+    <Compile Include="QueryParts\Sql\FieldIsNullCriterion.cs" />
+    <Compile Include="QueryParts\Sql\FieldOperand.cs" />
+    <Compile Include="QueryParts\Sql\FromTable.cs" />
+    <Compile Include="QueryParts\Sql\OrderField.cs" />
+    <Compile Include="QueryParts\Sql\SelectField.cs" />
+    <Compile Include="QueryParts\Sql\SqlValueOperand.cs" />
+    <Compile Include="QueryDao\Callback\CountByCriteriaCallback.cs" />
+    <Compile Include="QueryDao\Callback\FindByCriteriaCallback.cs" />
+    <Compile Include="QueryDao\Callback\FindByExampleCallback.cs" />
+    <Compile Include="QueryDao\IQuery.cs" />
+    <Compile Include="QueryDao\NHibernateQueryBase.cs" />
+    <Compile Include="QueryDao\NHibernateQueryHelper.cs" />
+    <Compile Include="Service\Implement\ServiceBase.cs" />
+    <Compile Include="Service\IService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\Adapters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

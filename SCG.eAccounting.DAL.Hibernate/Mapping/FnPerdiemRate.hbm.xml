@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnPerdiemRate,SCG.eAccounting.DTO" table="FnPerdiemRate">
+
+		<id name="PerdiemRateID" column="PerdiemRateID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<!--<many-to-one name="PerdiemProfile" column="PerdiemProfileID" class="SCG.eAccounting.DTO.FnPerdiemProfile,SCG.eAccounting.DTO" />
+		<many-to-one name="Zone" column="ZoneID" class="SS.DB.DTO.DbZone,SS.DB.DTO" />-->
+    <property column="PerdiemProfileID" type="Int64" name="PerdiemProfileID" />
+    <property column="ZoneID" type="Int16" name="ZoneID" />
+		<property column="PersonalLevel" type="String" name="PersonalLevel" length="40" />
+		<property column="ExtraPerdiemRate" type="System.Nullable`1[[System.Double]]" name="ExtraPerdiemRate" />
+		<property column="OfficialPerdiemRate" type="System.Nullable`1[[System.Double]]" name="OfficialPerdiemRate" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="InternationalStaffPerdiemRate" type="System.Nullable`1[[System.Double]]" name="InternationalStaffPerdiemRate" />
+    <property column="SCGStaffPerdiemRate" type="System.Nullable`1[[System.Double]]" name="SCGStaffPerdiemRate" />
+	</class>
+</hibernate-mapping>

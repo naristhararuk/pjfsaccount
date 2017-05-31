@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnExpenseInvoiceItem,SCG.eAccounting.DTO" table="FnExpenseInvoiceItem">
+
+		<id name="InvoiceItemID" column="InvoiceItemID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Invoice" column="InvoiceID" class="SCG.eAccounting.DTO.FnExpenseInvoice,SCG.eAccounting.DTO" />
+		<many-to-one name="CostCenter" column="CostCenterID" class="SCG.DB.DTO.DbCostCenter,SCG.DB.DTO" />
+		<many-to-one name="Account" column="AccountID" class="SCG.DB.DTO.DbAccount,SCG.DB.DTO" />
+		<many-to-one name="IO" column="IOID" class="SCG.DB.DTO.DbInternalOrder,SCG.DB.DTO" />
+		<property column="CurrencyID" type="System.Nullable`1[[System.Int64]]" name="CurrencyID" />
+		<property column="Description" type="String" name="Description" length="50" />
+		<property column="CurrencyAmount" type="System.Nullable`1[[System.Double]]" name="CurrencyAmount" />
+		<property column="Amount" type="System.Nullable`1[[System.Double]]" name="Amount" />
+		<property column="ExchangeRate" type="System.Nullable`1[[System.Double]]" name="ExchangeRate" />
+		<property column="ReferenceNo" type="String" name="ReferenceNo" length="30" />
+    <property column="VendorCodeAP" type="String" name="VendorCodeAP" length="20" />
+		<property column="SaleOrder" type="String" name="SaleOrder" length="10" />
+		<property column="SaleItem" type="String" name="SaleItem" length="6" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="NonDeductAmount" type="Double" name="NonDeductAmount" />
+    <property column="MainCurrencyID" type="System.Nullable`1[[System.Int16]]" name="MainCurrencyID" />
+    <property column="MainCurrencyAmount" type="System.Nullable`1[[System.Double]]" name="MainCurrencyAmount" />
+    <property column="LocalCurrencyAmount" type="System.Nullable`1[[System.Double]]" name="LocalCurrencyAmount" />
+	</class>
+</hibernate-mapping>

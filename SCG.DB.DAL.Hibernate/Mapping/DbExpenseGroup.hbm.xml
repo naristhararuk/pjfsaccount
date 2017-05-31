@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbExpenseGroup,SCG.DB.DTO" table="DbExpenseGroup">
+
+		<id name="ExpenseGroupID" column="ExpenseGroupID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="ExpenseGroupCode" type="String" name="ExpenseGroupCode" length="20" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="Description" type="String" name="Description" length="100" />
+
+	</class>
+</hibernate-mapping>

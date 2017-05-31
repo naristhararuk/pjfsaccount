@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FneacAdvanceImportTemp,SCG.eAccounting.DTO" table="FnEACAdvanceImportTemp">
+
+		<id name="TempID" column="TempID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="ExpenseNo" type="String" name="ExpenseNo" length="50" />
+		<property column="ExpenseComCode" type="String" name="ExpenseComCode" length="50" />
+		<property column="ExpenseCreateDate" type="System.Nullable`1[[System.DateTime]]" name="ExpenseCreateDate" />
+		<property column="RequesterUserCode" type="String" name="RequesterUserCode" length="50" />
+		<property column="ReceiverUserCode" type="String" name="ReceiverUserCode" length="50" />
+		<property column="NetAmount" type="Double" name="NetAmount" />
+		<property column="PaymentType" type="String" name="PaymentType" length="50" />
+		<property column="ClearAdvanceDate" type="System.Nullable`1[[System.DateTime]]" name="ClearAdvanceDate" />
+		<property column="ClearAdvanceDueDate" type="System.Nullable`1[[System.DateTime]]" name="ClearAdvanceDueDate" />
+		<property column="ApproveUserCode" type="String" name="ApproveUserCode" length="50" />
+		<property column="ExpenseComID" type="Int64" name="ExpenseComID" />
+		<property column="RequesterUserID" type="Int64" name="RequesterUserID" />
+		<property column="ReceiverUserID" type="Int64" name="ReceiverUserID" />
+		<property column="ApproveUserID" type="Int64" name="ApproveUserID" />
+    <property column="PBID" type="Int64" name="PBID" /> 
+    <property column="PBCode" type="String" name="PBCode" length="50" />
+    <property column="Subject" type="String" name="Subject" length="50" />
+    <property column="ReasonDue" type="String" name="ReasonDue" length="100" />
+		
+	</class>
+</hibernate-mapping>

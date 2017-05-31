@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.SuEmailLog,SCG.eAccounting.DTO" table="SuEMailLog">
+
+		<id name="EMailLogID" column="EMailLogID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="RequestNo" type="String" name="RequestNo" length="20" />
+		<property column="EmailType" type="String" name="EmailType" length="5" />
+		<property column="SendDate" type="DateTime" name="SendDate" />
+		<property column="ToEmail" type="String" name="ToEmail" length="500" />
+    <property column="CCEmail" type="String" name="CCEmail" length="500" />
+    <property column="Status" type="Int32" name="Status"/>
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="Remark" type="String" name="Remark" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuRTEContent,SS.SU.DTO" table="SuRTEContent">
+
+		<id name="Id" column="ID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+
+		<property column="Header" type="String" name="Header" length="1000"/>
+		<property column="Content" type="String" name="Content" length="5000" />
+		<property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="50" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+    <many-to-one name="Node" column="NodeID" class="SS.SU.DTO.SuRTENode, SS.SU.DTO" />
+    <many-to-one name="Language" column="LanguageID" class="SS.DB.DTO.DbLanguage,SS.DB.DTO" />
+	</class>
+</hibernate-mapping>

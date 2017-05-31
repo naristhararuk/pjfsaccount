@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbAccount,SCG.DB.DTO" table="DbAccount">
+
+		<id name="AccountID" column="AccountID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="ExpenseGroupID" type="Int64" name="ExpenseGroupID" />
+		<property column="AccountCode" type="String" name="AccountCode" not-null="true" length="20" />
+		<property column="SaveAsDebtor" type="Boolean" name="SaveAsDebtor" />
+    <property column="SaveAsVendor" type="Boolean" name="SaveAsVendor" />
+    <property column="SAPSpecialGLAssignment" type="String" name="SAPSpecialGLAssignment" length="50" />
+    <property column="SAPSpecialGL" type="String" name="SAPSpecialGL" length="100" />
+		<property column="DomesticRecommend" type="Boolean" name="DomesticRecommend" />
+		<property column="ForeignRecommend" type="Boolean" name="ForeignRecommend" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    <property column="TaxCode" type="Int32" name="TaxCode" />
+    <property column="CostCenter" type="Int32" name="CostCenter" />
+    <property column="InternalOrder" type="Int32" name="InternalOrder" />
+    <property column="SaleOrder" type="Int32" name="SaleOrder" />
+	</class>
+</hibernate-mapping>

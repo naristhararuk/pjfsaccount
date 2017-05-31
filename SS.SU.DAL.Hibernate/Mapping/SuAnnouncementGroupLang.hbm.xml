@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuAnnouncementGroupLang,SS.SU.DTO" table="SuAnnouncementGroupLang">
+
+		<id name="Id" column="ID" type="Int16" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<!--<property column="AnnouncementGroupID" type="Int16" name="AnnouncementGroupid" not-null="true" />-->
+		<many-to-one name="Language" column="LanguageID" class="SS.DB.DTO.DbLanguage,SS.DB.DTO" />
+		<many-to-one name="AnnouncementGroup" column="AnnouncementGroupId" class="SS.SU.DTO.SuAnnouncementGroup, SS.SU.DTO" />
+		<property column="AnnouncementGroupName" type="String" name="AnnouncementGroupName" length="300" />
+		<property column="Comment" type="String" name="Comment" length="500" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="50" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.SAP.DTO.Bapiache09,SCG.eAccounting.SAP" table="BAPIACHE09">
+
+		<id name="Id" column="ID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="DOC_ID" type="Int64" name="DocId" not-null="true" />
+		<property column="DOC_SEQ" type="String" name="DocSeq" length="10" />
+		<property column="DOC_KIND" type="String" name="DocKind" length="50" />
+		<property column="DOC_STATUS" type="String" name="DocStatus" length="1" />
+		<property column="DOC_YEAR" type="String" name="DocYear" length="4" />
+		<property column="DOC_APP_FLAG" type="String" name="DocAppFlag" length="1" />
+		<property column="REVERSE_DOC" type="String" name="ReverseDoc" length="15" />
+		<property column="REVERSE_DATE" type="String" name="ReverseDate" length="8" />
+		<property column="FI_DOC" type="String" name="FiDoc" length="15" />
+		<property column="OBJ_TYPE" type="String" name="ObjType" length="5" />
+		<property column="OBJ_KEY" type="String" name="ObjKey" length="20" />
+		<property column="OBJ_SYS" type="String" name="ObjSys" length="10" />
+		<property column="BUS_ACT" type="String" name="BusAct" length="4" />
+		<property column="USERNAME" type="String" name="Username" length="12" />
+		<property column="HEADER_TXT" type="String" name="HeaderTxt" length="25" />
+		<property column="COMP_CODE" type="String" name="CompCode" length="4" />
+		<property column="DOC_DATE" type="String" name="DocDate" length="8" />
+		<property column="PSTNG_DATE" type="String" name="PstngDate" length="8" />
+		<property column="TRANS_DATE" type="String" name="TransDate" length="8" />
+		<property column="FISC_YEAR" type="String" name="FiscYear" length="4" />
+		<property column="FIS_PERIOD" type="String" name="FisPeriod" length="2" />
+		<property column="DOC_TYPE" type="String" name="DocType" length="2" />
+		<property column="REF_DOC_NO" type="String" name="RefDocNo" length="16" />
+		<property column="AC_DOC_NO" type="String" name="AcDocNo" length="10" />
+		<property column="OBJ_KEY_R" type="String" name="ObjKeyR" length="20" />
+		<property column="REASON_REV" type="String" name="ReasonRev" length="2" />
+		<property column="COMPO_ACC" type="String" name="CompoAcc" length="4" />
+		<property column="REF_DOC_NO_LONG" type="String" name="RefDocNoLong" length="35" />
+		<property column="ACC_PRINCIPLE" type="String" name="AccPrinciple" length="4" />
+		<property column="NEG_POSTNG" type="String" name="NegPostng" length="1" />
+		<property column="OBJ_KEY_INV" type="String" name="ObjKeyInv" length="20" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion" insert="false" update="false"/>
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		
+	</class>
+</hibernate-mapping>

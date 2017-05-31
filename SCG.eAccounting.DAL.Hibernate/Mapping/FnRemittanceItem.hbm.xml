@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.FnRemittanceItem, SCG.eAccounting.DTO" table="FnRemittanceItem">
+		<id name="RemittanceItemID" column="RemittanceItemID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+    <property column="PaymentType" type="String" name="PaymentType" not-null="true" length="5" />
+    <property column="ForeignCurrencyAdvanced" type="Double" name="ForeignCurrencyAdvanced" />
+    <property column="ExchangeRate" type="Double" name="ExchangeRate" />
+    <property column="ForeignCurrencyRemitted" type="Double" name="ForeignCurrencyRemitted" />
+    <property column="AmountTHB" type="Double" name="AmountTHB" />
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="IsImportFromAdvance" type="Boolean" name="IsImportFromAdvance" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+
+		<many-to-one name="Remittance" column="RemittanceID" class="SCG.eAccounting.DTO.FnRemittance, SCG.eAccounting.DTO" />
+		<many-to-one name="Currency" column="CurrencyID" class="SS.DB.DTO.DbCurrency, SS.DB.DTO" />
+	<property column="ForeignAmountTHBAdvanced" type="Double" name="ForeignAmountTHBAdvanced" />
+    <property column="MainCurrencyAmount" type="Double" name="MainCurrencyAmount" />
+    <property column="ForeignAmountMainCurrencyAdvanced" type="Double" name="ForeignAmountMainCurrencyAdvanced" />
+    <property column="ExchangeRateTHB" type="Double" name="ExchangeRateTHB" />
+	</class>
+</hibernate-mapping>

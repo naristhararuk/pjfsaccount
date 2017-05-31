@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74702C51-8486-4E7D-A880-997E4ECF457D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.SU.DTO</RootNamespace>
+    <AssemblyName>SS.SU.DTO</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.0.3, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SuUserPersonalLevel.cs" />
+    <Compile Include="ISimpleMaster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuAlertMessage.cs" />
+    <Compile Include="SuAlertMessageLang.cs" />
+    <Compile Include="SuAnnouncement.cs" />
+    <Compile Include="SuAnnouncementGroup.cs" />
+    <Compile Include="SuAnnouncementGroupLang.cs" />
+    <Compile Include="SuAnnouncementLang.cs" />
+    <Compile Include="SuDivision.cs" />
+    <Compile Include="SuDivisionLang.cs" />
+    <Compile Include="SuDivisionWithLang.cs" />
+    <Compile Include="SueHrExpenseLog.cs" />
+    <Compile Include="SueHrProfileLog.cs" />
+    <Compile Include="SuEMailLog.cs" />
+    <Compile Include="SuEmailResending.cs" />
+    <Compile Include="SuEventLogGroup.cs" />
+    <Compile Include="SuEventLogGroupLang.cs" />
+    <Compile Include="SuGlobalTranslate.cs" />
+    <Compile Include="SuGlobalTranslateLang.cs" />
+    <Compile Include="SuImageTosapLog.cs" />
+    <Compile Include="SuMenu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuMenuLang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuOrganization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuOrganizationLang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuOrganizationWithLang.cs" />
+    <Compile Include="SuPasswordHistory.cs" />
+    <Compile Include="SuPostSAPLog.cs" />
+    <Compile Include="SuProgram.cs" />
+    <Compile Include="SuProgramLang.cs" />
+    <Compile Include="SuProgramRole.cs" />
+    <Compile Include="SuRole.cs" />
+    <Compile Include="SuRoleLang.cs" />
+    <Compile Include="SuRolepb.cs" />
+    <Compile Include="SuRoleService.cs" />
+    <Compile Include="SuRTEContent.cs" />
+    <Compile Include="SuRTENode.cs" />
+    <Compile Include="SuSession.cs" />
+    <Compile Include="SuSmsLog.cs" />
+    <Compile Include="SuStatistic.cs" />
+    <Compile Include="SuUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuUserFavoriteActor.cs" />
+    <Compile Include="SuUserGridView.cs" />
+    <Compile Include="SuUserLang.cs" />
+    <Compile Include="SuUserLog.cs" />
+    <Compile Include="SuUserProfile.cs" />
+    <Compile Include="SuUserProfileLang.cs" />
+    <Compile Include="SuUserRole.cs" />
+    <Compile Include="SuUserLoginToken.cs" />
+    <Compile Include="TmpSuUser.cs" />
+    <Compile Include="UserMenu.cs" />
+    <Compile Include="UserRoles.cs" />
+    <Compile Include="UserSession.cs" />
+    <Compile Include="ValueObject\AnnouncementGroup.cs" />
+    <Compile Include="ValueObject\AnnouncementGroupLang.cs" />
+    <Compile Include="ValueObject\AnnouncementLang.cs" />
+    <Compile Include="ValueObject\AutoCompleteParameter.cs" />
+    <Compile Include="ValueObject\MaintainPersonalLevelCriteria.cs" />
+    <Compile Include="ValueObject\MaintainPersonalLevelData.cs" />
+    <Compile Include="ValueObject\MenuPath.cs" />
+    <Compile Include="ValueObject\DivisionLang.cs" />
+    <Compile Include="ValueObject\DivisionSearchResult.cs" />
+    <Compile Include="ValueObject\GlobalTranslate.cs" />
+    <Compile Include="ValueObject\GlobalTranslateLang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\MenuLang.cs" />
+    <Compile Include="ValueObject\NewUserEmail.cs" />
+    <Compile Include="ValueObject\OrganizationLang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\PBInformation.cs" />
+    <Compile Include="ValueObject\ProgramInformation.cs" />
+    <Compile Include="ValueObject\ProgramLang.cs" />
+    <Compile Include="ValueObject\ProgramRole.cs" />
+    <Compile Include="ValueObject\RoleLang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\ServiceTeamInformation.cs" />
+    <Compile Include="ValueObject\SuImageToSAPLogSearchResult.cs" />
+    <Compile Include="ValueObject\SuMenuSearchResult.cs" />
+    <Compile Include="ValueObject\SuAnnouncementGroupSearchResult.cs" />
+    <Compile Include="ValueObject\SuAnnouncementSearchResult.cs" />
+    <Compile Include="ValueObject\SuDivisionSearchResult.cs" />
+    <Compile Include="ValueObject\SuOrganizationSearchResult.cs" />
+    <Compile Include="ValueObject\SuPostSAPLogSearchResult.cs" />
+    <Compile Include="ValueObject\SuProgramRoleSearchResult.cs" />
+    <Compile Include="ValueObject\SuProgramSearchResult.cs" />
+    <Compile Include="ValueObject\SuRoleLangSearchResult.cs" />
+    <Compile Include="ValueObject\SuRTEContentSearchResult.cs" />
+    <Compile Include="ValueObject\SuRTENodeSearchResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\SuSmsLogSearchResult.cs" />
+    <Compile Include="ValueObject\SuUserLoginLog.cs" />
+    <Compile Include="ValueObject\SuUserParameter.cs" />
+    <Compile Include="ValueObject\SuUserPersonalLevelSearchResult.cs" />
+    <Compile Include="ValueObject\SuUserRoleSearchResult.cs" />
+    <Compile Include="ValueObject\SuUserSearchResult.cs" />
+    <Compile Include="ValueObject\TranslatedListItem.cs" />
+    <Compile Include="ValueObject\TranslateSearchResult.cs" />
+    <Compile Include="ValueObject\UserAutoCompleteParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\UserCriteria.cs" />
+    <Compile Include="ValueObject\UserLang.cs" />
+    <Compile Include="ValueObject\UserRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\VOUserProfile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

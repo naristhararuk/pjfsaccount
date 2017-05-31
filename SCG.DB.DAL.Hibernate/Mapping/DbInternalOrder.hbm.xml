@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.DB.DTO.DbInternalOrder,SCG.DB.DTO" table="DbInternalOrder">
+
+		<id name="IOID" column="IOID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="IONumber" type="String" name="IONumber" not-null="true" length="20" />
+    <property column="IOType" type="String" name="IOType" length="50" />
+		<property column="IOText" type="String" name="IOText" length="100" />
+    <property column="EffectiveDate" type="System.Nullable`1[[System.DateTime]]" name="EffectiveDate" />
+    <property column="ExpireDate" type="System.Nullable`1[[System.DateTime]]" name="ExpireDate" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+
+    <property column="CostCenterID" type="System.Nullable`1[[System.Int64]]" name="CostCenterID" />
+    <property column="CostCenterCode" type="String" name="CostCenterCode" length="20" not-null="true"/>
+    <property column="CompanyID" type="System.Nullable`1[[System.Int64]]" name="CompanyID" />
+    <property column="CompanyCode" type="String" name="CompanyCode" length="20" not-null="true" />
+
+    <property column="BusinessArea" type="String" name="BusinessArea" length="4" />
+    <property column="ProfitCenter" type="String" name="ProfitCenter" length="10" />
+    <!--<many-to-one name="CostCenterID" column="CostCenterID" class="SCG.DB.DTO.DbCostCenter,SCG.DB.DTO" />
+    <many-to-one name="CostCenterCode" column="CostCenterCode" class="SCG.DB.DTO.DbCostCenter,SCG.DB.DTO" />
+    <many-to-one name="CompanyID" column="CompanyID" class="SCG.DB.DTO.DbCompany,SCG.DB.DTO" />
+    <many-to-one name="CompanyCode" column="CompanyCode" class="SCG.DB.DTO.DbCompany,SCG.DB.DTO" />-->
+    
+	</class>
+</hibernate-mapping>

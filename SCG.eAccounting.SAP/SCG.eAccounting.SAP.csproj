@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB3E9E59-A972-4CAD-9328-8569D4F6980B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.SAP</RootNamespace>
+    <AssemblyName>SCG.eAccounting.SAP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\BapiDaoProvider.cs" />
+    <Compile Include="DAL\Hibernate\Bapiacap09Dao.cs" />
+    <Compile Include="DAL\Hibernate\Bapiacar09Dao.cs" />
+    <Compile Include="DAL\Hibernate\Bapiaccr09Dao.cs" />
+    <Compile Include="DAL\Hibernate\BapiacextcDao.cs" />
+    <Compile Include="DAL\Hibernate\Bapiacgl09Dao.cs" />
+    <Compile Include="DAL\Hibernate\Bapiache09Dao.cs" />
+    <Compile Include="DAL\Hibernate\Bapiacpa09Dao.cs" />
+    <Compile Include="DAL\Hibernate\Bapiactx09Dao.cs" />
+    <Compile Include="DAL\Hibernate\Bapiret2Dao.cs" />
+    <Compile Include="DAL\Hibernate\BapireverseDao.cs" />
+    <Compile Include="DAL\Hibernate\BapirunningDao.cs" />
+    <Compile Include="DAL\Interface\IBapiacap09Dao.cs" />
+    <Compile Include="DAL\Interface\IBapiacar09Dao.cs" />
+    <Compile Include="DAL\Interface\IBapiaccr09Dao.cs" />
+    <Compile Include="DAL\Interface\IBapiacextcDao.cs" />
+    <Compile Include="DAL\Interface\IBapiacgl09Dao.cs" />
+    <Compile Include="DAL\Interface\IBapiache09Dao.cs" />
+    <Compile Include="DAL\Interface\IBapiacpa09Dao.cs" />
+    <Compile Include="DAL\Interface\IBapiactx09Dao.cs" />
+    <Compile Include="DAL\Interface\IBapiret2Dao.cs" />
+    <Compile Include="DAL\Interface\IBapireverseDao.cs" />
+    <Compile Include="DAL\Interface\IBapirunningDao.cs" />
+    <Compile Include="DBManage.cs" />
+    <Compile Include="DTO\Bapiacap09.cs" />
+    <Compile Include="DTO\Bapiacar09.cs" />
+    <Compile Include="DTO\Bapiaccr09.cs" />
+    <Compile Include="DTO\Bapiacextc.cs" />
+    <Compile Include="DTO\Bapiacgl09.cs" />
+    <Compile Include="DTO\Bapiache09.cs" />
+    <Compile Include="DTO\Bapiacpa09.cs" />
+    <Compile Include="DTO\Bapiactx09.cs" />
+    <Compile Include="DTO\Bapiret2.cs" />
+    <Compile Include="DTO\Bapireverse.cs" />
+    <Compile Include="DTO\Bapirunning.cs" />
+    <Compile Include="DTO\ValueObject\SapLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\BapiQueryProvider.cs" />
+    <Compile Include="Query\Hibernate\Bapiacap09Query.cs" />
+    <Compile Include="Query\Hibernate\Bapiacar09Query.cs" />
+    <Compile Include="Query\Hibernate\Bapiaccr09Query.cs" />
+    <Compile Include="Query\Hibernate\BapiacextcQuery.cs" />
+    <Compile Include="Query\Hibernate\Bapiacgl09Query.cs" />
+    <Compile Include="Query\Hibernate\Bapiache09Query.cs" />
+    <Compile Include="Query\Hibernate\Bapiacpa09Query.cs" />
+    <Compile Include="Query\Hibernate\Bapiactx09Query.cs" />
+    <Compile Include="Query\Hibernate\Bapiret2Query.cs" />
+    <Compile Include="Query\Hibernate\BapireverseQuery.cs" />
+    <Compile Include="Query\Hibernate\BapirunningQuery.cs" />
+    <Compile Include="Query\Interface\IBapiacap09Query.cs" />
+    <Compile Include="Query\Interface\IBapiacar09Query.cs" />
+    <Compile Include="Query\Interface\IBapiaccr09Query.cs" />
+    <Compile Include="Query\Interface\IBapiacextcQuery.cs" />
+    <Compile Include="Query\Interface\IBapiacgl09Query.cs" />
+    <Compile Include="Query\Interface\IBapiache09Query.cs" />
+    <Compile Include="Query\Interface\IBapiacpa09Query.cs" />
+    <Compile Include="Query\Interface\IBapiactx09Query.cs" />
+    <Compile Include="Query\Interface\IBapiret2Query.cs" />
+    <Compile Include="Query\Interface\IBapireverseQuery.cs" />
+    <Compile Include="Query\Interface\IBapirunningQuery.cs" />
+    <Compile Include="SAPUIHelper.cs" />
+    <Compile Include="Service\BapiServiceProvider.cs" />
+    <Compile Include="Service\Implement\Bapiacap09Service.cs" />
+    <Compile Include="Service\Implement\Bapiacar09Service.cs" />
+    <Compile Include="Service\Implement\Bapiaccr09Service.cs" />
+    <Compile Include="Service\Implement\BapiacextcService.cs" />
+    <Compile Include="Service\Implement\Bapiacgl09Service.cs" />
+    <Compile Include="Service\Implement\Bapiache09Service.cs" />
+    <Compile Include="Service\Implement\Bapiacpa09Service.cs" />
+    <Compile Include="Service\Implement\Bapiactx09Service.cs" />
+    <Compile Include="Service\Implement\Bapiret2Service.cs" />
+    <Compile Include="Service\Implement\BapireverseService.cs" />
+    <Compile Include="Service\Implement\BapirunningService.cs" />
+    <Compile Include="Service\Interface\IBapiacar09Service.cs" />
+    <Compile Include="Service\Interface\IBapiacgl09Service.cs" />
+    <Compile Include="Service\Interface\IBapiache09Service.cs" />
+    <Compile Include="Service\Interface\IBapiacap09Service.cs" />
+    <Compile Include="Service\Interface\IBapiaccr09Service.cs" />
+    <Compile Include="Service\Interface\IBapiacextcService.cs" />
+    <Compile Include="Service\Interface\IBapiacpa09Service.cs" />
+    <Compile Include="Service\Interface\IBapiactx09Service.cs" />
+    <Compile Include="Service\Interface\IBapiret2Service.cs" />
+    <Compile Include="Service\Interface\IBapireverseService.cs" />
+    <Compile Include="Service\Interface\IBapirunningService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.BLL\SCG.DB.BLL.csproj">
+      <Project>{F710CA0A-7490-4B61-AE96-0E46F7B7702C}</Project>
+      <Name>SCG.DB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.BLL\SS.SU.BLL.csproj">
+      <Project>{7BDC5E8F-976D-4AFA-95E0-66E1C3E23450}</Project>
+      <Name>SS.SU.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Bapiacap09.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bapiacar09.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bapiaccr09.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bapiacextc.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bapiacgl09.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bapiacpa09.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bapiactx09.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bapiret2.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Bapiache09.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Bapirunning.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Bapireverse.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SSGPDFCreatorService</name>
+    </assembly>
+    <members>
+        <member name="T:SSG.PDF.Service.PDFCreatorService">
+            <summary>
+            The class PDFCreatorService contains methods for performing 
+            start/stop windows service and control threads polling.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="F:SSG.PDF.Service.PDFCreatorService.ZERO_HOUR">
+            <summary>
+            Zero hour value
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.PDFCreatorService.ZERO_MINUTE">
+            <summary>
+            Zero minute value
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.PDFCreatorService.PENDING_TIME_TO_STOP">
+            <summary>
+            Pending time to stop process
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.PDFCreatorService.FIRST_INDEX_THREAD">
+            <summary>
+            First index of thread
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.PDFCreatorService.START_PATH_INDEX">
+            <summary>
+            Starting index of path file
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.PDFCreatorService.UNCOMPLETED_BASE_INDEX">
+            <summary>
+            Base index of uncompleted list
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.PDFCreatorService.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.#ctor">
+            <summary>
+            Initialize and loading configuration 
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.GetConfigFile">
+            <summary>
+            Get configuration file from execution path
+            </summary>
+            <returns>Configuration file name</returns>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.OnStart(System.String[])">
+            <summary>
+            Perfrom create threads with maximum thread polling.
+            </summary>
+            <param name="args">Argument parameter</param>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.OnStop">
+            <summary>
+            Stop running of exist threads
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.DoProcess">
+            <summary>
+            Maintain process state uncompleted task and read request from message queue 
+            then assign job to the worker thread.
+            Waiting for worker thread is idle then assign the requested id to generate a pdf document.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.PDFCreatorService.ReadUncompltedID">
+            <summary>
+            Get uncomplete requested id from list queue.
+            </summary>
+            <returns>Uncomplete requested id</returns>
+        </member>
+        <member name="M:SSG.PDF.Service.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:SSG.PDF.Service.ProjectInstaller">
+            <summary>
+            The class ProjectInstaller used for installing windows service.
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.ProjectInstaller.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.ProjectInstaller.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SSG.PDF.Service.ProjectInstaller.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.ProjectInstaller.#ctor">
+            <summary>
+            The constructor of project installer.
+            </summary>
+        </member>
+        <member name="T:SSG.PDF.Service.Worker">
+            <summary>
+            The inner class Worker contains methods for calling SSG.PDFReceive.PDFCreator.RequestFromMSMQ 
+            when thread is running state.
+            </summary>
+            
+            <author>Phoonperm Suwannarattaphoom</author>
+            <version>1.0</version>
+        </member>
+        <member name="F:SSG.PDF.Service.Worker.DEFAULT_INTERVAL_TIMER">
+            <summary>
+            Default interval = 1 second
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.Worker.ZERO_HOUR">
+            <summary>
+            Zero hour value
+            </summary>
+        </member>
+        <member name="F:SSG.PDF.Service.Worker.ZERO_MINUTE">
+            <summary>
+            Zero minute value
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.Worker.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor a Worker with ID and interval sleeping value. 
+            </summary>
+            <param name="nID">The worker id.</param>
+            <param name="nInterval">The interval value must be second unit. 
+            It's define thread sleep.</param>
+        </member>
+        <member name="M:SSG.PDF.Service.Worker.ExecuteTask">
+            <summary>
+            Execute task when thread started for doing process job.
+            </summary>
+        </member>
+        <member name="M:SSG.PDF.Service.Worker.DoProcess(System.String,System.Guid,System.Boolean)">
+            <summary>
+            Do process for calling the SSG.PDFReceive.PDFCreator.PerfromGeneratePDF
+            </summary>
+            <param name="strWorker">The name of Worker</param>
+            <param name="oID">The ID of requested pdf generate.</param>
+            <param name="bForce">Force generate a pdf</param>
+            <seealso cref="M:SSG.PDF.PDFCreator.PerfromGeneratePDF(System.String,System.Guid,System.Boolean)"/>
+        </member>
+        <member name="P:SSG.PDF.Service.Worker.ServiceStarted">
+            <summary>
+            Gets or sets flag of start/stop service.
+            </summary>
+            <value>Status of start/stop service.</value>
+        </member>
+        <member name="P:SSG.PDF.Service.Worker.ServiceIdle">
+            <summary>
+            Gets or sets flag of service idle status.
+            </summary>
+            <value>Status of idle service.</value>
+        </member>
+        <member name="P:SSG.PDF.Service.Worker.ForceProcess">
+            <summary>
+            Gets or sets flag of force perform generate pdf.
+            </summary>
+            <value>Status of force process.</value>
+        </member>
+        <member name="P:SSG.PDF.Service.Worker.RequestedID">
+            <summary>
+            Gets or sets the requested id.
+            </summary>
+            <value>Uniqeidentifier ID</value>
+        </member>
+    </members>
+</doc>

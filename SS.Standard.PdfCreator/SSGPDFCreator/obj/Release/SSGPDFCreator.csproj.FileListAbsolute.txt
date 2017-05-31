@@ -1,0 +1,12 @@
+D:\SSG\PDFCreator\SSGPDFCreator\bin\Release\SSGPDFCreator.dll
+D:\SSG\PDFCreator\SSGPDFCreator\bin\Release\SSGPDFCreator.pdb
+D:\SSG\PDFCreator\SSGPDFCreator\obj\Release\ResolveAssemblyReference.cache
+D:\SSG\PDFCreator\SSGPDFCreator\obj\Release\SSGPDFCreator.dll
+D:\SSG\PDFCreator\SSGPDFCreator\obj\Release\SSGPDFCreator.pdb
+D:\SSG\PDFCreator\SSGPDFCreator\bin\Release\SSGPDFCreator.XML
+E:\Desh\MyWork\SS\SCG\eAccounting\main\program\eAccountingApp\SS.Standard.PdfCreator\SSGPDFCreator\bin\Release\SSGPDFCreator.XML
+E:\Desh\MyWork\SS\SCG\eAccounting\main\program\eAccountingApp\SS.Standard.PdfCreator\SSGPDFCreator\bin\Release\SSGPDFCreator.dll
+E:\Desh\MyWork\SS\SCG\eAccounting\main\program\eAccountingApp\SS.Standard.PdfCreator\SSGPDFCreator\bin\Release\SSGPDFCreator.pdb
+E:\Desh\MyWork\SS\SCG\eAccounting\main\program\eAccountingApp\SS.Standard.PdfCreator\SSGPDFCreator\obj\Release\ResolveAssemblyReference.cache
+E:\Desh\MyWork\SS\SCG\eAccounting\main\program\eAccountingApp\SS.Standard.PdfCreator\SSGPDFCreator\obj\Release\SSGPDFCreator.dll
+E:\Desh\MyWork\SS\SCG\eAccounting\main\program\eAccountingApp\SS.Standard.PdfCreator\SSGPDFCreator\obj\Release\SSGPDFCreator.pdb

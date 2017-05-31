@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SS.SU.DTO.SuStatistic,SS.SU.DTO" table="SuStatistic">
+
+    <id name="Statisticid" column="StatisticID" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property column="StatisticNumber" type="Int64" name="StatisticNumber" />
+    <property column="StatisticDate" type="DateTime" name="StatisticDate" not-null="false" />
+  </class>
+</hibernate-mapping>

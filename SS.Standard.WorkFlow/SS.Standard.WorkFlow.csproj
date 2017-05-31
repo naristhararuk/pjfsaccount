@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAB1E069-C432-4CEE-8182-833595F486AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.Standard.WorkFlow</RootNamespace>
+    <AssemblyName>SS.Standard.WorkFlow</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\Hibernate\WorkFlowHoldResponseDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowHoldResponseDetailDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowRejectResponseDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowResponseDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowResponseTokenDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowsmsTokenDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowStateDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowStateEventPermissionDao.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowVerifyResponseDao.cs" />
+    <Compile Include="DAL\IWorkFlowDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\IWorkFlowHoldResponseDao.cs" />
+    <Compile Include="DAL\IWorkFlowHoldResponseDetailDao.cs" />
+    <Compile Include="DAL\IWorkFlowRejectResponseDao.cs" />
+    <Compile Include="DAL\IWorkFlowResponseDao.cs" />
+    <Compile Include="DAL\IWorkFlowResponseTokenDao.cs" />
+    <Compile Include="DAL\IWorkFlowsmsTokenDao.cs" />
+    <Compile Include="DAL\IWorkFlowStateDao.cs" />
+    <Compile Include="DAL\IWorkFlowStateEventPermissionDao.cs" />
+    <Compile Include="DAL\IWorkFlowVerifyResponseDao.cs" />
+    <Compile Include="DAL\WorkFlowDaoProvider.cs" />
+    <Compile Include="DAL\Hibernate\WorkFlowDao.cs" />
+    <Compile Include="DTO\Document.cs" />
+    <Compile Include="DTO\DocumentType.cs" />
+    <Compile Include="DTO\ValueObject\AuthorizedEvent.cs" />
+    <Compile Include="DTO\ValueObject\GeneralResponse.cs" />
+    <Compile Include="DTO\ValueObject\HoldDetailResponse.cs" />
+    <Compile Include="DTO\ValueObject\ApproveVerifyStatus.cs" />
+    <Compile Include="DTO\ValueObject\ReceiveResponse.cs" />
+    <Compile Include="DTO\ValueObject\RejectDetailResponse.cs" />
+    <Compile Include="DTO\ValueObject\ExpenseRemittanceDetailResponse.cs" />
+    <Compile Include="DTO\ValueObject\SubmitResponse.cs" />
+    <Compile Include="DTO\ValueObject\VerifyOrRejectDetailResponse.cs" />
+    <Compile Include="DTO\ValueObject\WorkFlowResponseSearchResult.cs" />
+    <Compile Include="DTO\ValueObject\WorkFlowSearchResult.cs" />
+    <Compile Include="DTO\ValueObject\WorkFlowStateEventWithLang.cs" />
+    <Compile Include="DTO\WorkFlow.cs" />
+    <Compile Include="DTO\WorkFlowEnum.cs" />
+    <Compile Include="DTO\WorkFlowResponseToken.cs" />
+    <Compile Include="DTO\WorkFlowsmsToken.cs" />
+    <Compile Include="DTO\WorkFlowStateEventPermission.cs" />
+    <Compile Include="DTO\WorkFlowTypeDocumentType.cs" />
+    <Compile Include="DTO\WorkFlowHoldResponse.cs" />
+    <Compile Include="DTO\WorkFlowHoldResponseDetail.cs" />
+    <Compile Include="DTO\WorkFlowRejectResponse.cs" />
+    <Compile Include="DTO\WorkFlowResponse.cs" />
+    <Compile Include="DTO\WorkFlowState.cs" />
+    <Compile Include="DTO\WorkFlowStateEvent.cs" />
+    <Compile Include="DTO\WorkFlowStateEventLang.cs" />
+    <Compile Include="DTO\WorkFlowStateLang.cs" />
+    <Compile Include="DTO\WorkFlowStateTransition.cs" />
+    <Compile Include="DTO\WorkFlowType.cs" />
+    <Compile Include="DTO\WorkFlowVerifyResponse.cs" />
+    <Compile Include="EventUserControl\IEventControl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\Hibernate\DocumentQuery.cs" />
+    <Compile Include="Query\Hibernate\DocumentTypeQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowRejectResponseQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowResponseQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Query\Hibernate\WorkFlowsmsTokenQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowStateEventPermissionQuery.cs" />
+    <Compile Include="Query\IDocumentTypeQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowHoldResponseDetailQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowHoldResponseQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Query\Hibernate\WorkFlowResponseTokenQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowStateEventQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Query\Hibernate\WorkFlowStateQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowTypeDocumentTypeQuery.cs" />
+    <Compile Include="Query\IWorkFlowHoldResponseDetailQuery.cs" />
+    <Compile Include="Query\IWorkFlowHoldResponseQuery.cs" />
+    <Compile Include="Query\IWorkFlowQuery.cs" />
+    <Compile Include="Query\Hibernate\WorkFlowStateTransitionQuery.cs" />
+    <Compile Include="Query\IDocumentQuery.cs" />
+    <Compile Include="Query\IWorkFlowRejectResponseQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Query\IWorkFlowResponseQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Query\IWorkFlowResponseTokenQuery.cs" />
+    <Compile Include="Query\IWorkFlowsmsTokenQuery.cs" />
+    <Compile Include="Query\IWorkFlowStateEventPermissionQuery.cs" />
+    <Compile Include="Query\IWorkFlowStateEventQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Query\IWorkFlowStateQuery.cs" />
+    <Compile Include="Query\IWorkFlowStateTransitionQuery.cs" />
+    <Compile Include="Query\IWorkFlowTypeDocumentTypeQuery.cs" />
+    <Compile Include="Query\WorkFlowQueryProvider.cs" />
+    <Compile Include="Service\Implement\WorkFlowResponseService.cs" />
+    <Compile Include="Service\Implement\WorkFlowResponseTokenService.cs" />
+    <Compile Include="Service\Implement\WorkFlowService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Implement\WorkFlowsmsTokenService.cs" />
+    <Compile Include="Service\Implement\WorkFlowStateEventPermissionService.cs" />
+    <Compile Include="Service\Implement\WorkFlowStateService.cs" />
+    <Compile Include="Service\IWorkFlowHoldResponseService.cs" />
+    <Compile Include="Service\IWorkFlowResponseService.cs" />
+    <Compile Include="Service\IWorkFlowResponseTokenService.cs" />
+    <Compile Include="Service\IWorkFlowService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\IWorkFlowsmsTokenService.cs" />
+    <Compile Include="Service\IWorkFlowStateEventPermissionService.cs" />
+    <Compile Include="Service\IWorkFlowStateService.cs" />
+    <Compile Include="Service\WorkFlowServiceValidationException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\WorkFlow.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowState.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowStateEvent.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowStateTransition.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Document.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\WorkFlowTypeDocumentType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowHoldResponse.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowHoldResponseDetail.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowRejectResponse.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowResponse.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowStateEventLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowStateLang.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowVerifyResponse.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DocumentType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowResponseToken.hbm.xml" />
+    <EmbeddedResource Include="Mapping\WorkFlowStateEventPermission.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\WorkFlowsmsToken.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

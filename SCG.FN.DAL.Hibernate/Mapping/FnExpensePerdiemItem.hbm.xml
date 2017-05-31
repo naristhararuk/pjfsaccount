@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.FN.DTO.FnExpensePerdiemItem,SCG.FN.DTO" table="FnExpensePerdiemItem">
+
+		<id name="PerdiemItemID" column="PerdiemItemID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="ExpensePerdiemID" column="ExpensePerdiemID" class="SCG.FN.DTO.FnExpensePerdiem,SCG.FN.DTO" />
+		<property column="FromDate" type="DateTime" name="FromDate" not-null="true" />
+		<property column="ToDate" type="DateTime" name="ToDate" not-null="true" />
+		<property column="FromTime" type="DateTime" name="FromTime" not-null="true" />
+		<property column="ToTime" type="DateTime" name="ToTime" not-null="true" />
+		<property column="AdjustedDay" type="Decimal" name="AdjustedDay" />
+		<property column="HalfDay" type="Decimal" name="HalfDay" />
+		<property column="FullDay" type="Decimal" name="FullDay" />
+		<property column="NetDay" type="Decimal" name="NetDay" not-null="true" />
+		<property column="CountryID" type="Int16" name="CountryID" />
+		<property column="CountryZoneID" type="Int64" name="CountryZoneID" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

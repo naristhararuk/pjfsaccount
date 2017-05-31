@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SCG.DB.DTO.DbOrganizationchart,SCG.DB.DTO" table="DbOrganizationChart">
+
+    <id name="OrgchartID" column="OrgChartID" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property column="CostCenterCode" type="String" name="CostCenterCode" length="20" />
+    <property column="DepartmentCode" type="String" name="DepartmentCode" length="20" />
+    <property column="DepartmentDescriptionEN" type="String" name="DepartmentDescriptionEN" length="40" />
+    <property column="ParentDepartmentCode" type="String" name="ParentDepartmentCode" length="20" />
+    <property column="Active" type="Boolean" name="Active" not-null="true" />
+    <property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+    <property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+    <property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+    <property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+    <property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+    <property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+    <property column="DepartmentDescriptionTH" type="String" name="DepartmentDescriptionTH" length="100" />
+    <property column="DepartmentLevelCode" type="String" name="DepartmentLevelCode" length="20"/>
+    <property column="DepartmentLevelName" type="String" name="DepartmentLevelName" length="100"/>
+    <property column="Relationship" type="String" name="Relationship" length="20"/>
+    <property column="CompanyCode" type="String" name="CompanyCode" length="20"/>
+    <property column="CompanyNameTH" type="String" name="CompanyNameTH" length="100"/>
+    <property column="CostCenterDescription" type="String" name="CostCenterDescription" length="100"/>
+    <property column="ManagerPersonID" type="String" name="ManagerPersonID"  length="10"/>
+    <property column="ManagerName" type="String" name="ManagerName"  length="100"/>
+    <property column="ManagerPosition" type="String" name="ManagerPosition" length="10"/>
+    <property column="ManagerPositionName" type="String" name="ManagerPositionName" length="100"/>
+    <property column="ManagerUserID" type="String" name="ManagerUserID" length="50"/>
+    <property column="ManagerReportToUserID" type="String"  name="ManagerReportToUserID" length="50" />
+    <property column="Sub1BusinessUnitEN" type="String" name="Sub1BusinessUnitEN"  length="100"/>
+    <property column="Sub1BusinessUnitTH" type="String" name="Sub1BusinessUnitTH"  length="100"/>
+    <property column="Sub1_1BusinessUnitEN" type="String" name="Sub1_1BusinessUnitEN" length="100"/>
+    <property column="Sub1_1BusinessUnitTH" type="String" name="Sub1_1BusinessUnitTH" length="100" />
+    <property column="CompanyEN" type="String" name="CompanyEN" length="100" />
+    <property column="CompanyTH" type="String" name="CompanyTH" length="100" />
+    <property column="Sub1CompanyEN" type="String" name="Sub1CompanyEN" length="100"/>
+    <property column="Sub1CompanyTH" type="String" name="Sub1CompanyTH" length="100"/>
+    <property column="DivisionNameEN" type="String" name="DivisionNameEN" length="100"/>
+    <property column="DivisionNameTH" type="String" name="DivisionNameTH" length="100"/>
+    <property column="Sub1DivisionNameEN" type="String" name="Sub1DivisionNameEN" length="100"/>
+    <property column="Sub1DivisionNameTH" type="String" name="Sub1DivisionNameTH" length="100"/>
+    <property column="DepartmentNameEN" type="String"  name="DepartmentNameEN" length="100"/>
+    <property column="DepartmentNameTH" type="String" name="DepartmentNameTH" length="100"/>
+    <property column="SubDepartmentNameEN" type="String" name="SubDepartmentNameEN" length="100"/>
+    <property column="SubDepartmentNameTH" type="String" name="SubDepartmentNameTH" length="100" />
+    <property column="SectionNameEN" type="String" name="SectionNameEN" length="100" />
+    <property column="SectionNameTH" type="String" name="SectionNameTH" length="100"/>
+    <property column="Sub1SectionNameEN" type="String" name="Sub1SectionNameEN" length="100"/>
+    <property column="Sub1SectionNameTH" type="String" name="Sub1SectionNameTH" length="100"/>
+    <property column="ShiftNameEN" type="String" name="ShiftNameEN" length="100"/>
+    <property column="ShiftNameTH" type="String" name="ShiftNameTH" length="100"/>
+    <property column="Sub1ShiftNameEN" type="String" name="Sub1ShiftNameEN" length="100"/>
+    <property column="Sub1ShiftNameTH" type="String" name="Sub1ShiftNameTH" length="100"/>
+    <property column="OrgIDOfSub1BusinessUnit" type="String" name="OrgIDOfSub1BusinessUnit" length="10"/>
+    <property column="OrgIDOfSub1_1BusinessUnit" type="String" name="OrgIDOfSub1_1BusinessUnit" length="10"/>
+    <property column="OrgIDOfCompany" type="String" name="OrgIDOfCompany" length="10"/>
+    <property column="OrgIDOfSub1Company" type="String" name="OrgIDOfSub1Company" length="10"/>
+    <property column="OrgIDOfDivision" type="String" name="OrgIDOfDivision" length="10"/>
+    <property column="OrgIDOfSub1Division" type="String" name="OrgIDOfSub1Division" length="10"/>
+    <property column="OrgIDOfDepartment" type="String" name="OrgIDOfDepartment" length="10"/>
+    <property column="OrgIDOfSub1Department" type="String" name="OrgIDOfSub1Department" length="10"/>
+    <property column="OrgIDOfSection" type="String" name="OrgIDOfSection" length="10"/>
+    <property column="OrgIDOfSub1Section" type="String" name="OrgIDOfSub1Section" length="10"/>
+    <property column="OrgIDOfShift" type="String" name="OrgIDOfShift" length="10"/>
+    <property column="OrgIDOfSub1Shift" type="String" name="OrgIDOfSub1Shift" />
+    <property column="StartDate" type="String" name="StartDate" length="10"/>
+    <property column="DelimitDate" type="String" name="DelimitDate" length="10"/>
+    <property column="SystemDate" type="String" name="SystemDate" length="10"/>
+  </class>
+</hibernate-mapping>

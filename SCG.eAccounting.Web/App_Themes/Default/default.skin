@@ -1,0 +1,219 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+
+--%>
+
+<asp:Panel runat="server" SkinID="SkLogin" BackImageUrl="~/App_Themes/Default/images/login_bg.jpg" CssClass=" " />
+<asp:ImageButton SkinID="SkCtlSignIn" runat="server" ImageUrl="~/App_Themes/Default/images/bok.png" />
+<asp:ImageButton SkinID="SkCtlCancel" runat="server" ImageUrl="~/App_Themes/Default/images/bcn.png" />
+<asp:ImageButton SkinID="SkCtlFormNewRow" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Add$" CssClass="btnAdd"/>
+<asp:ImageButton SkinID="SkCtlFormSave" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Save$" CssClass="btnSave"/>
+<asp:ImageButton SkinID="SkCtlFormCancel" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Cancel$" CssClass="btnCancel"/>
+<asp:ImageButton SkinID="SkCtlFormBack" runat="server" ImageUrl="~/App_Themes/Default/images/icon/ibc.png" ToolTip="$Back$" />
+<asp:ImageButton SkinID="SkCtlFormEdit" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Edit$" CssClass="btnEdit"/>
+<asp:ImageButton SkinID="SkCtlFavorite" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Favorite$" CssClass="btnFavorites" />
+<asp:ImageButton SkinID="SkCtlCalendar" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$ShowCalendar$" CssClass="btnCalendar"/>
+<asp:ImageButton SkinID="SkCtlGridNewLang" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$AddLang$" CssClass="btnAdd"/>
+<asp:ImageButton SkinID="SkCtlGridSelect" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Select$" CssClass="btnCheck" align="center"/>
+<asp:ImageButton SkinID="SkCtlGridSave" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Save$" CssClass="btnSave"/>
+<asp:ImageButton SkinID="SkCtlGridCancel" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Cancel$" CssClass="btnCancel"/>
+<asp:ImageButton SkinID="SkCtlGridEdit" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Edit$" CssClass="btnEdit"/>
+<asp:ImageButton SkinID="SkCtlGridDelete" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Delete$" CssClass="btnDelete"/>
+<asp:ImageButton SkinID="SkCtlApprove" runat="server" ImageUrl="~/App_Themes/Default/images/BtnApprove.png" ToolTip="$Approve$" />
+<asp:ImageButton SkinID="SkCtlImport" runat="server" ImageUrl="~/App_Themes/Default/images/BtnImport.png" ToolTip="$Import$"  />
+<asp:ImageButton SkinID="SkCtlView" runat="server" ImageUrl="~/App_Themes/Default/images/BtnView.png" ToolTip="$View$"  />
+<%--link="Red" alink="blue" vlink="violet"--%>
+<asp:Menu 
+    SkinID="SkMenu" 
+    runat="server" 
+    BackColor="#FFFFFF"
+    Font-Names="Tahoma" 
+    Font-Size="12px"
+    Font-Bold="true"
+    StaticSubMenuIndent="10px"
+    ForeColor="Blue"
+    >
+    
+    <StaticSelectedStyle    BackColor="#5D7B9D" ForeColor="Blue" /> 
+    <StaticMenuItemStyle    BackColor="#FFFFFF" ForeColor="Blue" HorizontalPadding="10px" VerticalPadding="2px"  />
+    <DynamicHoverStyle      BackColor="#44b5e1" ForeColor="White" />
+    <DynamicMenuStyle       BackColor="#2c76b5" ForeColor="Blue" />
+    <DynamicSelectedStyle   BackColor="#5D7B9D" ForeColor="Blue" />
+    <DynamicMenuItemStyle   BackColor="#2c76b5" ForeColor="#44b5e1" HorizontalPadding="10px" VerticalPadding="2px" />
+    <StaticHoverStyle       BackColor="#FFFFFF" ForeColor="Blue" /> <%-- MENU --%>
+</asp:Menu>
+                
+<asp:ImageButton SkinID="SkLoading" runat="server"      ImageUrl="~/App_Themes/Default/Images/Loading/loading.gif"  />
+<asp:ImageButton SkinID="SkSCGLoading" runat="server"   ImageUrl="~/App_Themes/Default/Images/Loading/SCGLoading.png"  />
+
+<asp:ImageButton SkinID="SkProgress" runat="server" ImageUrl="~/App_Themes/Default/Images/activity.gif"  />
+<asp:ImageButton SkinID="SkCtlGridAddRole" runat="server" ImageUrl="~/App_Themes/Default/images/icon/iui.gif" ToolTip="$Role$" />
+<asp:ImageButton SkinID="SkCtlQuery" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Filter$" CssClass="btnRetrieve"/>
+<asp:ImageButton SkinID="SkCtlSubmit" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" CssClass="btnSubmit"/>
+<asp:ImageButton SkinID="SkCtlPrint" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" CssClass="btnPrint"/>
+
+<ajaxToolkit:CalendarExtender SkinID="SkCtlCalendar" runat="server" CssClass="ajaxCalendar"  >
+</ajaxToolkit:CalendarExtender>
+
+<asp:ImageButton SkinID="SkMsgOKImageButton"  runat="server"  ImageUrl="~/App_Themes/Default/images/bbc.gif" />
+<asp:ImageButton SkinID="SkMsgCancelImageButton" runat="server"  ImageUrl="~/App_Themes/Default/images/bbc.gif"  />
+<asp:ImageButton SkinID="SkCtlMsgCloseImageButton" runat="server"  ImageUrl="~/App_Themes/Default/images/bbc.gif" />    
+<asp:ImageButton SkinID="SkCtlEnglishFlagButton" runat="server" CssClass="EngFlag" />
+<asp:ImageButton SkinID="SkCtlThaiFlagButton" runat="server" CssClass="ThaiFlag" />
+<asp:Image runat="server" SkinID="SkMsgType"  />
+<asp:TextBox runat="server" SkinID="SkCtlTextboxLeft" Width="200px" Style="text-align: Left;"/>
+<asp:TextBox runat="server" SkinID="SkCtlTextboxCenter" Width="200px" Font-Names="Tahoma" Font-Size="8"  Style="text-align: center;"/>
+<asp:TextBox runat="server" SkinID="SkCtlTextboxRight" Width="200px" Style="text-align: right;"/>
+<asp:TextBox runat="server" SkinID="SkCtlLongTexboxLeft" Width="400px" Style="text-align: Left;"/>
+<asp:TextBox runat="server" SkinID="SkCtlShortTextboxCenter" Width="100px" Style="text-align: Center;"/>
+<asp:DropDownList SkinID="SkCtlDropDownList" runat="server" Width="198px"/>
+<asp:TextBox SkinID="SkCtlTextboxMultiLine" Font-Names="Tahoma" Font-Size="8"  Width="200px" Height="50px" runat="server"/>
+<asp:FileUpload SkinID="SkCtlFileUpload" Width="388px" runat="server"/>
+<asp:Label SkinID="SkCtlLabelNodata" runat="server" ForeColor="Red" style="font-weight:bold;" Text="No data found."/>
+<asp:Label SkinID="SkCtlLabelNodataNew" runat="server" ForeColor="Red" style="font-weight:bold;"/>
+
+<asp:Label SkinID="SkCtlMsgInformation" runat="server" ForeColor="Green" style="font-weight:bold;font-family:Tahoma;font-Size:small"/>
+<asp:Label SkinID="SkCtlMsgError" runat="server" ForeColor="Red" style="font-weight:bold;font-family:Tahoma;font-Size:small"/>
+<asp:Label SkinID="SkCtlUserInfo" runat="server" ForeColor="#0d87ba" Font-Size="10" style="font-weight:bold;font-family:Tahoma;"/>
+<asp:LinkButton SkinID="SkCtlUserInfoLink" runat="server" ForeColor="#215e9d" Font-Size="10" style="font-weight:bold;font-family:Tahoma;"/>
+<asp:Label SkinID="SkCtlLoginInfomationHead" runat="server" ForeColor="#215ea1" Font-Size="8" Font-Underline="true" style="font-family:Tahoma;" Font-Bold="false"/>
+<asp:Label SkinID="SkCtlLoginInfomationDetail" runat="server" ForeColor="#215ea1" Font-Size="8" style="font-family:Tahoma;"/>
+
+
+<%-- For shortcut(hot) menu on the left side of screen--%>
+<asp:Panel SkinID="AccordionHeader" runat="server" style="cursor:hand;" ForeColor="White" Font-Bold="true" HorizontalAlign="Left" Font-Names="Tahoma" Font-Size="10" />
+<asp:Panel SkinID="AccordionChild" runat="server" HorizontalAlign="Left" Font-Names="Tahoma" Font-Size="10" Font-Bold="false"/>
+<asp:LinkButton SkinID="SkLinkLeftMenu" runat="server" ForeColor="#1f5f9f" Font-Size="10" style="text-decoration:none;font-family:Tahoma;"/>
+<asp:LinkButton SkinID="SkLinkHeaderMenu" runat="server"  ForeColor="White" Font-Bold="true" Font-Size="10" style="cursor:hand;text-decoration:none;font-family:Tahoma;"/>
+<asp:HyperLink SkinID="SkHyperLinkLeftMenu" runat="server" ForeColor="#1f5f9f" Font-Size="10" style="text-decoration:none;font-family:Tahoma;" Font-Underline ="false"/>
+<asp:HyperLink SkinID="SkHyperLinkLeftMenuHeader" runat="server" ForeColor="White" Font-Size="10" Font-Bold="true" Font-Underline ="false" style="text-decoration:none;font-family:Tahoma;"/>
+<asp:LinkButton SkinID="SkLinkLeftMenuHeaderArchive" runat="server" ForeColor="White" Font-Size="10" Font-Bold="true" Font-Underline ="false" style="text-decoration:none;font-family:Tahoma;"/>
+
+<ajaxToolkit:AutoCompleteExtender runat="server" SkinID="SkCtlAutoComplete"
+    CompletionListCssClass="autocomplete_completionListElement" 
+    CompletionListItemCssClass="autocomplete_listItem" 
+    CompletionListHighlightedItemCssClass="autocomplete_highlightedListItem"/>
+<asp:Image SkinID="ctlLoading" runat="server" ImageUrl="~/App_Themes/Default/images/indicator.gif" CssClass="image_loading"  />
+<asp:RadioButtonList SkinID="SkCtlAuthorizedEventList" runat="server" style="font-family:Tahoma;font-size:10px;font-weight:bold;text-align:left" ></asp:RadioButtonList>
+
+ <asp:DropDownList SkinID="SkCtlDropDown" runat="server" Font-Names="Tahoma" Font-Size="8" />
+ <asp:TextBox runat="server" SkinID="SkCtlTextbox"  Font-Names="Tahoma" Font-Size="8"  />
+ <asp:CheckBox runat="server" SkinID="SkCtlCheckBox" Font-Names="Tahoma" Font-Size="8"/>
+ <asp:LinkButton runat="server" SkinID="SkCtlLinkButton" Font-Names="Tahoma" Font-Size="8"></asp:LinkButton>
+ <asp:Label runat="server" SkinID="SkCtlLabel" Font-Names="Tahoma" Font-Size="8"  style="font-weight:bold;"/>
+ <asp:Label runat="server" SkinID="SkCtlLabelData" Font-Names="Tahoma" Font-Size="8"  />
+ <asp:Label runat="server" SkinID="SkCtlLabelHeader" Font-Size="12" Font-Names="Tahoma"  style="font-weight:bold;"/>
+ <asp:ListBox SkinID="SkCtlListBox" Font-Names="Tahoma" Font-Size="8" runat="server" />
+ <asp:Button SkinID="SkCtlButton" runat="server"  Font-Names="Tahoma" Font-Size="8" />
+ 
+ 
+ <%-- 
+#############################################
+	new Skin Define By AO on 23-Mar-2009  
+#############################################
+--%>
+<%-- For Radio Button --%>
+<asp:RadioButton SkinID="SkGeneralRadioButton" runat="server" Font-Names="Tahoma" Font-Size="10" />  
+
+<%-- For Checkbox --%>
+<asp:CheckBox SkinID="SkGeneralCheckBox" runat="server" Font-Names="Tahoma" Font-Size="10" />
+
+<%-- For DropDownList --%>
+<asp:DropDownList SkinID="SkGeneralDropdown" runat="server" Font-Names="Tahoma" Font-Size="10" />
+
+<%-- For TextBox --%>
+<asp:TextBox SkinID="SkCalendarTextBox" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:center;" />
+<asp:TextBox SkinID="SkNumberTextBox" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:right;" />
+<asp:TextBox SkinID="SkGeneralTextBox" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:left;" />
+<asp:TextBox SkinID="SkAutoCompleteTextBox" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:left;" />
+
+<%-- For Label --%>
+<asp:Label SkinID="SkFieldCaptionLabel" runat="server" Font-Names="Tahoma" Font-Size="8" style="font-weight:bold;" />
+<asp:Label SkinID="SkDocumentHeader1Label" runat="server" Font-Names="Tahoma" Font-Size="11" style="font-weight:bold;" />
+<asp:Label SkinID="SkDocumentHeader2Label" runat="server" Font-Names="Tahoma" Font-Size="10" style="font-weight:bold;" />
+<asp:Label SkinID="SkRequiredLabel" runat="server" Font-Names="Tahoma" Font-Size="10" ForeColor="Red" Text="*" />
+<asp:Label SkinID="SkNodataLabel" runat="server" ForeColor="Red" Font-Size="10" style="font-weight:bold;" Text="No data found."/>
+<asp:Label SkinID="SkGeneralLabel" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:left;"></asp:Label>
+<asp:Label SkinID="SkNumberLabel" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:right;"></asp:Label>
+<asp:Label SkinID="SkCalendarLabel" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:center;"></asp:Label>
+<asp:Label SkinID="SkOrderLabel" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:center;"></asp:Label>
+<asp:Label SkinID="SkCodeLabel" runat="server" Font-Names="Tahoma" Font-Size="10" style="text-align:center;"></asp:Label>
+
+<%-- For Button --%>
+<asp:Button SkinID="SkGeneralButton" runat="server" Font-Names="Tahoma" Font-Size="10" />
+
+<%-- For ImageButton --%>
+<asp:ImageButton SkinID="SkSaveButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Save$" CssClass="btnSave"/>
+<asp:ImageButton SkinID="SkOKButton" runat="server" ImageUrl="~/App_Themes/Default/images/okbtn.gif" ToolTip="$OK$"/>
+<asp:ImageButton SkinID="SkCancelButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Cancel$" CssClass="btnCancel"/>
+<asp:ImageButton SkinID="SkEditButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Edit$" CssClass="btnEdit"/>
+<asp:ImageButton SkinID="SkQueryButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Query$" CssClass="btnRetrieve"/>
+<asp:ImageButton SkinID="SkCloseButton" runat="server" ImageUrl="~/App_Themes/Default/images/icon/BtDelete.gif" ToolTip="$Close$" />
+<asp:ImageButton SkinID="SkLookupButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Show Lookup$" CssClass="btnRetrieve"/>
+<asp:ImageButton SkinID="SkAutoCompleteButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Show Lookup$" CssClass="btnDownArrow" />
+<asp:ImageButton SkinID="SkCalendarButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$ShowCalendar$" CssClass="btnCalendar"/>
+<asp:ImageButton SkinID="SkDeleteButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Delete$" CssClass="btnDelete"/>
+<asp:ImageButton SkinID="SkSubmitButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Submit$" CssClass="btnSubmit"/>
+<asp:ImageButton SkinID="SkPrintButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Print$" CssClass="btnPrint"/>
+<asp:ImageButton SkinID="SkAddButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Add$" CssClass="btnAdd"/>
+<asp:ImageButton SkinID="SkSelectButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Select$" CssClass="btnCheck"/>
+<asp:ImageButton SkinID="SkProgressBar" runat="server" ImageUrl="~/App_Themes/Default/Images/activity.gif" ToolTip="$Loading$"  />
+<asp:ImageButton SkinID="SkSendButton" runat="server" ImageUrl="~/App_Themes/Default/images/icon/i_send.png" ToolTip="$Send$"  />
+<asp:ImageButton SkinID="SkCalculateButton" runat="server" ImageUrl="~/App_Themes/Default/images/icon/i_cal.png" ToolTip="$Calculate$"  />
+<asp:ImageButton SkinID="SkPrintPayInButton" runat="server" ImageUrl="~/App_Themes/Default/images/payinbtn.gif" ToolTip="$PrintPayIn$" CssClass="btnPrintPayIn"/>
+
+
+<%-- For AutoComplete Animation --%>
+<asp:Image SkinID="SkAutoCompleteLoading" runat="server" ImageUrl="~/App_Themes/Default/Images/indicator.gif" CssClass="image_loading"  />
+<asp:Image SkinID="SkAttachButton" runat="server" ImageUrl="~/App_Themes/Default/images/icon/attach.gif" ToolTip="$Attach$"  />
+<asp:Image SkinID="SkFileButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$File$" CssClass="btnFile" />
+
+<%-- For TabPanel --%>
+<ajaxToolkit:TabPanel SkinID="SkTab" runat="server" Font-Names="Tahoma" Font-Size="8" style="font-weight:bold;" />
+
+<%-- For AutoComplete List --%>
+<ajaxToolkit:AutoCompleteExtender runat="server" SkinID="SkAutoCompleteItem"
+	CompletionListCssClass="autocomplete_completionListElement" 
+	CompletionListItemCssClass="autocomplete_listItem" 
+	CompletionListHighlightedItemCssClass="autocomplete_highlightedListItem"/>
+
+<%-- For ReadOnlyTextBox --%>
+<ss:ReadOnlyTextBox SkinID="SkNumberReadOnlyTextBox" runat="server" Style="text-align:right;" BackColor="Transparent" BorderColor="Transparent" BorderWidth="0" />
+<ss:ReadOnlyTextBox SkinID="SkGeneralReadOnlyTextBox" runat="server" Style="text-align:left;" BackColor="Transparent" BorderColor="Transparent" BorderWidth="0" />
+
+<%-- For LabelExtender --%>
+<ss:LabelExtender SkinID="SkGeneralLabel" runat="server" Font-Names="Tahoma" ForeColor="#476082" Font-Size="10" style="text-align:left;"></ss:LabelExtender>
+<ss:LabelExtender SkinID="SkNumberLabel" runat="server" Font-Names="Tahoma" ForeColor="#476082" Font-Size="10" style="text-align:right;"></ss:LabelExtender>
+<ss:LabelExtender SkinID="SkCenterLabel" runat="server" Font-Names="Tahoma" ForeColor="#476082" Font-Size="10" style="text-align:center;"></ss:LabelExtender>
+<ss:LabelExtender SkinID="SkOrderLabel" runat="server" Font-Names="Tahoma" ForeColor="#476082" Font-Size="10" style="text-align:center;"></ss:LabelExtender>
+<ss:LabelExtender SkinID="SkMultiLineLabel" runat="server" Font-Names="Tahoma" ForeColor="#476082" Font-Size="10" style="text-align:left;word-break:break-all;word-wrap:break-word;"></ss:LabelExtender>
+
+
+<%-- For Copy Button by Sirilak : 17/05/2009 --%>
+<asp:ImageButton SkinID="SkCopyButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Copy$" CssClass="btnCopy"/>
+
+<%-- For Search & DeclareVAT Button by Sirilak : 28/05/2009 --%>
+<asp:ImageButton SkinID="SkSearchButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Search$" CssClass="btnSearch"/>
+<asp:ImageButton SkinID="SkDeclareVATButton" runat="server" ImageUrl="~/App_Themes/Default/images/icon/declare_vat.png" ToolTip="$Declare VAT$" />
+
+<%-- For Search & DeclareVAT Button by Sirilak : 08/06/2009 --%>
+<asp:ImageButton SkinID="SkMileageButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Mileage$" CssClass="btnMileage" />
+<asp:ImageButton SkinID="SkGeneralExpenseButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$GeneralExpense$" CssClass="btnGeneralExpense" />
+<asp:ImageButton SkinID="SkPerdiemButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Perdiem$" CssClass="btnPerdiem"/>
+<asp:ImageButton SkinID="SkTALookupButton" runat="server" ImageUrl="~/App_Themes/Default/images/empty.gif" ToolTip="$Show Lookup$" CssClass="btnTASearch"/>
+
+<%-- For Menu by Kookkla : 09/06/2009 --%>
+<asp:LinkButton SkinID="SkCtlMenuTop"       runat="server" ForeColor="Blue" Font-Size="16px" Font-Names="Tahoma" />
+<asp:LinkButton SkinID="SkCtlMenuBottom"    runat="server" ForeColor="White" Font-Size="12px" Font-Names="Tahoma" />

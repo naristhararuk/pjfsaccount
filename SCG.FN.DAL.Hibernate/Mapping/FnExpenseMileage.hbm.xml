@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.FN.DTO.FnExpenseMileage,SCG.FN.DTO" table="FnExpenseMileage">
+
+		<id name="ExpenseMileageID" column="ExpenseMileageID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Expense" column="ExpenseID" class="SCG.FN.DTO.FnExpenseDocument,SCG.FN.DTO" />
+		<property column="CarLicenseNo" type="String" name="CarLicenseNo" not-null="true" length="10" />
+		<property column="TypeOfCar" type="String" name="TypeOfCar" not-null="true" length="5" />
+		<property column="TypeOfUse" type="String" name="TypeOfUse" not-null="true" length="5" />
+		<property column="Owner" type="String" name="Owner" not-null="true" length="5" />
+		<property column="PermissionNo" type="String" name="PermissionNo" length="20" />
+		<property column="HomeToOfficeRoundTrip" type="System.Nullable`1[[System.Double]]" name="HomeToOfficeRoundTrip" />
+		<property column="PrivateUse" type="System.Nullable`1[[System.Double]]" name="PrivateUse" />
+		<property column="First100KmRate" type="System.Nullable`1[[System.Double]]" name="First100KmRate" />
+		<property column="Exceed100KmRate" type="System.Nullable`1[[System.Double]]" name="Exceed100KmRate" />
+		<property column="TotalAmount" type="System.Nullable`1[[System.Double]]" name="TotalAmount" />
+		<property column="HelpingAmount" type="System.Nullable`1[[System.Double]]" name="HelpingAmount" />
+		<property column="AboveHelpingAmount" type="System.Nullable`1[[System.Double]]" name="AboveHelpingAmount" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

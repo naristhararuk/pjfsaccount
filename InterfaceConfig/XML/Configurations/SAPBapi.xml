@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+	
+	<!-- QUERY Obj.		-->
+	<object id="BapiQueryProvider"	type="SCG.eAccounting.SAP.Query.BapiQueryProvider, SCG.eAccounting.SAP"				autowire="byName" />
+	<object id="Bapiacap09Query"	type="SCG.eAccounting.SAP.Query.Hibernate.Bapiacap09Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacar09Query"	type="SCG.eAccounting.SAP.Query.Hibernate.Bapiacar09Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiaccr09Query"	type="SCG.eAccounting.SAP.Query.Hibernate.Bapiaccr09Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="BapiacextcQuery"	type="SCG.eAccounting.SAP.Query.Hibernate.BapiacextcQuery, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacgl09Query"	type="SCG.eAccounting.SAP.Query.Hibernate.Bapiacgl09Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiache09Query"	type="SCG.eAccounting.SAP.Query.Hibernate.Bapiache09Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacpa09Query"	type="SCG.eAccounting.SAP.Query.Hibernate.Bapiacpa09Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiactx09Query"	type="SCG.eAccounting.SAP.Query.Hibernate.Bapiactx09Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiret2Query"		type="SCG.eAccounting.SAP.Query.Hibernate.Bapiret2Query, SCG.eAccounting.SAP"		autowire="byName"/>
+	
+
+	<!-- DAO Obj.		-->
+	<object id="BapiDaoProvider"	type="SCG.eAccounting.SAP.DAL.BapiDaoProvider, SCG.eAccounting.SAP"				autowire="byName" />
+	<object id="Bapiacap09Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiacap09Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacar09Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiacar09Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiaccr09Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiaccr09Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="BapiacextcDao"		type="SCG.eAccounting.SAP.DAL.Hibernate.BapiacextcDao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacgl09Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiacgl09Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiache09Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiache09Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacpa09Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiacpa09Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiactx09Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiactx09Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiret2Dao"		type="SCG.eAccounting.SAP.DAL.Hibernate.Bapiret2Dao, SCG.eAccounting.SAP"		autowire="byName"/>
+	
+	
+	<!-- Service Obj.	-->
+	<object id="BapiServiceProvider"	type="SCG.eAccounting.SAP.Service.BapiServiceProvider, SCG.eAccounting.SAP"				autowire="byName" />
+	<object id="Bapiacap09Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiacap09Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacar09Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiacar09Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiaccr09Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiaccr09Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="BapiacextcService"		type="SCG.eAccounting.SAP.Service.Implement.BapiacextcService, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacgl09Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiacgl09Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiache09Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiache09Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiacpa09Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiacpa09Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiactx09Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiactx09Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	<object id="Bapiret2Service"		type="SCG.eAccounting.SAP.Service.Implement.Bapiret2Service, SCG.eAccounting.SAP"		autowire="byName"/>
+	
+	<object id="AdvancePostingService"		type="SCG.eAccounting.SAP.BAPI.Service.AdvancePostingService, SCG.eAccounting.SAP.BAPI.Service"		autowire="byName"/>
+	<object id="ExpensePostingService"		type="SCG.eAccounting.SAP.BAPI.Service.ExpensePostingService, SCG.eAccounting.SAP.BAPI.Service"		autowire="byName"/>
+	<object id="RemittancePostingService"	type="SCG.eAccounting.SAP.BAPI.Service.RemittancePostingService, SCG.eAccounting.SAP.BAPI.Service"	autowire="byName"/>
+	
+</objects>	

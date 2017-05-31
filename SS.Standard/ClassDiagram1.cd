@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SS.Standard.AlertMsg.Dialog" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAIABIAAYAwQAAAAAADAAAQAABAAAAAAAAAAAIAA=</HashCode>
+      <FileName>AlertMsg\Dialog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Base.Linq.absBase&lt;T&gt;" Collapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Linq\absBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Linq.absLinq&lt;T&gt;" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIUAAEAAAAAAAAIAAAAIAEAAAIEAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Base\Linq\absLinq.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Linq.daoLinq&lt;T&gt;" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAEAAAAAAAAIAAAAIAEAAAIEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Linq\daoLinq.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Mssql.absMssqlBase&lt;T&gt;" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Mssql\absMssqlBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Mssql.absMssqlDTO" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAIEIAAEAAAAAAAgAASAAAAAAAAAAAAAAAJCAAAAA=</HashCode>
+      <FileName>Base\Mssql\absMssqlDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Mssql.baseMssqlDAL" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQBIAAAAAAAAAACABgACSAAAAAAAQAAAAAAIAA=</HashCode>
+      <FileName>Base\Mssql\baseMssqlDAL.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Base.Mssql.daoMssql&lt;T&gt;" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYIAEBAgAAAAAQAAAABQEACAAEEAAgIACgAQEAAAAA=</HashCode>
+      <FileName>Base\Mssql\daoMssql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Oracle.absOracleBase&lt;T&gt;" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Oracle\absOracleBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Oracle.absOracleDTO" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAIEIAAEAAAAAAAgAASAAAAAAAAAAAAAAAJCAAAAA=</HashCode>
+      <FileName>Base\Oracle\absOracleDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.Oracle.baseOracleDAL" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQBIAAAAAAAAAACABgACSAAAAAAAQAAAAAAIAA=</HashCode>
+      <FileName>Base\Oracle\baseOracleDAL.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Base.Oracle.daoOracle&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYIAEBAgAAAAAQAAAABQEACAAEEAAgIACgAQEAAAAA=</HashCode>
+      <FileName>Base\Oracle\daoOracle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.UI.BaseMaster" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAEAAAAAQA=</HashCode>
+      <FileName>Base\UI\BaseMaster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Base.UI.BasePage" Collapsed="true">
+    <Position X="29.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIECAAAEEAABIAGBAAAAAQA=</HashCode>
+      <FileName>Base\UI\BasePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicQueryable" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIAAAACAAAAAAAAAAAAAAAQAAAEAAAAAAAEAQAAAEAA=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicClass" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicProperty" Collapsed="true">
+    <Position X="29.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicExpression" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicOrdering" Collapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.Signature" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Linq.Dynamic.ClassFactory" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAAAAAAAABACAQAAAAAACAAAAASAAAAAABAAg=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.ParseException" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAkAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.ExpressionParser" Collapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Co+4gUICBFAhMm7UoEgTE7BCIIzYpCqIKkUKBAmRAYI=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.Res" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgMKhAIAgAAgEAgCIBSSAQAFDAgABEACoACAgLAA8A=</HashCode>
+      <FileName>Data\Linq\DynamicLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.HelperLinq" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAEAQAAAAAAAAAAAgEgAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Linq\HelperLinq.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.StandardDataContext" Collapsed="true">
+    <Position X="29.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aGtQbW4BL7Mq42s8Zrpl62+jvOq3SQOzf6pHshddhBI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_CITY" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ShAkBSIRAkxgBQLYaAEESXKBiCAAACCgQBKAJWAFCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuUserRole" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBggBCIRAkRiQQBQQCEESBKBmCABIIAgQBKAJGAHCQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_DISTRICT" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ShgghSIRAkRgBYLQaAEEaRKBiCAAACChQBKAJWAFiFA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_PARAMETER" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>eJCgpCIRIkRgQQBQQGMGSgOBuCAAQAIgSBKAJmAFCCA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_PARAMETER_GROUP" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgpCIRAkRgIQBQSQEETgLBiCABAAAgQBKAJmAFCAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_POSTAL" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBgghSIRAkRgBYBQaQEESUKBiCAAACChRBKAJWAFGBI=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_PREFIX" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ShAgDCIVAkRgBQDQQAEEShOBiCAAABEgQBKiJmCVCZA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_PREFIX_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgDCoVAkRgBQBQUAkESAORiiAAQBAgQBqgJGCFCYA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_PROVINCE" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>StAwDCYZFkRgBQLYQQHMSVKBjCgAQCAiQBKAZHQFCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_REGION" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SFgwJCIZAkRgAQDUQAEESBLBiCAABIKgUBKAZGMFCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.DB_SCHOOL_REGION" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SFgwDCIZFkRgAQDQQAEESBKBjCgABACgUBKELGAFCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_ALERT" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aBAiRC4RIl1gBQHYQAUESRKDmCQAEAAwYFaAdGAFyBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_ALERT_GROUP" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>WBAgRGIRIkRhAxjQQBEESRKhjCAAEAgoQBKAJGAFCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_ALERT_GROUP_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>WBAgRCoRIkRhAwBQUAkESAKTjiAAUAAgQBKAJGCFCAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_ALERT_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aBAgBCYRAl3gAQBYUAkESQKxiiQAQAAwYBaAZGCFSBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_DIV_TYPE" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SXSgBGIRAkRgAQLQQAGUSBKBiDABIQAgQBKAJWAFCBQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_DIV_TYPE_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>STSgBCIRAkRgAQJQUAkUSAKRijgAQAAgQBKAJGCFCAQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_DIVISION" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SD5gBCIRAkRgMQDQRAGVTBKBmDsEAUJgQBLoJGQNCBQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_DIVISION_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBIgBCIRAkRgAQBQUAkESAKRmiAAQUBgQBLgJGCFCAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SllgLGIRIsR4KQn4RhmGTxKTjyAhREQiRFOK9nqFiBk=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_LOG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAggACABAAQoAQAAcCEAgAABmShhAAASYAIAQAAHQcA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_LOG_TYPE" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgBCIRAlRoAQDQQgEESBKBiCAgAAAgQJKAJGAFThA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuMenusGroup" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgBCITEkRgAQDQQBEdSBKBmCMAAAIkQBPA5GANCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuMenusGroup_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgFCITEkRgAQBQUAkMSAqRiiAAQAAkQBLAJGCFCAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuProgramMenu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBEgFCITK0RgAQDQQAEESBqBiCAhAAQg4FKFJGAFCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuProgramMenu_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgBCIRC0RgAQBQUAkESAKRiiAAQAIgQFKBJGCFKAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_ORGANIZATION" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>bhAghGJROkVwJQLYQUtVSZKFzCIoYSGjxBKCJWAFWBg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuOrganizationLang" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aBAgBCIRGkRgAQBYUEkVSIKViiMAQAAgQBKAJGCNCAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuProgram" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aRBiBmYRCkRiAQDwQAMESRKBiCiEkAYwYBKwJGAHKNA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuProgramLang" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgBiIRAkRgAQBQUAkESQKRiiAEQAAw4BKAJGCHCMA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuRole" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>TBAgJCIxAkRjKQDQwANESxKBiSCAoMAgUBKAJGIFCBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuRole_GROUP" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>TBQgBCIxAmRwYQDSSIEVSBKBiCMAQAAgQBKAJmAPCBg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuRole_GROUP_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>TBQgBCIxAkRwIQBSWAlESAKRiiAAQAAgQBKAJGCFCAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuRole_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgBCIRAkRjSQBQUAkESBKRiiAAYIAgUBKAJGCFCAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuProgramRole" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAiBIIRAkRiRQRwQAEESBKJiCAAIIAwoBKApGACCMI=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuSession" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAogAAChCAQAAZAAUAEAAAAJiSABQABAgADAAgAAAQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_TRANSLATE" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAkBCIRAkRgBQDQRAEESBKDiCAARAAgQBKCJHANCHA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_TRANSLATE_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aBQkBGIRAkRgBcBQVAkESAKTiiAAQAAgQBOAJGCNDAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_TRANSLATE_PGM" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBAgDCIRAkRgAQDQRgEESBqBiGAAQAAw5BKCJGAHCvA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SU_TRANSLATE_PGM_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aBQgBCIRAkRgAQBQVAkESAqRimgAQAAgQBOAJGCFCgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuUser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ahhkPCIRAuxgCQDSwbeGWBKB3DAAgQJgQBORpHwXDxk=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuUserDivision" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBogBCIRAkRgAQBQQCEESAKBmCABAQBgQBLAJGAHCQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuUser_LOG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQiAAADSIQAAQAAQDFAggAJmCAAQAAACQgAKgACAQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuUserProfile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>TBggBCpRIlViIQpQQCEESAOB2CApAAEhQBrAZGAHDYA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Linq.SuUserProfile_LANG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBggBCIRAlRiAQhQUCkESAKRmiABQAAgQBLAJGCHDQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SS.Standard.Data.Mssql.BLManageGeneric" Collapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAEAAQAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Mssql\BLManageGeneric.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Data.Mssql.DBManager" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAABIAAYACEAAABAAFQAAQCAIAABAAAAAAEAKAA=</HashCode>
+      <FileName>Data\Mssql\DBManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Data.Mssql.MssqlHelper" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAACEAAAAAAEAAAAAAQAQBAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Mssql\MssqlHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Data.Mssql.SSMssqlHelper" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEABIAAAAAIAAAAIABAAAQEAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Data\Mssql\SSMssqlHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Data.Oracle.OracleHelper" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAACEAAAAAAEAAAAAAQAQBAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Oracle\OracleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Language.LanguageDescription" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABIAAAAAAAAAAAABAAAQQAAAAAAAAACAAQIAA=</HashCode>
+      <FileName>Language\LanguageDescription.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Language.Translation" Collapsed="true">
+    <Position X="29.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQcZAQAIAhAEAwCICoQkEAJUAABEAgQFAAAAAAAAAAA=</HashCode>
+      <FileName>Language\Translation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Messages.ExceptionManager" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Messages\ExceptionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Properties.Settings" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAIAAACAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Security.DAL.Mssql.UserDAL" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAACAAAACAFAAAAAAABAAAQBAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Security\DAL\Mssql\UserDAL.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Security.UserAccount" Collapsed="true">
+    <Position X="31" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgAAEAQAAACAAAAQAAAAAhIAAAAEAgAAQAAAAAAAAg=</HashCode>
+      <FileName>Security\UserAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Security.UserEngine" Collapsed="true">
+    <Position X="17" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACSAAAAQEAIAAAACAABAAgAgAAAJAAAAABAAAkA=</HashCode>
+      <FileName>Security\UserEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Security.UserMenu" Collapsed="true">
+    <Position X="18.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEAAABAAAAAAA=</HashCode>
+      <FileName>Security\UserMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Security.UserSession" Collapsed="true">
+    <Position X="20.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgEAEAQAAgCAAQAQAIAAAhJAAAACAgAAQAAAgAAAAg=</HashCode>
+      <FileName>Security\UserSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Utilities.CompressViewState" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\CompressViewState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Utilities.DbParameter" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABJAAAAAAAAAAAABAAAQQAAAAAAAAAAAAQMAA=</HashCode>
+      <FileName>Utilities\DbParameter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SS.Standard.Utilities.Utilities" Collapsed="true">
+    <Position X="22.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAACAAAQAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Utilities\Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SS.Standard.Utilities.Validation" Collapsed="true">
+    <Position X="24" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgIAAIAAAAAAAAACAAAAAAAAAQAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Utilities\Validation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SS.Standard.Data.Interfaces.IDBManager" Collapsed="true">
+    <Position X="17" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABIAAAAAAAAAAAABAAAQAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Data\Interfaces\IDBManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SS.Standard.Security.DAL.Interface.IUserDAL" Collapsed="true">
+    <Position X="18.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAACAAAAAAFAAAAAAABAAAQBAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Security\DAL\Interface\IUserDAL.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SS.Standard.Data.Enum.ExcutetionStatus" Collapsed="true">
+    <Position X="17" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Enum\Excutetion.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

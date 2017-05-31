@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.eAccounting.DTO.TADocument, SCG.eAccounting.DTO" table="TADocument">
+		<id name="TADocumentID" column="TADocumentID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="DocumentID" column="DocumentID" class="SCG.eAccounting.DTO.SCGDocument,SCG.eAccounting.DTO" />		
+		<property column="FromDate" type="DateTime" name="FromDate" not-null="true" />
+		<property column="ToDate" type="DateTime" name="ToDate" not-null="true" />
+		<property column="IsBusinessPurpose" type="Boolean" name="IsBusinessPurpose" not-null="true" />
+		<property column="IsTrainningPurpose" type="Boolean" name="IsTrainningPurpose" not-null="true" />
+		<property column="IsOtherPurpose" type="Boolean" name="IsOtherPurpose" not-null="true" />
+		<property column="OtherPurposeDescription" type="String" name="OtherPurposeDescription" length="100" />
+		<property column="TravelBy" type="String" name="TravelBy" length="10" />		
+		<property column="Province" type="String" name="Province" length="100" />
+		<property column="Country" type="String" name="Country" length="100" />
+		<property column="Ticketing" type="String" name="Ticketing" length="100" />		
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true" update="false"  />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true" update="false"  />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false"  />
+		<many-to-one name="CostCenterID" column="CostCenterID" class="SCG.DB.DTO.DbCostCenter, SCG.DB.DTO" />
+		<many-to-one name="Account" column="AccountID" class="SCG.DB.DTO.DbAccount, SCG.DB.DTO" />
+		<many-to-one name="IOID" column="IOID" class="SCG.DB.DTO.DbInternalOrder, SCG.DB.DTO" />
+	</class>
+</hibernate-mapping>

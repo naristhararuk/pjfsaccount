@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SS.SU.DTO.SuSession,SS.SU.DTO" table="SuSession">
+
+		<id name="Userid" column="UserID" type="Int64" unsaved-value="0">
+			<generator class="assigned"/>
+		</id>
+		<property column="SessionID" type="String" name="Sessionid" not-null="true" length="300" />
+		<property column="IP" type="String" name="Ip" length="50" />
+		<property column="TimeStamp" type="DateTime" name="TimeStamp" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

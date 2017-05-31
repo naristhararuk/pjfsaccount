@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects default-lazy-init="true"
+	xmlns="http://www.springframework.net" >
+	<object id="messageSource" type="SS.Standard.UI.Spring.Translation.DBMessageSource, SS.Standard.UI.Spring" />
+	<!--<object id="messageSource" type="Spring.Context.Support.ResourceSetMessageSource, Spring.Core">
+		<property name="ResourceManagers">
+			<list>
+				-->
+	<!--<value>Resources.PageTitles, App_GlobalResources</value>
+				<value>Resources.ErrorMessage, App_GlobalResources</value>-->
+	<!--
+			</list>
+		</property>
+		<property name="UseCodeAsDefaultMessage" value="true" />
+	</object>-->
+
+	<object id="HelperConstant" type="SCG.eAccounting.Web.Helper.Constant" lazy-init="false">
+		<property name="dateFormat" value="dd/MM/yyyy" />
+		<property name="calendarDateFormat" value="dd/MM/yyyy" />
+	</object>
+
+	<object id="UIHelper" type="SCG.eAccounting.Web.Helper.UIHelper" lazy-init="false">
+		<property name="UserCulture" ref="culture" />
+	</object>
+
+
+
+	<object id="CalendatCulture" type="SCG.eAccounting.Web.UserControls.Calendar">
+		<property name="UserCulture" ref="culture" />
+	</object>
+
+
+
+
+	<!-- For inject AvAdvanceConstant -->
+	<object id="AvAdvanceConstant" type="SCG.eAccounting.BLL.AvAdvanceConstant" lazy-init="false">
+		<property name="advanceHoldStateEventID" value="51" />
+	</object>
+
+	<object id="FnExpenseConstant" type="SCG.eAccounting.BLL.FnExpenseConstant" lazy-init="false">
+		<property name="expenseHoldStateEventID" value="89" />
+	</object>
+
+	<object id="TaConstant" type="SCG.eAccounting.BLL.TaConstant" lazy-init="false">
+		<property name="taCompleteStateID" value="17" />
+	</object>
+
+
+	<object id="SCG.eAccounting.Web.MasterPageL1" autowire="byName" abstract="true" parent="BaseMaster" >
+	</object>
+
+	<object id="MasterPageL2" autowire="byName" abstract="true" parent="BaseMaster" >
+		<property name="ProgramCode" value="MasterPageL2"></property>
+	</object>
+	<object id="ProgramPage" autowire="byName" abstract="true" parent="BaseMaster" >
+		<property name="ProgramCode" value="ProgramPage"></property>
+	</object>
+	<object id="ProgramsPages" autowire="byName" abstract="true" parent="BaseMaster" >
+		<property name="ProgramCode" value="ProgramsPages"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/WebForm4.aspx" autowire="byName" parent="BasePage" >
+		<property name="ProgramCode" value="WebForm4"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="Forms/SU/Programs/WebForm3.aspx" autowire="byName" parent="BasePage" >
+		<property name="ProgramCode" value="WebForm3"></property>
+	</object>
+	<object type="Forms/SU/Programs/WebForm2.aspx" autowire="byName" parent="BasePage" >
+		<property name="ProgramCode" value="WebForm2"></property>
+	</object>
+
+
+	<object type="testApproveSMS.aspx" autowire="byName" parent="BasePage" >
+		<property name="ProgramCode" value="testApproveSMS"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/User.aspx" autowire="byName" parent="BasePage" >
+		<property name="ProgramCode" value="User"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/UserProfile.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="UserProfile"></property>
+	</object>
+	<object type="Forms/SU/Programs/Role.aspx" autowire="byName" parent="BasePage" >
+		<property name="ProgramCode" value="Role"></property>
+	</object>
+	<object type="Forms/SU/Programs/ProgramRole.aspx" autowire="byName" parent="BasePage" >
+		<property name="ProgramCode" value="ProgramRole"></property>
+	</object>
+	<object type="Forms/SU/Programs/Language.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Language"></property>
+	</object>
+	<object type="Forms/SU/Programs/AnnouncementGroup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AnnouncementGroup"></property>
+	</object>
+	<object type="Forms/SU/Programs/Announcement.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Announcement"></property>
+	</object>
+
+
+	<object type="Forms/SU/Programs/AnnouncementInfo.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ViewAnnouncementInfo"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/Translation.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Translation"></property>
+	</object>
+	<object type="Forms/SU/Programs/Program.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Program"></property>
+	</object>
+	<object type="Forms/SU/Programs/Currency.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Currency"></property>
+	</object>
+	<object type="Forms/SU/Programs/Organization.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Organization"></property>
+	</object>
+	<object type="Forms/SU/Programs/TestPage.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TestPage"></property>
+	</object>
+	<object type="Login.aspx" autowire="byName" parent="BasePage">
+		<property name="PageTitle" value="Welcome to eXpense System"></property>
+		<property name="ProgramCode" value="Login"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="Home.aspx" autowire="byName" parent="BasePage">
+		<property name="PageTitle" value="Welcome to eXpense System"></property>
+		<property name="ProgramCode" value="Home"></property>
+	</object>
+	<object type="GetLog.aspx" autowire="byName" parent="BasePage">
+		<property name="PageTitle" value="Welcome : SCG Accounting --> GetLog Error !!!!"></property>
+		<property name="ProgramCode" value="GetLog"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/Status.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Status"></property>
+	</object>
+	<object type="Forms/SU/Programs/Division.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Division"></property>
+	</object>
+	<!--Approve via Email-->
+	<object type="ApproveReject.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ApproveReject"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/Menu.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageMenu"></property>
+	</object>
+
+	<object type="Menu.aspx" autowire="byName" parent="BasePage">
+		<property name="PageTitle" value="Welcome to eXpense System"></property>
+		<property name="ProgramCode" value="Menu"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/AnnouncementPopup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AnnouncementPopup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="Forms/SU/Programs/ManageHeader.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageHeader"></property>
+	</object>
+	<object type="Forms/SS.DB/Programs/Province.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Province"></property>
+	</object>
+	<object type="Forms/SS.DB/Programs/TestLovProvince.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TestLovProvince"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/ManageUserProfile.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageUserProfile"></property>
+	</object>
+  <object type="Forms/SU/Programs/ManageUserProfile2.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="ManageUserProfile2"></property>
+  </object>
+  
+	<!-- test -->
+	<object type="KLATEST.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="KLATEST"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/TestPostingData.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TestPostingData"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+
+	<!-- SCG.GL System -->
+	<object type="Forms/GL/Programs/Account.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Account"></property>
+	</object>
+
+	<!-- SCG.DB System -->
+	<object type="Forms/SCG.DB/Programs/ManageIO.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageIO"></property>
+	</object>
+	<object type="Forms/SCG.DB/Programs/PBManage.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="PBManage"></property>
+	</object>
+	<object type="Forms/SCG.DB/Programs/Bank.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Bank"></property>
+	</object>
+	<object type="Forms/SCG.DB/Programs/WithHoldingTaxType.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="WithHoldingTaxType"></property>
+	</object>
+	<object type="Forms/SCG.DB/Programs/WithHoldingTax.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="WithHoldingTax"></property>
+	</object>
+
+	<object type="Forms/SCG.DB/Programs/Vendor.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Vendor"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/ManageUserRole.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageUserRole"></property>
+	</object>
+
+	<object type="Forms/SCG.DB/Programs/Company.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Company"></property>
+	</object>
+
+	<object type="Forms/SCG.DB/Programs/PaymentMethod.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="PaymentMethod"></property>
+	</object>
+
+
+	<object type="Forms/SCG.DB/Programs/ServiceTeam.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ServiceTeam"></property>
+	</object>
+
+	<object type="Forms/SCG.DB/Programs/ManageCostCenter.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageCostCenter"></property>
+	</object>
+
+	<!-- SCG.eAccounting System -->
+	<object type="Forms/SCG.eAccounting/Programs/PaymentInbox.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="PaymentInbox"></property>
+	</object>
+  <object type="Forms/SCG.eAccounting/Programs/PaymentSearch.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="PaymentSearch"></property>
+  </object>
+	<object type="Forms/SCG.eAccounting/Programs/PaymentHistory.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="PaymentHistory"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/History.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="History"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/Search.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Search"></property>
+	</object>
+  <object type="Forms/SCG.eAccounting/Programs/AccountantSearch.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="AccountantSearch"></property>
+  </object>
+	<object type="Forms/SCG.eAccounting/Programs/AccountantHistory.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AccountantHistory"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/AccountantPaymentInbox.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AccountantPaymentInbox"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/EmployeeHistory.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="EmployeeHistory"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/EmployeeInbox.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="EmployeeInbox"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/Draft.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Draft"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/AdvanceForm.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="AdvanceForm"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/AdvanceForeignForm.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AdvanceForeignForm"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/AdvanceDomesticForm.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AdvanceDomesticForm"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/ExpenseFormFR.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ExpenseFormFR"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/ExpenseFormDM.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ExpenseFormDM"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/ExpenseForm.ascx" autowire="byName">
+		<property name="ProgramCode" value="ExpenseForm"></property>
+	</object>
+
+	<object type="Forms/SCG.eAccounting/Reports/DocumentFollowupReport.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="DocumentFollowupReport"></property>
+	</object>
+	<object type="UserControls/Report/DocumentFollowupCriteria.ascx" autowire="byName">
+		<property name="ProgramCode" value="DocumentFollowupCriteria"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Reports/AdvanceOverDueReport.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AdvanceOverDueReport"></property>
+	</object>
+  <object type="Forms/SCG.eAccounting/Reports/CompanyMoneyTranferReport.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="CompanyMoneyTranferReport"></property>
+  </object>
+	<object type="Forms/SCG.eAccounting/Reports/EmailLogView.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="EmailLogView"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Reports/ExpenseStatementReport.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ExpenseStatementReport"></property>
+	</object>
+	<object type="UserControls/Report/ExpenseStatementCriteria.ascx" autowire="byName">
+		<property name="ProgramCode" value="ExpenseStatementCriteria"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Reports/TravelExpenseReport.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TravelExpenseReport"></property>
+	</object>
+	<object type="UserControls/Report/TravelExpenseCriteria.ascx" autowire="byName">
+		<property name="ProgramCode" value="TravelExpenseCriteria"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Reports/VehicleMileageReport.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="VehicleMileageReport"></property>
+	</object>
+	<object type="UserControls/Report/VehicleMileageCriteria.ascx" autowire="byName">
+		<property name="ProgramCode" value="VehicleMileageCriteria"></property>
+	</object>
+	<object type="UserControls/Report/AdvanceOverDueCriteria.ascx" autowire="byName">
+		<property name="ProgramCode" value="AdvanceOverDueCriteria"></property>
+	</object>
+	<!-- SCG.DB System -->
+	<object type="Forms/SCG.DB/Programs/Country.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Country"></property>
+	</object>
+
+	<object type="Forms/SCG.DB/Programs/Tax.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Tax"></property>
+	</object>
+  <object type="UserControls/CompanyTaxInfo.ascx" autowire="byName" parent="BaseUserControl">
+    <property name="ProgramCode" value="CompanyTaxInfo"></property>
+  </object>
+  <object type="UserControls/CompanyTaxEditor.ascx" autowire="byName" parent="BaseUserControl">
+    <property name="ProgramCode" value="CompanyTaxEditor"></property>
+  </object>
+
+	<!-- SCG.eAccounting System -->
+	<object type="Forms/SCG.eAccounting/Programs/AdvanceFormInt.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AdvanceFormInt"></property>
+	</object>
+
+	<object type="Forms/SU/Programs/testSMS.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="testSMS"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/TAForm.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TAForm"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/RemittanceForm.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="RemittanceForm"></property>
+	</object>
+
+
+	<!-- SS.Log System -->
+	<object type="Forms/SCG.Log/Programs/InterfacePostSAPLog.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="InterfacePostSAPLog"></property>
+	</object>
+	<object type="Forms/SCG.Log/Programs/InterfaceImageToSAPLog.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="InterfaceImageToSAPLog"></property>
+	</object>
+	<object type="Forms/SCG.Log/Programs/SMSLog.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="SMSLog"></property>
+	</object>
+
+	<object type="Forms/SCG.Log/Programs/EHRProfileLog.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="EHRProfileLog"></property>
+	</object>
+	<object type="Forms/SCG.Log/Programs/EHRExpenseLog.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="EHRExpenseLog"></property>
+	</object>
+	<object type="Forms/SCG.Log/Programs/UserLoginLog.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="UserLoginLog"></property>
+	</object>
+
+
+
+	<!-- SS.DB System -->
+
+
+	<!-- SS.DB System -->
+
+	<object type="Forms/SS.DB/Programs/Parameter.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Parameter"></property>
+	</object>
+	<object type="Forms/SS.DB/Programs/Zone.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Zone"></property>
+	</object>
+
+
+	<object type="Forms/SS.DB/Programs/CurrencySetup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="CurrencySetup"></property>
+	</object>
+
+	<!--SCG.Payroll-->
+	<object type="Forms/Interface/Programs/ExportPayroll.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="PayRoll"></property>
+	</object>
+	<object type="Forms/Interface/Programs/PayrollReportOutput.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="PayRollReport"></property>
+	</object>
+
+
+	<object id="localizer" type="SS.Standard.UI.Spring.Translation.DBLocalizer, SS.Standard.UI.Spring"/>
+
+	<object id="culture" type="Spring.Globalization.Resolvers.SessionCultureResolver, Spring.Web"  >
+		<property name="DefaultCulture">
+			<object type="System.Globalization.CultureInfo">
+				<constructor-arg name="name" value="en-US"/>
+				<property name="DateTimeFormat">
+					<object type="System.Globalization.DateTimeFormatInfo">
+						<!--<property name="ShortDatePattern" value="dd-MMM-yy"/>-->
+            <property name="ShortDatePattern" value="dd/MM/yyyy"/>
+					</object>
+				</property>
+			</object>
+		</property>
+	</object>
+
+	<object id="BasePage" abstract="true">
+		<property name="Localizer" ref="localizer"/>
+		<property name="CultureResolver" ref="culture" />
+	</object>
+	<object id="BaseUserControl" abstract="true">
+		<property name="Localizer" ref="localizer"/>
+	</object>
+	<object id="BaseMaster" abstract="true">
+		<property name="Localizer" ref="localizer"/>
+	</object>
+
+	<object type="UserControls/DocumentEditor/Components/Attachment.ascx" autowire="byName">
+		<property name="ProgramCode" value="Attachment"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/ProgramSearch.ascx" autowire="byName">
+		<property name="ProgramCode" value="ProgramSearchPopup"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/RoleSearch.ascx" parent="BaseUserControl" autowire="byName">
+		<property name="ProgramCode" value="RoleSearchPopup"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/AnnouncementInfo.ascx" autowire="byName">
+		<property name="ProgramCode" value="AnnouncementInfo"></property>
+	</object>
+	<object type="UserControls/Shared/Calendar.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="Calendar"></property>
+	</object>
+	<object type="UserControls/CalendarOfDueDate.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="CalendarOfDueDate"></property>
+	</object>
+
+	<object type="UserControls/ServiceShowCase.ascx" autowire="byName"  >
+	</object>
+	<object type="UserControls/LOV/SS.DB/AnnouncementInfo2.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AnnouncementInfo2"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/ProvinceLookUp.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ProvinceLookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/ProvinceTextBoxAutoComplete.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ProvinceTextBoxAutoComplete"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/ProvinceLookUpPrototype.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ProvinceLookUpPrototype"></property>
+	</object>
+	<object type="UserControls/ViewPost/ViewPost.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ViewPost"></property>
+	</object>
+	<object type="UserControls/Shared/SCGLoading.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="SCGLoading"></property>
+	</object>
+	<object type="UserControls/ViewPost/ViewPostTest.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ViewPostTest"></property>
+	</object>
+	<object type="UserControls/ViewPost/ViewPostMessage.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ViewPostMessage"></property>
+	</object>
+	<object type="UserControls/ViewPost/ViewPostEditDate.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ViewPostEditDate"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/ClearingAdvance.ascx" autowire="byName">
+		<property name="ProgramCode" value="ClearingAdvance"></property>
+	</object>
+
+	<object type="UserControls/UserInfo.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="UserInfo"></property>
+	</object>
+	<object type="UserControls/PBInfo.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="PBInfo"></property>
+	</object>
+	<object type="UserControls/ServiceTeamInfo.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ServiceTeamInfo"></property>
+	</object>
+	<object type="UserControls/ProgramInfo.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ProgramInfo"></property>
+	</object>
+
+	<object type="UserControls/UserRoleEditor.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="UserRoleEditor"></property>
+	</object>
+
+	<object type="UserControls/CostCenterEditor.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="CostCenterEditor"></property>
+	</object>
+
+	<object type="UserControls/Report/EmailLog.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="EmailLog"></property>
+	</object>
+
+	<object type="UserControls/LOV/SS.DB/UserLookup.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="UserLookup"></property>
+	</object>
+	<object type="UserControls/AlertMessage.ascx" autowire="byName">
+		<property name="ProgramCode" value="AlertMessage"></property>
+	</object>
+
+	<object type="UserControls/ExpenseGroupEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="ExpenseGroupEditor"></property>
+	</object>
+	<object type="UserControls/ExpenseInfoEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="ExpenseInfoEditor"></property>
+	</object>
+  <!--<object type="UserControls/ApproveVerifyStatus.ascx" autowire="byName" >
+    <property name="ProgramCode" value="ApproveVerifyStatus"></property>
+  </object>-->
+	<object type="UserControls/AccountLangEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="AccountLangEditor"></property>
+	</object>
+	<object type="UserControls/CompanyInfoEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="CompanyInfoEditor"></property>
+	</object>
+
+	<object type="UserControls/UserProfileEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="UserProfileEditor"></property>
+	</object>
+
+	<object type="UserControls/LocationEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="LocationEditor"></property>
+	</object>
+	<object type="UserControls/ApproverEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="ApproverEditor"></property>
+	</object>
+	<object type="UserControls/InitiatorEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="InitiatorEditor"></property>
+	</object>
+	<object type="UserControls/UserGroupEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="UserGroupEditor"></property>
+	</object>
+
+	<object type="UserControls/CurrencySetupEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="CurrencySetupEditor"></property>
+	</object>
+
+	<object type="UserControls/PBEditor.ascx" autowire="byName">
+		<property name="ProgramCode" value="PBEditor" ></property>
+	</object>
+	<object type="UserControls/FormEditor/SCG.DB/DbRejectReasonEditor.ascx" autowire="byName" >
+		<property name="ProgramCode" value="RejectReasonEditor" />
+	</object>
+	<object type="UserControls/IOEditor.ascx" autowire="byName">
+		<property name="ProgramCode" value="IOEditor" />
+	</object>
+	<object type="UserControls/Menu.ascx" autowire="byName" >
+		<property name="ProgramCode" value="MenuControl" ></property>
+	</object>
+	<object type="UserControls/ShowDateTime.ascx" autowire="byName" >
+		<property name="ProgramCode" value="ShowDateTime" ></property>
+	</object>
+	<object type="UserControls/ShowDate.ascx" autowire="byName" >
+		<property name="ProgramCode" value="ShowDate" ></property>
+	</object>
+	<object type="UserControls/BreadCrumb.ascx" autowire="byName" >
+		<property name="ProgramCode" value="BreadCrumb" ></property>
+	</object>
+	<object type="UserControls/LanguageFlag.ascx" autowire="byName" >
+		<property name="ProgramCode" value="LanguageFlag" ></property>
+	</object>
+	<object type="UserControls/UserInfoWelcome.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="UserInfoWelcome" />
+	</object>
+	<object type="UserControls/ForgetPassword.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ForgetPassword" />
+	</object>
+	<object type="UserControls/ChangePassword.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ChangePassword" />
+	</object>
+
+	<object type="UserControls/MenuBottom.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="MenuBottom" />
+	</object>
+	<object type="UserControls/MenuTop.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="MenuTop" />
+	</object>
+	<object type="UserControls/PanelLogin.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="PanelLogin" />
+	</object>
+	<object type="UserControls/PanelMenu.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="PanelMenu" />
+	</object>
+
+	<object type="UserControls/LogIn.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="LoginUserControl" />
+	</object>
+	<object type="UserControls/LoginInformation.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="LoginInformation"></property>
+	</object>
+	<object type="UserControls/WelcomeShow.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="WelcodeShow"></property>
+	</object>
+	<object type="UserControls/StaticAlertMessage.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="StaticAlertMessage"></property>
+	</object>
+	<object type="UserControls/LOV/GL/Account.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AccountLOV"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CountrySearch.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CountrySearch"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CountryLookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CountryLookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/VendorLookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="VendorLookup"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CompanyLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CompanyLookup"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CompanyField.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CompanyField"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/Exp-NonInv.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="Exp-NonInv"></property>
+	</object>
+	<object type="UserControls/LOV/GL/AccountLookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="ExpenseCodeLookup"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/ExpenseGeneral.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="ExpenseGeneral"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/Perdiem.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="Perdiem"></property>
+	</object>
+
+	<object type="UserControls/DocumentEditor/Components/Mileage.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="Mileage"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/Advance.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AdvanceGrid"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/UserProfileLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="UserProfileLookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/UserProfileTextBoxAutoComplete.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="UserProfileTextBoxAutoComplete"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/UserAutoCompleteLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="UserAutoCompleteLookup"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/AccountLookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AccountLookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/AccountField.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AccountField"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CompanyTextboxAutoComplete.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="CompanyTextboxAutoComplete"></property>
+	</object>
+	<object type="UserControls/Time.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="TimeControl"></property>
+	</object>
+
+	<object type="UserControls/LOV/SCG.DB/UserGroupLookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="UserGroupLookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/TALookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="TALookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/LocationLookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="LocationLookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/LocationUserLookUp.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="LocationUserLookUp"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/LocationUserField.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="LocationUserField"></property>
+	</object>
+	<!-- DropdownList Control -->
+	<object type="UserControls/DropdownList/SCG.DB/PB.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="PBControl"></property>
+	</object>
+	<object type="UserControls/DropdownList/SCG.DB/PaymentMethod.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="PaymentMethodDDL"></property>
+	</object>
+	<object type="UserControls/DropdownList/SCG.DB/WHTTypeDropdown.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="WHTTypeDropdown"></property>
+	</object>
+	<object type="UserControls/DropdownList/SCG.DB/WHTRateDropdown.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="WHTRateDropdown"></property>
+	</object>
+	<object type="UserControls/DropdownList/SCG.DB/StatusDropdown.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="StatusDropdown"></property>
+	</object>
+	<object type="UserControls/DropdownList/SCG.DB/CounterCashier.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="CounterCashier"></property>
+	</object>
+	<object type="UserControls/Report/SendFollowUpEmail.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="SendFollowUpEmail"></property>
+	</object>
+
+	<!--Initiator Control-->
+	<object type="UserControls/DocumentEditor/Components/Initiator.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="InitiatorControl"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/AddInitiatorLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AddInitiatorLookupControl"></property>
+	</object>
+
+	<object type="UserControls/DocumentEditor/Components/InvoiceForm.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="InvoiceForm"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/ExpensesViewByAccount.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="ExpensesViewByAccount"></property>
+	</object>
+
+	<!-- Test MasterGrid -->
+	<object type="UserControls/MasterGrid.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="MasterGrid"></property>
+	</object>
+	<object type="Forms/SU/Programs/TestMasterGrid.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TestMasterGrid"></property>
+	</object>
+
+	<!--FN Project-->
+	<object type="Forms/FN/Programs/ReceiptType.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ReceiptType"></property>
+	</object>
+	<object type="Forms/FN/Programs/ManageCashier.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageCashier"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/ActorData.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ActorData"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/ConfirmSubmit.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ConfirmSubmit"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/AdvanceDocumentEditor.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="AdvanceDocumentEditor"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/ExpenseDocumentEditor.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ExpenseDocumentEditor"></property>
+	</object>
+
+	<object type="UserControls/DocumentEditor/TADocumentEditor.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="TADocumentEditor"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/RemittanceDocumentEditor.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="RemittanceDocumentEditor"></property>
+	</object>
+
+
+	<object type="Forms/SS.DB/Programs/TestTALookup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TestTALookup"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/TALookup.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="TALookup"></property>
+	</object>
+	<object type="UserControls/LOV/AV/AdvanceLookup.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="AdvanceLookup"></property>
+	</object>
+	<object type="UserControls/Dropdownlist/SS.DB/CurrencyDropdown.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="CurrencyDropdown"></property>
+	</object>
+
+	<object type="UserControls/DocumentEditor/Components/DocumentHeader.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="DocumentHeader"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/PaymentDetail.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="PaymentDetail"></property>
+	</object>
+
+	<object type="UserControls/LOV/SCG.DB/IOLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="IOLookup"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/IOTextBoxAutoComplete.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="IOTextBoxAutoComplete"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/AccountTextBoxAutoComplete.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AccountTextBoxAutoComplete"></property>
+	</object>
+	<object type="Forms/SCG.DB/Programs/ManageReason.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageReason"></property>
+	</object>
+	<object type="Forms/SCG.DB/Programs/ManageRejectReason.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageRejectReason"></property>
+	</object>
+	<object type="Forms/SCG.DB/Programs/ManageExpenseGroup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ManageExpenseGroup"></property>
+	</object>
+
+	<object type="UserControls/LOV/SCG.DB/AccountLabelLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AccountLabelLookup"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CostCenterLabelLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CostCenterLabelLookup"></property>
+	</object>
+
+	<!--UserControls WorkFlow-->
+	<object type="UserControls/WorkFlow/OverRole.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="OverRole"></property>
+	</object>
+	<object type="UserControls/WorkFlow/HoldDetail.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="HoldDetail"></property>
+	</object>
+	<object type="UserControls/WorkFlow/RejectDetail.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="RejectDetail"></property>
+	</object>
+  <object type="UserControls/WorkFlow/ApproveReason.ascx" autowire="byName" parent="BaseUserControl" >
+    <property name="ProgramCode" value="ApproveReason"></property>
+  </object>
+	<object type="UserControls/LeftMenus.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="LeftMenus"></property>
+	</object>
+	<object type="UserControls/LeftMenu.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="LeftMenu"></property>
+	</object>
+
+
+	<!--Inbox Search-->
+	<object type="Inbox.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Inbox"></property>
+	</object>
+	<object type="UserControls/InboxSearchResult/InboxEmployeeSearchResult.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="InboxEmployeeSearchResult"></property>
+	</object>
+
+	<object type="Search.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Search1"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/DocumentView.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="DocumentView"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/SubmitResult.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="SubmitResult"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/DocumentSecurity.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="DocumentSecurity"></property>
+	</object>
+	<object type="UserControls/WorkFlow/ReceiveDocument.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="ReceiveDocument"></property>
+	</object>
+
+	<object type="UserControls/DocumentEditor/Components/SimpleExpense.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="SimpleExpense"></property>
+	</object>
+	<object type="Forms/SCG.eAccounting/Programs/ResponseTest.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ResponseTest"></property>
+	</object>
+	<!--<object type="Forms/SCG.eAccounting/Programs/ReceiveEmail.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="ReceiveEmail"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+  </object>-->
+	<object type="Forms/SCG.eAccounting/Programs/AdvanceImportLogViewer.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AdvanceImportLogViewer"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/History.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="HistoryControl"></property>
+	</object>
+	<object type="UserControls/InboxSearchResult/InboxAccountantPaymentSearchCriteria.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="InboxAccountantPaymentSearchCriteria"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/IOLabelLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="IOLabelLookup"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CostCenterField.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CostCenterField"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/CostCenterTextBoxAutoComplete.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CostCenterTextBoxAutoComplete"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/AccountField.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="AccountField1"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/IOAutoCompleteLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="IOAutoCompleteLookup"></property>
+	</object>
+
+	<object type="UserControls/LOV/SCG.DB/CostCenterLookup.ascx" autowire="byName" parent="BaseUserControl" >
+		<property name="ProgramCode" value="CostCenterPopup"></property>
+	</object>
+
+	<object type="UserControls/LOV/SS.DB/SupervisorTextBoxAutoComplete.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="SupervisorTextBoxAutoComplete"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/SupervisorUserField.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="SupervisorUserField"></property>
+	</object>
+	<object type="UserControls/InboxSearchResult/InboxEmployeeSearchCriteria.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="InboxEmployeeSearchCriteria"></property>
+	</object>
+	<object type="UserControls/InboxSearchResult/InboxEmployeeSearchResult.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="InboxEmployeeSearchResult"></property>
+	</object>
+	<object type="UserControls/InboxSearchResult/InboxAccountantPaymentSearchCriteria.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="InboxAccountantPaymentSearchCriteria"></property>
+	</object>
+	<object type="UserControls/InboxSearchResult/HomeSummary.ascx" autowire="byName" parent="BaseUserControl">
+		<property name="ProgramCode" value="HomeSummary"></property>
+	</object>  
+	<object type="DocumentView/ForceLock.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ForceLock"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="DocumentView/TryLock.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TryLock"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="DocumentView/UnLock.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="UnLock"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="Receive.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Receive"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="DLVReceive.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="DLVReceive"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/Invoice.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="Invoice"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/PerdiemPopup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="PerdiemPopup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/DocumentEditor/Components/MileageForm.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="MileageForm"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<!-- LOV Lookpup Page -->
+	<object type="UserControls/LOV/SCG.DB/UserProfileLookup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="UserProfileLookup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/IOLookup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="IOLookup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+  <object type="UserControls/LOV/AV/AdvanceLookUp.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="AdvanceLookUp"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+  </object>
+
+	<object type="UserControls/LOV/SCG.DB/CompanyLookup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="CompanyLookup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+
+	<object type="UserControls/LOV/SCG.DB/CostCenterPopup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="CostCenterLookup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/ProgramSearchPopup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="ProgramSearch"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/VendorLookup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="VendorLookUp"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/LocationLookUp.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="LocationLookup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/LocationUserLookUp.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="LocationUserLookup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/TALookUp.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="TALookup"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SS.DB/RoleSearchPopup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="RoleSearch"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/UserGroupLookUp.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="UserGroupLookUp"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+	<object type="UserControls/LOV/SCG.DB/ExpenseCodeLookup.aspx" autowire="byName" parent="BasePage">
+		<property name="ProgramCode" value="AccountLookUp"></property>
+		<property name="NotAuthenticationPage" value="true"></property>
+	</object>
+  <object type="UserControls/DocumentEditor/Components/UploadFile.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="UploadFile"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+  </object>
+  <object type="UserControls/DocumentEditor/Components/UploadFile.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="UploadFile"></property>
+    <property name="NotAuthenticationPage" value="true"></property>
+  </object>
+  <object type="UserControls/ApproveResultSummary.ascx" autowire="byName" parent="BaseUserControl">
+    <property name="ProgramCode" value="ApproveResultSummary"></property>
+  </object>
+  <object type="Forms/SCG.DB/Programs/MaintainRate.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="MaintainRate"></property>
+  </object>
+  <object type="Forms/SCG.eAccounting/Reports/ReimbursementReport.aspx" autowire="byName" parent="BasePage">
+    <property name="ProgramCode" value="ReimbursementReport"></property>
+  </object>
+</objects>

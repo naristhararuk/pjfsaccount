@@ -1,0 +1,136 @@
+\documentclass[12pt,a4paper,twocolumn]{report}
+
+\usepackage[english,thai]{babel}
+\usepackage{thswitch}
+
+\usepackage{hyperref}
+
+\usepackage{geometry}
+
+
+\setlength{\columnsep}{2cm} \setlength{\columnseprule}{1pt}
+
+
+\geometry{top=1in,bottom=1in,left=1.in,right=1in}
+
+
+\renewcommand{\thairmdefault}{angsana}
+\renewcommand{\englishrmdefault}{ptm}
+
+\newcommand{\Test}{%
+{\tiny \latintext{test} \thaitext{test ทดสอบ}} \\
+{\scriptsize \latintext{test} \thaitext{test ทดสอบ}} \\
+{\footnotesize \latintext{test} \thaitext{test ทดสอบ}} \\
+{\small \latintext{test} \thaitext{test ทดสอบ}} \\
+{\normalsize \latintext{test} \thaitext{test ทดสอบ}} (12 pts) \\
+{\large \latintext{test} \thaitext{test ทดสอบ}} \\
+{\Large \latintext{test} \thaitext{test ทดสอบ}} \\
+{\LARGE \latintext{test} \thaitext{test ทดสอบ}} \\
+{\huge \latintext{test} \thaitext{test ทดสอบ}} \\
+{\Huge \latintext{test} \thaitext{test ทดสอบ}}%
+}
+
+\newcommand{\TTest}[2]{%
+\renewcommand{\thairmdefault}{#1}
+\usefont{LTH}{#1}{m}{n}\selectfont
+\chapter{\thaitext{ฟอนต์~#2}}
+
+\section{\thaitext{ตัวตรง}}
+\noindent\Test \\
+
+\usefont{LTH}{#1}{m}{it}\selectfont
+\section{\thaitext{ตัวเอียง}}
+\noindent\textit{\Test} \\
+
+\newpage
+
+\usefont{LTH}{#1}{b}{n}\selectfont
+\section{\thaitext{ตัวหนา}}
+\noindent\textbf{\Test} \\
+
+\usefont{LTH}{#1}{b}{it}\selectfont
+\section{\thaitext{ตัวหนาเอียง}}
+\noindent\textbf{\itshape\Test}%
+
+\usefont{LTH}{#1}{m}{n}\selectfont
+\renewcommand{\thairmdefault}{angsana}\newpage
+}
+
+
+\title{\bfseries การทดสอบฟอนต์ภาษาไทยใน \LaTeXe\\ %
+(ภาค~2)}
+\author{\textbf{\LARGE Anonymous}}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{NECTEC Fonts}
+
+\TTest{norasi}{Norasi}
+
+\TTest{kinnari}{Kinnari}
+
+\TTest{garuda}{Garuda}
+
+%\TTest{dbtt}{Dbtt}
+
+\TTest{loma}{Loma}
+
+%\TTest{pmono}{Pmono}
+
+\TTest{purisa}{Purisa}
+
+\TTest{ttype}{Ttype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Windows Fonts}
+
+\TTest{angsana}{Angsana~New}
+
+\TTest{browallia}{Browallia~New}
+
+\TTest{cordia}{Cordia~New}
+
+\TTest{uangsana}{Angsana~UPC}
+
+\TTest{ubrowallia}{Browallia~UPC}
+
+\TTest{ucordia}{Cordia~UPC}
+
+\TTest{udillenia}{Dillenia~UPC}
+
+%\TTest{ueucrosia}{Eucrosia~UPC}
+
+\TTest{ufreesia}{Freesia~UPC}
+
+\TTest{uiris}{Iris~UPC}
+
+\TTest{ujasmine}{Jasmine~UPC}
+
+\TTest{ukodchiang}{KodchiangUPC}
+
+\TTest{ulily}{Lily~UPC}
+
+\TTest{tahoma}{Tahoma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{JS Fonts}
+
+\TTest{jswannaree}{JS~Wannaree}
+
+\TTest{jswansika}{JS~Wansika}
+
+\TTest{jswanida}{JS~Wanida}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

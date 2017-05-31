@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:aop="http://www.springframework.net/aop"
+         xmlns:tx="http://www.springframework.net/tx">
+
+
+  <object id="UserEngine" type="SS.Standard.Security.Implement.UserEngine, SS.Standard.Security.Implement" autowire="byName" />
+  <object id="MenuEngine" type="SS.Standard.Security.Implement.MenuEngine, SS.Standard.Security.Implement" autowire="byName" />
+	<object id="UserAccount" type="SS.Standard.Security.Implement.UserAccount, SS.Standard.Security.Implement" autowire="byName" />
+
+	<object id="ACLEngine" type="SS.Standard.Security.Implement.ACLEngine, SS.Standard.Security.Implement" autowire="byName" />
+ 
+</objects>

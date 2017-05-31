@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C4351BFB-AF2B-4499-8626-5BC6233AC52F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.Interface.FixedAdvanceOverDueEmail</RootNamespace>
+    <AssemblyName>SCG.eAccounting.Interface.FixedAdvanceOverDueEmail</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Nonshipping>true</Nonshipping>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\SCG.eAccounting.Interface\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\SCG.eAccounting.Interface\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\Factory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.BLL\SCG.DB.BLL.csproj">
+      <Project>{F710CA0A-7490-4B61-AE96-0E46F7B7702C}</Project>
+      <Name>SCG.DB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DAL.Hibernate\SCG.DB.DAL.Hibernate.csproj">
+      <Project>{107882FA-CD93-4D59-9C58-6AA554BA3883}</Project>
+      <Name>SCG.DB.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DAL\SCG.DB.DAL.csproj">
+      <Project>{C8A062D6-03AE-4376-A714-2792B7055899}</Project>
+      <Name>SCG.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Query.Hibernate\SCG.DB.Query.Hibernate.csproj">
+      <Project>{28B95EEB-670E-4F5E-AFBD-240BF193C7C1}</Project>
+      <Name>SCG.DB.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Query\SCG.DB.Query.csproj">
+      <Project>{66CBB214-DA80-40EF-917C-DEB3DAC72AF7}</Project>
+      <Name>SCG.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.BLL\SCG.eAccounting.BLL.csproj">
+      <Project>{A44769B3-3B65-411D-A878-D70E10F6B538}</Project>
+      <Name>SCG.eAccounting.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DAL.Hibernate\SCG.eAccounting.DAL.Hibernate.csproj">
+      <Project>{9D4A8C5C-D6CE-4E73-9727-08237CB5342E}</Project>
+      <Name>SCG.eAccounting.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DAL\SCG.eAccounting.DAL.csproj">
+      <Project>{D8377A07-E8CF-4EFD-9814-5C10EFF09281}</Project>
+      <Name>SCG.eAccounting.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.DTO\SCG.eAccounting.DTO.csproj">
+      <Project>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</Project>
+      <Name>SCG.eAccounting.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Helper\SCG.eAccounting.Helper.csproj">
+      <Project>{8242573D-841E-46C5-A1EE-9D67685C5229}</Project>
+      <Name>SCG.eAccounting.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Interface.Utilities\SCG.eAccounting.Interface.Utilities.csproj">
+      <Project>{A5B1C7B5-E95B-476C-93D6-582541677F99}</Project>
+      <Name>SCG.eAccounting.Interface.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Query.Hibernate\SCG.eAccounting.Query.Hibernate.csproj">
+      <Project>{62013F38-D560-4FB7-A679-2EE341EC4D39}</Project>
+      <Name>SCG.eAccounting.Query.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.eAccounting.Query\SCG.eAccounting.Query.csproj">
+      <Project>{A133B337-8915-4934-BC9C-D26D30485147}</Project>
+      <Name>SCG.eAccounting.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.BLL\SS.DB.BLL.csproj">
+      <Project>{8A6CCEE6-C339-4451-B9C2-2093E0DB1121}</Project>
+      <Name>SS.DB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL.Hibernate\SS.DB.DAL.Hibernate.csproj">
+      <Project>{E145299E-7512-4CAB-8697-5F2F879F05FC}</Project>
+      <Name>SS.DB.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL\SS.DB.DAL.csproj">
+      <Project>{305467E4-B9C3-4669-9895-F0B8C507479F}</Project>
+      <Name>SS.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.Query\SS.DB.Query.csproj">
+      <Project>{450B57C6-3B02-4238-9C8B-4D46C6B9C924}</Project>
+      <Name>SS.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.References\SS.References.csproj">
+      <Project>{F5ED6F2D-CC07-4BAA-93F8-36580F0FE6D4}</Project>
+      <Name>SS.References</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.CommunicationService\SS.Standard.CommunicationService.csproj">
+      <Project>{A6C988C2-ED30-4DEB-ACA7-36340AC13C42}</Project>
+      <Name>SS.Standard.CommunicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.BLL\SS.SU.BLL.csproj">
+      <Project>{7BDC5E8F-976D-4AFA-95E0-66E1C3E23450}</Project>
+      <Name>SS.SU.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.Query\SS.SU.Query.csproj">
+      <Project>{4D083F28-AE94-4FF7-B010-9B96701C1B3C}</Project>
+      <Name>SS.SU.Query</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

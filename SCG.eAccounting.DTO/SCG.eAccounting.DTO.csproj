@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C6C0B7B-EBDF-4158-88BA-40F005AA5E64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.eAccounting.DTO</RootNamespace>
+    <AssemblyName>SCG.eAccounting.DTO</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AvAdvanceDocument.cs" />
+    <Compile Include="AvAdvanceItem.cs" />
+    <Compile Include="CADocument.cs" />
+    <Compile Include="DataSet\FixedAdvanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FixedAdvanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FixedAdvanceDocument.cs" />
+    <Compile Include="FnExpenseCA.cs" />
+    <Compile Include="DataSet\CADocumentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CADocumentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\ExpenseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\FnRemittanceDataset.cs">
+      <DependentUpon>FnRemittanceDataset.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet\FnRemittanceDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FnRemittanceDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\TADocumentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TADocumentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MPADocumentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MPADocumentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\AdvanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DbDocumentBoxidPosting.cs" />
+    <Compile Include="DbDocumentImagePosting.cs" />
+    <Compile Include="DbMonitoringDocument.cs" />
+    <Compile Include="DocumentMonitoringInbox.cs" />
+    <Compile Include="DocumentViewLock.cs" />
+    <Compile Include="FnAutoPayment.cs" />
+    <Compile Include="FnAutoPaymentTemp.cs" />
+    <Compile Include="FnEACAdvanceImportLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FneacAdvanceImportTemp.cs" />
+    <Compile Include="FnehRexpenseTemp.cs" />
+    <Compile Include="FnExpenseAdvance.cs" />
+    <Compile Include="FnExpenseAdvanceExchangeRate.cs" />
+    <Compile Include="FnExpenseDocument.cs" />
+    <Compile Include="FnExpenseInvoice.cs" />
+    <Compile Include="FnExpenseInvoiceItem.cs" />
+    <Compile Include="FnExpenseMileage.cs" />
+    <Compile Include="FnExpenseMileageInvoice.cs" />
+    <Compile Include="FnExpenseMileageItem.cs" />
+    <Compile Include="FnExpensePerdiem.cs" />
+    <Compile Include="FnExpensePerdiemDetail.cs" />
+    <Compile Include="FnExpensePerdiemItem.cs" />
+    <Compile Include="FnExpenseRemittance.cs" />
+    <Compile Include="FnExpenseMPA.cs" />
+    <Compile Include="FnPerdiemProfile.cs" />
+    <Compile Include="FnPerdiemProfileCountry.cs" />
+    <Compile Include="FnPerdiemRate.cs" />
+    <Compile Include="FnRemittance.cs" />
+    <Compile Include="FnRemittanceAdvance.cs" />
+    <Compile Include="FnRemittanceItem.cs" />
+    <Compile Include="MonitoringInBoxSearchCriteria.cs" />
+    <Compile Include="MPADocument.cs" />
+    <Compile Include="MPAItem.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="SCGDocument.cs" />
+    <Compile Include="DocumentAttachment.cs" />
+    <Compile Include="DocumentInitiator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCGDocumentEmail.cs" />
+    <Compile Include="SuEmailLog.cs" />
+    <Compile Include="TADocument.cs" />
+    <Compile Include="TADocumentAdvance.cs" />
+    <Compile Include="TADocumentSchedule.cs" />
+    <Compile Include="TADocumentTraveller.cs" />
+    <Compile Include="ValueObject\Advance.cs" />
+    <Compile Include="ValueObject\AdvanceData.cs" />
+    <Compile Include="ValueObject\AdvanceDataForEmail.cs" />
+    <Compile Include="ValueObject\AdvanceOutstanding.cs" />
+    <Compile Include="ValueObject\FixedAdvanceRefObjectValues.cs" />
+    <Compile Include="ValueObject\FixedAdvanceOverDue.cs" />
+    <Compile Include="ValueObject\FixedAdvanceOutstanding.cs" />
+    <Compile Include="ValueObject\ExpenseCA.cs" />
+    <Compile Include="ValueObject\ExpensesMPA.cs" />
+    <Compile Include="ValueObject\FnExpenseDataForEmail.cs" />
+    <Compile Include="ValueObject\ForeignPerdiemRateProfileCriteria.cs" />
+    <Compile Include="ValueObject\ForeignPerdiemRateProfileData.cs" />
+    <Compile Include="ValueObject\PerdiemProfileCountryValObj.cs" />
+    <Compile Include="ValueObject\RecommendExpenseData.cs" />
+    <Compile Include="ValueObject\ReimbursementReportValueObj.cs" />
+    <Compile Include="ValueObject\TASearchCriteria.cs" />
+    <Compile Include="ValueObject\TASearchResultData.cs" />
+    <Compile Include="ValueObject\ValidateMilage.cs" />
+    <Compile Include="ValueObject\ValidatePrediem.cs" />
+    <Compile Include="ValueObject\VoAdvanceFromTA.cs" />
+    <Compile Include="ValueObject\VOFixedAdvanceCompareReport.cs" />
+    <Compile Include="ValueObject\VOFixedAdvanceDuplicateReport.cs" />
+    <Compile Include="ValueObject\VOFixedAdvanceOverDueReport.cs" />
+    <Compile Include="ValueObject\VOInvoiceItem.cs" />
+    <Compile Include="ValueObject\VoTravelExpenseReport.cs" />
+    <Compile Include="ValueObject\VoVehicleMileageReport.cs" />
+    <Compile Include="ValueObject\VOExpenseStatementReport.cs" />
+    <Compile Include="ValueObject\CostCenterData.cs" />
+    <Compile Include="ValueObject\DocumentInitiatorLang.cs" />
+    <Compile Include="ValueObject\DocumentReportName.cs" />
+    <Compile Include="ValueObject\EmailValueObject.cs" />
+    <Compile Include="ValueObject\ExportBoxID.cs" />
+    <Compile Include="ValueObject\ExportClearing.cs" />
+    <Compile Include="ValueObject\ExportDocumentImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\ExportPayroll.cs" />
+    <Compile Include="ValueObject\InitiatorCriteria.cs" />
+    <Compile Include="ValueObject\InvoiceData.cs" />
+    <Compile Include="ValueObject\InvoiceExchangeRate.cs" />
+    <Compile Include="ValueObject\PerdiemRateValObj.cs" />
+    <Compile Include="ValueObject\Remittance.cs" />
+    <Compile Include="ValueObject\ExpenseGeneral.cs" />
+    <Compile Include="ValueObject\Mileage.cs" />
+    <Compile Include="ValueObject\RemittanceValueObj.cs" />
+    <Compile Include="ValueObject\SearchCriteria.cs" />
+    <Compile Include="ValueObject\SearchResultData.cs" />
+    <Compile Include="ValueObject\TADocumentObj.cs" />
+    <Compile Include="ValueObject\TranslatedListItem.cs" />
+    <Compile Include="ValueObject\UserFavoriteInitiator.cs" />
+    <Compile Include="ValueObject\VOAdvanceOverDueReport.cs" />
+    <Compile Include="ValueObject\VODocumentFollowUpReport.cs" />
+    <Compile Include="ValueObject\VOEmailLog.cs" />
+    <Compile Include="ViewPostingDocument.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.WorkFlow\SS.Standard.WorkFlow.csproj">
+      <Project>{FAB1E069-C432-4CEE-8182-833595F486AA}</Project>
+      <Name>SS.Standard.WorkFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.SU.DTO\SS.SU.DTO.csproj">
+      <Project>{74702C51-8486-4E7D-A880-997E4ECF457D}</Project>
+      <Name>SS.SU.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSet\CADocumentDataSet.xsc">
+      <DependentUpon>CADocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\CADocumentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CADocumentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\CADocumentDataSet.xss">
+      <DependentUpon>CADocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\FixedAdvanceDataSet.xsc">
+      <DependentUpon>FixedAdvanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\FixedAdvanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FixedAdvanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\FixedAdvanceDataSet.xss">
+      <DependentUpon>FixedAdvanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MPADocumentDataSet.xsc">
+      <DependentUpon>MPADocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MPADocumentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MPADocumentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\MPADocumentDataSet.xss">
+      <DependentUpon>MPADocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\TADocumentDataSet.xsc">
+      <DependentUpon>TADocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\TADocumentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TADocumentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\TADocumentDataSet.xss">
+      <DependentUpon>TADocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\AdvanceDataSet.xsc">
+      <DependentUpon>AdvanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\AdvanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\AdvanceDataSet.xss">
+      <DependentUpon>AdvanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\ExpenseDataSet.xsc">
+      <DependentUpon>ExpenseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\ExpenseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExpenseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\ExpenseDataSet.xss">
+      <DependentUpon>ExpenseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\FnRemittanceDataset.xsc">
+      <DependentUpon>FnRemittanceDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\FnRemittanceDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FnRemittanceDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\FnRemittanceDataset.xss">
+      <DependentUpon>FnRemittanceDataset.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

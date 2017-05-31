@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SCG.FN.DTO.FnExpensePerdiem,SCG.FN.DTO" table="FnExpensePerdiem">
+
+		<id name="ExpensePerdiemID" column="ExpensePerdiemID" type="Int64" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="InvoiceID" column="InvoiceID" class="SCG.FN.DTO.FnExpenseInvoice,SCG.FN.DTO" />
+		<many-to-one name="CostCenterID" column="CostCenterID" class="SCG.FN.DTO.DbCostCenter,SCG.FN.DTO" />
+		<many-to-one name="AccountID" column="AccountID" class="SCG.FN.DTO.DbAccount,SCG.FN.DTO" />
+		<many-to-one name="IOID" column="IOID" class="SCG.FN.DTO.DbInternalOrder,SCG.FN.DTO" />
+		<property column="Description" type="String" name="Description" not-null="true" length="500" />
+		<property column="PerdiemRate" type="Decimal" name="PerdiemRate" />
+		<property column="ReferenceNo" type="String" name="ReferenceNo" length="30" />
+		<property column="PerdiemType" type="String" name="PerdiemType" length="5" />
+		<property column="Active" type="Boolean" name="Active" not-null="true" />
+		<property column="CreBy" type="Int64" name="CreBy" not-null="true"  update="false" />
+		<property column="CreDate" type="DateTime" name="CreDate" not-null="true"  update="false" />
+		<property column="UpdBy" type="Int64" name="UpdBy" not-null="true" />
+		<property column="UpdDate" type="DateTime" name="UpdDate" not-null="true" />
+		<property column="UpdPgm" type="String" name="UpdPgm" not-null="true" length="30" />
+		<property column="RowVersion" type="Byte[]" name="RowVersion"  insert="false" update="false" />
+		
+	</class>
+</hibernate-mapping>

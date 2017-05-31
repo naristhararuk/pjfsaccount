@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.DB.DTO</RootNamespace>
+    <AssemblyName>SCG.DB.DTO</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbBU.cs" />
+    <Compile Include="DbHoliday.cs" />
+    <Compile Include="DbHolidayProfile.cs" />
+    <Compile Include="DbMileageRateRevision.cs" />
+    <Compile Include="DbMileageRateRevisionDetail.cs" />
+    <Compile Include="DbProfileList.cs" />
+    <Compile Include="DbSapInstance.cs" />
+    <Compile Include="DbSellingLetterDetail.cs" />
+    <Compile Include="DbSellingRunning.cs" />
+    <Compile Include="DataSet\DBPbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DbAccountCompany.cs" />
+    <Compile Include="DbBuyingLetter.cs" />
+    <Compile Include="DbBuyingLetterDetail.cs" />
+    <Compile Include="DbBuyingRunning.cs" />
+    <Compile Include="DbCompanyPaymentMethod.cs" />
+    <Compile Include="DbCompanyTax.cs" />
+    <Compile Include="DbCostCenter.cs" />
+    <Compile Include="DbAccount.cs" />
+    <Compile Include="DbAccountLang.cs" />
+    <Compile Include="DbCompany.cs" />
+    <Compile Include="DbDictionary.cs" />
+    <Compile Include="DbDocumentRunning.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DbExpenseGroup.cs" />
+    <Compile Include="DbExpenseGroupLang.cs" />
+    <Compile Include="DbInternalOrder.cs" />
+    <Compile Include="DbioImportLog.cs" />
+    <Compile Include="DbLocation.cs" />
+    <Compile Include="DbLocationLang.cs" />
+    <Compile Include="DbOrganizationChart.cs" />
+    <Compile Include="DbPaymentMethod.cs" />
+    <Compile Include="Dbpb.cs" />
+    <Compile Include="DbPBCurrency.cs" />
+    <Compile Include="DbpbLang.cs" />
+    <Compile Include="DbPbRate.cs" />
+    <Compile Include="DbRejectReason.cs" />
+    <Compile Include="DbRejectReasonLang.cs" />
+    <Compile Include="DbScgReason.cs" />
+    <Compile Include="DbScgReasonLang.cs" />
+    <Compile Include="DbServiceTeam.cs" />
+    <Compile Include="DbServiceTeamLocation.cs" />
+    <Compile Include="DbStatus.cs" />
+    <Compile Include="DbStatusLang.cs" />
+    <Compile Include="DbTax.cs" />
+    <Compile Include="DbVendor.cs" />
+    <Compile Include="DbVendorTemp.cs" />
+    <Compile Include="DbWithHoldingTax.cs" />
+    <Compile Include="DbWithHoldingTaxType.cs" />
+    <Compile Include="DbCountryLang.cs" />
+    <Compile Include="DbCountry.cs" />
+    <Compile Include="DbBank.cs" />
+    <Compile Include="DbBankLang.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RejectReason.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RejectReasonLang.cs" />
+    <Compile Include="DbSellingLetter.cs" />
+    <Compile Include="TmpDbCostCenter.cs" />
+    <Compile Include="TmpDbInternalOrder.cs" />
+    <Compile Include="TmpCostCenter.cs" />
+    <Compile Include="TmpDbOrganizationChart.cs" />
+    <Compile Include="ValueObject\AccountAutoCompleteParameter.cs" />
+    <Compile Include="ValueObject\AccountLang.cs" />
+    <Compile Include="ValueObject\AdvanceFormDbPBData.cs" />
+    <Compile Include="ValueObject\AutocompleteField.cs" />
+    <Compile Include="DbCostCenterImportLog.cs" />
+    <Compile Include="ValueObject\CompanyTaxRate.cs" />
+    <Compile Include="ValueObject\CostCenterCompany.cs" />
+    <Compile Include="ValueObject\MoneyRequestSearchResult.cs" />
+    <Compile Include="ValueObject\SapDocTypeData.cs" />
+    <Compile Include="ValueObject\SapInstanceCriteria.cs" />
+    <Compile Include="ValueObject\SapInstanceData.cs" />
+    <Compile Include="ValueObject\SCGAutoCompleteParameter.cs" />
+    <Compile Include="ValueObject\BankLang.cs" />
+    <Compile Include="ValueObject\CompanyPaymentMethodResult.cs" />
+    <Compile Include="ValueObject\CompanyResult.cs" />
+    <Compile Include="ValueObject\ExpenseRecommend.cs" />
+    <Compile Include="ValueObject\PaymentTypeListItem.cs" />
+    <Compile Include="ValueObject\SellingDetailResult.cs" />
+    <Compile Include="ValueObject\SellingRequestLetterParameter.cs" />
+    <Compile Include="ValueObject\ServiceTeamLocationResult.cs" />
+    <Compile Include="ValueObject\Travelling.cs" />
+    <Compile Include="ValueObject\VOAccountCompany.cs" />
+    <Compile Include="ValueObject\VOExpenseGroup.cs" />
+    <Compile Include="ValueObject\IOAutoCompleteParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueObject\Location.cs" />
+    <Compile Include="ValueObject\LocationLangResult.cs" />
+    <Compile Include="ValueObject\RejectReasonAutoCompleteParameter.cs" />
+    <Compile Include="ValueObject\VOPB.cs" />
+    <Compile Include="ValueObject\VOPbRate.cs" />
+    <Compile Include="ValueObject\VOReasonLang.cs" />
+    <Compile Include="ValueObject\CountryLang.cs" />
+    <Compile Include="ValueObject\DbCountryAutoCompleteParameter.cs" />
+    <Compile Include="ValueObject\VORejectReasonLang.cs" />
+    <Compile Include="ValueObject\VOVendor.cs" />
+    <Compile Include="ValueObject\VOWHTRate.cs" />
+    <Compile Include="ValueObject\VOWHTType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSet\DBPbDataSet.xsc">
+      <DependentUpon>DBPbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DBPbDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBPbDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DBPbDataSet.xss">
+      <DependentUpon>DBPbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

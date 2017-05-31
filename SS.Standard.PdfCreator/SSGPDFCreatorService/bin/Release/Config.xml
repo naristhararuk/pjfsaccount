@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TexDirectory>C:\Inetpub\wwwroot\PdfCreator\bin\Tex</TexDirectory>
+  <PdfDirectory>C:\Inetpub\wwwroot\PdfCreator\bin\Pdf</PdfDirectory>
+  <LogDirectory>C:\Inetpub\wwwroot\PdfCreator\bin\Log</LogDirectory>
+  <Latex>C:\Program Files\MiKTeX 2.7\miktex\bin\latex.exe</Latex>
+  <PdfLatex>C:\Program Files\MiKTeX 2.7\miktex\bin\pdflatex.exe</PdfLatex>
+  <ConvertTimeout>60</ConvertTimeout>
+  <MsmqQueueName>Develop\private$\PDFQueue</MsmqQueueName>
+  <MessageTimeOut>1</MessageTimeOut>
+  <ServicePollingInterval>1</ServicePollingInterval>
+  <ServiceMaxThread>10</ServiceMaxThread>
+  <DatabaseServer>Develop</DatabaseServer>
+  <DatabaseName>SSGDB</DatabaseName>
+  <IntegratedSecurity>false</IntegratedSecurity>
+  <DBUser>sa</DBUser>
+  <DBPassword>123456</DBPassword>
+  <SystemLog>C:\Inetpub\wwwroot\PdfCreator\bin\Log\Service.log</SystemLog>
+</Config>

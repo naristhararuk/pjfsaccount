@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F710CA0A-7490-4B61-AE96-0E46F7B7702C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.DB.BLL</RootNamespace>
+    <AssemblyName>SCG.DB.BLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TeamSystem.Data.UnitTesting, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SS.References\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IDbHolidayProfileService.cs" />
+    <Compile Include="IDbHolidayService.cs" />
+    <Compile Include="IDbMileageRateRevisionDetailService.cs" />
+    <Compile Include="IDbMileageRateRevisionService.cs" />
+    <Compile Include="IDbProfileListService.cs" />
+    <Compile Include="IDbSapInstanceService.cs" />
+    <Compile Include="IDbSellingRunningService.cs" />
+    <Compile Include="IDbSellingLetterDetailService.cs" />
+    <Compile Include="IDbSellingLetterService.cs" />
+    <Compile Include="IDbAccountCompanyService.cs" />
+    <Compile Include="IDbAccountService.cs" />
+    <Compile Include="IDbBuyingLetterService.cs" />
+    <Compile Include="IDbBuyingLetterDetailService.cs" />
+    <Compile Include="IDbBuyingRunningService.cs" />
+    <Compile Include="IDbCompanyPaymentMethodService.cs" />
+    <Compile Include="IDbCompanyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDbCompanyTaxService.cs" />
+    <Compile Include="IDbCostCenterImportLogService.cs" />
+    <Compile Include="IDbCostCenterService.cs" />
+    <Compile Include="IDbCountryService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDbDocumentRunningService.cs" />
+    <Compile Include="IDbExpenseGroupLangService.cs" />
+    <Compile Include="IDbExpenseGroupService.cs" />
+    <Compile Include="IDbioImportLogService.cs" />
+    <Compile Include="IDbIOService.cs" />
+    <Compile Include="IDbLocationLangService.cs" />
+    <Compile Include="IDbLocationService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDbOrganizationChartService.cs" />
+    <Compile Include="IDbPaymentMethodService.cs" />
+    <Compile Include="IDbPBLangService.cs" />
+    <Compile Include="IDbPbRateService.cs" />
+    <Compile Include="IDbPBService.cs" />
+    <Compile Include="IDbReasonLangService.cs" />
+    <Compile Include="IDbReasonService.cs" />
+    <Compile Include="IDbServiceTeamLocationService.cs" />
+    <Compile Include="IDbServiceTeamService.cs" />
+    <Compile Include="IDbTaxService.cs" />
+    <Compile Include="IDbBankLangService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDbCountryLangService.cs" />
+    <Compile Include="IDbBankService.cs" />
+    <Compile Include="IDbVendorService.cs" />
+    <Compile Include="IDbVendorTempService.cs" />
+    <Compile Include="IDbWithHoldingTaxService.cs" />
+    <Compile Include="IDbWithHoldingTaxTypeService.cs" />
+    <Compile Include="Implement\DbHolidayProfileService.cs" />
+    <Compile Include="Implement\DbHolidayService.cs" />
+    <Compile Include="Implement\DbMileageRateRevisionDetailService.cs" />
+    <Compile Include="Implement\DbMileageRateRevisionService.cs" />
+    <Compile Include="Implement\DbProfileListService.cs" />
+    <Compile Include="Implement\DbSapInstanceService.cs" />
+    <Compile Include="Implement\DbSellingLetterDetailService.cs" />
+    <Compile Include="Implement\DbSellingLetterService.cs" />
+    <Compile Include="Implement\DbSellingRunningService.cs" />
+    <Compile Include="Implement\DbAccountCompanyService.cs" />
+    <Compile Include="Implement\DbAccountLangService.cs" />
+    <Compile Include="Implement\DbAccountService.cs" />
+    <Compile Include="Implement\DbBuyingLetterService.cs" />
+    <Compile Include="Implement\DbBuyingLetterDetailService.cs" />
+    <Compile Include="Implement\DbBuyingRunningService.cs" />
+    <Compile Include="Implement\DbCompanyPaymentMethodService.cs" />
+    <Compile Include="Implement\DbCompanyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\DbCompanyTaxService.cs" />
+    <Compile Include="Implement\DbCostCenterImportLogService.cs" />
+    <Compile Include="Implement\DbCostCenterService.cs" />
+    <Compile Include="Implement\DbCountryService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\DbDocumentRunningService.cs" />
+    <Compile Include="Implement\DbExpenseGroupLangService.cs" />
+    <Compile Include="Implement\DbExpenseGroupService.cs" />
+    <Compile Include="Implement\DbioImportLogService.cs" />
+    <Compile Include="Implement\DbIOService.cs" />
+    <Compile Include="Implement\DbLocationLangService.cs" />
+    <Compile Include="Implement\DbLocationService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\DbOrganizationChartService.cs" />
+    <Compile Include="Implement\DbPaymentMethodService.cs" />
+    <Compile Include="Implement\DbPBLangService.cs" />
+    <Compile Include="Implement\DbPbRateService.cs" />
+    <Compile Include="Implement\DbPBService.cs" />
+    <Compile Include="Implement\DbReasonLangService.cs" />
+    <Compile Include="Implement\DbReasonService.cs" />
+    <Compile Include="Implement\DbServiceTeamLocationService.cs" />
+    <Compile Include="Implement\DbServiceTeamService.cs" />
+    <Compile Include="Implement\DbTaxService.cs" />
+    <Compile Include="Implement\DbBankLangService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implement\DbCountryLangService.cs" />
+    <Compile Include="Implement\DbBankService.cs" />
+    <Compile Include="IDbAccountLangService.cs" />
+    <Compile Include="Implement\DbVendorService.cs" />
+    <Compile Include="Implement\DbVendorTempService.cs" />
+    <Compile Include="Implement\DbWithHoldingTaxService.cs" />
+    <Compile Include="Implement\DbWithHoldingTaxTypeService.cs" />
+    <Compile Include="Implement\TmpDbCostCenterService.cs" />
+    <Compile Include="Implement\TmpDbInternalOrderService.cs" />
+    <Compile Include="ITmpDbCostCenterService.cs" />
+    <Compile Include="ITmpDbInternalOrderService.cs" />
+    <Compile Include="Implement\RejectReasonLangService.cs" />
+    <Compile Include="Implement\RejectReasonService.cs" />
+    <Compile Include="Implement\TmpDbOrganizationChartService.cs" />
+    <Compile Include="ITmpDbOrganizationChartService.cs" />
+    <Compile Include="IRejectReasonLangService.cs" />
+    <Compile Include="IRejectReasonService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.DB.DAL\SCG.DB.DAL.csproj">
+      <Project>{C8A062D6-03AE-4376-A714-2792B7055899}</Project>
+      <Name>SCG.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.DTO\SCG.DB.DTO.csproj">
+      <Project>{1AD139BB-4AD4-424A-A951-8BCECFA953BA}</Project>
+      <Name>SCG.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Helper\SCG.DB.Helper.csproj">
+      <Project>{A7A80FAE-7432-442D-BD5B-B931B72A9FEC}</Project>
+      <Name>SCG.DB.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCG.DB.Query\SCG.DB.Query.csproj">
+      <Project>{66CBB214-DA80-40EF-917C-DEB3DAC72AF7}</Project>
+      <Name>SCG.DB.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL.Hibernate\SS.DB.DAL.Hibernate.csproj">
+      <Project>{E145299E-7512-4CAB-8697-5F2F879F05FC}</Project>
+      <Name>SS.DB.DAL.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DAL\SS.DB.DAL.csproj">
+      <Project>{305467E4-B9C3-4669-9895-F0B8C507479F}</Project>
+      <Name>SS.DB.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.DB.DTO\SS.DB.DTO.csproj">
+      <Project>{C67E0A91-F6CF-458C-A8D6-DB54080FB231}</Project>
+      <Name>SS.DB.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.NHibernate\SS.Standard.Data.NHibernate.csproj">
+      <Project>{B1D260DC-E99A-4559-B29F-696EE2E1243C}</Project>
+      <Name>SS.Standard.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Data.Query\SS.Standard.Data.Query.csproj">
+      <Project>{2B9CC477-B163-4B1E-ACBA-37CAA0B9F9A1}</Project>
+      <Name>SS.Standard.Data.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Security\SS.Standard.Security.csproj">
+      <Project>{B31E8EDC-7CF5-43B8-A5FF-E79668E800CF}</Project>
+      <Name>SS.Standard.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.Utilities\SS.Standard.Utilities.csproj">
+      <Project>{8D0003EE-F819-46FD-8791-E01AE2456A5E}</Project>
+      <Name>SS.Standard.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Standard.WorkFlow\SS.Standard.WorkFlow.csproj">
+      <Project>{FAB1E069-C432-4CEE-8182-833595F486AA}</Project>
+      <Name>SS.Standard.WorkFlow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
